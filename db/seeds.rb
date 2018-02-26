@@ -42,7 +42,8 @@ status = ["Pending", "Confirmed by the team", "Accepted by the organization", "D
     description: Faker::Lorem.paragraph,
     budget: (100..40_000).to_a.sample,
     due_date: Faker::Date.forward(100),
-    status: status.sample
+    status: status.sample,
+    organization: Organization.all.sample
     )
   project.remote_pic_url_url = "http://res.cloudinary.com/jules/image/upload/v1519664939/seeds/#{(1..20).to_a.sample}"
   project.save
@@ -57,7 +58,7 @@ end
 p "Creating user"
 
 20.times do
-  user = User.new(
+  user = User.create(
     email: Faker::Internet.email,
     password: "password123",
     first_name: Faker::Name.first_name,
