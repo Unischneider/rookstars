@@ -25,7 +25,7 @@ p "Creating organizations"
      description: Faker::Lorem.paragraph,
      name: Faker::Company.name
     )
-  organization.remote_photo_url = "https://source.unsplash.com/weekly?company"
+  organization.remote_pic_url_url = "https://source.unsplash.com/weekly?company"
   organization.save
 
 end
@@ -43,7 +43,7 @@ status = ["Pending", "Confirmed by the team", "Accepted by the organization", "D
     due_date: Faker::Date.forward(100),
     status: status.sample
     )
-  project.remote_photo_url = "http://res.cloudinary.com/jules/image/upload/v1519664939/seeds/#{(1..20).to_a.sample}"
+  project.remote_pic_url_url = "http://res.cloudinary.com/jules/image/upload/v1519664939/seeds/#{(1..20).to_a.sample}"
   project.save
 end
 
