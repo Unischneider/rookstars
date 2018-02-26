@@ -15,8 +15,11 @@ Team.destroy_all
 User.destroy_all
 
 
-20.Times do
-
-
+20.times do
+  Application.create(
+    pitch: Faker::Lorem.paragraph,
+    accepted: [true, false].sample,
+    user:
+    )
 
 end
