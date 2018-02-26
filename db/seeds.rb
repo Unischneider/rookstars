@@ -23,7 +23,8 @@ p "Creating organizations"
      #{Faker::Address.state}, #{Faker::Address.country}",
      website: Faker::Internet.url,
      description: Faker::Lorem.paragraph,
-     name: Faker::Company.name
+     name: Faker::Company.name,
+     password: "password123"
     )
   organization.remote_pic_url_url = "https://source.unsplash.com/weekly?company"
   organization.save
