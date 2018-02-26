@@ -1,0 +1,37 @@
+.two-column-cta {
+  background-color: $primary;
+  height: 300px;
+  hr {
+   margin-bottom: 0px;
+   width: 78px;
+   margin-top: 70px;
+   border-width: 6px;
+   display: inline-block;
+   text-align: left;
+ }
+ h1 {
+  font-weight: bold;
+  font-size: 30px;
+  text-align: left;
+}
+p {
+  font-weight: light;
+  font-size: 14px;
+}
+.left-cta {
+  border-right: solid 2px;
+  border-color: white;
+  height: 300px;
+}
+.right-cta {
+  height: 300px;
+
+}
+
+.cta-button {
+  margin: 20px 0px;
+
+}
+
+}
+
