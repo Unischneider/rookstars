@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  pitch: MyText
+  accepted: false
+  project: one
+  team: one
+
+two:
+  pitch: MyText
+  accepted: false
+  project: two
+  team: two
