@@ -1,28 +1,31 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
-<div class="two-column-cta">
-  <div class="container">
+<%= render 'components/header' %>
+<div class="container-fluid">
+  <div class="two-column-cta">
     <div class="row">
       <div class="double-cta">
         <div class="left-cta col-xs-6">
+          <div class="cta-content">
           <hr>
           <div class="text">
             <h1>Are You a developer</h1>
             <p>Grow your portfolio thorugh social good.</p>
           </div>
           <div class="cta-button">
-          <%= link_to "start", @projects_path, class: "custom-primary-btn" %>
+            <%= link_to "start", @projects_path, class: "custom-primary-btn" %>
+          </div>
           </div>
         </div>
         <div class="right-cta col-xs-6">
+          <div class="cta-content">
           <hr>
           <div class="text">
             <h1>Are You a Organization</h1>
             <p>Improve your digital presence with help of young profesionals.</p>
           </div>
           <div class="cta-button">
-          <%= link_to "start", @projects_path, class: "custom-primary-btn" %>
+            <%= link_to "start", @projects_path, class: "custom-primary-btn" %>
           </div>
+        </div>
         </div>
       </div>
     </div>
