@@ -26,6 +26,17 @@ ActiveRecord::Schema.define(version: 20180226151718) do
     t.index ["team_id"], name: "index_applications_on_team_id"
   end
 
+  create_table "developers", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.string "email"
+    t.string "github"
+    t.string "linkedin"
+    t.string "pic_url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "organizations", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
