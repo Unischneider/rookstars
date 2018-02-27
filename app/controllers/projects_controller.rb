@@ -8,6 +8,7 @@ class ProjectsController < ApplicationController
   def show
     set_params
     authorize @project
+    @organization = Organization.find(@project.organization_id)
   end
 
   def new
@@ -29,7 +30,7 @@ class ProjectsController < ApplicationController
   private
 
   def set_params
-    @project = Project.where(params[:id])
+    @project = Project.find(params[:id])
   end
 
   def valid_params
