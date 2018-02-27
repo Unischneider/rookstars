@@ -16,8 +16,6 @@
 .form-color {
   background-color: $accent;
   color: white;
-  max-width: 100%;
-  width: 620px;
 }
 
 .form-space{
@@ -25,7 +23,6 @@
 }
 
 .inner {
-    width: 145rem;
 }
 
 .control-label {
@@ -33,7 +30,7 @@
 }
 
 .form-group {
-      margin-top: -36px;
+      margin-top: -4px;
 }
 
 .content {
@@ -115,9 +112,9 @@ ul.plain li {
 
 .copyright {
     border-top: 1px solid;
-    font-size: 0.8rem;
+    font-size: 10px;
     opacity: 0.5;
-    padding: 2rem 0;
+    padding: 4px;
     text-align: center;
 }
 }

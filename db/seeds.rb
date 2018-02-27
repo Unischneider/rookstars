@@ -14,6 +14,7 @@ TeamMember.destroy_all
 Team.destroy_all
 User.destroy_all
 
+
 p "Creating organizations"
 
 20.times do
@@ -59,7 +60,7 @@ p "Creating user"
 
 20.times do
   user = User.create(
-    email: Faker::Internet.email,
+    email: "john-eric.berner@t-online.de",
     password: "password123",
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
