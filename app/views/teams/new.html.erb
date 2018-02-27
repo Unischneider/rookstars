@@ -3,8 +3,8 @@
     <h1>Create your team</h1>
   </div>
   <div class="form">
-    <% simple_form_for @team do |f| %>
-      <%#= f.association :team_members, collection: Users.all %>
+    <% simple_form_for[@team, @team_members] do |f| %>
+      <%= f.association :team_members, collection: Users.all %>
       <%= f.input :about_us %>
       <%= f.submit %>
     <% end %>
