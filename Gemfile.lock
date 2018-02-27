@@ -94,13 +94,11 @@ GEM
       activesupport (>= 4.2.0)
       multi_json (>= 1.2)
     json (2.1.0)
+    jwt (1.5.6)
     launchy (2.4.3)
       addressable (~> 2.3)
     letter_opener (1.6.0)
       launchy (~> 2.2)
-
-    jwt (1.5.6)
-
     listen (3.0.8)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -120,9 +118,7 @@ GEM
     mini_portile2 (2.3.0)
     minitest (5.11.3)
     multi_json (1.13.1)
-
     multi_xml (0.6.0)
-
     multipart-post (2.0.0)
     netrc (0.11.0)
     nio4r (2.2.0)
@@ -270,11 +266,8 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   letter_opener
   listen (~> 3.0.5)
-
   mail_form
-
   omniauth-github
-
   pg (~> 0.21)
   postmark-rails
   pry-byebug
