@@ -8,6 +8,9 @@
    border-color: $secondary;
    text-align: left;
  }
+ .tag-label {
+   color: #f4f4f463;
+ }
  h1 {
   font-weight: bold;
   font-size: 24px;
@@ -16,8 +19,12 @@
 }
 p {
   color: white;
+  margin-bottom: 1px;
   font-weight: light;
   font-size: 14px;
+}
+.text {
+  margin-bottom: 35px;
 }
 .left-cta {
   background-color: $primary;

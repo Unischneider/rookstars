@@ -1,0 +1,123 @@
+#footer {
+    background-color: #111111;
+    color: rgba(255, 255, 255, 0.5);
+    padding: 8rem 0 6rem 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+
+.form-footer {
+  margin-top:10px;
+}
+
+.form-color {
+  background-color: $accent;
+  color: white;
+  max-width: 100%;
+  width: 620px;
+}
+
+.form-space{
+  margin-top: -35px;
+}
+
+.inner {
+    width: 145rem;
+}
+
+.control-label {
+  visibility: hidden;
+}
+
+.form-group {
+      margin-top: -36px;
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.content section:first-child {
+    width: 51%;
+    padding-right: 6rem;
+    padding-left: 6rem;
+    padding-bottom: 1rem;
+    max-width: 51%;
+  .h4 {
+    font-weight: bold;
+    font-size: 16px;
+    text-align: left; }
+}
+
+.content section {
+    width: 25%;
+    padding-left: 3rem;
+}
+
+a {
+  color: inherit;
+  font-size: 14px;
+}
+
+ul.alt {
+    list-style: none;
+    padding-left: 0;
+        padding-top: 35px;
+}
+
+ul {
+    list-style: disc;
+    margin: 0 0 2rem 0;
+    padding-left: 1rem;
+}
+ol, ul {
+    list-style: none;
+}
+
+
+ul.alt li {
+    border-top-color: rgba(255, 255, 255, 0.25);
+}
+ul.alt li:first-child {
+    border-top: 0;
+    padding-top: 0;
+}
+ul.alt li {
+    border-top-color: rgba(0, 0, 0, 0.25);
+}
+ul.alt li {
+    border-top: solid 1px;
+    padding: 0.75rem 0;
+}
+ul li {
+    padding-left: 0.325rem;
+}
+
+
+.content section:last-child {
+    padding-left: 6rem;
+}
+
+ul.plain {
+    list-style: none;
+        padding-left: 75px;
+    padding-top: 43px;
+}
+
+ul.plain li {
+    margin-bottom: 1rem;
+}
+
+
+.copyright {
+    border-top: 1px solid;
+    font-size: 0.8rem;
+    opacity: 0.5;
+    padding: 2rem 0;
+    text-align: center;
+}
+}
