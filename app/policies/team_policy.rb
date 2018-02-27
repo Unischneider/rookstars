@@ -5,15 +5,15 @@ class TeamPolicy < ApplicationPolicy
     end
   end
 
-  def show
+  def show?
     true
   end
 
-  def create
+  def create?
     true
   end
 
-  def destroy
+  def destroy?
     user == record.user
   end
 end
