@@ -7,4 +7,5 @@ class User < ApplicationRecord
   has_many :team_members
   has_many :teams, through: :team_members
   validates :first_name, :last_name, :github, presence: true
+  mount_uploader :pic_url, PhotoUploader
 end
