@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
 
+  get 'teams/new'
+
+  get 'teams/create'
+
+  get 'teams/show'
+
+  get 'teams/destroy'
+
   devise_for :organizations
   devise_for :users
   root to: 'pages#home'
