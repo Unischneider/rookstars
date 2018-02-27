@@ -6,10 +6,4 @@
   </div>
 </div>
 
-<% @projects.each do |project| %>
-  <%= link_to project.title, project_path(project) %>
-  <%= project.description %>
-  <%= project.budget %>
-  <%= project.due_date %>
-  <%= project.status %>
-<% end %>
+<%= render 'components/cards' %>
