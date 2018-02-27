@@ -7,7 +7,9 @@ class User < ApplicationRecord
 
   has_many :team_members
   has_many :teams, through: :team_members
+  validates :first_name, presence: true
   mount_uploader :pic_url, PhotoUploader
+
 
 
 def self.new_with_session(params, session)
