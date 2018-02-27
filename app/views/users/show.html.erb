@@ -1,14 +1,8 @@
 
-
-
-
-
-<div class="container">
+<div class="container-fluid">
   <div class="row">
     <div class="col-xs-12">
-      <div class="text-center">
-        <h1> User Profile</h1>
-      </div>
+      <h1 style="text-align: center"> User Profile</h1>
     </div>
   </div>
   <div class="row">
@@ -25,9 +19,6 @@
       </div>
     </div>
   </div>
-</div>
-
-<div class="container-fluid">
   <div class="two-column-cta">
     <div class="row">
       <div class="double-cta">
@@ -45,11 +36,37 @@
             <hr>
             <div class="text">
               <h1>Teams and Projects</h1>
-              <p></p>
-            </div><%  %>
-          </div>
+              <% @user.teams.each do |team| %>
+              <% team.team_members.each do |team_member| %>
+              <%  if team_member.lead_dev %>
+              <p> <%= team_member.user.first_name %>'s Team </p>
+              <% end %>
+              <% end %>
+              <% team.applications.each do |app|   %>
+              <% if app.accepted %>
+              <p> <%= app.project.title %></p>
+              <% end %>
+              <% end %>
+            </li>
+            <% end %>
+          </ul>
         </div>
       </div>
     </div>
   </div>
 </div>
+<div class="row">
+  <div class="col-xs-12">
+    <div class="get-in-touch">
+      <div class="text-center">
+        <h2>
+          Want to get in touch?
+        </h2>
+        <p>Get in touch with <%= @user.first_name %></p>
+        <%= link_to "Contact", root_path , class: "custom-primary-btn" %>
+      </div>
+    </div>
+  </div>
+</div>
+
+

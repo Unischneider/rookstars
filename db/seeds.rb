@@ -60,7 +60,7 @@ p "Creating user"
 
 20.times do
   user = User.create(
-    email: "john-eric.berner@t-online.de",
+    email: Faker::Internet.email,
     password: "password123",
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
