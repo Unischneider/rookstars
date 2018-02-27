@@ -1,2 +1,56 @@
-<h1>Projects#show</h1>
-<p>Find me in app/views/projects/show.html.erb</p>
+<div class="header-container" style="background-image: url('<%= cl_image_path @project.pic_url %>'); background-size: cover; background-position: center">
+  <div class="header-content">
+    <div class="text-center intro-text">
+      <h1><%= @project.title %></h1>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid">
+  <div class="two-column-content">
+    <div class="row">
+      <div class="double-cta">
+        <div class="left-cta col-xs-12 col-md-6">
+          <div class="cta-content">
+            <hr>
+            <div class="text">
+              <h1>About the NGO</h1>
+              <p><%= @organization.description %></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="right-cta col-xs-12 col-md-6">
+        <div class="cta-content">
+          <hr>
+          <div class="text">
+            <h1>About the Project</h1>
+            <p class="tag-label">Project details:</p>
+            <p><strong> <%= @project.description %></strong></p><br>
+            <p class="tag-label">Due date:</p>
+            <p><strong><%= @project.due_date %></strong></p><br>
+            <p class="tag-label">Budget:</p> <p> <strong> <%= @project.budget %> </strong></p>
+          </div>
+          <div class="cta-button">
+            <%= link_to "collaborate", teams_new_path, class: "custom-primary-btn" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+  <div class="one-column-cta">
+<div class="container-fluid">
+    <div class="cta-content">
+      <hr>
+      <div class="text text-center">
+        <h1>Are You a Organization</h1>
+        <p>Improve your digital presence with help of young profesionals.</p>
+      </div>
+      <div class="cta-button">
+        <%= link_to "start", @projects_path, class: "custom-primary-btn" %>
+      </div>
+    </div>
+  </div>
+</div>

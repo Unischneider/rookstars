@@ -1,0 +1,15 @@
+<% @projects.each do |project| %>
+    <div class="col-xs-4">
+      <div class="card">
+        <div class="card-category" style="background-image: url('<%= cl_image_path project.pic_url %>');">
+          <%= link_to "Join", project_path(project.id), class: "custom-primary-btn" %>
+        </div>
+        <div class="card-description">
+          <h2><%= link_to project.title, project_path(project.id) %></h2>
+          <h1><%= project.organization.name %></h1>
+          <p class="description-text"><%= project.description %></p>
+        </div>
+      </div>
+    </div>
+  <% end %>
+

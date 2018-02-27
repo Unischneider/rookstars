@@ -5,30 +5,37 @@
       <div class="double-cta">
         <div class="left-cta col-xs-12 col-md-6">
           <div class="cta-content">
-          <hr>
-          <div class="text">
-            <h1>Are You a developer</h1>
-            <p>Grow your portfolio thorugh social good.</p>
-          </div>
-          <div class="cta-button">
-            <%= link_to "start", @projects_path, class: "custom-primary-btn" %>
-          </div>
+            <hr>
+            <div class="text">
+              <h1>Are You a developer</h1>
+              <p>Grow your portfolio thorugh social good.</p>
+            </div>
+            <div class="cta-button">
+              <%= link_to "start", @projects_path, class: "custom-primary-btn" %>
+            </div>
           </div>
         </div>
         <div class="right-cta col-xs-12 col-md-6">
           <div class="cta-content">
-          <hr>
-          <div class="text">
-            <h1>Are You a Organization</h1>
-            <p>Improve your digital presence with help of young profesionals.</p>
+            <hr>
+            <div class="text">
+              <h1>Are You a Organization</h1>
+              <p>Improve your digital presence with help of young profesionals.</p>
+            </div>
+            <div class="cta-button">
+              <%= link_to "start", @projects_path, class: "custom-primary-btn" %>
+            </div>
           </div>
-          <div class="cta-button">
-            <%= link_to "start", @projects_path, class: "custom-primary-btn" %>
-          </div>
-        </div>
         </div>
       </div>
     </div>
   </div>
 </div>
+<div class="container">
+  <br>
+  <h1 class="text-center">Onboard an ongoing project</h1>
+  <br>
+  <div class="row">
+  <%= render "components/cards" %>
+  </div>
 </div>

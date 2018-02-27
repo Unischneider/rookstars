@@ -24,6 +24,10 @@ gem 'gibbon'
 gem "letter_opener", group: :development
 gem 'mail_form'
 
+gem 'pundit'
+gem 'omniauth-github'
+
+
 group :development do
   gem 'web-console', '>= 3.3.0'
 end
