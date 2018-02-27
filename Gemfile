@@ -19,6 +19,10 @@ gem 'webpacker'
 gem 'cloudinary'
 gem 'carrierwave', '~> 1.2'
 gem 'faker'
+gem 'postmark-rails'
+gem 'gibbon'
+gem "letter_opener", group: :development
+gem 'mail_form'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
