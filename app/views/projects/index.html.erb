@@ -1,13 +1,13 @@
 <div class="header-container">
   <div class="header-content">
     <div class="text-center intro-text">
-      <h1>Pick your cause</h1>
+      <h1>Support a cause</h1>
     </div>
   </div>
 </div>
 
 <% @projects.each do |project| %>
-  <%= project.title %>
+  <%= link_to project.title, project_path(project) %>
   <%= project.description %>
   <%= project.budget %>
   <%= project.due_date %>

@@ -1,6 +1,15 @@
 class ProjectsController < ApplicationController
   skip_before_action :authenticate_user!
 
+  def index
+    @projects = policy_scope(Project)
+  end
+
+  def show
+    set_params
+    authorize @project
+  end
+
   def new
     @project = Project.new
     authorize @project
@@ -17,16 +26,11 @@ class ProjectsController < ApplicationController
     end
   end
 
-  def show
-    @project = Project.find(params[:id])
-    authorize @project
-  end
-
-  def index
-    @projects = policy_scope(Project)
-  end
-
   private
+
+  def set_params
+    @project = Project.where(params[:id])
+  end
 
   def valid_params
     params.permit(:project).require(:title, :description, :due_date, :status, :budget, :pic_url)
