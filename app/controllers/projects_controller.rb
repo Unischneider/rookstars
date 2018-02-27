@@ -13,6 +13,7 @@ class ProjectsController < ApplicationController
 
   def new
     @project = Project.new
+    @application = Application.new
     authorize @project
   end
 
