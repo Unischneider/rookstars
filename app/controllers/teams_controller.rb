@@ -6,6 +6,7 @@ class TeamsController < ApplicationController
 
   def new
     @team = Team.new
+    @team_member = TeamMember.new
     authorize @team
   end
 
