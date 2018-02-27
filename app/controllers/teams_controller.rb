@@ -1,4 +1,10 @@
 class TeamsController < ApplicationController
+  skip_before_action :authenticate_user!
+
+  def show
+    authorize @team
+  end
+
   def new
     @team = Team.new
     authorize @team
@@ -9,9 +15,6 @@ class TeamsController < ApplicationController
     authorize @team
   end
 
-  def show
-    authorize @team
-  end
 
   def destroy
     authorize @team

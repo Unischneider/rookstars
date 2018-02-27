@@ -30,9 +30,11 @@
               <p><strong><%= @project.due_date %></strong></p><br>
               <p>Budget:</p> <p> <strong> <%= @project.budget %> </strong></p>
             </div>
-            <div class="cta-button">
-              <%= link_to "collaborate", teams_new_path, class: "custom-primary-btn" %>
-            </div>
+            <% if policy(Team).create? %>
+              <div class="cta-button">
+                <%= link_to "collaborate", teams_new_path, class: "custom-primary-btn" %>
+              </div>
+          <% end %>
           </div>
         </div>
       </div>
