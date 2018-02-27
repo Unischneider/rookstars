@@ -20,6 +20,7 @@ gem 'cloudinary'
 gem 'carrierwave', '~> 1.2'
 gem 'faker'
 gem 'pundit'
+gem 'omniauth-github'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
