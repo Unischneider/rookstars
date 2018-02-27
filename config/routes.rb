@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :contacts, only: [:new, :create]
   resources :applications, only: [:new, :create, :show, :index, :edit, :update]
   resources :organizations, only: [:new, :create, :show, :edit, :update]
-  # resources :users, only: [:new, :create, :show, :edit, :update]
+  resources :users, only: [:new, :create, :show, :edit, :update]
   resources :projects
   resources :teams, only: [:show, :new, :create, :destroy]
 
