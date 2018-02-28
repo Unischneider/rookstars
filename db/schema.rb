@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180227171022) do
+ActiveRecord::Schema.define(version: 20180228140358) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -56,6 +56,15 @@ ActiveRecord::Schema.define(version: 20180227171022) do
     t.bigint "organization_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "landing_page"
+    t.boolean "db_sql"
+    t.boolean "maps"
+    t.boolean "forms"
+    t.boolean "mail_integration"
+    t.boolean "messaging_integration"
+    t.boolean "sign_up_log_in"
+    t.boolean "payment_integration"
+    t.string "other"
     t.index ["organization_id"], name: "index_projects_on_organization_id"
   end
 
