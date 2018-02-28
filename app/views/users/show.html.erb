@@ -83,7 +83,25 @@
   </div>
 </div>
 
+<% if current_user == @user %>
+  <div class="one-column-cta">
+    <div class="container-fluid">
+      <div class="cta-content">
+        <hr>
+        <div class="text text-center">
+          <h1>You have done other projects?</h1>
+          <p>Add a project that you've been working on in the past</p>
+        </div>
+        <div class="cta-button">
+          <%= link_to "New Project", new_project_path, class: "custom-primary-btn"  %>
+        </div>
+      </div>
+    </div>
+  </div>
 
+
+
+<% else %>
   <div class="one-column-cta">
     <div class="container-fluid">
       <div class="cta-content">
@@ -98,3 +116,4 @@
       </div>
     </div>
   </div>
+<% end %>
