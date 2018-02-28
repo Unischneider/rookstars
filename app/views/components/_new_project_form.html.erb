@@ -33,6 +33,8 @@
         <% if current_user.class == Organization.class %>
           <%=  f.input :due_date %>
         <% end %>
+        <%= f.input :photo, label: "Upload a project picture"%>
+        <%= f.input :photo_cache, as: :hidden %>
         <%= f.submit "Create a project", class: "custom-secondary-btn" %>
         <% end %>
       </div>

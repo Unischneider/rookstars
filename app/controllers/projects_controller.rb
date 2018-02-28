@@ -35,7 +35,7 @@ class ProjectsController < ApplicationController
   end
 
   def valid_params
-    params.permit(:project).require(:title, :description, :due_date, :status, :budget, :pic_url)
+    params.permit(:project).require(:title, :description, :due_date, :status, :budget, :photo)
   end
 
 end
