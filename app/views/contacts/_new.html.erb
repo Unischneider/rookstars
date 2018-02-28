@@ -1,30 +1,34 @@
-<div class="container">
+
 <div align="center">
-  <%= simple_form_for Contact.new, :html => {:class => 'form-horizontal' } do |f| %>
-  <div class="row">
-    <div class="col-xs-3" style="width: 225px;">
-    <%= f.input :name, :required => true, placeholder: "name", label: false %>
-    </div>
-      <div class="col-xs-3" style="margin-left: 10px; width: 350px;">
-      <%= f.input :email, :required => true, placeholder: "email", label: false %>
+  <div class="col-xs-12">
+   <%= simple_form_for Contact.new, :html => {:class => 'form-horizontal' } do |f| %>
+   <div class="single-forms">
+    <div class="col-xs-12">
+      <%= f.input :message, :as => :text, :required => true, placeholder: "Do you have any questions?", label: false %>
+      <div class= "hidden">
+        <%= f.input :nickname, :hint => 'Leave this field blank!' %>
       </div>
     </div>
+ </div>
+   <div class="inline-forms">
 
-  <div class="row">
-    <div class="col-xs-6" >
-    <%= f.input :message, :as => :text, :required => true, placeholder: "message", label: false %>
-    <div class= "hidden">
-      <%= f.input :nickname, :hint => 'Leave this field blank!' %>
-    </div>
+   <div class="col-xs-6">
     <div>
-      </br>
-      <%= f.button :submit, 'Send message', :class=> "custom-primary-btn form-space" %>
-    </div>
-
+      <%= f.input :name, :required => true, placeholder: "name", label: false %>
     </div>
   </div>
-  <% end %>
+
+  <div class="col-xs-6">
+    <div>
+      <%= f.input :email, :required => true, placeholder: "email", label: false %>
+    </div>
+  </div>
+  </div>
+ <div class="text-left">
+     <%= f.button :submit, 'Ask us!', :class=> "custom-primary-btn form-space" %>
+   </div>
+</div>
+ <% end %>
+</div>
 </div>
 
-
-</div>

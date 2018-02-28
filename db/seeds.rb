@@ -36,7 +36,7 @@ p "Creating projects"
 
 
 project_titles = ["Google Maps integration", "Complete Website", "Sign Up", "Payement integration", "Refactoring Website", "Make our Website responsive"]
-status = ["Pending", "Confirmed by the team", "Accepted by the organization", "Declined by organization", "Rejected by the team"]
+status = ["Pending", "On Going", "Accepted by the organization", "Declined by organization", "Rejected by the team", "Done"]
 20.times do
  project = Project.new(
     title: project_titles.sample,
