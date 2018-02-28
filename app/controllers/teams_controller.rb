@@ -7,12 +7,12 @@ class TeamsController < ApplicationController
 
   def new
     @team = Team.new
-    @team_member = TeamMember.new
+    # @team_member = TeamMember.new
     authorize @team
   end
 
   def create
-    @team = Team.new
+    @team = Team.new(valid_params)
     @project = Project.find(params[:project_id])
     authorize @team
 
@@ -46,7 +46,7 @@ class TeamsController < ApplicationController
   #   params.permit(:project).require(:title, :description, :budget, :pic_url, :due_date, :status, :organization_id)
   # end
 
-  # def valid_params
-  #   params.permit(:team).require(:about_us)
-  # end
+  def valid_params
+    params.permit(:team).require(:about_us)
+  end
 end

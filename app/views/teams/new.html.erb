@@ -3,9 +3,9 @@
     <h1>Create your team</h1>
   </div>
   <div class="form">
-    <%= simple_form_for [@team, @team_member] do |f| %>
+    <%= simple_form_for @team do |f| %>
       <%= f.input :about_us %>
-      <%= f.association :user %>
+      <!-- <%# f.association :user %> -->
       <%= f.submit %>
     <% end %>
   </div>
