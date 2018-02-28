@@ -1,6 +1,6 @@
 <div class="container">
   <div class="form">
-    <%= simple_form_for @team, @team_members do |f| %>
+    <%= simple_form_for [@team, @team_member] do |f| %>
       <%= f.input :user %>
       <%= f.input :lead_dev %>
       <%= f.submit %>

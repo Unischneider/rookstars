@@ -12,27 +12,14 @@ class TeamsController < ApplicationController
   end
 
   def create
-    @team = Team.new(valid_params)
-    @project = Project.find(params[:project_id])
+    @team = Team.new(set_params)
     authorize @team
-
+    # @team.lead_dev = current_user
     if @team.save
-      redirect_to project_team_team_members_path(@project, @team)
+      redirect_to new_team_team_member_path(@team)
     else
       render :new
     end
-    # @toothbrush = Toothbrush.find(params[:toothbrush_id])
-    # @booking = Booking.new(booking_params)
-    # @booking.toothbrush = @toothbrush
-    # @booking.user = current_user
-    # @booking.status = "Pending owner validation"
-    # total_price
-    # authorize @booking
-    # if @booking.save
-    #   redirect_to booking_path(@booking)
-    # else
-    #   render :new
-    # end
   end
 
 
@@ -46,7 +33,7 @@ class TeamsController < ApplicationController
   #   params.permit(:project).require(:title, :description, :budget, :pic_url, :due_date, :status, :organization_id)
   # end
 
-  def valid_params
-    params.permit(:team).require(:about_us)
+  def set_params
+    params.require(:team).permit(:about_us)
   end
 end
