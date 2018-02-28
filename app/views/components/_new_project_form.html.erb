@@ -6,30 +6,32 @@
   </div>
 </div> -->
 <div class="container">
-  <div class="text text-center">
-    <h1>New Project</h1>
-  </div>
-  <div class="row">
-    <div class="col-xs-10 col-xs-offset-1">
-      <%= simple_form_for project do |f| %>
-      <%= f.input :title %>
-      <%= f.input :description %>
-      <%= f.input :budget %>
-      <%= check_box_tag :db_sql , "Database", project.db_sql %>
-      <%= check_box_tag :maps , "Map integration", project.maps %>
-      <%= check_box_tag :forms , "Forms (Contact forms etc.)", project.forms %>
-      <%= check_box_tag :mail_integration , "E-Mail integration", project.mail_integration %>
-      <%= check_box_tag :messaging_integration , "Messaging through the Website", project.messaging_integration %>
-      <%= check_box_tag :sign_up_log_in , "Sign-In / Sign-Up", project.sign_up_log_in %>
-      <%= check_box_tag :payment_integration , "Payemnt integration", project.payment_integration %>
-      <%= check_box_tag :landing_page , "Landing page", project.landing_page %>
-      <%= f.input :other %>
-      <%= f.submit "Create a project", class: "custom-primary-btn" %>
-      <% end %>
+  <div class="project-container">
+    <div class="text text-center">
+      <h1>New Project</h1>
+    </div>
+    <div class="row">
+      <div class="col-xs-10 col-xs-offset-1">
+        <%= simple_form_for project do |f| %>
+        <%= f.input :title %>
+        <%= f.input :description %>
+        <%= f.input :budget %>
+        <p>What functionalities would you need?</p>
+        <div class="feature_checkbox_wrapper">
+          <%= f.input :db_sql, label: "Database",  wrapper_html: { class: "feature_checkbox" } %>
+          <%= f.input :maps, label: "Maps integration",  wrapper_html: { class: "feature_checkbox" } %>
+          <%= f.input :forms, label: "Forms (Contact forms etc.)",  wrapper_html: { class: "feature_checkbox" } %>
+          <%= f.input :mail_integration, label: "Mail integration" ,  wrapper_html: { class: "feature_checkbox" } %>
+          <%= f.input :messaging_integration, label: "Messaging integration",  wrapper_html: { class: "feature_checkbox" } %>
+          <%= f.input :sign_up_log_in, label: "Sign-Up and Log-In",  wrapper_html: { class: "feature_checkbox" }%>
+          <%= f.input :payment_integration ,  wrapper_html: { class: "feature_checkbox" }%>
+          <%= f.input :landing_page,  wrapper_html: { class: "feature_checkbox" }%>
+        </div>
+        <%= f.input :other %>
+        <%=  f.input :due_date %>
+        <%= f.submit "Create a project", class: "custom-primary-btn" %>
+        <% end %>
+      </div>
     </div>
   </div>
-</div>
-<div class="custom-control custom-checkbox">
-  <input type="checkbox" class="custom-control-input" id="customCheck1">
-  <label class="custom-control-label" for="customCheck1">Check this custom checkbox</label>
 </div>

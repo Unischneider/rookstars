@@ -1,0 +1,17 @@
+.project-container {
+  padding: 15px;
+  background-color: $secondary;
+  border-radius: 10px;
+  margin: 20px 0;
+  color: white;
+}
+
+.feature_checkbox_wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.feature_checkbox {
+  flex: 0 0 25%;
+}
+
