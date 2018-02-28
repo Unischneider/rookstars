@@ -23,6 +23,7 @@ gem 'postmark-rails'
 gem 'gibbon'
 gem "letter_opener", group: :development
 gem 'mail_form'
+gem 'ruby-trello'
 
 gem 'pundit'
 gem 'omniauth-github'

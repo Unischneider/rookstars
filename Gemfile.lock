@@ -55,7 +55,7 @@ GEM
       activemodel (>= 4.0.0)
       activesupport (>= 4.0.0)
       mime-types (>= 1.16)
-    cloudinary (1.8.3)
+    cloudinary (1.9.0)
       aws_cf_signer
       rest-client
     coderay (1.1.2)
@@ -73,7 +73,7 @@ GEM
     execjs (2.7.0)
     faker (1.8.7)
       i18n (>= 0.7)
-    faraday (0.14.0)
+    faraday (0.12.2)
       multipart-post (>= 1.2, < 3)
     ffi (1.9.23)
     figaro (1.1.1)
@@ -124,6 +124,7 @@ GEM
     nio4r (2.2.0)
     nokogiri (1.8.2)
       mini_portile2 (~> 2.3.0)
+    oauth (0.5.4)
     oauth2 (1.4.0)
       faraday (>= 0.8, < 0.13)
       jwt (~> 1.0)
@@ -162,7 +163,7 @@ GEM
     rack (2.0.4)
     rack-proxy (0.6.3)
       rack
-    rack-test (0.8.2)
+    rack-test (0.8.3)
       rack (>= 1.0, < 3)
     rails (5.1.5)
       actioncable (= 5.1.5)
@@ -199,6 +200,12 @@ GEM
       http-cookie (>= 1.0.2, < 2.0)
       mime-types (>= 1.16, < 4.0)
       netrc (~> 0.8)
+    ruby-trello (2.0.1)
+      activemodel (>= 3.2.0)
+      addressable (~> 2.3)
+      json
+      oauth (>= 0.4.5)
+      rest-client (>= 1.8.0)
     sass (3.5.5)
       sass-listen (~> 4.0.0)
     sass-listen (4.0.0)
@@ -276,6 +283,7 @@ DEPENDENCIES
   pundit
   rails (= 5.1.5)
   redis
+  ruby-trello
   sass-rails
   simple_form
   spring
