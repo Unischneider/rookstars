@@ -1,19 +1,22 @@
 .header-container {
-      background-color: #232323;
-    height: 430px;
-    margin-top: -110px;
-    padding: 189px 65px;
-   h1 {
-  text-align: left;
-  font-weight: bold;
-  font-size: 35px;
-  color: white;
-}
-p {
-  color: white;
-  font-weight: 100;
-  font-size: 14px;
-}
+  background-image: url("bg.jpg");
+  background-color: #232323;
+  background-position: center;
+  background-size: cover;
+  height: 430px;
+  margin-top: -110px;
+  padding: 189px 65px;
+  h1 {
+    text-align: left;
+    font-weight: bold;
+    font-size: 35px;
+    color: white;
+  }
+  p {
+    color: white;
+    font-weight: 100;
+    font-size: 14px;
+  }
 }
 
 
