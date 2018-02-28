@@ -15,9 +15,9 @@ Rails.application.routes.draw do
   resources :organizations, only: [:new, :create, :show, :edit, :update]
   # resources :users, only: [:new, :create, :show, :edit, :update]
   resources :projects do
-    resources :proposals, only: [:new, :create]
+    resources :proposals, only: [:new,  :show, :create]
   end
-  resources :proposals, only: [:index, :show, :destroy, :update]
+  resources :proposals, only: [:index, :destroy, :update]
 
   resources :users, only: [:new, :create, :show, :edit, :update]
   resources :projects
