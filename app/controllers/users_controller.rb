@@ -7,6 +7,10 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    # @team_members = TeamMember.where(user: @user)
+    # @team_members.each do |team|
+    #   @apps =  Application.select(team_id: team.id)
+    # end
     authorize @user
   end
 

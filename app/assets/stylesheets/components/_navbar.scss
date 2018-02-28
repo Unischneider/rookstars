@@ -20,6 +20,12 @@
 
 }
 
+.avatar {
+  width: 40px;
+  margin-left: 18px;
+  height: 40px;
+}
+
 /* Logo */
 .navbar-wagon-brand img {
   height: 50px;
@@ -99,7 +105,7 @@
   align-items: center;
   justify-content: left;
   opacity: 0.8;
-   a {
+  a {
     color: white;
   }
 }
@@ -109,7 +115,7 @@
 }
 
 .navbar-bottom-item {
-  margin: 35px;
+  margin: 13px;
 }
 
 .brand {
