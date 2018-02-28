@@ -1,3 +1,7 @@
+a .card {
+    color: $primary;
+    text-decoration: none;
+}
 .card {
  width: 330px;
  height: 315px;
@@ -17,6 +21,7 @@
   height: 150px;
   background-size: cover;
   background-size: position;
+
 }
 .custom-primary-btn {
   visibility: hidden;
@@ -61,6 +66,8 @@ p {
   font-size: 14px;
   top: 219px;
 }
+
+
 }
 .card:hover {
   transition: ease .2s;
@@ -71,6 +78,7 @@ p {
   margin: 13px 0px;
   position: relative;
   border-radius: 4px;
+
   .card-category {
     opacity: .8;
     transition: ease .3s;
