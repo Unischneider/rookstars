@@ -7,8 +7,12 @@ Rails.application.routes.draw do
   resources :applications, only: [:new, :create, :show, :index, :edit, :update]
   resources :organizations, only: [:new, :create, :show, :edit, :update]
   resources :users, only: [:new, :create, :show, :edit, :update]
-  resources :projects
-  resources :teams, only: [:show, :new, :create, :destroy]
+  resources :projects do
+     resources :teams, only: [:show, :new, :create, :destroy]  do
+       resources :team_members, only: [:new, :create]
+     end
+  end
+
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
