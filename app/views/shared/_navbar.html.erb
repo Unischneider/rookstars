@@ -4,14 +4,18 @@
     <%= link_to root_path, class: "navbar-top-eric" do %>
     <% if user_signed_in? %>
     <%= link_to destroy_user_session_path,class: "custom-primary-btn",  method: :delete do %>
-    <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
+            <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
     <% end %>
     <div class="navbar-top-item">
       <div class="dropdown">
         <% if current_user.pic_url.nil? %>
-        <img src="https://kitt.lewagon.com/placeholder/users/ssaunier" class="avatar dropdown-toggle" id="navbar-top-menu" data-toggle="dropdown">
+          <%= link_to user_path(current_user) do   %>
+            <img src="https://kitt.lewagon.com/placeholder/users/ssaunier" class="avatar dropdown-toggle" id="navbar-top-menu" data-toggle="dropdown">
+          <% end %>
         <% else %>
-        <%= image_tag current_user.pic_url, class: "avatar dropdown-toggle", id: "navbar-top-menu", "data-toggle" => "dropdown" %>
+          <%= link_to user_path(current_user) do   %>
+            <%= image_tag current_user.pic_url, class: "avatar dropdown-toggle", id: "navbar-top-menu", "data-toggle" => "dropdown" %>
+            <% end %>
         <% end %>
         <ul class="dropdown-menu dropdown-menu-right navbar-top-dropdown-menu">
           <li>
@@ -39,22 +43,22 @@
     </div>
     <% end %>
     <% end %>
-    <div class="flash-contaienr">
-   </div>
-   <div class="brand">
-    <a href="/" class="navbar-wagon-brand">
-    </a>
-  </div>
-</div>
 
-<div class="navbar-bottom">
-  <div class="navbar-bottom-right hidden-xs hidden-sm">
 
-    <!-- Links when logged in -->
-    <%= link_to "Home", root_path, class: "navbar-bottom-item navbar-top-link" %>
-    <%= link_to "About", "#", class: "navbar-bottom-item navbar-top-link" %>
-    <%= link_to "Projects", projects_path, class: "navbar-bottom-item navbar-top-link" %>
-    <%= link_to "FAQ", "#", class: "navbar-bottom-item navbar-top-link" %>
+    <div class="brand">
+      <a href="/" class="navbar-wagon-brand">
+      </a>
+    </div>
   </div>
-</div>
+
+  <div class="navbar-bottom">
+    <div class="navbar-bottom-right hidden-xs hidden-sm">
+
+      <!-- Links when logged in -->
+      <%= link_to "Home", root_path, class: "navbar-bottom-item navbar-top-link" %>
+      <%= link_to "About", "#", class: "navbar-bottom-item navbar-top-link" %>
+      <%= link_to "Projects", projects_path, class: "navbar-bottom-item navbar-top-link" %>
+      <%= link_to "FAQ", "#", class: "navbar-bottom-item navbar-top-link" %>
+    </div>
+  </div>
 </div>
