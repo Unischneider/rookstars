@@ -1,38 +1,40 @@
 <div class="container-fluid">
   <div class="row">
-    <footer id="footer">
-        <div class="inner">
-          <div class="content">
+    <div class="footer">
+      <div class="content">
+        <div class="list-content">
+          <div class="col-xs-5">
             <section>
-              <h4>Any Questions?</h4>
+              <p style="color: white; font-size: 14px; margin-left: 20px;">Get in touch</p>
               <%= render 'contacts/new', contact: @contact %>
             </section>
+          </div>
+          <div class="col-xs-4 list-names">
             <section>
               <ul class="alt">
                 <li><a href="#">Home</a></li>
                 <li><a href="#">About</a></li>
                 <li><a href="#">Our NGOs</a></li>
                 <li><a href="#">Posted Jobs</a></li>
+            <ul style="margin-top: 21px;" class="list-inline alt">
+              <li><a href="#"><i style="font-size: 20px;" class="icon fab fa-twitter">&nbsp;</i></a></li>
+              <li><a href="#"><i style="font-size: 20px;" class="icon fab fa-facebook">&nbsp;</i></a></li>
+              <li><a href="#"><i style="font-size: 20px;" class="icon fab fa-instagram">&nbsp;</i></a></li>
+              <li><a href="#"><i style="font-size: 20px;" class="icon fab fa-github">&nbsp;</i></a></li>
+            </ul>
+
               </ul>
-            </section>
-            <section>
-              <ul class="plain">
-                <li><a href="#"><i class="icon fab fa-twitter">&nbsp;</i>Twitter</a></li>
-                <li><a href="#"><i class="icon fab fa-facebook">&nbsp;</i>Facebook</a></li>
-                <li><a href="#"><i class="icon fab fa-instagram">&nbsp;</i>Instagram</a></li>
-                <li><a href="#"><i class="icon fab fa-github">&nbsp;</i>Github</a></li>
-              </ul>
+
+
             </section>
           </div>
-          <div class="copyright">
-            &copy; Thank you. Photos <a href="https://unsplash.co">Unsplash</a>, Video <a href="https://coverr.co">Coverr</a>.
-          </div>
-        </div>
-      </footer>
+
+
+      </div>
+    </div>
   </div>
 </div>
-
-
+</div>
 
 
 

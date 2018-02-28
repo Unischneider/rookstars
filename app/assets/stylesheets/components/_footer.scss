@@ -1,120 +1,41 @@
-#footer {
-    background-color: #111111;
-    color: rgba(255, 255, 255, 0.5);
-    padding: 8rem 0 6rem 0;
-    margin: 0;
-    padding: 0;
+.footer {
+  background-color: #111111;
+    color: #232323;
+    height: 269px;
     border: 0;
     font-size: 100%;
     font: inherit;
     vertical-align: baseline;
-
-.form-footer {
-  margin-top:10px;
-}
-
-.form-color {
-  background-color: $accent;
-  color: white;
-}
-
-.form-space{
-  margin-top: -35px;
-}
-
-.inner {
-}
-
-.control-label {
-  visibility: hidden;
-}
-
-.form-group {
-      margin-top: -4px;
-}
-
-.content {
-    display: flex;
-    justify-content: space-between;
-}
-
-.content section:first-child {
-    width: 51%;
-    padding-right: 6rem;
-    padding-left: 6rem;
-    padding-bottom: 1rem;
-    max-width: 51%;
-  .h4 {
-    font-weight: bold;
-    font-size: 16px;
-    text-align: left; }
-}
-
-.content section {
-    width: 25%;
-    padding-left: 3rem;
-}
-
-a {
-  color: inherit;
-  font-size: 14px;
-}
-
-ul.alt {
+    padding: 11px 20px;
+  ul {
     list-style: none;
-    padding-left: 0;
-        padding-top: 35px;
-}
+  }
 
-ul {
-    list-style: disc;
-    margin: 0 0 2rem 0;
-    padding-left: 1rem;
-}
-ol, ul {
-    list-style: none;
-}
+  .single-forms .form-control {
+    width: 96.5%;
+    font-size: 14px;
+  }
 
+  .inline-forms .form-control {
+    width: 95%;
+    font-size: 14px;
+  }
 
-ul.alt li {
-    border-top-color: rgba(255, 255, 255, 0.25);
-}
-ul.alt li:first-child {
-    border-top: 0;
-    padding-top: 0;
-}
-ul.alt li {
-    border-top-color: rgba(0, 0, 0, 0.25);
-}
-ul.alt li {
-    border-top: solid 1px;
-    padding: 0.75rem 0;
-}
-ul li {
-    padding-left: 0.325rem;
-}
+  a {
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+  }
 
+  .list-content {
+    padding-top: 30px;
+  }
 
-.content section:last-child {
-    padding-left: 6rem;
-}
+.list-names {
+    padding-top: 30px;
+  }
 
-ul.plain {
-    list-style: none;
-        padding-left: 75px;
-    padding-top: 43px;
-}
-
-ul.plain li {
-    margin-bottom: 1rem;
-}
-
-
-.copyright {
-    border-top: 1px solid;
-    font-size: 10px;
-    opacity: 0.5;
-    padding: 4px;
-    text-align: center;
-}
+  .alt {
+    text-align: left;
+  }
 }
