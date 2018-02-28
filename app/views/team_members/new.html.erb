@@ -3,15 +3,20 @@
     <div class="form">
       <div class="col-xs-6 col-xs-offset-3">
         <div class="text-center">
-          <%= simple_form_for [@team, @team_member] do |f| %>
-          <%= f.input :user, label: "Add as many team members as you want" %>
-          <%= f.input :user, label: false  %>
-          <%= f.input :user, label: false  %>
-          <%= f.input :user, label: false  %>
-          <%= f.input :user, label: false  %>
-          <%= f.input :user, label: false  %>
-          <%= f.input :lead_dev, label: "Are you the team leader?" %>
-          <%= f.button :submit, "Start Your Project Application", class: "custom-primary-btn"  %>
+          <%= form_for [@team, @team_member] do |f| %>
+            <%= f.check_box :lead_dev %>
+            <%= f.fields_for :users do |p| %>
+              <%= p.text_field :email %>
+              <%= p.text_field :first_name %>
+            <% end %>
+          <%#f.input :user, label: "Add as many team members as you want" %>
+          <%#f.input :user, required: false, label: false  %>
+          <%#f.input :user, required: false, label: false  %>
+          <%#f.input :user, required: false, label: false,  %>
+          <%#f.input :user, required: false, label: false,  %>
+          <%#f.input :user, required: false, label: false,  %>
+          <%#f.input :lead_dev, label: "Are you the team leader?" %>
+          <%= f.submit "Start Your Project Application", class: "custom-primary-btn"  %>
           <% end %>
         </div>
       </div>
