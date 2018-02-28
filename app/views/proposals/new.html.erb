@@ -1,0 +1,26 @@
+<div class="full-height">
+<div class="container">
+  <div class="proposal-form">
+    <div class="row">
+      <div class="text-center">
+        <h2>Project Proposal</h2>
+      </div>
+      <%= simple_form_for  new_project_proposal_path do |f| %>
+      <%= f.error_notification %>
+      <div class="col-xs-6 col-xs-offset-3">
+        <div class="form-inputs">
+          <%= f.input :pitch, :as => :text %>
+        </div>
+        <div class="form-actions">
+          <div class="text-center">
+            <%= f.button :submit, "Sign up", class: "custom-primary-btn" %>
+            <br>
+          </div>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
+</div>
+</div>

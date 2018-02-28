@@ -1,12 +1,8 @@
 Rails.application.routes.draw do
 
-  get 'teams/new'
+  get 'team_members/new'
 
-  get 'teams/create'
-
-  get 'teams/show'
-
-  get 'teams/destroy'
+  get 'team_members/create'
 
   devise_for :organizations
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks', registrations: 'registrations' }
@@ -15,12 +11,17 @@ Rails.application.routes.draw do
   resources :organizations, only: [:new, :create, :show, :edit, :update]
   # resources :users, only: [:new, :create, :show, :edit, :update]
   resources :projects do
-    resources :proposals, only: [:new, :create]
+    resources :proposals, only: [:new,  :show, :create]
   end
+
   resources :proposals, only: [:index, :show, :destroy, :update]
+  resources :teams, only: [:show, :new, :create, :delete] do
+    resources :team_members, only: [:new, :create]
+  end
 
   resources :users, only: [:new, :create, :show, :edit, :update]
-  resources :projects
+
+
 
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
