@@ -1,0 +1,21 @@
+<div class="container">
+  <!-- <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://kitt.lewagon.com/placeholder/cities/berlin');">
+  <div class="banner-content">
+    <h1>Le Wagon Berlin</h1>
+    <p>Learn to code with us in Berlin</p>
+    <a class="btn btn-primary btn-lg">Start now</a>
+  </div>
+</div> -->
+  <div class="text-center">
+    <h1>New Project</h1>
+  </div>
+  <% simple_form_for @project do |f| %>
+  <div class="row">
+    <div class="col-xs-10 col-xs-offset-1">
+      <%= f.input :title %>
+      <%= f.input :description %>
+      <%= f.button :submit, "Create a project", class: "custom-primary-btn" %>
+    </div>
+  </div>
+  <% end %>
+</div>
