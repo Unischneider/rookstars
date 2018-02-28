@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   get 'team_members/create'
 
+
   devise_for :organizations
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks', registrations: 'registrations' }
   root to: 'pages#home'
@@ -11,6 +12,7 @@ Rails.application.routes.draw do
   resources :organizations, only: [:new, :create, :show, :edit, :update]
   # resources :users, only: [:new, :create, :show, :edit, :update]
   resources :projects do
+    get 'classroom', to: :classroom, controller: 'projects'
     resources :proposals, only: [:new,  :show, :create]
   end
 
@@ -21,8 +23,7 @@ Rails.application.routes.draw do
 
   resources :users, only: [:new, :create, :show, :edit, :update]
 
-
-
+  mount Thredded::Engine => '/forum'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

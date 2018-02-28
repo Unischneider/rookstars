@@ -16,4 +16,8 @@ class ProjectPolicy < ApplicationPolicy
   def update?
     true
   end
+
+  def classroom?
+    true
+  end
 end

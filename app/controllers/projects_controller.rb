@@ -28,6 +28,11 @@ class ProjectsController < ApplicationController
     end
   end
 
+  def classroom
+    @project = Project.find(params[:project_id])
+    authorize @project
+  end
+
   private
 
   def set_params
