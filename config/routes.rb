@@ -19,6 +19,9 @@ Rails.application.routes.draw do
   end
   resources :proposals, only: [:index, :show, :destroy, :update]
 
+  resources :users, only: [:new, :create, :show, :edit, :update]
+  resources :projects
+
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
