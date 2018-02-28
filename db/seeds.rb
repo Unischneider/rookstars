@@ -27,7 +27,7 @@ p "Creating organizations"
      name: Faker::Company.name,
      password: "password123"
     )
-  organization.remote_pic_url_url = "https://source.unsplash.com/weekly?company"
+  organization.remote_photo_url = "https://source.unsplash.com/weekly?company"
   organization.save
 
 end
@@ -56,7 +56,7 @@ some = ["Translation", "All in blue", "picture uploading", "banners", "specific 
     messaging_integration: [true, false].sample,
     other: some.sample,
     )
-  project.remote_pic_url_url = "http://res.cloudinary.com/jules/image/upload/v1519664939/seeds/#{(1..20).to_a.sample}"
+  project.remote_photo_url = "http://res.cloudinary.com/jules/image/upload/v1519664939/seeds/#{(1..20).to_a.sample}"
   project.save
 end
 
@@ -75,7 +75,7 @@ p "Creating user"
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
     github: "https://github.com/Jb5322",
-    pic_url: "https://source.unsplash.com/person",
+    photo: "https://source.unsplash.com/person",
     about_me: "#{Faker::SiliconValley.motto} + #{Faker::SiliconValley.quote}"
     )
 
