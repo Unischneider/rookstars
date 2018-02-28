@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
 
-Application.destroy_all
+Proposal.destroy_all
 Project.destroy_all
 Organization.destroy_all
 TeamMember.destroy_all
@@ -86,9 +86,9 @@ p "Creating applications"
 
 
 20.times do
-  Application.create(
+  Proposal.create(
     pitch: Faker::Lorem.paragraph,
-    accepted: [true, false].sample,
+    status: ["Pending Developer request", "Pending NGO validation", "Confirmed", "Canceled"].sample,
     team: Team.all.sample,
     project: Project.all.sample
     )
