@@ -15,7 +15,9 @@
         <%= simple_form_for project do |f| %>
         <%= f.input :title %>
         <%= f.input :description %>
-        <%= f.input :budget %>
+        <% if current_user.class == Organization.class %>
+          <%= f.input :budget %>
+        <% end %>
         <p>What functionalities would you need?</p>
         <div class="feature_checkbox_wrapper">
           <%= f.input :db_sql, label: "Database",  wrapper_html: { class: "feature_checkbox" } %>
@@ -28,8 +30,10 @@
           <%= f.input :landing_page,  wrapper_html: { class: "feature_checkbox" }%>
         </div>
         <%= f.input :other %>
-        <%=  f.input :due_date %>
-        <%= f.submit "Create a project", class: "custom-primary-btn" %>
+        <% if current_user.class == Organization.class %>
+          <%=  f.input :due_date %>
+        <% end %>
+        <%= f.submit "Create a project", class: "custom-secondary-btn" %>
         <% end %>
       </div>
     </div>
