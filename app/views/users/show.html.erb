@@ -26,8 +26,14 @@
           <div class="cta-content">
             <hr>
             <div class="text">
-              <h1>About me</h1>
-              <p><%= @user.about_me %></p>
+              <h1>Teams</h1>
+              <% @user.teams.each do |team| %>
+              <% team.team_members.each do |team_member| %>
+              <% if team_member.lead_dev %>
+              <p> <%= team_member.user.first_name %>'s Team </p>
+              <% end %>
+              <% end %>
+              <% end %>
             </div>
           </div>
         </div>
@@ -35,38 +41,53 @@
           <div class="cta-content">
             <hr>
             <div class="text">
-              <h1>Teams and Projects</h1>
+              <h1>Applications</h1>
               <% @user.teams.each do |team| %>
-              <% team.team_members.each do |team_member| %>
-              <%  if team_member.lead_dev %>
-              <p> <%= team_member.user.first_name %>'s Team </p>
-              <% end %>
-              <% end %>
               <% team.applications.each do |app|   %>
               <% if app.accepted %>
               <p> <%= app.project.title %></p>
               <% end %>
               <% end %>
-            </li>
-            <% end %>
-          </ul>
+              <% end %>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </div>
-<div class="row">
-  <div class="col-xs-12">
-    <div class="get-in-touch">
-      <div class="text-center">
-        <h2>
-          Want to get in touch?
-        </h2>
-        <p>Get in touch with <%= @user.first_name %></p>
+
+<div class="one-column-cta">
+  <div class="container-fluid">
+    <div class="cta-content">
+      <hr>
+      <div class="text text-center">
+        <h1>Past Projects</h1>
+        <% @user.teams.each do |team| %>
+        <% team.applications.each do |app|   %>
+        <% if app.accepted %>
+        <p> <%= app.project.title %></p>
+        <% end %>
+        <% end %>
+        <% end %>
+      </div>
+      <div class="cta-button">
         <%= link_to "Contact", root_path , class: "custom-primary-btn" %>
       </div>
     </div>
   </div>
 </div>
-
-
+<div class="one-column-cta">
+  <div class="container-fluid">
+    <div class="cta-content">
+      <hr>
+      <div class="text text-center">
+        <h1>Want to get in touch?</h1>
+        <p>Get in touch with <%= @user.first_name %></p>
+      </div>
+      <div class="cta-button">
+        <%= link_to "Contact", root_path , class: "custom-primary-btn" %>
+      </div>
+    </div>
+  </div>
+</div>
