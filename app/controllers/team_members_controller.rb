@@ -11,11 +11,12 @@ class TeamMembersController < ApplicationController
     @team_member = TeamMember.new(lead_dev: team_member_params[:lead_dev])
     @team_member.team = @team
     @team_member.user = @user
+    @project = Project.find(@team.proposals.project.id)
     p @team_member
     p team_member_params
     authorize @team_member
     if @team_member.save
-      render team_path(@team)
+      redirect_to new_proposal_path(@project)
     else
       p @team_member.errors.messages
       render :new

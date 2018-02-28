@@ -32,7 +32,7 @@
             <p class="tag-label">Budget:</p> <p> <strong> <%= @project.budget %> </strong></p>
           </div>
           <div class="cta-button">
-            <%= link_to "collaborate", new_team_path(@project), class: "custom-primary-btn" %>
+            <%= link_to "collaborate", new_team_path project: @project, class: "custom-primary-btn" %>
           </div>
         </div>
       </div>
