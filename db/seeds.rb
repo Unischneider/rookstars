@@ -37,6 +37,7 @@ p "Creating projects"
 
 project_titles = ["Google Maps integration", "Complete Website", "Sign Up", "Payement integration", "Refactoring Website", "Make our Website responsive"]
 status = ["Pending", "On Going", "Accepted by the organization", "Declined by organization", "Rejected by the team", "Done"]
+some = ["Translation", "All in blue", "picture uploading", "banners", "specific form", "trello integration"]
 20.times do
  project = Project.new(
     title: project_titles.sample,
@@ -44,7 +45,16 @@ status = ["Pending", "On Going", "Accepted by the organization", "Declined by or
     budget: (100..40_000).to_a.sample,
     due_date: Faker::Date.forward(100),
     status: status.sample,
-    organization: Organization.all.sample
+    organization: Organization.all.sample,
+    db_sql: [true, false].sample,
+    maps: [true, false].sample,
+    forms: [true, false].sample,
+    mail_integration: [true, false].sample,
+    payment_integration: [true, false].sample,
+    sign_up_log_in: [true, false].sample,
+    landing_page: [true, false].sample,
+    messaging_integration: [true, false].sample,
+    other: some.sample,
     )
   project.remote_pic_url_url = "http://res.cloudinary.com/jules/image/upload/v1519664939/seeds/#{(1..20).to_a.sample}"
   project.save

@@ -14,8 +14,22 @@
       <%= simple_form_for project do |f| %>
       <%= f.input :title %>
       <%= f.input :description %>
+      <%= f.input :budget %>
+      <%= check_box_tag :db_sql , "Database", project.db_sql %>
+      <%= check_box_tag :maps , "Map integration", project.maps %>
+      <%= check_box_tag :forms , "Forms (Contact forms etc.)", project.forms %>
+      <%= check_box_tag :mail_integration , "E-Mail integration", project.mail_integration %>
+      <%= check_box_tag :messaging_integration , "Messaging through the Website", project.messaging_integration %>
+      <%= check_box_tag :sign_up_log_in , "Sign-In / Sign-Up", project.sign_up_log_in %>
+      <%= check_box_tag :payment_integration , "Payemnt integration", project.payment_integration %>
+      <%= check_box_tag :landing_page , "Landing page", project.landing_page %>
+      <%= f.input :other %>
       <%= f.submit "Create a project", class: "custom-primary-btn" %>
       <% end %>
     </div>
   </div>
+</div>
+<div class="custom-control custom-checkbox">
+  <input type="checkbox" class="custom-control-input" id="customCheck1">
+  <label class="custom-control-label" for="customCheck1">Check this custom checkbox</label>
 </div>
