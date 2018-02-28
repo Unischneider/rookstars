@@ -28,11 +28,11 @@
             <div class="text">
               <h1>Teams</h1>
               <% @user.teams.each do |team| %>
-              <% team.team_members.each do |team_member| %>
-              <% if team_member.lead_dev %>
-              <p> <%= team_member.user.first_name %>'s Team </p>
-              <% end %>
-              <% end %>
+                <% team.team_members.each do |team_member| %>
+                  <% if team_member.lead_dev %>
+                    <p> <%= team_member.user.first_name %>'s Team </p>
+                  <% end %>
+                <% end %>
               <% end %>
             </div>
           </div>
@@ -43,11 +43,9 @@
             <div class="text">
               <h1>Applications</h1>
               <% @user.teams.each do |team| %>
-              <% team.applications.each do |app|   %>
-              <% if app.accepted %>
-              <p> <%= app.project.title %></p>
-              <% end %>
-              <% end %>
+                <% team.applications.each do |app|   %>
+                  <p> <%= app.project.title %></p>
+                <% end %>
               <% end %>
             </div>
           </div>
@@ -57,37 +55,46 @@
   </div>
 </div>
 
-<div class="one-column-cta">
-  <div class="container-fluid">
-    <div class="cta-content">
-      <hr>
-      <div class="text text-center">
-        <h1>Past Projects</h1>
-        <% @user.teams.each do |team| %>
-        <% team.applications.each do |app|   %>
-        <% if app.accepted %>
-        <p> <%= app.project.title %></p>
-        <% end %>
-        <% end %>
-        <% end %>
-      </div>
-      <div class="cta-button">
-        <%= link_to "Contact", root_path , class: "custom-primary-btn" %>
+<div class="container">
+  <br>
+  <h1 class="text-center">Past projects <%= @user.first_name %> worked on</h1>
+  <br>
+  <div class="row">
+  <% @user.teams.each do |team| %>
+    <% team.applications.each do |app|%>
+      <% if app.accepted %>
+        <div class="col-xs-4">
+          <%= link_to project_path(app.project.id) do  %>
+          <div class="card">
+            <div class="card-category" style="background-image: url('<%= cl_image_path app.project.pic_url %>');">
+              <p class= "custom-primary-btn">Join</p>
+            </div>
+            <div class="card-description">
+              <h2><%= app.project.title%></h2>
+              <h1><%= app.project.organization.name %></h1>
+              <p class="description-text"><%= app.project.description %></p>
+            </div>
+          </div>
+          <% end %>
+        </div>
+      <% end %>
+    <% end %>
+  <% end %>
+  </div>
+</div>
+
+
+  <div class="one-column-cta">
+    <div class="container-fluid">
+      <div class="cta-content">
+        <hr>
+        <div class="text text-center">
+          <h1>Want to get in touch?</h1>
+          <p>Get in touch with <%= @user.first_name %></p>
+        </div>
+        <div class="cta-button">
+          <%= link_to "Contact", root_path , class: "custom-primary-btn" %>
+        </div>
       </div>
     </div>
   </div>
-</div>
-<div class="one-column-cta">
-  <div class="container-fluid">
-    <div class="cta-content">
-      <hr>
-      <div class="text text-center">
-        <h1>Want to get in touch?</h1>
-        <p>Get in touch with <%= @user.first_name %></p>
-      </div>
-      <div class="cta-button">
-        <%= link_to "Contact", root_path , class: "custom-primary-btn" %>
-      </div>
-    </div>
-  </div>
-</div>
