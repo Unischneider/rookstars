@@ -10,21 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180227133033) do
+ActiveRecord::Schema.define(version: 20180227171022) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "applications", force: :cascade do |t|
-    t.text "pitch"
-    t.boolean "accepted"
-    t.bigint "project_id"
-    t.bigint "team_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["project_id"], name: "index_applications_on_project_id"
-    t.index ["team_id"], name: "index_applications_on_team_id"
-  end
 
   create_table "contacts", force: :cascade do |t|
     t.string "name"
@@ -70,6 +59,17 @@ ActiveRecord::Schema.define(version: 20180227133033) do
     t.index ["organization_id"], name: "index_projects_on_organization_id"
   end
 
+  create_table "proposals", force: :cascade do |t|
+    t.text "pitch"
+    t.bigint "project_id"
+    t.bigint "team_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "status"
+    t.index ["project_id"], name: "index_proposals_on_project_id"
+    t.index ["team_id"], name: "index_proposals_on_team_id"
+  end
+
   create_table "team_members", force: :cascade do |t|
     t.boolean "lead_dev"
     t.bigint "team_id"
@@ -111,9 +111,9 @@ ActiveRecord::Schema.define(version: 20180227133033) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "applications", "projects"
-  add_foreign_key "applications", "teams"
   add_foreign_key "projects", "organizations"
+  add_foreign_key "proposals", "projects"
+  add_foreign_key "proposals", "teams"
   add_foreign_key "team_members", "teams"
   add_foreign_key "team_members", "users"
 end
