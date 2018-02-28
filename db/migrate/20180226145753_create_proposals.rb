@@ -1,8 +1,7 @@
-class CreateApplications < ActiveRecord::Migration[5.1]
+class CreateProposals < ActiveRecord::Migration[5.1]
   def change
-    create_table :applications do |t|
+    create_table :proposals do |t|
       t.text :pitch
-      t.boolean :accepted
       t.references :project, foreign_key: true
       t.references :team, foreign_key: true
 
