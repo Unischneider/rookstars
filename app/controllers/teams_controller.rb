@@ -1,12 +1,12 @@
 class TeamsController < ApplicationController
 
   def show
+    @team = Team.find(params[:id])
     authorize @team
   end
 
   def new
     @team = Team.new
-    @project = Project.find(params[:project_id])
     @team_member = TeamMember.new
     authorize @team
   end

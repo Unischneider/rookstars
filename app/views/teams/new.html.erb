@@ -3,12 +3,16 @@
     <h1>Create your team</h1>
   </div>
   <div class="form">
-    <%= simple_form_for [@project, @team] do |f| %>
-      <%= f.simple_fields_for :application do |p| %>
-        <%= p.input :pitch %>
-      <% end %>
+    <%= simple_form_for [@team, @team_member] do |f| %>
       <%= f.input :about_us %>
+      <%= f.association :user %>
       <%= f.submit %>
     <% end %>
   </div>
 </div>
+
+
+
+ <%#= f.simple_fields_for :application do |p| %>
+        <%#= p.input :pitch %>
+      <%# end %>
