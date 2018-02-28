@@ -1,19 +1,13 @@
-
+<div class="full-height">
 <div class="container">
-  <div class="title">
-    <h1>Create your team</h1>
-  </div>
+    <div class="col-xs-6 col-xs-offset-3">
+      <div class="text-center">
   <div class="form">
-    <%= simple_form_for @team do |f| %>
-      <%= f.input :about_us, label: "Tell us about your team" %>
-      <!-- <%# f.association :user %> -->
-      <%= f.submit %>
-    <% end %>
+      <%= simple_form_for @team do |f| %>
+        <%= f.input :about_us, label: "Tell us about your team" %>
+        <%= f.button :submit, "Add team members", class: "custom-primary-btn" %>
+      <% end %>
+    </div>
   </div>
 </div>
-
-
-
- <%#= f.simple_fields_for :application do |p| %>
-        <%#= p.input :pitch %>
-      <%# end %>
+</div>
