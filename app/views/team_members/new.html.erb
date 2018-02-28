@@ -5,10 +5,11 @@
         <div class="text-center">
           <%= simple_form_for [@team, @team_member] do |f| %>
           <%= f.input :user, label: "Add as many team members as you want" %>
-          <%= f.input :user, label: false, required: false %>
-          <%= f.input :user, label: false, required: false %>
-          <%= f.input :user, label: false, required: false %>
-          <%= f.input :user, label: false, required: false %>
+          <%= f.input :user, label: false  %>
+          <%= f.input :user, label: false  %>
+          <%= f.input :user, label: false  %>
+          <%= f.input :user, label: false  %>
+          <%= f.input :user, label: false  %>
           <%= f.input :lead_dev, label: "Are you the team leader?" %>
           <%= f.button :submit, "Start Your Project Application", class: "custom-primary-btn"  %>
           <% end %>
