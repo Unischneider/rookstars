@@ -14,7 +14,9 @@
   <div class="row">
     <div class="col-xs-12">
       <div class="text-center">
-        <%= image_tag @user.pic_url, class: "avatar-large" %>
+        <% if @user.pic_url %>
+          <%= image_tag @user.pic_url, class: "avatar-large" %>
+        <% end %>
       </div>
     </div>
   </div>

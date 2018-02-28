@@ -2,8 +2,13 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   # after_create :subscribe_to_newsletter
+  before_create :make_moderator
 
   private
+
+  def make_moderator
+    self.moderator = true
+  end
 
   def subscribe_to_newsletter
     SubscribeToNewsletterService.new(self).call
@@ -38,6 +43,7 @@ def self.new_with_session(params, session)
       end
       p auth.info.image
       user.pic_url = auth.info.image # assuming the user model has an image
+      user.moderator = true
       # If you are using confirmable and the provider(s) you use validate emails,
       # uncomment the line below to skip the confirmation emails.
       # user.skip_confirmation!
