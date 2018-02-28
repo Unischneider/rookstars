@@ -16,5 +16,7 @@ class SubscribeToNewsletterService
         # }
       }
     )
+  rescue Gibbon::MailChimpError => e
+    puts "Houston, we have a problem: #{e.message} - #{e.raw_body}"
   end
 end
