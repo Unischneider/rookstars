@@ -8,15 +8,14 @@ Rails.application.routes.draw do
   # resources :users, only: [:new, :create, :show, :edit, :update]
   resources :projects do
     resources :proposals, only: [:new, :create]
-  end
-  resources :proposals, only: [:index, :show, :destroy, :update]
-
-  resources :users, only: [:new, :create, :show, :edit, :update]
-  resources :projects do
-     resources :teams, only: [:show, :new, :create, :destroy]  do
+     resources :teams, only: [:new, :create]  do
        resources :team_members, only: [:new, :create]
-     end
   end
+end
+  resources :proposals, only: [:index, :show, :destroy, :update]
+  resources :teams, only: [:show, :delete]
+  resources :users, only: [:new, :create, :show, :edit, :update]
+
 
 
 
