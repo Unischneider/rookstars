@@ -1,4 +1,36 @@
-<%= @project.title %>
-<%= @project.description %>
-<br />
-<%=  @proposal.status %>
+  <div class="header-container">
+    <div class="header-content">
+      <div class="text-center intro-text">
+        <h1><%= @project.title %></h1>
+      </div>
+    </div>
+  </div>
+  <div class="title">
+    <h1>Proposal</h1>
+  </div>
+  <div class="info">
+    <%= @team.team_members.each do |member| %>
+      <h3><%= member[0].user_id %></h3>
+    <% end %>
+  </div>
+  <div class="form">
+    <%= form_for @project do |f| %>
+      <%= fields_for :proposals do |proposal| %>
+        <%= proposal.label :pitch %>
+        <%= proposal.text_area :pitch %>
+      <% end %>
+      <%= f.button :submit %>
+    <% end %>
+  </div>
+
+
+
+<!-- <%#= f.fields_for :addresses do |addresses_form| %>
+      <li>
+        <%#= addresses_form.label :kind %>
+        <%#= addresses_form.text_field :kind %>
+
+        <%#= addresses_form.label :street %>
+        <%#= addresses_form.text_field :street %>
+        ...
+      </li> -->

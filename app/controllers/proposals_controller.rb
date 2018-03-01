@@ -32,8 +32,10 @@ class ProposalsController < ApplicationController
   end
 
   def edit
+    @projects = Project.all
     @project = Project.find(params[:project_id])
     @proposal = Proposal.find(params[:id])
+    @team = Team.find(@proposal.team_id)
     authorize @proposal
   end
 
