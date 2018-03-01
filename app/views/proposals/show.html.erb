@@ -1,1 +1,70 @@
-fuck
+<div class="proposal-index">
+<div class="container">
+  <h1 class="text-center">Proposal Confirmation</h1>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="banner" style="background-image: url('<%= cl_image_path @proposal.project.photo, crop: :fill %>');">
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="text-center">
+        <% if @proposal.status == "Pending NGO validation"%>
+          <h3><strong><i class="fa fa-star" aria-hidden="true"></i> We are waiting for <%= @proposal.project.user.first_name %>
+            <% if @proposal.project.user.last_name %>
+              <%= @proposal.project.user.last_name %>
+            <% end %>
+            to answer your application </strong> <i class="fa fa-star" aria-hidden="true"></i>
+          </h3>
+          <h3> So... stay tuned! </h3>
+        <% end %>
+        <hr>
+      </div>
+      <div class="text-left">
+        <h4> <strong id="red-word">Your Proposal Details:</strong></h4>
+        <br>
+        <table>
+         <tbody>
+          <tr>
+            <td><h4>&nbsp; The organization:
+              &nbsp;   <%= @proposal.project.organization.name %> <br>
+              <%= link_to "Website", "#{@proposal.project.organization.website}" %> <br>
+              <%= @proposal.project.organization.description %> <br><br>
+              <div class="cta-button">
+                <%= link_to "More Information", organization_path, class: "custom-primary-btn" %>
+            </div> </h4></td>
+          </tr>
+          <tr>
+            <td><h4> &nbsp; The Project: <%= @proposal.project.title %> <br>
+              <%= @proposal.project.description %></h4>
+            </td>
+          </tr>
+          <tr>
+            <td><h4> &nbsp; Due to: <%= @proposal.project.due_date %> <br><br>
+              Budget: <%= @proposal.project.budget %> €</h4>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <h4>Your Team:</h4>
+              <ul>
+                <% @team_members.each do |member| %>
+                <li>
+                  <%= member.user.first_name %>
+                  <% if member.user.last_name %>
+                    <%= member.user.last_name %>
+                  <% end %>
+                  <% if member.user.photo %>
+                    <%= cl_image_tag member.user.photo %>
+                  <% end %>
+                </li>
+                <% end %>
+              </ul>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+

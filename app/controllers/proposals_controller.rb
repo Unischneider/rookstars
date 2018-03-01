@@ -7,6 +7,7 @@ class ProposalsController < ApplicationController
 
   def show
     @project = @proposal.project
+    @team_members = TeamMember.where(team_id: @proposal.team_id)
     authorize @proposal
     authorize @project
   end
@@ -50,6 +51,6 @@ class ProposalsController < ApplicationController
   end
 
   def set_booking
-    @proposal = proposal.find(params[:id])
+    @proposal = Proposal.find(params[:id])
   end
 end
