@@ -5,5 +5,5 @@ class Organization < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   validates :name, :description, presence: true
-  mount_uploader :pic_url, PhotoUploader
+  mount_uploader :photo, PhotoUploader
 end

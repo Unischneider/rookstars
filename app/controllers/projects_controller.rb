@@ -6,19 +6,19 @@ class ProjectsController < ApplicationController
   end
 
   def show
-    find_project
+    set_params
     authorize @project
     @organization = Organization.find(@project.organization_id)
   end
 
   def new
     @project = Project.new
-    @application = Application.new
+    @proposal = Proposal.new
     authorize @project
   end
 
   def create
-    @project = Project.new(set_params)
+    @project = Project.new(valid_params)
     authorize @project
     @project.organization = current_user
     if @project.save
@@ -35,12 +35,12 @@ class ProjectsController < ApplicationController
 
   private
 
-  def find_project
+  def set_params
     @project = Project.find(params[:id])
   end
 
-  def set_params
-    params.permit(:project).require(:title, :description, :due_date, :status, :budget, :pic_url)
+  def valid_params
+    params.permit(:project).require(:title, :description, :due_date, :status, :budget, :photo)
   end
 
 end

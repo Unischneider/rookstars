@@ -19,3 +19,21 @@
 
 }
 
+.custom-secondary-btn {
+  color: white;
+  background-color: $primary;
+  padding: 10px 60px;
+  border-radius: 41px;
+  color: white;
+  font-size: 14px;
+  border-color: $primary !important;
+}
+
+.custom-secondary-btn:hover {
+  color: white;
+  background-color: $primary;
+  border-color: $accent;
+  padding: 10px 60px;
+  border-radius: 41px;
+  color: white;
+}
