@@ -44,6 +44,24 @@
               Budget: <%= @proposal.project.budget %> €</h4>
             </td>
           </tr>
+          <tr>
+            <td>
+              <h4>Your Team:</h4>
+              <ul>
+                <% @team_members.each do |member| %>
+                <li>
+                  <%= member.user.first_name %>
+                  <% if member.user.last_name %>
+                    <%= member.user.last_name %>
+                  <% end %>
+                  <% if member.user.photo %>
+                    <%= member.user.photo %>
+                  <% end %>
+                </li>
+                <% end %>
+              </ul>
+            </td>
+          </tr>
         </tbody>
       </table>
     </div>

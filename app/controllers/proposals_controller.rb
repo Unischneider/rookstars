@@ -7,6 +7,7 @@ class ProposalsController < ApplicationController
 
   def show
     @project = @proposal.project
+    @team_members = TeamMember.where(team_id: @proposal.team_id)
     authorize @proposal
     authorize @project
   end
