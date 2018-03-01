@@ -20,20 +20,22 @@
 }
 
 .custom-secondary-btn {
-  color: white;
-  background-color: $primary;
+  background-color: #f4f4f4;
   padding: 10px 60px;
   border-radius: 41px;
-  color: white;
+  color: #8a8a8a;
   font-size: 14px;
-  border-color: $primary !important;
+  border: solid 1px;
+  border-color: #cacaca !important;
 }
 
 .custom-secondary-btn:hover {
-  color: white;
-  background-color: $primary;
-  border-color: $accent;
-  padding: 10px 60px;
-  border-radius: 41px;
-  color: white;
+ background-color: #f4f4f4;
+ padding: 10px 60px;
+ border-radius: 41px;
+ color: #8a8a8a;
+ font-size: 14px;
+ text-decoration: none;
+ border: solid 1px;
+ border-color: #656565 !important;
 }
