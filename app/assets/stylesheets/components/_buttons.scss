@@ -1,24 +1,41 @@
 .custom-primary-btn {
   color: white;
+  background-image: linear-gradient(to right, #92fe9d -100%, #00c9ff 100%);
   background-color: $secondary;
   padding: 10px 60px;
   border-radius: 50px;
   color: white;
-  border: solid 2px;
   font-size: 14px;
-  border-color: $secondary;
 }
 
 .custom-primary-btn:hover {
   color: white;
-  transition: ease .2s;
+  background-image: linear-gradient(60deg, #FA3E64 0%, #ffb199 260%);
+  transition: ease .6s;
   background-color: $primary;
-  border-color: white;
   padding: 10px 60px;
-  border: solid 2px;
   border-radius: 50px;
   text-decoration: none;
 
-
 }
 
+.custom-secondary-btn {
+  background-color: #f4f4f4;
+  padding: 10px 60px;
+  border-radius: 41px;
+  color: #8a8a8a;
+  font-size: 14px;
+  border: solid 1px;
+  border-color: #cacaca !important;
+}
+
+.custom-secondary-btn:hover {
+ background-color: #f4f4f4;
+ padding: 10px 60px;
+ border-radius: 41px;
+ color: #8a8a8a;
+ font-size: 14px;
+ text-decoration: none;
+ border: solid 1px;
+ border-color: #656565 !important;
+}

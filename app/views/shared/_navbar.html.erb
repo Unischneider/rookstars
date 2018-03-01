@@ -8,13 +8,13 @@
     <% end %>
     <div class="navbar-top-item">
       <div class="dropdown">
-        <% if current_user.pic_url.nil? %>
+        <% if current_user.photo.nil? %>
           <%= link_to user_path(current_user) do   %>
-            <img src="https://kitt.lewagon.com/placeholder/users/ssaunier" class="avatar dropdown-toggle" id="navbar-top-menu" data-toggle="dropdown">
+            <img src="https://kitt.lewagon.com/placeholder/users/ssaunier" class="avatar dropdown-toggle" id="navbar-top-menu">
           <% end %>
         <% else %>
           <%= link_to user_path(current_user) do   %>
-            <%= image_tag current_user.pic_url, class: "avatar dropdown-toggle", id: "navbar-top-menu", "data-toggle" => "dropdown" %>
+            <%= image_tag current_user.photo, class: "avatar dropdown-toggle", id: "navbar-top-menu" %>
             <% end %>
         <% end %>
         <ul class="dropdown-menu dropdown-menu-right navbar-top-dropdown-menu">
