@@ -3,7 +3,7 @@
   <h1 class="text-center">Proposal Confirmation</h1>
   <div class="row">
     <div class="col-md-6">
-      <div class="banner" style="background-image: url('<%= cl_image_path @proposal.project.pic_url, crop: :fill %>');">
+      <div class="banner" style="background-image: url('<%= cl_image_path @proposal.project.photo, crop: :fill %>');">
       </div>
     </div>
 
@@ -55,7 +55,7 @@
                     <%= member.user.last_name %>
                   <% end %>
                   <% if member.user.photo %>
-                    <%= member.user.photo %>
+                    <%= cl_image_tag member.user.photo %>
                   <% end %>
                 </li>
                 <% end %>
