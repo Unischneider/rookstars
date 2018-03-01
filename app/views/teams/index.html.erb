@@ -3,8 +3,21 @@
     <h1>Select teams</h1>
   </div>
   <div class="team-list">
-    <ul>
-   <%= @teams.each do |team| %>
-    </ul>
+  <!--   <ul>
+      <%#= @teams.each do |team| %>
+        <li> -->
+          <%= form_for(@teams) do |f|  %>
+          <%= f.hidden_field : %>
+<!--         </li>
+        <#% end %>
+    </ul> -->
   </div>
 </div>
+
+
+
+<%= form_for(@comment) do |f| %>
+
+<%= f.hidden_field :post_id, :value => @post.id %>
+
+<% end %>
