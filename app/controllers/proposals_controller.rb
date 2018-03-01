@@ -50,6 +50,6 @@ class ProposalsController < ApplicationController
   end
 
   def set_booking
-    @proposal = proposal.find(params[:id])
+    @proposal = Proposal.find(params[:id])
   end
 end

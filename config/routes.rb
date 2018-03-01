@@ -13,10 +13,10 @@ Rails.application.routes.draw do
   # resources :users, only: [:new, :create, :show, :edit, :update]
   resources :projects do
     get 'classroom', to: :classroom, controller: 'projects'
-    resources :proposals, only: [:new,  :show, :create]
+    resources :proposals, only: [:new,  :show, :create, :destroy, :update]
   end
 
-  resources :proposals, only: [:index, :show, :destroy, :update]
+  resources :proposals, only: [:index]
   resources :teams, only: [:show, :new, :create, :delete] do
     resources :team_members, only: [:new, :create]
   end
