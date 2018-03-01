@@ -3,23 +3,35 @@
     <div class="form">
       <div class="col-xs-6 col-xs-offset-3">
         <div class="text-center">
-          <%= form_for [@team, @team_member] do |f| %>
-            <%= f.check_box :lead_dev %>
-            <%= f.fields_for :users do |p| %>
-              <%= p.text_field :email %>
-              <%= p.text_field :first_name %>
+
+
+          <%= form_tag team_team_members_path do %>
+            <% @members.each do |member| %>
+              <%= fields_for 'users[]', member do |m| %>
+                <%# m.text_field :lead_dev %>
+                <%= m.text_field :email %>
+                <%= m.text_field :first_name %>
+                <div class="field">
+                  <%# m.fields_for "user" do |p| %>
+                  <%# end %>
+                </div>
+              <% end %>
             <% end %>
-          <%#f.input :user, label: "Add as many team members as you want" %>
-          <%#f.input :user, required: false, label: false  %>
-          <%#f.input :user, required: false, label: false  %>
-          <%#f.input :user, required: false, label: false,  %>
-          <%#f.input :user, required: false, label: false,  %>
-          <%#f.input :user, required: false, label: false,  %>
-          <%#f.input :lead_dev, label: "Are you the team leader?" %>
-          <%= f.submit "Start Your Project Application", class: "custom-primary-btn"  %>
+           <div class="actions">
+            <%= submit_tag %>
+           </div>
           <% end %>
         </div>
       </div>
     </div>
   </div>
 </div>
+
+<%#= form_for [@team, @team_member] do |f| %>
+<%#= f.check_box :lead_dev %>
+<%#= f.fields_for :users do |p| %>
+<%#= p.text_field :email %>
+<%#= p.text_field :first_name %>
+<%# end %>
+<%#= f.submit "Start Your Project Application", class: "custom-primary-btn"  %>
+

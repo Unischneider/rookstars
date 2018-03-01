@@ -2,25 +2,24 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   # after_create :subscribe_to_newsletter
+  has_many :team_members
+  has_many :teams, through: :team_members
+  validates :first_name, presence: true
 
-  private
-
-  def subscribe_to_newsletter
-    SubscribeToNewsletterService.new(self).call
-  end
+  accepts_nested_attributes_for :team_members
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable,
          omniauth_providers: %i[github]
 
-  has_many :team_members
-  has_many :teams, through: :team_members
-  validates :first_name, presence: true
   # mount_uploader :pic_url, PhotoUploader
 
 
+  def subscribe_to_newsletter
+    SubscribeToNewsletterService.new(self).call
+  end
 
-def self.new_with_session(params, session)
+  def self.new_with_session(params, session)
     super.tap do |user|
       if data = session["devise.github_data"] && session["devise.github_data"]["extra"]["raw_info"]
         user.email = data["email"] if user.email.blank?

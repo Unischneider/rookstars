@@ -13,6 +13,7 @@ class TeamsController < ApplicationController
 
   def create
     @team = Team.new(set_params)
+
     authorize @team
     # @team.lead_dev = current_user
     if @team.save
