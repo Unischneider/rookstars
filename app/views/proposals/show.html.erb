@@ -28,7 +28,7 @@
           <tr>
             <td><h4>&nbsp; The organization:
               &nbsp;   <%= @proposal.project.organization.name %> <br>
-              <%= link_to "http://#{@proposal.project.organization.website}" %> <br>
+              <%= link_to "Website", "#{@proposal.project.organization.website}" %> <br>
               <%= @proposal.project.organization.description %> <br><br>
               <div class="cta-button">
                 <%= link_to "More Information", organization_path, class: "custom-primary-btn" %>
@@ -38,6 +38,8 @@
             <td><h4> &nbsp; The Project: <%= @proposal.project.title %> <br>
               <%= @proposal.project.description %></h4>
             </td>
+          </tr>
+          <tr>
             <td><h4> &nbsp; Due to: <%= @proposal.project.due_date %> <br><br>
               Budget: <%= @proposal.project.budget %> €</h4>
             </td>
