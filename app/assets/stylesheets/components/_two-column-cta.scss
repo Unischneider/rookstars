@@ -1,12 +1,13 @@
 .two-column-cta {
   height: 300px;
+
   hr {
    margin-bottom: 0px;
    width: 78px;
    margin-top: 70px;
    border-width: 6px;
    display: inline-block;
-   border-color: $secondary;
+   border-color: $blue;
    text-align: left;
  }
  h1 {
@@ -21,11 +22,15 @@ p {
   font-size: 14px;
 }
 .left-cta {
+  background-image: url("bg2.jpg");
   background-color: $primary;
+  background-size: cover;
   height: 300px;
 }
 .right-cta {
+  background-image: url("bg3.jpg");
   background-color: $accent;
+  background-size: cover;
   height: 300px;
 
 }

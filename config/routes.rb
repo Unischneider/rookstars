@@ -9,16 +9,16 @@ Rails.application.routes.draw do
   resources :projects do
     resources :teams, only: [:index, :new, :create]
     resources :proposals, only: [:create, :edit, :update]
-    # resources :proposals, only: [:new, :create]
   end
   resources :proposals, only: [:index, :show, :destroy, :update]
   resources :teams, only: [:show, :delete, :edit, :update] do
     resources :team_members, only: [:new, :create]
   end
+    get 'classroom', to: :classroom, controller: 'projects'
+
   resources :users, only: [:new, :create, :show, :edit, :update]
 
-
-
+  mount Thredded::Engine => '/forum'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

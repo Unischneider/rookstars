@@ -1,0 +1,43 @@
+  <!-- <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://kitt.lewagon.com/placeholder/cities/berlin');">
+  <div class="banner-content">
+    <h1>Le Wagon Berlin</h1>
+    <p>Learn to code with us in Berlin</p>
+    <a class="btn btn-primary btn-lg">Start now</a>
+  </div>
+</div> -->
+<div class="container">
+  <div class="project-container">
+    <div class="text text-center">
+      <h1>New Project</h1>
+    </div>
+    <div class="row">
+      <div class="col-xs-10 col-xs-offset-1">
+        <%= simple_form_for project do |f| %>
+        <%= f.input :title %>
+        <%= f.input :description %>
+        <% if current_user.class == Organization.class %>
+          <%= f.input :budget %>
+        <% end %>
+        <p>What functionalities would you need?</p>
+        <div class="feature_checkbox_wrapper">
+          <%= f.input :db_sql, label: "Database",  wrapper_html: { class: "feature_checkbox" } %>
+          <%= f.input :maps, label: "Maps integration",  wrapper_html: { class: "feature_checkbox" } %>
+          <%= f.input :forms, label: "Forms (Contact forms etc.)",  wrapper_html: { class: "feature_checkbox" } %>
+          <%= f.input :mail_integration, label: "Mail integration" ,  wrapper_html: { class: "feature_checkbox" } %>
+          <%= f.input :messaging_integration, label: "Messaging integration",  wrapper_html: { class: "feature_checkbox" } %>
+          <%= f.input :sign_up_log_in, label: "Sign-Up and Log-In",  wrapper_html: { class: "feature_checkbox" }%>
+          <%= f.input :payment_integration ,  wrapper_html: { class: "feature_checkbox" }%>
+          <%= f.input :landing_page,  wrapper_html: { class: "feature_checkbox" }%>
+        </div>
+        <%= f.input :other %>
+        <% if current_user.class == Organization.class %>
+          <%=  f.input :due_date %>
+        <% end %>
+        <%= f.input :photo, label: "Upload a project picture"%>
+        <%= f.input :photo_cache, as: :hidden %>
+        <%= f.submit "Create a project", class: "custom-secondary-btn" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

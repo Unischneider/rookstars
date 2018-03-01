@@ -7,13 +7,11 @@ class User < ApplicationRecord
   validates :first_name, presence: true
 
   accepts_nested_attributes_for :team_members
+  before_create :make_moderator
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable,
          omniauth_providers: %i[github]
-
-  # mount_uploader :pic_url, PhotoUploader
-
 
   def subscribe_to_newsletter
     SubscribeToNewsletterService.new(self).call
@@ -36,10 +34,22 @@ class User < ApplicationRecord
         user.last_name = auth.info.name.split.last
       end
       p auth.info.image
-      user.pic_url = auth.info.image # assuming the user model has an image
+      user.photo = auth.info.image # assuming the user model has an image
+      user.moderator = true
       # If you are using confirmable and the provider(s) you use validate emails,
       # uncomment the line below to skip the confirmation emails.
       # user.skip_confirmation!
     end
   end
+
+  private
+
+  def make_moderator
+    self.moderator = true
+  end
+
+  def subscribe_to_newsletter
+    SubscribeToNewsletterService.new(self).call
+  end
+
 end
