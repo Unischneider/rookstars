@@ -10,7 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180228153928) do
+
+ActiveRecord::Schema.define(version: 20180228164436) do
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,9 +53,9 @@ ActiveRecord::Schema.define(version: 20180228153928) do
     t.datetime "updated_at", null: false
     t.string "name"
     t.text "description"
-    t.string "pic_url"
     t.string "location"
     t.string "website"
+    t.string "photo"
     t.index ["email"], name: "index_organizations_on_email", unique: true
     t.index ["reset_password_token"], name: "index_organizations_on_reset_password_token", unique: true
   end
@@ -62,12 +64,21 @@ ActiveRecord::Schema.define(version: 20180228153928) do
     t.string "title"
     t.text "description"
     t.integer "budget"
-    t.string "pic_url"
     t.date "due_date"
     t.string "status"
     t.bigint "organization_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "landing_page"
+    t.boolean "db_sql"
+    t.boolean "maps"
+    t.boolean "forms"
+    t.boolean "mail_integration"
+    t.boolean "messaging_integration"
+    t.boolean "sign_up_log_in"
+    t.boolean "payment_integration"
+    t.string "other"
+    t.string "photo"
     t.index ["organization_id"], name: "index_projects_on_organization_id"
   end
 
@@ -340,7 +351,7 @@ ActiveRecord::Schema.define(version: 20180228153928) do
     t.string "last_name"
     t.string "github"
     t.string "linkedin"
-    t.string "pic_url"
+    t.string "photo"
     t.text "about_me"
     t.string "provider"
     t.string "uid"

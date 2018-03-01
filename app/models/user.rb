@@ -10,7 +10,7 @@ class User < ApplicationRecord
   has_many :team_members
   has_many :teams, through: :team_members
   validates :first_name, presence: true
-  # mount_uploader :pic_url, PhotoUploader
+  # mount_uploader :photo, PhotoUploader
 
 
 
@@ -31,7 +31,7 @@ def self.new_with_session(params, session)
         user.last_name = auth.info.name.split.last
       end
       p auth.info.image
-      user.pic_url = auth.info.image # assuming the user model has an image
+      user.photo = auth.info.image # assuming the user model has an image
       user.moderator = true
       # If you are using confirmable and the provider(s) you use validate emails,
       # uncomment the line below to skip the confirmation emails.
