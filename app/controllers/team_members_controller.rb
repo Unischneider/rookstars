@@ -2,6 +2,10 @@ class TeamMembersController < ApplicationController
   def new
     @team = Team.find(params[:team_id])
     @team_member = TeamMember.new
+    @members = []
+    5.times do
+      @members << TeamMember.new
+    end
     authorize @team_member
   end
 
