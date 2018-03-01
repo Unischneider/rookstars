@@ -8,9 +8,9 @@ Rails.application.routes.draw do
   # resources :users, only: [:new, :create, :show, :edit, :update]
   resources :projects do
     resources :teams, only: [:index, :new, :create]
-    resources :proposals, only: [:create, :edit, :update]
+    resources :proposals, only: [:create, :edit, :show, :update]
   end
-  resources :proposals, only: [:index, :show, :destroy, :update]
+  resources :proposals, only: [:index, :destroy, :update]
   resources :teams, only: [:show, :delete, :edit, :update] do
     resources :team_members, only: [:new, :create]
   end

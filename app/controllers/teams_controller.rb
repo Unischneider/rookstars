@@ -1,4 +1,9 @@
 class TeamsController < ApplicationController
+  skip_before_action :authenticate_user!
+
+  def index
+    @teams = Team.all
+  end
 
   def show
     @team = Team.find(params[:id])
@@ -13,14 +18,13 @@ class TeamsController < ApplicationController
   end
 
   def create
-    @team = Team.new(set_params)
-
+    @team = Team.new
+    @proposal = Proposal.create(team: @team)
     authorize @team
+    @project = @team.proposals.project_id
     # @team.lead_dev = current_user
     if @team.save
-      redirect_to new_team_team_member_path(@team)
-    else
-      render :new
+    redirect_to new_team_team_member_path(@team)
     end
   end
 
