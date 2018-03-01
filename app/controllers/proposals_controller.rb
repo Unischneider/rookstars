@@ -20,16 +20,21 @@ class ProposalsController < ApplicationController
 
   def create
     @project = Project.find(params[:project_id])
-    @proposal = proposal.new(proposal_params)
+    @proposal = Proposal.new(proposal_params)
     @proposal.project = @project
-    @proposal.user = current_user
     @proposal.status = "Pending NGO validation"
     authorize @proposal
     if @proposal.save
-      redirect_to proposal_path(@proposal)
+      redirect_to edit_project_proposal_path(@project, @proposal)
     else
-      render :new
+      redirect_to project_teams_path(@project)
     end
+  end
+
+  def edit
+    @project = Project.find(params[:project_id])
+    @proposal = Proposal.find(params[:id])
+    authorize @proposal
   end
 
   def update
@@ -45,6 +50,10 @@ class ProposalsController < ApplicationController
   end
 
   private
+
+  def proposal_params
+    params.require(:proposal).permit(:team_id)
+  end
 
   def booking_params
     params.require(:proposal).permit(:pitch, :status)

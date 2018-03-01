@@ -1,8 +1,9 @@
 class TeamsController < ApplicationController
-  skip_before_action :authenticate_user!
 
   def index
-    @teams = Team.all
+    @teams = policy_scope(Team).joins(:team_members).where('team_members.user_id = ? ', current_user.id)
+    @project = Project.find(params[:project_id])
+    @proposal = Proposal.new
   end
 
   def show
