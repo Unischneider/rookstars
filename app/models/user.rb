@@ -3,17 +3,6 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
   # after_create :subscribe_to_newsletter
   before_create :make_moderator
-
-  private
-
-  def make_moderator
-    self.moderator = true
-  end
-
-  def subscribe_to_newsletter
-    SubscribeToNewsletterService.new(self).call
-  end
-
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable,
          omniauth_providers: %i[github]
@@ -49,4 +38,15 @@ def self.new_with_session(params, session)
       # user.skip_confirmation!
     end
   end
+
+  private
+
+  def make_moderator
+    self.moderator = true
+  end
+
+  def subscribe_to_newsletter
+    SubscribeToNewsletterService.new(self).call
+  end
+
 end
