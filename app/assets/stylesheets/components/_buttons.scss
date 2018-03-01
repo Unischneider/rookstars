@@ -6,7 +6,6 @@
   border-radius: 50px;
   color: white;
   font-size: 14px;
-  border-color: $secondary;
 }
 
 .custom-primary-btn:hover {
@@ -14,11 +13,9 @@
   background-image: linear-gradient(60deg, #FA3E64 0%, #ffb199 260%);
   transition: ease .6s;
   background-color: $primary;
-  border-color: white;
   padding: 10px 60px;
   border-radius: 50px;
   text-decoration: none;
-
 
 }
 
