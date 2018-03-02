@@ -1,10 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'team_members/new'
-
-  get 'team_members/create'
-
-
   devise_for :organizations
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks', registrations: 'registrations' }
   root to: 'pages#home'
@@ -16,9 +11,8 @@ Rails.application.routes.draw do
     resources :proposals, only: [:new,  :show, :create, :destroy, :update]
     get 'projects/:project_id/proposal/:id/confirm', to: 'proposals#confirm', as: 'proposal_confirm'
   end
-
-  resources :proposals, only: [:index]
-  resources :teams, only: [:show, :new, :create, :delete] do
+  resources :proposals, only: [:index, :destroy, :update]
+  resources :teams, only: [:show, :delete, :edit, :update] do
     resources :team_members, only: [:new, :create]
   end
 
