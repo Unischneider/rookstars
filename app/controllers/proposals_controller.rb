@@ -1,5 +1,5 @@
 class ProposalsController < ApplicationController
-  before_action :set_booking, only: [:show, :update, :destroy]
+  before_action :set_booking, only: [:show, :update, :destroy, :confirm]
 
   def index
     @proposals = policy_scope(Proposal).where(user: current_user)
@@ -49,6 +49,11 @@ class ProposalsController < ApplicationController
     authorize @proposal
     @proposal.destroy
     redirect_to proposals_path
+  end
+
+  def confirm
+    @team_members = TeamMember.where(team_id: @proposal.team_id)
+    authorize @proposal
   end
 
   private

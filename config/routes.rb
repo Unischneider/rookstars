@@ -7,14 +7,14 @@ Rails.application.routes.draw do
   resources :organizations, only: [:new, :create, :show, :edit, :update]
   # resources :users, only: [:new, :create, :show, :edit, :update]
   resources :projects do
-    resources :teams, only: [:index, :new, :create]
-    resources :proposals, only: [:create, :edit, :show, :update]
+    get 'classroom', to: :classroom, controller: 'projects'
+    resources :proposals, only: [:new,  :show, :create, :destroy, :update]
+    get 'projects/:project_id/proposal/:id/confirm', to: 'proposals#confirm', as: 'proposal_confirm'
   end
   resources :proposals, only: [:index, :destroy, :update]
   resources :teams, only: [:show, :delete, :edit, :update] do
     resources :team_members, only: [:new, :create]
   end
-    get 'classroom', to: :classroom, controller: 'projects'
 
   resources :users, only: [:new, :create, :show, :edit, :update]
 

@@ -21,6 +21,14 @@ class ProposalPolicy < ApplicationPolicy
     user == record.user
   end
 
+  def confirm?
+    record.team.team_members.each do |team_member|
+      if team_member.lead_dev
+        user == team_member.user
+      end
+    end
+  end
+
   def destroy?
     user == record.user
   end
