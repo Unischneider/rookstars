@@ -1,13 +1,11 @@
 <div class="navbar-container">
   <div class="navbar-top">
     <!-- Logo -->
-    <%= link_to root_path, class: "navbar-top-eric" do %>
     <% if user_signed_in? %>
-    <%= link_to destroy_user_session_path,class: "custom-primary-btn",  method: :delete do %>
-            <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
-    <% end %>
-    <div class="navbar-top-item">
-      <div class="dropdown">
+      <%= link_to destroy_user_session_path,class: "custom-primary-btn",  method: :delete do %>
+        <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
+      <% end %>
+      <div class="navbar-top-item">
         <% if current_user.photo.nil? %>
           <%= link_to user_path(current_user) do   %>
             <img src="https://kitt.lewagon.com/placeholder/users/ssaunier" class="avatar dropdown-toggle" id="navbar-top-menu">
@@ -15,51 +13,30 @@
         <% else %>
           <%= link_to user_path(current_user) do   %>
             <%= image_tag current_user.photo, class: "avatar dropdown-toggle", id: "navbar-top-menu" %>
-            <% end %>
+          <% end %>
         <% end %>
-        <ul class="dropdown-menu dropdown-menu-right navbar-top-dropdown-menu">
-          <li>
-            <%= link_to "#" do %>
-            <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
-            <% end %>
-          </li>
-          <li>
-            <%= link_to "#" do %>
-            <i class="fa fa-cog"></i>  <%= t(".settings", default: "Settings") %>
-            <% end %>
-          </li>
-          <li>
-            <%= link_to destroy_user_session_path, method: :delete do %>
-            <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
-            <% end %>
-          </li>
-        </ul>
       </div>
-    </div>
     <% else %>
     <!-- Login link (when logged out) -->
-    <div class="nav-content">
-      <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-top-eric custom-primary-btn" %>
-    </div>
+      <div class="nav-content">
+        <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-top-eric custom-primary-btn" %>
+      </div>
     <% end %>
-    <% end %>
-
-
     <div class="brand">
-      <img src="<%= image_path "logo.png" %>" href="/" class="navbar-wagon-brand">
-
-      </img>
-    </div>
+      <%= link_to root_path do  %>
+        <%= image_tag "logo.png", class: "navbar-wagon-brand" %>
+      <% end %>
   </div>
+</div>
 
-  <div class="navbar-bottom">
-    <div class="navbar-bottom-right hidden-xs hidden-sm">
+<div class="navbar-bottom">
+  <div class="navbar-bottom-right hidden-xs hidden-sm">
 
-      <!-- Links when logged in -->
-      <%= link_to "Home", root_path, class: "navbar-bottom-item navbar-top-link" %>
-      <%= link_to "About", "#", class: "navbar-bottom-item navbar-top-link" %>
-      <%= link_to "Projects", projects_path, class: "navbar-bottom-item navbar-top-link" %>
-      <%= link_to "FAQ", "#", class: "navbar-bottom-item navbar-top-link" %>
-    </div>
+    <!-- Links when logged in -->
+    <%= link_to "Home", root_path, class: "navbar-bottom-item navbar-top-link" %>
+    <%= link_to "About", "#", class: "navbar-bottom-item navbar-top-link" %>
+    <%= link_to "Projects", projects_path, class: "navbar-bottom-item navbar-top-link" %>
+    <%= link_to "FAQ", "#", class: "navbar-bottom-item navbar-top-link" %>
   </div>
+</div>
 </div>
