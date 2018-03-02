@@ -23,7 +23,7 @@ class ProposalsController < ApplicationController
     @proposal = Proposal.new(proposal_params)
     @proposal.project = @project
     @proposal.status = "Pending NGO validation"
-    team = Team.find(params[:proposal][:team_id])
+    team = Team.find(params[:proposal][:team])
     @proposal.team = team
     authorize @proposal
     if @proposal.save
