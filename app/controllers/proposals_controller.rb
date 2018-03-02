@@ -1,5 +1,5 @@
 class ProposalsController < ApplicationController
-  before_action :set_booking, only: [:show, :update, :destroy]
+  before_action :set_booking, only: [:show, :update, :destroy, :confirm]
 
   def index
     @proposals = policy_scope(Proposal).where(user: current_user)
@@ -23,9 +23,11 @@ class ProposalsController < ApplicationController
     @proposal = Proposal.new(proposal_params)
     @proposal.project = @project
     @proposal.status = "Pending NGO validation"
+    team = Team.find(params[:proposal][:team_id])
+    @proposal.team = team
     authorize @proposal
     if @proposal.save
-      redirect_to edit_project_proposal_path(@project, @proposal)
+      redirect_to edit_project_proposal_path(@project.id, @proposal.id)
     else
       redirect_to project_teams_path(@project)
     end
@@ -51,15 +53,17 @@ class ProposalsController < ApplicationController
     redirect_to proposals_path
   end
 
+  def confirm
+    @team_members = TeamMember.where(team_id: @proposal.team_id)
+    authorize @proposal
+  end
+
   private
 
   def proposal_params
-    params.require(:proposal).permit(:team_id)
+    params.require(:proposal).permit(:team_id, :project_id)
   end
 
-  def booking_params
-    params.require(:proposal).permit(:pitch, :status)
-  end
 
   def set_booking
     @proposal = Proposal.find(params[:id])

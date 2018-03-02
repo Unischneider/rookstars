@@ -59,16 +59,30 @@
       </div>
     </div>
   </div>
-  <div class="one-column-content">
-    <div class="container-fluid">
-      <div class="cta-content">
-        <hr>
-        <div class="text">
-          <h1>About the team</h1>
-          <p><%= @proposal.team.about_us%></p>
-        </div>
+</div>
+<div class="one-column-content">
+  <div class="container-fluid">
+    <div class="cta-content">
+      <hr>
+      <div class="text">
+        <h1>About the team</h1>
+        <p><%= @proposal.team.about_us%></p>
       </div>
     </div>
   </div>
-
+</div>
+<div class="one-column-cta">
+  <div class="container-fluid">
+    <div class="cta-content">
+      <hr>
+      <div class="text text-center">
+        <h1>Haven't heard from the NGO yet?</h1>
+        <p>Checkout your application status.</p>
+      </div>
+      <div class="cta-button">
+        <%= link_to "Status", project_proposal_confirm_path , class: "custom-primary-btn" %>
+      </div>
+    </div>
+  </div>
+</div>
 
