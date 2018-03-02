@@ -29,18 +29,9 @@ class ProjectsController < ApplicationController
   end
 
   def update
-    # @proposal = Proposal()
-
-# @toothbrush = Toothbrush.find(params[:id])
-#     @toothbrush.user = current_user
-#     if @toothbrush.update(valid_params)
-#       redirect_to toothbrush_path(@toothbrush)
-#     else
-#       render :edit
-#     end
-#     authorize @toothbrush
-
-
+    set_params
+    @proposal = Proposal.find(params[:id])
+    redirect_to project_proposal_path(@project, @proposal)
     authorize @project
   end
 
