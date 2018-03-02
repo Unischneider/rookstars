@@ -15,13 +15,13 @@
             <hr>
             <div class="text">
               <h1>Team</h1>
-               <div class="team-avatar">
-        <% @team_members.each do |member| %>
-      <% if member.user.photo %>
-          <%= cl_image_tag member.user.photo, class: "member-avatar" %>
-      <% end %>
-      <% end %>
-      </div>
+              <div class="team-avatar">
+                <% @team_members.each do |member| %>
+                <% if member.user.photo %>
+                <%= cl_image_tag member.user.photo, class: "member-avatar" %>
+                <% end %>
+                <% end %>
+              </div>
               <% @team_members.each do |member| %>
               <p><%= member.user.first_name %>
                 <% if member.user.last_name %>
