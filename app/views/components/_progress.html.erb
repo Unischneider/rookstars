@@ -2,11 +2,11 @@
   <div class="bar">
    <div class="container-fluid">
      <div class="row">
-      <% if current_page? new_team_path %>
+      <% if current_page? new_project_team_path(@project) %>
       <div class="active col-xs-4"></div>
       <div class="unactive col-xs-4"></div>
       <div class="unactive col-xs-4"></div>
-      <% elsif current_page? new_team_team_member_path %>
+      <% elsif current_page? project_teams_path(@project) %>
       <div class="active col-xs-4"></div>
       <div class="active col-xs-4"></div>
       <div class="unactive col-xs-4"></div>
