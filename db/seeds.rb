@@ -23,7 +23,7 @@ p "Creating organizations"
     location: "#{Faker::Address.street_address}, #{Faker::Address.zip_code},
      #{Faker::Address.state}, #{Faker::Address.country}",
      website: Faker::Internet.url,
-     description: Faker::Lorem.paragraph,
+     description: ["We have the knowledge, skills and technologies to stop climate change. All over the world people have woken up to the threat, and are working to reduce the use of fossil fuels, stop rainforest destruction and get power from clean energy. Still much more needs to be done.", ].sample,
      name: Faker::Company.name,
      password: "password123"
     )
