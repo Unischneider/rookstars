@@ -1,0 +1,21 @@
+<div class="progress-custom">
+  <div class="bar">
+   <div class="container-fluid">
+     <div class="row">
+      <% if current_page? new_team_path %>
+      <div class="active col-xs-4"></div>
+      <div class="unactive col-xs-4"></div>
+      <div class="unactive col-xs-4"></div>
+      <% elsif current_page? new_team_team_member_path %>
+      <div class="active col-xs-4"></div>
+      <div class="active col-xs-4"></div>
+      <div class="unactive col-xs-4"></div>
+      <% else %>
+      <div class="active col-xs-4"></div>
+      <div class="active col-xs-4"></div>
+      <div class="active col-xs-4"></div>
+      <% end %>
+    </div>
+  </div>
+</div>
+</div>
