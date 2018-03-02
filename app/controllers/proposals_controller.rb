@@ -44,6 +44,10 @@ class ProposalsController < ApplicationController
     redirect_to proposals_path
   end
 
+  def confirm
+
+  end
+
   private
 
   def booking_params

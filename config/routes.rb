@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   # resources :users, only: [:new, :create, :show, :edit, :update]
   resources :projects do
     get 'classroom', to: :classroom, controller: 'projects'
-    resources :proposals, only: [:new,  :show, :create, :destroy, :update]
+    resources :proposals, only: [:new,  :show, :create, :destroy, :update, :confirm]
   end
 
   resources :proposals, only: [:index]
