@@ -1,7 +1,7 @@
+
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 
 var dragula = require('dragula');
-
 (function () {
 
     this.jKanban = function () {
@@ -130,11 +130,14 @@ var dragula = require('dragula');
             }
         };
 
+
+
         this.addElement = function (boardID, element) {
             var board = self.element.querySelector('[data-id="' + boardID + '"] .kanban-drag');
             var nodeItem = document.createElement('div');
             nodeItem.classList.add('kanban-item');
             nodeItem.innerHTML = element.title;
+            nodeItem.setAttribute("data-eid", (boardID + '_' + (board.getElementsByTagName("div").length - 1)));
             //add function
             nodeItem.clickfn = element.click;
             nodeItem.dragfn = element.drag;
@@ -142,6 +145,7 @@ var dragula = require('dragula');
             nodeItem.dropfn = element.drop;
             __onclickHandler(nodeItem);
             board.appendChild(nodeItem);
+            addRemoveAbility()
             return self;
         };
 
@@ -1225,3 +1229,138 @@ if (si) {
 
 module.exports = tick;
 },{}]},{},[1]);
+
+
+var KanbanTest = new jKanban({
+    element: '#myKanban',
+    gutter: '10px',
+    widthBoard: '450px',
+    click: function (el) {
+
+    },
+    buttonClick: function (el, boardId) {
+        console.log(el);
+        console.log(boardId);
+        // create a form to enter element
+        var formItem = document.createElement('form');
+        formItem.setAttribute("class", "itemform");
+        formItem.innerHTML = '<div class="form-group"><textarea class="form-control" rows="2" autofocus></textarea></div><div class="form-group"><button type="submit" class="btn btn-primary btn-xs pull-right">Submit</button><button type="button" id="CancelBtn" class="btn btn-default btn-xs pull-right">Cancel</button></div>'
+        KanbanTest.addForm(boardId, formItem);
+        formItem.addEventListener("submit", function (e) {
+            e.preventDefault();
+            var text = e.target[0].value
+            KanbanTest.addElement(boardId, {
+                "title": text
+            })
+            formItem.parentNode.removeChild(formItem);
+        });
+        document.getElementById('CancelBtn').onclick = function () {
+            formItem.parentNode.removeChild(formItem)
+        }
+    },
+    addItemButton: true,
+    boards: [
+        {
+            "id": "_todo",
+            "title": "To Do",
+            "class": "info,good",
+            "dragTo": ['_working'],
+        //     "item": [
+        //         {
+        //             "id": "_test_delete",
+        //             "title": "Dashboard",
+        //             "drag": function (el, source) {
+        //                 console.log("START DRAG: " + el.dataset.eid);
+        //             },
+        //             "dragend": function (el) {
+        //                 console.log("END DRAG: " + el.dataset.eid);
+        //             },
+        //             "drop": function(el){
+        //                 console.log('DROPPED: ' + el.dataset.eid )
+        //             }
+        //         },
+        //         {
+        //             "id": "try",
+        //             "title": "Try Click This!",
+        //         }
+        //     ]
+        },
+        {
+            "id": "_working",
+            "title": "Working",
+            "class": "warning",
+            "item": [
+                {
+                    "title": "landing#page",
+                },
+            ]
+        },
+        {
+            "id": "_done",
+            "title": "Done",
+            "class": "success",
+            "dragTo": ['_working'],
+            "item": [
+                {
+                    "title": "application#index",
+                },
+                {
+                    "title": "bookings#index",
+                }
+            ]
+        }
+    ]
+});
+
+        function addRemoveAbility() {
+          let kanbanItems = document.querySelectorAll(".kanban-item")
+          kanbanItems.forEach(function (item) {
+            item.addEventListener("click", function (e) {
+              KanbanTest.removeElement(this.getAttribute("data-eid"));
+            })
+          })
+        }
+
+        addRemoveAbility()
+// var toDoButton = document.getElementById('addToDo');
+// toDoButton.addEventListener('click', function () {
+//     KanbanTest.addElement(
+//         "_todo",
+//         {
+//             "title": "Test Add",
+//         }
+//     );
+// });
+// var addBoardDefault = document.getElementById('addDefault');
+// addBoardDefault.addEventListener('click', function () {
+//     KanbanTest.addBoards(
+//         [{
+//             "id": "_default",
+//             "title": "Kanban Default",
+//             "item": [
+//                 {
+//                     "title": "Default Item",
+//                 },
+//                 {
+//                     "title": "Default Item 2",
+//                 },
+//                 {
+//                     "title": "Default Item 3",
+//                 }
+//             ]
+//         }]
+//     )
+// });
+// var removeBoard = document.getElementById('removeBoard');
+// removeBoard.addEventListener('click', function () {
+//     KanbanTest.removeBoard('_done');
+// });
+// var removeElement = document.getElementById('removeElement');
+// removeElement.addEventListener('click', function () {
+//     KanbanTest.removeElement('_test_delete');
+// });
+// var allEle = KanbanTest.getBoardElements('_todo');
+// allEle.forEach(function (item, index) {
+//     //console.log(item);
+// })
+

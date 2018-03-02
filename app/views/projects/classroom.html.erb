@@ -3,41 +3,9 @@
 <br>
 <br>
 
-<div class="col-md-12">
-  <div class="container">
-    <div id="trello-board">
-      <div class="kanban-container" style="width: 840px;">
-        <div data-id="_todo" class="kanban-board" style="width: 250px; margin-left: 15px; margin-right: 15px;">
-          <header class="kanban-board-header info">
-            <div class="kanban-title-board">To Do</div>
-          </header>
-          <main class="kanban-drag">
-            <div class="kanban-item" data-eid="undefined">My Task Test</div>
-            <div class="kanban-item" data-eid="undefined">Buy Milk</div>
-          </main>
-          <footer></footer>
-        </div>
-        <div data-id="_working" class="kanban-board" style="width: 250px; margin-left: 15px; margin-right: 15px;">
-          <header class="kanban-board-header warning">
-            <div class="kanban-title-board">Working</div>
-          </header>
-          <main class="kanban-drag">
-            <div class="kanban-item" data-eid="undefined">Do Something!</div>
-            <div class="kanban-item" data-eid="undefined">Run?</div>
-          </main><footer></footer>
-        </div>
-        <div data-id="_done" class="kanban-board" style="width: 250px; margin-left: 15px; margin-right: 15px;"><header class="kanban-board-header success">
-          <div class="kanban-title-board">Done</div>
-        </header>
-        <main class="kanban-drag">
-          <div class="kanban-item" data-eid="undefined">All right</div>
-          <div class="kanban-item" data-eid="undefined">Ok!</div>
-        </main><footer></footer>
-      </div>
+<div class="container-fluid">
+    <div id="myKanban">
     </div>
-    <hr>
-    <button class="btn btn-success" id="addDefault">Add "Default" board</button>
-    <button class="btn btn-success" id="addToDo">Add element in "To Do" Board</button>
-    <button class="btn btn-danger" id="removeBoard">Remove "Done" Board</button>
-  </div>
 </div>
+
+<%= javascript_pack_tag 'jkanban' %>
