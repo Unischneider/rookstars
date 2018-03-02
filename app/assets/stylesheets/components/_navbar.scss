@@ -15,9 +15,10 @@
     padding: 0px 30px;
     display: flex;
     align-items: center;
-    justify-content: left;
+    justify-content: flex-end;
     opacity: 0.8;
 }
+
 
 .avatar {
   width: 40px;
@@ -116,7 +117,10 @@
 
 .brand {
   position: absolute;
-  left: 51.8%;
-  margin-left: -50px !important;  /* 50% of your logo width */
+  left: 70px;
   display: block;
+  img {
+    max-height: 50px;
+    opacity: 1;
+  }
 }
