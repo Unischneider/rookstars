@@ -15,13 +15,13 @@
             <hr>
             <div class="text">
               <h1>Team</h1>
-               <div class="team-avatar">
-        <% @team_members.each do |member| %>
-      <% if member.user.photo %>
-          <%= cl_image_tag member.user.photo, class: "member-avatar" %>
-      <% end %>
-      <% end %>
-      </div>
+              <div class="team-avatar">
+                <% @team_members.each do |member| %>
+                <% if member.user.photo %>
+                <%= cl_image_tag member.user.photo, class: "member-avatar" %>
+                <% end %>
+                <% end %>
+              </div>
               <% @team_members.each do |member| %>
               <p><%= member.user.first_name %>
                 <% if member.user.last_name %>
@@ -59,16 +59,30 @@
       </div>
     </div>
   </div>
-  <div class="one-column-content">
-    <div class="container-fluid">
-      <div class="cta-content">
-        <hr>
-        <div class="text">
-          <h1>About the team</h1>
-          <p><%= @proposal.team.about_us%></p>
-        </div>
+</div>
+<div class="one-column-content">
+  <div class="container-fluid">
+    <div class="cta-content">
+      <hr>
+      <div class="text">
+        <h1>About the team</h1>
+        <p><%= @proposal.team.about_us%></p>
       </div>
     </div>
   </div>
-
+</div>
+<div class="one-column-cta">
+  <div class="container-fluid">
+    <div class="cta-content">
+      <hr>
+      <div class="text text-center">
+        <h1>Haven't heard from the NGO yet?</h1>
+        <p>Checkout your application status.</p>
+      </div>
+      <div class="cta-button">
+        <%= link_to "start", project_proposal_confirm_path(@proposal.project.id, @proposal.id), class: "custom-primary-btn" %>
+      </div>
+    </div>
+  </div>
+</div>
 
