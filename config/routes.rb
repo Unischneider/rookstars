@@ -7,8 +7,9 @@ Rails.application.routes.draw do
   resources :organizations, only: [:new, :create, :show, :edit, :update]
   # resources :users, only: [:new, :create, :show, :edit, :update]
   resources :projects do
+    resources :teams, only: [:new, :index, :create]
     get 'classroom', to: :classroom, controller: 'projects'
-    resources :proposals, only: [:new,  :show, :create, :destroy, :update]
+    resources :proposals, only: [:edit, :show, :create, :destroy, :update]
     get 'projects/:project_id/proposal/:id/confirm', to: 'proposals#confirm', as: 'proposal_confirm'
   end
   resources :proposals, only: [:index, :destroy, :update]

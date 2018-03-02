@@ -28,6 +28,13 @@ class ProjectsController < ApplicationController
     end
   end
 
+  def update
+    set_params
+    @proposal = Proposal.find(params[:id])
+    redirect_to project_proposal_path(@project, @proposal)
+    authorize @project
+  end
+
   def classroom
     @project = Project.find(params[:project_id])
     authorize @project

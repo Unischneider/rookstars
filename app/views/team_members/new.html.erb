@@ -1,5 +1,25 @@
+<%= render 'components/progress' %>
 <div class="container">
     <div class="form">
+      <!-- <div class="col-xs-8 col-xs-offset-2">
+        <div class="team-members text-center">
+          <h1>Add Your Team Members</h1>
+          <%= simple_form_for [@team, @team_member] do |f| %>
+
+          <div class="col-xs-6">
+          <%= f.input :user, label: false  %>
+          <%= f.input :user, label: false  %>
+          <%= f.input :user, label: false  %>
+          </div>
+          <div class="col-xs-6">
+          <%= f.input :user, label: false  %>
+          <%= f.input :user, label: false  %>
+          <%= f.input :user, label: false  %>
+          </div>
+          <%= f.input :lead_dev, label: "Are you the team leader?" %>
+          <div class="col-xs-12">
+          <%= f.button :submit, "Start Your Project Application", class: "custom-primary-btn"  %>
+          </div> -->
       <div class="col-xs-6 col-xs-offset-3">
         <div class="text-center">
           <%= form_tag team_team_members_path do %>
@@ -22,7 +42,6 @@
       </div>
     </div>
   </div>
-</div>
 
 <%#= form_for [@team, @team_member] do |f| %>
 <%#= f.check_box :lead_dev %>
