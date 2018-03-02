@@ -26,7 +26,6 @@ class ProposalsController < ApplicationController
     team = Team.find(params[:proposal][:team_id])
     @proposal.team = team
     authorize @proposal
-    p "running by this"
     if @proposal.save
       redirect_to edit_project_proposal_path(@project.id, @proposal.id)
     else
