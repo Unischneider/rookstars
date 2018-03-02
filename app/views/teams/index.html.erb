@@ -1,20 +1,26 @@
-<div class="container">
-  <div class="header">
-    <h1>Select a team</h1>
-  </div>
-  <div class="team-list">
-    <%= simple_form_for [@project, @proposal] do |f| %>
-      <%# @teams.map do |team| %>
-        <%# f.label :team, value: "#{team.lead_dev.map {|member| member.user.first_name}}'s team" %>
-        <%# f.radio_button :team, team.lead_dev, checked: false %>
-      <%# end %>
-      <%= f.input :team_id, collection: @teams, as: :radio_buttons, label_method: :lead_dev_label %>
-      <%= f.submit %>
-    <% end %>
+<%= render 'components/progress' %>
+<div class="full-height">
+  <div class="container">
+    <div class="row">
+      <div class="team-pick">
+      <div class="col-xs-6 col-xs-offset-3">
+        <h1>Select from your teams</h1>
+        <div class="team-list">
+          <%= simple_form_for [@project, @proposal] do |f| %>
+          <%# @teams.map do |team| %>
+          <%# f.label :team, value: "#{team.lead_dev.map {|member| member.user.first_name}}'s team" %>
+          <%# f.radio_button :team, team.lead_dev, checked: false %>
+          <%# end %>
+          <%= f.input :team, collection: @teams, as: :radio_buttons, label_method: :lead_dev_label, label: false %>
+          <%= f.submit class: "custom-primary-btn" %>
+          <% end %>
+        </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </div>
 
-
-
 <!-- @teams.map { |team| team.lead_dev.map {|member| member.user.first_name}}
- -->
+-->
