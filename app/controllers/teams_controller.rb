@@ -12,9 +12,9 @@ class TeamsController < ApplicationController
   end
 
   def new
-    @team = Team.new
     @project = Project.find(params[:project_id])
-    # @team_member = TeamMember.new
+    @team = Team.new
+    #@team_members = TeamMember.where(user_id: current_user.id)
     authorize @team
   end
 
