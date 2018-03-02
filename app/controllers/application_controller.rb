@@ -14,6 +14,19 @@ class ApplicationController < ActionController::Base
   #   redirect_to(root_path)
   # end
 
+  # def create
+  #   if params.has_key?("team_members")
+  #     TeamMember.create(tmem_params(params["team_members"]))
+  #   else
+  #     params["team_members"].each do |member|
+  #       if puppy["name"] != ""
+  #         TeamMember.create(tmem_params(member))
+  #       end
+  #     end
+  #   end
+  # end
+
+
   private
 
   def skip_pundit?

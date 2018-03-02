@@ -45,7 +45,7 @@
             <div class="text">
               <h1>Applications</h1>
               <% @user.teams.each do |team| %>
-                <% team.applications.each do |app|   %>
+                <% team.proposals.each do |app|   %>
                   <p> <%= app.project.title %></p>
                 <% end %>
               <% end %>
@@ -63,7 +63,7 @@
   <br>
   <div class="row">
   <% @user.teams.each do |team| %>
-    <% team.applications.each do |app|%>
+    <% team.proposals.each do |app|%>
       <% if app.accepted %>
         <div class="col-xs-4">
           <%= link_to project_path(app.project.id) do  %>
