@@ -28,6 +28,22 @@ class ProjectsController < ApplicationController
     end
   end
 
+  def update
+    # @proposal = Proposal()
+
+# @toothbrush = Toothbrush.find(params[:id])
+#     @toothbrush.user = current_user
+#     if @toothbrush.update(valid_params)
+#       redirect_to toothbrush_path(@toothbrush)
+#     else
+#       render :edit
+#     end
+#     authorize @toothbrush
+
+
+    authorize @project
+  end
+
   def classroom
     @project = Project.find(params[:project_id])
     authorize @project

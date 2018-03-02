@@ -3,7 +3,7 @@ class TeamsController < ApplicationController
   def index
     @teams = policy_scope(Team).joins(:team_members).where('team_members.user_id = ? ', current_user.id)
     @project = Project.find(params[:project_id])
-    @proposal = Proposal.new
+    @proposal = Proposal.create
   end
 
   def show
