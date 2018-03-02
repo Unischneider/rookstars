@@ -1,5 +1,11 @@
 class TeamsController < ApplicationController
 
+  def index
+    @teams = policy_scope(Team).joins(:team_members).where('team_members.user_id = ? ', current_user.id)
+    @project = Project.find(params[:project_id])
+    @proposal = Proposal.new
+  end
+
   def show
     @team = Team.find(params[:id])
     authorize @team
@@ -7,18 +13,19 @@ class TeamsController < ApplicationController
 
   def new
     @team = Team.new
+    @project = Project.find(params[:project_id])
     # @team_member = TeamMember.new
     authorize @team
   end
 
   def create
-    @team = Team.new(set_params)
+    @team = Team.new
+    @proposal = Proposal.create(team: @team)
     authorize @team
+    @project = @team.proposals.project_id
     # @team.lead_dev = current_user
     if @team.save
-      redirect_to new_team_team_member_path(@team)
-    else
-      render :new
+    redirect_to new_team_team_member_path(@team)
     end
   end
 
