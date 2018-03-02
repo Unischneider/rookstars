@@ -11,7 +11,7 @@
           <%# f.label :team, value: "#{team.lead_dev.map {|member| member.user.first_name}}'s team" %>
           <%# f.radio_button :team, team.lead_dev, checked: false %>
           <%# end %>
-          <%= f.input :team, collection: @teams, as: :radio_buttons, label_method: :lead_dev_label, label: false %>
+          <%= f.input :team, collection: @teams, as: :radio_buttons, label_method: :lead_dev_label, label: false, hint: false, error: false %>
           <%= f.submit class: "custom-primary-btn" %>
           <% end %>
         </div>
