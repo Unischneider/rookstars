@@ -20,7 +20,9 @@ Rails.application.routes.draw do
   resources :users, only: [:new, :create, :show, :edit, :update]
 
   #for payments
-  resources :orders, only: [:show, :create]
+  resources :orders, only: [:show, :create] do
+    resources :payments, only: [:new, :create]
+  end
 
 
   mount Thredded::Engine => '/forum'
