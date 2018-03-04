@@ -1,5 +1,6 @@
 class TeamsController < ApplicationController
-
+  before_action :team_finder, only: [:show, :edit, :update, :destroy]
+  before_action :project_finder, only: [:index, :new, :create, :update]
   def index
     @teams = policy_scope(Team).joins(:team_members).where('team_members.user_id = ? ', current_user.id)
     @project = Project.find(params[:project_id])
@@ -9,20 +10,18 @@ class TeamsController < ApplicationController
   end
 
   def show
-    @team = Team.find(params[:id])
     authorize @team
   end
 
   def new
-    @project = Project.find(params[:project_id])
     @team = Team.new
-    #@team_members = TeamMember.where(user_id: current_user.id)
+    @project = Project.find(params[:project_id])
+    # @team_member = TeamMember.new
     authorize @team
   end
 
   def create
     @team = Team.new
-    @project = Project.find(params[:project_id])
     @proposal = Proposal.create(team: @team, project: @project)
     authorize @team
     # @team.lead_dev = current_user
@@ -31,16 +30,33 @@ class TeamsController < ApplicationController
     end
   end
 
-def edit
-  @team = Team.find(params[:id])
-  authorize @team
-end
+  def edit
+    authorize @team
+  end
+
+  def update
+    authorize @team
+    @project =
+    if @team.save
+      redirect_to edit_project_proposal_path(@project, @proposal)
+    else
+      render :edit
+    end
+  end
 
   def destroy
     authorize @team
   end
 
   private
+
+  def team_finder
+    @team = Team.find(params[:project_id])
+  end
+
+  def project_finder
+    @project = Project.find(params[:project_id])
+  end
 
   # def project_params
   #   params.permit(:project).require(:title, :description, :budget, :pic_url, :due_date, :status, :organization_id)
