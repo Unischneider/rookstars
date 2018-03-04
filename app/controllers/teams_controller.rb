@@ -4,6 +4,8 @@ class TeamsController < ApplicationController
     @teams = policy_scope(Team).joins(:team_members).where('team_members.user_id = ? ', current_user.id)
     @project = Project.find(params[:project_id])
     @proposal = Proposal.create
+    # @team = @teams.map{ |team| team.users == current_user }
+    # @member = @team.team_members.map{ |member| member.user }
   end
 
   def show
@@ -20,12 +22,12 @@ class TeamsController < ApplicationController
 
   def create
     @team = Team.new
-    @proposal = Proposal.create(team: @team)
+    @project = Project.find(params[:project_id])
+    @proposal = Proposal.create(team: @team, project: @project)
     authorize @team
-    @project = @team.proposals.project_id
     # @team.lead_dev = current_user
     if @team.save
-    redirect_to new_team_team_member_path(@team)
+      redirect_to new_team_team_member_path(@team)
     end
   end
 
