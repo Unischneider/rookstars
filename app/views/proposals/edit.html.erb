@@ -1,36 +1,24 @@
   <%= render 'components/progress' %>
   <div class="full-height">
-  <div class="container">
-    <div class="row">
-    <div class="info">
-  <!--   <%#= @team.team_members.each do |member| %>
-      <h3><%#= member[0].user_id %></h3>
-      <%# end %> -->
-    </div>
-    <div class="col-xs-12 ">
-    <div class="proposal-form">
-    <div class="form">
-      <%= form_for @project do |f| %>
-      <%= fields_for :proposals do |proposal| %>
-      <%= proposal.label :pitch %>
-      <br>
-      <%= proposal.text_area :pitch%>
-      <% end %>
-      <br>
-      <%= f.button :submit, class: "custom-primary-btn"  %>
-      <% end %>
+    <div class="container">
+      <div class="row">
+        <div class="info">
+        </div>
+        <div class="col-xs-12 ">
+          <div class="proposal-form">
+            <div class="form">
+              <%= form_for @project do |f| %>
+              <%= fields_for :proposals do |proposal| %>
+              <%= proposal.label :pitch %>
+              <br>
+              <%= proposal.text_area :pitch%>
+              <% end %>
+              <br>
+              <%= f.button :submit, class: "custom-primary-btn"  %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-  </div>
-</div>
-</div>
-</div>
-<!-- <%#= f.fields_for :addresses do |addresses_form| %>
-      <li>
-        <%#= addresses_form.label :kind %>
-        <%#= addresses_form.text_field :kind %>
-
-        <%#= addresses_form.label :street %>
-        <%#= addresses_form.text_field :street %>
-        ...
-      </li> -->

@@ -1,5 +1,6 @@
 class ProposalsController < ApplicationController
   before_action :set_booking, only: [:show, :update, :destroy, :confirm]
+  before_action :project_finder, only: [:new, :create, :edit]
 
   def index
     @proposals = policy_scope(Proposal).where(user: current_user)
@@ -13,13 +14,11 @@ class ProposalsController < ApplicationController
   end
 
   def new
-    @project = Project.find(params[:project_id])
     @proposal = Proposal.new
     authorize @proposal
   end
 
   def create
-    @project = Project.find(params[:project_id])
     @proposal = Proposal.new(proposal_params)
     @proposal.project = @project
     @proposal.status = "Pending NGO validation"
@@ -35,7 +34,6 @@ class ProposalsController < ApplicationController
 
   def edit
     @projects = Project.all
-    @project = Project.find(params[:project_id])
     @proposal = Proposal.find(params[:id])
     @team = Team.find(@proposal.team_id)
     authorize @proposal
@@ -64,6 +62,9 @@ class ProposalsController < ApplicationController
     params.require(:proposal).permit(:team_id, :project_id)
   end
 
+  def project_finder
+    @project = Project.find(params[:project_id])
+  end
 
   def set_booking
     @proposal = Proposal.find(params[:id])
