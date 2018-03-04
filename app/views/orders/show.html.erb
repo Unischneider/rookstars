@@ -1,5 +1,7 @@
-<h1>Donation or Advancing the project budget</h1>
-<%= form_tag orders_path do %>
-  <%= hidden_field_tag 'project_id', @project.id %>
-  <%= submit_tag 'Purchase', class: 'btn btn-primary' %>
-<% end %>
+
+<h1>Order</h1>
+<ul>
+  <li>Status: <%= @order.state %></li>
+  <li>Item: <%= @order.teddy_sku %></li>
+  <li>Amount: <%= humanized_money_with_symbol(@order.amount) %></li>
+<ul>
