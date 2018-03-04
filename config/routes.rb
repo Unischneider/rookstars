@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
-  devise_for :organizations, path: 'organizations', controllers: { registrations: 'organizations/registrations' }
-  devise_for :users, path: 'users', controllers: { omniauth_callbacks: 'users/omniauth_callbacks', registrations: 'users/registrations' }
+  devise_for :organizations, path: 'organizations', controllers: { sessions: 'organizations/sessions', registrations: 'organizations/registrations' }
+  devise_for :users, path: 'users', controllers: { omniauth_callbacks: 'users/omniauth_callbacks', sessions: 'users/sessions', registrations: 'users/registrations' }
   root to: 'pages#home'
   resources :contacts, only: [:new, :create]
   get 'landing', to: "organizations#landing"
