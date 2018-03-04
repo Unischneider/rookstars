@@ -1,48 +1,60 @@
 <%#= render 'components/progress' %>
 <div class="container">
-    <div class="form">
-      <div class="col-xs-8 col-xs-offset-2">
+
+     <!--  <div class="col-xs-8 col-xs-offset-2">
         <div class="team-members text-center">
           <h1>Add Your Team Members</h1>
-          <%= simple_form_for [@team, @team_member] do |f| %>
+          <%#= simple_form_for [@team, @team_member] do |f| %>
             <div class="col-xs-6">
-              <%= f.input :user, label: false  %>
-              <%= f.input :user, label: false  %>
-              <%= f.input :user, label: false  %>
+              <%#= f.input :user, label: false  %>
+              <%#= f.input :user, label: false  %>
+              <%#= f.input :user, label: false  %>
             </div>
             <div class="col-xs-6">
-              <%= f.input :user, label: false  %>
-              <%= f.input :user, label: false  %>
-              <%= f.input :user, label: false  %>
+              <%#= f.input :user, label: false  %>
+              <%#= f.input :user, label: false  %>
+              <%#= f.input :user, label: false  %>
             </div>
-              <%= f.input :lead_dev, label: "Are you the team leader?" %>
+              <%#= f.input :lead_dev, label: "Are you the team leader?" %>
             <div class="col-xs-12">
-              2<%= f.button :submit, "Start Your Project Application", class: "custom-primary-btn"  %>
-            </div>
+              2<%#= f.button :submit, "Start Your Project Application", class: "custom-primary-btn"  %>
+            </div> -->
       <div class="col-xs-6 col-xs-offset-3">
-        <div class="text-center">
+
+          <div class="title">
+            <h1>Invite your teammates</h1>
+          </div>
+          <div class="form">
           <%= form_tag team_team_members_path do %>
             <% @members.each do |member| %>
+                <div class="col xs-6">
               <%= fields_for 'users[]', member do |m| %>
                 <%# m.text_field :lead_dev %>
-                <%= m.text_field :email %>
-                <%= m.text_field :first_name %>
-                <div class="field">
+
+                  <%= m.label 'first_name', "First name" %>
+                  <%= m.text_field :first_name %>
+                </div>
+                <div class="col-xs-6">
+                  <%= m.label 'email', "Email" %>
+                  <%= m.text_field :email %>
+                </div>
+                <!-- <div class="field">
                   <%# m.fields_for "user" do |p| %>
                   <%# end %>
-                </div>
+                </div> -->
               <% end %>
             <% end %>
            <div class="actions">
-            <%= submit_tag %>
+            <%= submit_tag "Send invitations", class: "custom-primary-btn" %>
            </div>
           <% end %>
-        </div>
+
+
       </div>
-    </div>
+
   </div>
-</div>
-<% end %>
+
+<%# end %>
 <%#= form_for [@team, @team_member] do |f| %>
 <%#= f.check_box :lead_dev %>
 <%#= f.fields_for :users do |p| %>

@@ -31,6 +31,10 @@ class TeamsController < ApplicationController
     end
   end
 
+def edit
+  @team = Team.find(params[:id])
+  authorize @team
+end
 
   def destroy
     authorize @team
