@@ -31,15 +31,21 @@ class TeamMembersController < ApplicationController
     # params[:users]
     # @team_member.team = @team
     # @team_member.user = @user
-    @project = Project.find(@team.proposals.project.id)
+    # @project = Project.find(@team.proposals.project_id)
     # # p @team_member
     # # p team_member_params
     authorize @team_member
-    if @team_member.id
-      redirect_to new_proposal_path(@project)
+    # @team_members = @team.where{ |team| team.team_members < 2}
+    @team_members = TeamMember.where(team: @team)
+    if @team_members
+      redirect_to edit_team_path(@team)
     else
       render :new
     end
+  end
+
+  def edit
+
   end
 
   private

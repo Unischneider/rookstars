@@ -14,9 +14,9 @@ class TeamsController < ApplicationController
   end
 
   def new
-    @project = Project.find(params[:project_id])
     @team = Team.new
-    #@team_members = TeamMember.where(user_id: current_user.id)
+    @project = Project.find(params[:project_id])
+    # @team_member = TeamMember.new
     authorize @team
   end
 
@@ -31,6 +31,10 @@ class TeamsController < ApplicationController
     end
   end
 
+def edit
+  @team = Team.find(params[:id])
+  authorize @team
+end
 
   def destroy
     authorize @team
