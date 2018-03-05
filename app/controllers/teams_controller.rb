@@ -23,6 +23,7 @@ class TeamsController < ApplicationController
 
   def create
     @team = Team.new
+    @project = Project.find(params[:project_id])
     authorize @team
     if @team.save
       @team_member = TeamMember.create(user: current_user, team: @team, lead_dev: true)
