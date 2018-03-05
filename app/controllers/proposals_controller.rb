@@ -1,5 +1,5 @@
 class ProposalsController < ApplicationController
-  before_action :set_booking, only: [:show, :update, :destroy, :confirm]
+  # before_action :set_booking, only: [:show, :update, :destroy, :confirm]
   before_action :project_finder, only: [:new, :create, :edit]
 
   def index
