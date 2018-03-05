@@ -7,16 +7,30 @@
 
 }
 .navbar-top {
-   box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.07), 0 1px 0 0 rgba(0, 0, 0, 0.03);
-    border-top: solid 5px #25b1dc;
-    background: #0d2839d6;
-    transition: all 0.3s ease;
-    height: 70px;
-    padding: 0px 30px;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    opacity: 0.99;
+ box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.07), 0 1px 0 0 rgba(0, 0, 0, 0.03);
+ border-top: solid 5px #25b1dc;
+ background: #0d2839d6;
+ transition: all 0.3s ease;
+ height: 70px;
+ padding: 0px 30px;
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+ opacity: 0.99;
+}
+
+
+.navbar-top-home {
+ box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.07), 0 1px 0 0 rgba(0, 0, 0, 0.03);
+ border-top: solid 5px #25b1dc;
+ background: #0d2839d6;
+ transition: all 0.3s ease;
+ height: 70px;
+ padding: 0px 30px;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ opacity: 0.99;
 }
 
 
@@ -99,8 +113,7 @@
   display: flex;
 }
 .back {
-  position: absolute;
-  left: 70px;
+
   a {
     font-size: 26px;
     display: flex;
@@ -113,9 +126,6 @@
 }
 
 .back:hover {
-
-  position: absolute;
-  left: 70px;
   text-decoration: none;
   a {
     font-size: 27px;
@@ -142,9 +152,9 @@
 }
 
 .brand {
-  position: absolute;
-  left: 530px;
-  display: block;
+  // position: absolute;
+  // left: 530px;
+  // display: block;
   img {
     max-height: 50px;
     opacity: 1;
