@@ -1,14 +1,14 @@
 class ProposalsController < ApplicationController
   # before_action :set_booking, only: [:show, :update, :destroy, :confirm]
-  before_action :project_finder, only: [:new, :create, :edit]
-  before_action :proposal_finder, only: [:edit, :update]
+  before_action :project_finder, only: [:show, :new, :create, :edit]
+  before_action :proposal_finder, only: [:show, :edit, :update]
 
   def index
     @proposals = policy_scope(Proposal).where(user: current_user)
   end
 
   def show
-    @project = @proposal.project
+    @proposal.project = @project
     @team_members = TeamMember.where(team_id: @proposal.team_id)
     authorize @proposal
     authorize @project
