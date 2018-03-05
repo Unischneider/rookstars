@@ -2,7 +2,7 @@ class TeamMembersController < ApplicationController
   def new
     @team = Team.find(params[:team_id])
     @team_member = TeamMember.new
-    @users = User.all
+    @users = User.all.where(email: params[:email])
     authorize @team_member
   end
 

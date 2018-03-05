@@ -1,8 +1,15 @@
 class UsersController < ApplicationController
-  def new
-  end
-
-  def create
+  def index
+    @user = current_user
+    authorize @user
+    @users = if params[:term]
+      User.where('email LIKE ?', "%#{params[:term]}%")
+    end
+    if @users
+      respond_to do |format|
+        format.js
+      end
+    end
   end
 
   def show
@@ -16,6 +23,6 @@ class UsersController < ApplicationController
 
   private
   def set_params
-    params.require(:user).permit(:first_name, :email, :password)
+    params.require(:user).permit(:first_name, :email, :password, :term)
   end
 end

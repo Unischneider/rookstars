@@ -24,14 +24,15 @@
       <%# end %>
     </div>
   </div>
- -->
+-->
 
 <div class="container">
   <div class="form">
-  <%= form_tag users_path do %>
-    <%= text_field_tag :email, collection: @users %>
-  <% end %>
-</div>
+    <%= form_tag(users_path, method: :get, remote: true) do %>
+      <%= text_field_tag :term, params[:term] %>
+      <%= submit_tag 'Submit', name: nil %>
+    <% end %>
+  </div>
 </div>
 
 
