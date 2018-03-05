@@ -39,10 +39,12 @@ project_titles = ["Google Maps integration", "Complete Website", "Sign Up", "Pay
 status = ["Pending", "On Going", "Accepted by the organization", "Declined by organization", "Rejected by the team", "Done"]
 some = ["Translation", "All in blue", "picture uploading", "banners", "specific form", "trello integration"]
 20.times do
+budget = (100..40_000).to_a.sample
  project = Project.new(
     title: project_titles.sample,
     description: Faker::Lorem.paragraph,
-    budget: (100..40_000).to_a.sample,
+    budget: budget,
+    price_cents: budget * 100,
     due_date: Faker::Date.forward(100),
     status: status.sample,
     organization: Organization.all.sample,
