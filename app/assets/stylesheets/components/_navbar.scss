@@ -19,6 +19,10 @@
  opacity: 0.99;
 }
 
+.please-work {
+  display: flex;
+}
+
 
 .navbar-top-home {
  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.07), 0 1px 0 0 rgba(0, 0, 0, 0.03);
@@ -29,7 +33,7 @@
  padding: 0px 30px;
  display: flex;
  align-items: center;
- justify-content: center;
+ justify-content: space-between;
  opacity: 0.99;
 }
 
