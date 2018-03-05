@@ -30,8 +30,8 @@
   <div class="title text-center">
     <h1>Add fellow Rookstars to your team</h1>
   </div>
-  <ul id="team_members_list">
-  </ul>
+  <ol id="team_members_list">
+  </ol>
   <div id="team_members_form">
     <% if @team.team_members.count < 5 %>
       <%= render "form", team: @team %>
