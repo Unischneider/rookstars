@@ -36,7 +36,7 @@ class TeamsController < ApplicationController
 
   def update
     authorize @team
-    @proposal = Proposal.find_by(team: @team, project: @project)
+    @proposal = Proposal.select(team: @team, project: @project)
     if @team.save
       redirect_to edit_project_proposal_path(@project, @proposal)
     else
