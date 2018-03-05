@@ -25,6 +25,7 @@ class TeamsController < ApplicationController
     @team = Team.new
     authorize @team
     if @team.save
+      @team_member = TeamMember.create(user: current_user, team: @team, lead_dev: true)
       @proposal = Proposal.create(team: @team, project: @project)
       redirect_to new_team_team_member_path(@team)
     end

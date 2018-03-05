@@ -1,0 +1,38 @@
+function refreshForm(innerHTML) {
+  const newUserForm = document.getElementById('email');
+  newUserForm.value = innerHTML;
+}
+
+function addUser(userHTML) {
+  const users = document.getElementById('team_members_list');
+  users.insertAdjacentHTML('beforeend', userHTML);
+}
+
+function addErrors(errorMessage) {
+  const form = document.getElementById('team_members_form');
+  form.insertAdjacentHTML('beforeend', '<p>' + errorMessage + '</p>');
+}
+
+function teamMemberList(teamMembers) {
+  const users = document.getElementById('team_members_list');
+  users.innerHTML = ''
+  teamMembers.forEach((member) => {
+    users.insertAdjacentHTML('beforeend', );
+  })
+}
+
+function destroyForm() {
+  const newUserForm = document.getElementById('team_members_form');
+  newUserForm.innerHTML = ''
+}
+// console.log("ghjkl")
+<% if @team_member && @team_member.errors.any? %>
+  addErrors("Please add a correct email address");
+<% elsif @team_members.count > 4 %>
+  addUser('<li><%= "#{@team_member.user.first_name} #{@team_member.user.last_name} (#{@team_member.user.email})" %></li>')
+  destroyForm()
+<% else %>
+  addUser('<li><%= "#{@team_member.user.first_name} #{@team_member.user.last_name} (#{@team_member.user.email})" %></li>')
+  refreshForm('');
+<% end %>
+

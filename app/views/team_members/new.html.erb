@@ -30,12 +30,18 @@
   <div class="title text-center">
     <h1>Add fellow Rookstars to your team</h1>
   </div>
-  <div class="form">
-    <%= form_tag(users_path, method: :get, remote: true) do %>
-      <%= text_field_tag :term, params[:term] %>
-      <%= submit_tag 'Submit', name: nil, class: "custom-primary-btn" %>
+  <ul id="team_members_list">
+  </ul>
+  <div id="team_members_form">
+    <% if @team.team_members.count < 5 %>
+      <%= render "form", team: @team %>
     <% end %>
+    <%#form_tag(users_path, method: :get, remote: true) do %>
+      <%#text_field_tag :term, params[:term] %>
+      <%#submit_tag 'Submit', name: nil, class: "custom-primary-btn" %>
+    <%# end %>
   </div>
+  <%= link_to "" %>
 </div>
 
 
