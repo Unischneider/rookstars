@@ -8,6 +8,8 @@ class User < ApplicationRecord
 
   accepts_nested_attributes_for :team_members
   before_create :make_moderator
+  mount_uploader :photo, PhotoUploader, :mount_on => :photo
+
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable,
