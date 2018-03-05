@@ -15,8 +15,7 @@ class TeamMembersController < ApplicationController
     # @user = User.find_by_email(params[:team_member][:users][:email]) || User.create(email: params[:team_member][:users][:email], password: "secret", first_name: params[:team_member][:users][:first_name])
     # @team_member = TeamMember.new(lead_dev: team_member_params[:lead_dev])
     users = params[:users].map do |user|
-      u = User.find_by_email(user[:email]) || User.create(email: user[:email], first_name: user[:first_name], password: "secret")
-      u
+      User.find_by_email(user[:email]) || User.create(email: user[:email], first_name: user[:first_name], password: "secret")
     end
     users.each do |user|
       @team_member = TeamMember.create(user: user, team: @team, lead_dev: false)
@@ -31,8 +30,6 @@ class TeamMembersController < ApplicationController
     # @team_member.team = @team
     # @team_member.user = @user
     # @project = Project.find(@team.proposals.project_id)
-    # # p @team_member
-    # # p team_member_params
     authorize @team_member
     # @team_members = @team.where{ |team| team.team_members < 2}
     @team_members = TeamMember.where(team: @team)

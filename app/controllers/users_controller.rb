@@ -1,9 +1,8 @@
 class UsersController < ApplicationController
   def index
     @user = current_user
-    authorize @user
     @users = if params[:term]
-      User.where('email LIKE ?', "%#{params[:term]}%")
+      policy_scope(User).where('email LIKE ?', "%#{params[:term]}%")
     end
     if @users
       respond_to do |format|

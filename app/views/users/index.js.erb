@@ -1,1 +1,16 @@
-console.log("hello")
+function refreshForm(innerHTML) {
+  const newUserForm = document.getElementById('term');
+  newUser.innerHTML = innerHTML;
+}
+
+function addUser(userHTML) {
+  const users = document.getElementById('reviews');
+  users.insertAdjacentHTML('beforeend', userHTML);
+}
+
+<%# if @user.errors.any? %>
+//   refreshForm('<%= j render "team_members/new", team: @team %>');
+// <%# else %>
+//   addUser('<%= j render "reviews/show", review: @review %>');
+//   refreshForm('<%= j render "reviews/form", restaurant: @restaurant, review: Review.new %>');
+<%# end %>
