@@ -23,11 +23,13 @@
     </div>
     <% else %>
     <!-- Login link (when logged out) -->
+
     <% unless current_page? root_path %>
     <div class="nav-content">
       <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-top-eric custom-primary-btn" %>
     </div>
     <% end %>
+
     <% end %>
 
   <div class="back">

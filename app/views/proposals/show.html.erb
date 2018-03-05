@@ -31,11 +31,11 @@
                 <br>
                 <p class="tag-label">Application Status</p>
                 <% if @proposal.joinable %>
-                <p>This team is closed</p>
-                <% else %>
                 <p>This team is open for applicants</p>
                 <div class="cta-button">
                   <%= link_to "Apply", new_project_team_path(@project), class: "custom-primary-btn" %>
+                <% else %>
+                <p>This team is closed</p>
                 </div>
                 <% end %>
               </div>

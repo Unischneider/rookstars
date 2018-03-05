@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
 
-  devise_for :organizations
-  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks', registrations: 'registrations' }
+  devise_for :organizations, path: 'organizations', controllers: { sessions: 'organizations/sessions', registrations: 'organizations/registrations' }
+  devise_for :users, path: 'users', controllers: { omniauth_callbacks: 'users/omniauth_callbacks', sessions: 'users/sessions', registrations: 'users/registrations' }
   root to: 'pages#home'
   resources :contacts, only: [:new, :create]
-  resources :organizations, only: [:new, :create, :show, :edit, :update]
+  get 'landing', to: "organizations#landing"
+
+
   # resources :users, only: [:new, :create, :show, :edit, :update]
   resources :projects do
     resources :teams, only: [:new, :index, :create]
@@ -18,6 +20,11 @@ Rails.application.routes.draw do
   end
 
   resources :users, only: [:new, :create, :show, :edit, :update]
+
+  #for payments
+  resources :orders, only: [:show, :create] do
+    resources :payments, only: [:new, :create]
+  end
 
   mount Thredded::Engine => '/forum'
 
