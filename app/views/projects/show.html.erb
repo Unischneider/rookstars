@@ -1,7 +1,7 @@
 <div class="header-container-small" style="background-image: url('<%= cl_image_path @project.photo %>'); background-size: cover; background-position: center">
   <div class="header-content">
     <div class="text-center intro-text">
-      <h1><%= @project.title %></h1>
+
     </div>
   </div>
 </div>
@@ -14,7 +14,8 @@
           <div class="cta-content">
             <hr>
             <div class="text">
-              <h1>About the NGO</h1>
+              <h1><%= @organization.name %></h1>
+              <p class="tag-label">About the NGO:</p>
               <p><%= @organization.description %></p>
             </div>
           </div>
@@ -25,6 +26,8 @@
           <hr>
           <div class="text">
             <h1>About the Project</h1>
+            <p class="tag-label">Project:</p>
+            <p><strong> <%= @project.title %></strong></p><br>
             <p class="tag-label">Project details:</p>
             <p><strong> <%= @project.description %></strong></p><br>
             <p class="tag-label">Due date:</p>
