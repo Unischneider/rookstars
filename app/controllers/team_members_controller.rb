@@ -57,9 +57,9 @@ class TeamMembersController < ApplicationController
 
   private
 
-  # def team_params
-  #   params.require(:team).permit(:about_us)
-  # end
+  def team_params
+    params.require(:team).permit(:about_us)
+  end
 
   # def team_member_params
   #   params.require(:team_member).permit(:lead_dev)

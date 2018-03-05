@@ -36,12 +36,8 @@
     <% if @team.team_members.count < 5 %>
       <%= render "form", team: @team %>
     <% end %>
-    <%#form_tag(users_path, method: :get, remote: true) do %>
-      <%#text_field_tag :term, params[:term] %>
-      <%#submit_tag 'Submit', name: nil, class: "custom-primary-btn" %>
-    <%# end %>
   </div>
-  <%= link_to "Submit", new_project_team_path(@project), class: "custom-primary-btn" %>
+<%= link_to "Submit", edit_team_path(@team), class: "custom-primary-btn" %>
 </div>
 
 
