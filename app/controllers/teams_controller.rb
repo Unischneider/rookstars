@@ -1,6 +1,6 @@
 class TeamsController < ApplicationController
   before_action :team_finder, only: [:show, :edit, :update, :destroy]
-  before_action :project_finder, only: [:index, :create, :update]
+  before_action :project_finder, only: [:index, :new, :create, :edit]
 
   def index
     @teams = policy_scope(Team).joins(:team_members).where('team_members.user_id = ? ', current_user.id)
@@ -16,13 +16,11 @@ class TeamsController < ApplicationController
 
   def new
     @team = Team.new
-    @project = Project.find(params[:project_id])
     authorize @team
   end
 
   def create
-    @team = Team.new
-    @project = Project.find(params[:project_id])
+    @team = Team.new(set_params)
     authorize @team
     if @team.save
       @team_member = TeamMember.create(user: current_user, team: @team, lead_dev: true)
@@ -37,7 +35,8 @@ class TeamsController < ApplicationController
 
   def update
     authorize @team
-    @proposal = Proposal.select(team: @team, project: @project)
+    @project = Project.find(@team.projects.first.id)
+    @proposal = Proposal.find_by(team: @team, project: @project)
     if @team.save
       redirect_to edit_project_proposal_path(@project, @proposal)
     else
@@ -57,7 +56,7 @@ class TeamsController < ApplicationController
 
   def project_finder
     # @projects = @team.projects.where { |project| project.teams == @team }
-    @project = Project.find(params[:project_id])
+    @project = Project.find(@team.projects.first.id)
   end
 
   def project_params
