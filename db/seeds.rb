@@ -449,7 +449,7 @@ p "Creating projects"
 p "Creating teams"
 
 20.times do
-  Team.create(about_us: Faker::Lorem.paragraph)
+  Team.create(about_us: ["We are fast working and accurate people.", "We want to help for nearly no money.", "Hey we are an open team that communicates and keeps everyone up to date."].sample)
 end
 
 p "Creating user"
@@ -460,7 +460,8 @@ p "Creating user"
     password: "password123",
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
-    github: "https://github.com/Jb5322",
+    github: "https://github.com/juliettech13",
+    photo: "https://source.unsplash.com/person",
     about_me: "#{Faker::SiliconValley.motto} + #{Faker::SiliconValley.quote}"
     )
   user.remote_photo_url = "https://source.unsplash.com/person"
@@ -483,7 +484,7 @@ p "Creating applications"
 
 20.times do
   Proposal.create(
-    pitch: Faker::Lorem.paragraph,
+    pitch: ["Me and my team would love to help you out. However, it would be great to get some financial help!", "We are work expirienced alumni from Le Wagon who are inquisitive and want to keep learning"].sample,
     status: ["Pending Developer request", "Pending NGO validation", "Confirmed", "Canceled"].sample,
     team: Team.all.sample,
     project: Project.all.sample

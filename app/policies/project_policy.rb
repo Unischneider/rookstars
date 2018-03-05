@@ -18,6 +18,14 @@ class ProjectPolicy < ApplicationPolicy
   end
 
   def classroom?
-    true
+    access = false
+    user.teams.each do |team|
+      record.teams.each do |project_team|
+        if team == project_team
+          access = true
+        end
+      end
+    end
+    access
   end
 end
