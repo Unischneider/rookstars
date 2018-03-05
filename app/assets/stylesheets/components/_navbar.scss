@@ -7,16 +7,16 @@
 
 }
 .navbar-top {
-  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.07), 0 1px 0 0 rgba(0, 0, 0, 0.03);
-    border-top: solid 5px $blue;
-    background: #1a292f;
+   box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.07), 0 1px 0 0 rgba(0, 0, 0, 0.03);
+    border-top: solid 5px #25b1dc;
+    background: #0d2839d6;
     transition: all 0.3s ease;
     height: 70px;
     padding: 0px 30px;
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    opacity: 0.8;
+    opacity: 0.99;
 }
 
 
@@ -24,6 +24,7 @@
   width: 40px;
   margin-left: 18px;
   height: 40px;
+
 }
 
 /* Logo */
@@ -94,18 +95,40 @@
   border-left: 1px solid #E6E6E6;
   border-top: 1px solid #E6E6E6;
 }
-
-.navbar-bottom {
-    height: 35px;
-    padding: 0px 30px;
-    display: flex;
-    align-items: center;
-    justify-content: left;
-    opacity: 0.8;
+.back-text {
+  display: flex;
+}
+.back {
+  position: absolute;
+  left: 70px;
   a {
-    color: white;
+    font-size: 26px;
+    display: flex;
+  }
+  p {
+    opacity: 0.3;
+    margin: 1px 10px -0px;
+    font-size: 18px;
   }
 }
+
+.back:hover {
+  position: absolute;
+  left: 70px;
+  text-decoration: none;
+  a {
+    font-size: 33px;
+    display: flex;
+    text-decoration: none;
+  }
+  p {
+    margin: 5px 10px -0px;
+    font-size: 18px;
+
+  }
+}
+
+
 
 .navbar-bottom-right {
   margin: auto;
@@ -117,10 +140,12 @@
 
 .brand {
   position: absolute;
-  left: 70px;
+  left: 530px;
   display: block;
   img {
     max-height: 50px;
     opacity: 1;
   }
 }
+
+
