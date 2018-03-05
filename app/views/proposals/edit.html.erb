@@ -9,9 +9,9 @@
             <div class="form">
               <%= form_for @project do |f| %>
               <%= fields_for :proposals do |proposal| %>
-              <%= proposal.label :pitch %>
+              <%= proposal.label "Tell us about how your team is planning on working on the project" %>
               <br>
-              <%= proposal.text_area :pitch%>
+              <%= proposal.text_area :pitch, placeholder: "Who will be working on what? How will you implement the feature? How long will it take you?" %>
               <% end %>
               <br>
               <%= f.button :submit, class: "custom-primary-btn"  %>
