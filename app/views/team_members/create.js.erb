@@ -30,8 +30,8 @@ function destroyForm() {
   addErrors("Please add a correct email address");
 <% elsif @team_members.count > 4 %>
   addUser('<li><%= "#{@team_member.user.first_name} #{@team_member.user.last_name} (#{@team_member.user.email})" %></li>');
-  addErrors("You have reached the maximum of teammates you can have");
   destroyForm()
+  addErrors("You have reached the maximum of teammates you can have");
 <% else %>
   addUser('<li><%= "#{@team_member.user.first_name} #{@team_member.user.last_name} (#{@team_member.user.email})" %></li>')
   refreshForm('');
