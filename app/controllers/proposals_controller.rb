@@ -66,7 +66,4 @@ class ProposalsController < ApplicationController
     @project = Project.find(params[:project_id])
   end
 
-  def set_booking
-    @proposal = Proposal.find(params[:id])
-  end
 end
