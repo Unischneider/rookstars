@@ -1,45 +1,47 @@
 <div class="navbar-container">
   <div class="navbar-top">
     <!-- Logo -->
+    <div class="brand">
+    <%= link_to root_path do  %>
+    <%= image_tag "logo.png", class: "navbar-wagon-brand" %>
+    <% end %>
+  </div>
     <% if user_signed_in? %>
-      <%= link_to destroy_user_session_path,class: "custom-primary-btn",  method: :delete do %>
-        <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
+    <%= link_to destroy_user_session_path,class: "custom-primary-btn",  method: :delete do %>
+    <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
+    <% end %>
+    <div class="navbar-top-item">
+      <% if current_user.photo.nil? %>
+      <%= link_to user_path(current_user) do   %>
+      <img src="https://kitt.lewagon.com/placeholder/users/ssaunier" class="avatar dropdown-toggle" id="navbar-top-menu">
       <% end %>
-      <div class="navbar-top-item">
-        <% if current_user.photo.nil? %>
-          <%= link_to user_path(current_user) do   %>
-            <img src="https://kitt.lewagon.com/placeholder/users/ssaunier" class="avatar dropdown-toggle" id="navbar-top-menu">
-          <% end %>
-        <% else %>
-          <%= link_to user_path(current_user) do   %>
-            <%= image_tag current_user.photo, class: "avatar dropdown-toggle", id: "navbar-top-menu" %>
-          <% end %>
-        <% end %>
-      </div>
+      <% else %>
+      <%= link_to user_path(current_user) do   %>
+      <%= image_tag current_user.photo, class: "avatar dropdown-toggle", id: "navbar-top-menu" %>
+      <% end %>
+      <% end %>
+    </div>
     <% else %>
     <!-- Login link (when logged out) -->
-      <div class="nav-content">
-        <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "custom-primary-btn" %>
-      </div>
+
+    <% unless current_page? root_path %>
+    <div class="nav-content">
+      <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-top-eric custom-primary-btn" %>
+    </div>
     <% end %>
-    <div class="brand">
 
-      <%= link_to root_path do  %>
-        <%= image_tag "logo.png", class: "navbar-wagon-brand" %>
-      <% end %>
+    <% end %>
 
-  </div>
+  <div class="back">
+     <% unless current_page? root_path %>
+     <%= link_to :back do %>
+     <div class="back-text">
+       <i class="back-btn fas fa-arrow-left"></i>
+       <p>Back</p>
+     <% end %>
+     <% end %>
+   </div>
 </div>
 
-<!--  <div class="navbar-bottom">
-    <div class="navbar-bottom-right hidden-xs hidden-sm">
-
-
-      <%#= link_to "Home", root_path, class: "navbar-bottom-item navbar-top-link" %>
-      <%#= link_to "About", "#", class: "navbar-bottom-item navbar-top-link" %>
-      <%#= link_to "Projects", projects_path, class: "navbar-bottom-item navbar-top-link" %>
-      <%#= link_to "FAQ", "#", class: "navbar-bottom-item navbar-top-link" %>
-    </div>
-  </div>
-</div> -->
+</div>
 
