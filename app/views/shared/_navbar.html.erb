@@ -1,6 +1,11 @@
 <div class="navbar-container">
   <div class="navbar-top">
     <!-- Logo -->
+    <div class="brand">
+    <%= link_to root_path do  %>
+    <%= image_tag "logo.png", class: "navbar-wagon-brand" %>
+    <% end %>
+  </div>
     <% if user_signed_in? %>
     <%= link_to destroy_user_session_path,class: "custom-primary-btn",  method: :delete do %>
     <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
@@ -18,15 +23,13 @@
     </div>
     <% else %>
     <!-- Login link (when logged out) -->
+    <% unless current_page? root_path %>
     <div class="nav-content">
       <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-top-eric custom-primary-btn" %>
     </div>
     <% end %>
-   <div class="brand">
-    <%= link_to root_path do  %>
-    <%= image_tag "logo.png", class: "navbar-wagon-brand" %>
     <% end %>
-  </div>
+
   <div class="back">
      <% unless current_page? root_path %>
      <%= link_to :back do %>

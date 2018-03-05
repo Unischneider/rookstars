@@ -113,17 +113,20 @@
 }
 
 .back:hover {
+
   position: absolute;
   left: 70px;
   text-decoration: none;
   a {
-    font-size: 33px;
+    font-size: 29px;
+    transition: ease .2s;
     display: flex;
     text-decoration: none;
   }
   p {
-    margin: 5px 10px -0px;
-    font-size: 18px;
+    transition: ease .2s;
+    margin: 0px 10px -0px;
+    font-size: 21px;
 
   }
 }
