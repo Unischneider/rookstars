@@ -1,5 +1,5 @@
 
-<div align="center">
+<div>
   <div class="col-xs-12">
    <%= simple_form_for Contact.new, :html => {:class => 'form-horizontal' } do |f| %>
    <div class="single-forms">
@@ -12,19 +12,13 @@
  </div>
    <div class="inline-forms">
 
-   <div class="col-xs-6">
-    <div>
-      <%= f.input :name, :required => true, placeholder: "name", label: false %>
-    </div>
-  </div>
-
-  <div class="col-xs-6">
+  <div class="col-xs-12">
     <div>
       <%= f.input :email, :required => true, placeholder: "email", label: false %>
     </div>
   </div>
   </div>
- <div class="text-left">
+ <div class="text-center">
      <%= f.button :submit, 'Ask us!', :class=> "custom-primary-btn form-space" %>
    </div>
 </div>
