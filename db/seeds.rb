@@ -282,7 +282,7 @@ p "Creating projects"
   some = ["Translation", "All in blue", "picture uploading", "banners", "specific form", "trello integration"]
   project = Project.new(
     title: "Sign Up",
-    description: "My website is great I think but I really would like a Sign up and login area. However, if you have anymore tips to make the website better please come forward.",
+    description: "My website is great but I really would like a Sign up and login area. However, if you have anymore tips to make the website better please come forward.",
     budget: (100..40_000).to_a.sample,
     due_date: Faker::Date.forward(100),
     status: status.sample,
@@ -444,6 +444,172 @@ p "Creating projects"
   project.remote_photo_url = organization1.photo.to_s
   project.save
 
+
+  organization1 = Organization.all.sample
+  status = ["Pending", "On Going", "Accepted by the organization", "Declined by organization", "Rejected by the team", "Done"]
+  some = ["Translation", "All in blue", "picture uploading", "banners", "specific form", "trello integration"]
+  project = Project.new(
+    title: "Maps needs styling",
+    description: "I would like to have a new map displaying our headquarter and where we are stationed around the world.",
+    budget: (100..40_000).to_a.sample,
+    due_date: Faker::Date.forward(100),
+    status: status.sample,
+    organization: organization1,
+    db_sql: false,
+    maps: true,
+    forms: false,
+    mail_integration: false,
+    payment_integration: false,
+    sign_up_log_in: false,
+    landing_page: false,
+    messaging_integration: false,
+    other: some.sample,
+    )
+  project.remote_photo_url = organization1.photo.to_s
+  project.save
+
+  organization1 = Organization.all.sample
+  status = ["Pending", "On Going", "Accepted by the organization", "Declined by organization", "Rejected by the team", "Done"]
+  some = ["Translation", "All in blue", "picture uploading", "banners", "specific form", "trello integration"]
+  project = Project.new(
+    title: "Complete Website",
+    description: "A new website, that contains forms to contact us and a volunteer login as well as a messaging area for those.",
+    budget: (100..40_000).to_a.sample,
+    due_date: Faker::Date.forward(100),
+    status: status.sample,
+    organization: organization1,
+    db_sql: false,
+    maps: false,
+    forms: true,
+    mail_integration: true,
+    payment_integration: false,
+    sign_up_log_in: true,
+    landing_page: true,
+    messaging_integration: true,
+    other: some.sample,
+    )
+  project.remote_photo_url = organization1.photo.to_s
+  project.save
+
+
+  organization1 = Organization.all.sample
+  status = ["Pending", "On Going", "Accepted by the organization", "Declined by organization", "Rejected by the team", "Done"]
+  some = ["Translation", "All in blue", "picture uploading", "banners", "specific form", "trello integration"]
+  project = Project.new(
+    title: "Login",
+    description: "I would like a Sign up and login area. However, if you have anymore tips to make the website better please come forward.",
+    budget: (100..40_000).to_a.sample,
+    due_date: Faker::Date.forward(100),
+    status: status.sample,
+    organization: organization1,
+    db_sql: false,
+    maps: false,
+    forms: true,
+    mail_integration: false,
+    payment_integration: false,
+    sign_up_log_in: true,
+    landing_page: false,
+    messaging_integration: false,
+    other: some.sample,
+    )
+  project.remote_photo_url = organization1.photo.to_s
+  project.save
+
+
+  organization1 = Organization.all.sample
+  status = ["Pending", "On Going", "Accepted by the organization", "Declined by organization", "Rejected by the team", "Done"]
+  some = ["Translation", "All in blue", "picture uploading", "banners", "specific form", "trello integration"]
+  project = Project.new(
+    title: "Payment option between Paypal etc",
+    description: "I would like a contact us page and a donate button on each page. It should include different payment options.",
+    budget: (100..40_000).to_a.sample,
+    due_date: Faker::Date.forward(100),
+    status: status.sample,
+    organization: organization1,
+    db_sql: false,
+    maps: false,
+    forms: true,
+    mail_integration: true,
+    payment_integration: true,
+    sign_up_log_in: false,
+    landing_page: false,
+    messaging_integration: false,
+    other: some.sample,
+    )
+  project.remote_photo_url = organization1.photo.to_s
+  project.save
+
+
+  organization1 = Organization.all.sample
+  status = ["Pending", "On Going", "Accepted by the organization", "Declined by organization", "Rejected by the team", "Done"]
+  some = ["Translation", "All in blue", "picture uploading", "banners", "specific form", "trello integration"]
+  project = Project.new(
+    title: "Whole new design",
+    description: "Our website needs a new design in the logo colours!",
+    budget: (100..40_000).to_a.sample,
+    due_date: Faker::Date.forward(100),
+    status: status.sample,
+    organization: organization1,
+    db_sql: true,
+    maps: true,
+    forms: true,
+    mail_integration: true,
+    payment_integration: false,
+    sign_up_log_in: false,
+    landing_page: true,
+    messaging_integration: true,
+    other: some.sample,
+    )
+  project.remote_photo_url = organization1.photo.to_s
+  project.save
+
+
+  organization1 = Organization.all.sample
+  status = ["Pending", "On Going", "Accepted by the organization", "Declined by organization", "Rejected by the team", "Done"]
+  some = ["Translation", "All in blue", "picture uploading", "banners", "specific form", "trello integration"]
+  project = Project.new(
+    title: "Make our Website suitable for all devices",
+    description: "The website should eb useable by all devices such as iPad, iPhone, etc",
+    budget: (100..40_000).to_a.sample,
+    due_date: Faker::Date.forward(100),
+    status: status.sample,
+    organization: organization1,
+    db_sql: false,
+    maps: false,
+    forms: true,
+    mail_integration: false,
+    payment_integration: false,
+    sign_up_log_in: true,
+    landing_page: true,
+    messaging_integration: false,
+    other: some.sample,
+    )
+  project.remote_photo_url = organization1.photo.to_s
+  project.save
+
+
+  organization1 = Organization.all.sample
+  status = ["Pending", "On Going", "Accepted by the organization", "Declined by organization", "Rejected by the team", "Done"]
+  some = ["Translation", "All in blue", "picture uploading", "banners", "specific form", "trello integration"]
+  project = Project.new(
+    title: "Contact us",
+    description: "I want a short and crispy contact us page and will give you the text to be displayed.",
+    budget: (100..40_000).to_a.sample,
+    due_date: Faker::Date.forward(100),
+    status: status.sample,
+    organization: organization1,
+    db_sql: false,
+    maps: true,
+    forms: true,
+    mail_integration: true,
+    payment_integration: false,
+    sign_up_log_in: false,
+    landing_page: false,
+    messaging_integration: false,
+    other: some.sample,
+    )
+  project.remote_photo_url = organization1.photo.to_s
+  project.save
 
 
 p "Creating teams"
