@@ -455,7 +455,7 @@ end
 p "Creating user"
 
 20.times do
-  user = User.create(
+  user = User.new(
     email: Faker::Internet.email,
     password: "password123",
     first_name: Faker::Name.first_name,
@@ -464,7 +464,8 @@ p "Creating user"
     photo: "https://source.unsplash.com/person",
     about_me: "#{Faker::SiliconValley.motto} + #{Faker::SiliconValley.quote}"
     )
-
+  user.remote_photo_url = "https://source.unsplash.com/person"
+  user.save
 end
 
 p "Creating team member"

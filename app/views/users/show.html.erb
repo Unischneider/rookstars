@@ -9,7 +9,7 @@
     <div class="col-xs-12">
       <div class="text-center">
         <% if @user.photo %>
-          <%= image_tag @user.photo, class: "avatar-large" %>
+        <%= image_tag @user.photo, class: "avatar-large" %>
         <% end %>
       </div>
     </div>
@@ -18,6 +18,11 @@
     <div class="col-xs-12">
       <div class="text-center">
         <h2>  <%= @user.first_name%> <%= @user.last_name  %></h2>
+        <h3><%= @user.email %></h3>
+        <h3><%= @user.linkedin if @user.linkedin %></h3>
+        <div class="box-about-me">
+          <p><%= @user.about_me if @user.about_me %></p>
+        </div>
       </div>
     </div>
   </div>
@@ -30,11 +35,11 @@
             <div class="text">
               <h1>Teams</h1>
               <% @user.teams.each do |team| %>
-                <% team.team_members.each do |team_member| %>
-                  <% if team_member.lead_dev %>
-                    <p> <%= team_member.user.first_name %>'s Team </p>
-                  <% end %>
-                <% end %>
+              <% team.team_members.each do |team_member| %>
+              <% if team_member.lead_dev %>
+              <p> <%= team_member.user.first_name %>'s Team </p>
+              <% end %>
+              <% end %>
               <% end %>
             </div>
           </div>
@@ -45,9 +50,9 @@
             <div class="text">
               <h1>Applications</h1>
               <% @user.teams.each do |team| %>
-                <% team.proposals.each do |app|   %>
-                  <p> <%= app.project.title %></p>
-                <% end %>
+              <% team.proposals.each do |app|   %>
+              <p> <%= app.project.title %></p>
+              <% end %>
               <% end %>
             </div>
           </div>
@@ -62,60 +67,60 @@
   <h1 class="text-center">Past projects <%= @user.first_name %> worked on</h1>
   <br>
   <div class="row">
-  <% @user.teams.each do |team| %>
+    <% @user.teams.each do |team| %>
     <% team.proposals.each do |app|%>
-    <% if app.status == "Confirmed"%>
-        <div class="col-xs-4">
-          <%= link_to project_path(app.project.id) do  %>
-          <div class="card">
-            <div class="card-category" style="background-image: url('<%= cl_image_path app.project.photo %>');">
-              <p class= "custom-primary-btn">Join</p>
-            </div>
-            <div class="card-description">
-              <h2><%= app.project.title%></h2>
-              <h1><%= app.project.organization.name %></h1>
-              <p class="description-text"><%= app.project.description %></p>
-            </div>
-          </div>
-          <% end %>
+    <% if app.accepted %>
+    <div class="col-xs-4">
+      <%= link_to project_path(app.project.id) do  %>
+      <div class="card">
+        <div class="card-category" style="background-image: url('<%= cl_image_path app.project.photo %>');">
+          <p class= "custom-primary-btn">Join</p>
         </div>
+        <div class="card-description">
+          <h2><%= app.project.title%></h2>
+          <h1><%= app.project.organization.name %></h1>
+          <p class="description-text"><%= app.project.description %></p>
+        </div>
+      </div>
       <% end %>
+    </div>
     <% end %>
-  <% end %>
+    <% end %>
+    <% end %>
   </div>
 </div>
 
 <% if current_user == @user %>
-  <div class="one-column-cta" style="background-image: url('<%= cl_image_path 'bg.jpg' %>'); background-size: cover; background-position: center">
-    <div class="container-fluid">
-      <div class="cta-content">
-        <hr>
-        <div class="text text-center">
-          <h1>You have done other projects?</h1>
-          <p>Add a project that you've been working on in the past</p>
-        </div>
-        <div class="cta-button">
-          <%= link_to "New Project", new_project_path, class: "custom-primary-btn"  %>
-        </div>
+<div class="one-column-cta" style="background-image: url('<%= cl_image_path 'bg.jpg' %>'); background-size: cover; background-position: center">
+  <div class="container-fluid">
+    <div class="cta-content">
+      <hr>
+      <div class="text text-center">
+        <h1>You have done other projects?</h1>
+        <p>Add a project that you've been working on in the past</p>
+      </div>
+      <div class="cta-button">
+        <%= link_to "New Project", new_project_path, class: "custom-primary-btn"  %>
       </div>
     </div>
   </div>
+</div>
 
 
 
 <% else %>
-  <div class="one-column-cta" style="background-image: url('<%= cl_image_path 'bg.jpg' %>'); background-size: cover; background-position: center">
-    <div class="container-fluid">
-      <div class="cta-content">
-        <hr>
-        <div class="text text-center">
-          <h1>Want to get in touch?</h1>
-          <p>Get in touch with <%= @user.first_name %></p>
-        </div>
-        <div class="cta-button">
-          <%= link_to "Contact", root_path , class: "custom-primary-btn" %>
-        </div>
+<div class="one-column-cta" style="background-image: url('<%= cl_image_path 'bg.jpg' %>'); background-size: cover; background-position: center">
+  <div class="container-fluid">
+    <div class="cta-content">
+      <hr>
+      <div class="text text-center">
+        <h1>Want to get in touch?</h1>
+        <p>Get in touch with <%= @user.first_name %></p>
+      </div>
+      <div class="cta-button">
+        <%= link_to "Contact", root_path , class: "custom-primary-btn" %>
       </div>
     </div>
   </div>
+</div>
 <% end %>
