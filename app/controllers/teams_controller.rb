@@ -55,8 +55,8 @@ class TeamsController < ApplicationController
   end
 
   def project_finder
-    team_finder
-    @projects = @team.projects.where { |project| project.teams == @team }
+    # @projects = @team.projects.where { |project| project.teams == @team }
+    @project = Project.find(params[:project_id])
   end
 
   def project_params

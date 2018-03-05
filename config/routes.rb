@@ -19,7 +19,7 @@ Rails.application.routes.draw do
     resources :team_members, only: [:new, :create]
   end
 
-  resources :users, only: [:new, :create, :show, :edit, :update]
+  resources :users, only: [:index, :new, :create, :show, :edit, :update]
 
   #for payments
   resources :orders, only: [:show, :create] do

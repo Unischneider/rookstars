@@ -2,23 +2,22 @@ class TeamMembersController < ApplicationController
   def new
     @team = Team.find(params[:team_id])
     @team_member = TeamMember.new
-    @members = []
-    5.times do
-      @members << User.new
-    end
+    @users = User.all
     authorize @team_member
   end
 
   def create
     @team = Team.find(params[:team_id])
+    @members = []
+    5.times do
+      @members << User.find(@team_member.user_id)
+    end
     # @user = User.find_by_email(params[:team_member][:users][:email]) || User.create(email: params[:team_member][:users][:email], password: "secret", first_name: params[:team_member][:users][:first_name])
     # @team_member = TeamMember.new(lead_dev: team_member_params[:lead_dev])
     users = params[:users].map do |user|
       u = User.find_by_email(user[:email]) || User.create(email: user[:email], first_name: user[:first_name], password: "secret")
-      p u.errors.messages
       u
     end
-    p users
     users.each do |user|
       @team_member = TeamMember.create(user: user, team: @team, lead_dev: false)
     end
