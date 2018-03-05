@@ -1,0 +1,29 @@
+<div class="header-container" style="background-image: url('<%= cl_image_path 'bg.jpg' %>'); background-size: cover; background-position: center">
+  <div class="header-content">
+    <div class="text-center intro-text">
+      <h1>Look at the projects <br>
+      that have been developed through our tool.</h1>
+    </div>
+  </div>
+</div>
+<div class="one-column-content" style="background-image: url('<%= cl_image_path 'bg3.jpg' %>'); background-size: cover; background-position: center">
+  <div class="container-fluid">
+    <div class="cta-content">
+      <hr>
+      <div class="text">
+        <h1>Don't have an Account yet?</h1>
+      </div>
+      <div class="cta-button">
+        <%= link_to "Add your organization and your projects!", new_organization_registration_path, class: "custom-primary-btn" %>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <br>
+  <h1 style="color: #005484;" class="text-center">Onboard an ongoing project</h1>
+  <br>
+  <div class="row">
+  <%= render "components/cards" %>
+  </div>
+</div>

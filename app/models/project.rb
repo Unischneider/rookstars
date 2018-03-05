@@ -4,4 +4,5 @@ class Project < ApplicationRecord
   has_many :teams, through: :proposals
   validates :title, :description, :due_date, :status, :budget, presence: true
   mount_uploader :photo, PhotoUploader, :mount_on => :photo
+  monetize :price_cents
 end

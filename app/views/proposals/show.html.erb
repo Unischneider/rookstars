@@ -10,7 +10,7 @@
   <div class="two-column-content">
     <div class="row">
       <div class="double-cta">
-        <div class="left-cta col-xs-12 col-md-6">
+        <div class="left-cta col-xs-12 col-md-6" style="background-image: url('<%= cl_image_path 'bg2.jpg' %>'); background-size: cover; background-position: center">
           <div class="cta-content">
             <hr>
             <div class="text">
@@ -31,11 +31,11 @@
                 <br>
                 <p class="tag-label">Application Status</p>
                 <% if @proposal.joinable %>
-                <p>This team is closed</p>
-                <% else %>
                 <p>This team is open for applicants</p>
                 <div class="cta-button">
                   <%= link_to "Apply", new_project_team_path(@project), class: "custom-primary-btn" %>
+                <% else %>
+                <p>This team is closed</p>
                 </div>
                 <% end %>
               </div>
@@ -43,7 +43,7 @@
           </div>
         </div>
 
-        <div class="right-cta col-xs-12 col-md-6">
+        <div class="right-cta col-xs-12 col-md-6" style="background-image: url('<%= cl_image_path 'bg3.jpg' %>'); background-size: cover; background-position: center">
           <div class="cta-content">
             <hr>
             <div class="text">
@@ -60,7 +60,7 @@
     </div>
   </div>
 </div>
-<div class="one-column-content">
+<div class="one-column-content" style="background-image: url('<%= cl_image_path 'bg2.jpg' %>'); background-size: cover; background-position: center">
   <div class="container-fluid">
     <div class="cta-content">
       <hr>
@@ -71,7 +71,7 @@
     </div>
   </div>
 </div>
-<div class="one-column-cta">
+<div class="one-column-cta" style="background-image: url('<%= cl_image_path 'bg.jpg' %>'); background-size: cover; background-position: center">
   <div class="container-fluid">
     <div class="cta-content">
       <hr>

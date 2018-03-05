@@ -229,6 +229,7 @@ organization = Organization.new(
 p "Creating projects"
 
 
+
   organization1 = Organization.all.sample
   status = ["Pending", "On Going", "Accepted by the organization", "Declined by organization", "Rejected by the team", "Done"]
   some = ["Translation", "All in blue", "picture uploading", "banners", "specific form", "trello integration"]

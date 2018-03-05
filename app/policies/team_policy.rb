@@ -13,6 +13,10 @@ class TeamPolicy < ApplicationPolicy
     true
   end
 
+  def update?
+    true
+  end
+
   def destroy?
     user == record.user
   end
