@@ -8,6 +8,8 @@ class ProposalsController < ApplicationController
 
   def show
     @proposal.project = @project
+    @proposal.pitch = params[:pitch]
+    @team = Team.find(@proposal.team_id)
     @team_members = TeamMember.where(team_id: @proposal.team_id)
     authorize @proposal
     authorize @project
@@ -15,6 +17,9 @@ class ProposalsController < ApplicationController
 
   def new
     @proposal = Proposal.new
+    team = Team.find(params[:proposal][:team])
+    @proposal.team = team
+    raise
     authorize @proposal
   end
 
@@ -35,12 +40,15 @@ class ProposalsController < ApplicationController
   def edit
     @projects = Project.all
     @team = Team.find(@proposal.team_id)
+    @proposal.team = @team
     authorize @proposal
   end
 
   def update
     @proposal.status = "Pending NGO validation"
     @proposal.pitch = params[:pitch]
+    @team = Team.find(@proposal.team_id)
+    @proposal.team = @team
     @proposal.save!
     redirect_to proposal_path(@proposal)
   end
