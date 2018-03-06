@@ -1,10 +1,10 @@
 <div class="full-height">
   <div class="container">
     <div class="signing-form">
+      <div class="row">
       <div class="text-center">
         <h2>Log in</h2>
       </div>
-      <div class="row">
         <div class="col-xs-8 col-xs-offset-2">
           <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
           <div class="form-inputs">
@@ -20,7 +20,7 @@
             <div class="text-center">
               <%= f.button :submit, "Log in", class: "custom-primary-btn" %>
               <br>
-              <%= render "devise/shared/links" %>
+              <%= render "users/shared/links" %>
             </div>
           </div>
           <% end %>
@@ -29,5 +29,3 @@
     </div>
   </div>
 </div>
-
-
