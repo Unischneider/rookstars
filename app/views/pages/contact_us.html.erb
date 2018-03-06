@@ -1,9 +1,9 @@
 <div class="contact_background" style="background-image: url('http://investoresearch.com/wp-content/uploads/2015/10/ContactUsBackgroundbanner.jpg'); height:820px;">
   <div class="contact_header">
-  <h1 style="color: white; font-size: 80px;">CONTACT</h1>
+    <h1 style="color: white; font-size: 80px;">CONTACT</h1>
   </div>
 </div>
-<div class="address" style="background-color: white; height:820px">
+<div class="address" style="background-color: white;">
   <div class="design_writing">
     <br>
     <div class="white_space">
@@ -24,10 +24,45 @@
     <div
     id="map"
     style="width: 100%;
-    height: 600px;"
+    height: 100%;"
     data-markers="<%= @markers.to_json %>"
     ></div>
   </div>
 </div>
-<br><br><br><br>
-<br><br><br><br>
+
+<div class="newsletter" style="height: 100%; background-color: #0e2227;">
+  <div class="copy">
+    <div class="contact_margin">
+    <div class="wrapper">
+      <div id="sm_wrapper">
+        <div id="sm_top">
+         <li>Subscribe to our Newsletter</li>
+        </div>
+        <div id="sm_content">
+          <p>  </p>
+          <form id="sm_form" action="http://rookstars.eu/wp-content/plugins/mailchimp-subscribe-sm/data-ajax.php" method="post"   class="myform">
+             <input type="hidden" name="ssm_sub_url" class="ssm_sub_url" value="http://rookstars.eu/thank-you/">
+             <input type="text" id="sm_input" class="sm_field" name="sm_name" placeholder="Your name">
+             <input type="email" id="sm_input" class="sm_field" name="sm_email" placeholder="Your email" required=""><br>
+             <input type="submit" name="submit" value="Send" class="sm_submit" id="sm_submit">
+          </form>
+        </div>
+        <div id="sm_footer">
+          <span id="response">
+          </span>
+          <p></p>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+<div class="contact_project">
+  <div class="row">
+      <%= render "components/cards" %>
+    </div>
+</div>
+
+
+
+
