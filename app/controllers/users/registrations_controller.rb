@@ -1,5 +1,11 @@
 class Users::RegistrationsController < Devise::RegistrationsController
-  include Accessible
+  def create
+    super
+    if current_user.photo.file.nil?
+      current_user.photo = "placeholder"
+    end
+  end
+
   private
 
   def sign_up_params

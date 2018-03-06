@@ -698,7 +698,7 @@ p "Creating user"
     photo: "https://source.unsplash.com/person",
     about_me: "#{Faker::SiliconValley.motto} + #{Faker::SiliconValley.quote}"
     )
-  user.remote_photo_url = "https://source.unsplash.com/person"
+  user.remote_photo_url = "https://source.unsplash.com/random"
   user.save
 end
 
