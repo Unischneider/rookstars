@@ -1,4 +1,4 @@
-<div class="header-container-small" style="background-image: url('<%= cl_image_path @proposal.project.photo, crop: :fill %>');">
+r<div class="header-container-small" style="background-image: url('<%= cl_image_path @proposal.project.photo, crop: :fill %>');">
   <div class="header-content">
     <div class="text-center intro-text">
       <h1 class="background_of_text">Team Proposal</h1>
@@ -33,7 +33,7 @@
                 <% if @proposal.joinable %>
                 <p>This team is open for applicants</p>
                 <div class="cta-button">
-                  <%= link_to "Apply", new_project_team_path(@project), class: "custom-primary-btn" %>
+                  <%= link_to "Apply", project_proposal_confirm_path(@project), class: "custom-primary-btn" %>
                 <% else %>
                 <p>This team is closed</p>
                 </div>
