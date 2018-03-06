@@ -7,15 +7,39 @@
   color: white;
 }
 
+.user-add-top {
+  display: flex;
+  justify-content: space-around;
+}
+
+.team-list-items {
+    color: #797979;
+    font-size: 28px;
+    list-style: none;
+  ol {
+    margin-bottom: 40px;
+  }
+}
+.team_list {
+
+  margin-bottom: 50px;
+}
+
 .container-add-user {
+      padding: 60px 0px;
   input#email {
    padding: 0px 64px 8px 11px;
-   margin-top: 31px;
+   margin-top: 10px;
    margin-bottom: 47px;
  }
  text-align: center;
  h1 {
   text-align: center;
+}
+
+p {
+      margin: 0 0 12.5px;
+    color: #797979;
 }
 }
 
