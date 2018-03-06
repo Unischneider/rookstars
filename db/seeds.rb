@@ -236,7 +236,7 @@ p "Creating projects"
   project = Project.new(
     title: "Google Maps integration",
     description: "I would like to have a map displaying our headquarter and where we are stationed around the world.",
-    budget: (100..40_000).to_a.sample,
+    budget: (100..3000).to_a.sample,
     due_date: Faker::Date.forward(100),
     status: status.sample,
     organization: organization1,
@@ -259,7 +259,7 @@ p "Creating projects"
   project = Project.new(
     title: "Complete Website",
     description: "I would like to have a whole new website. It shoulod contain forms to contact us and a volunteer login as well as a messaging area for those.",
-    budget: (100..40_000).to_a.sample,
+    budget: (100..3000).to_a.sample,
     due_date: Faker::Date.forward(100),
     status: status.sample,
     organization: organization1,
@@ -282,8 +282,8 @@ p "Creating projects"
   some = ["Translation", "All in blue", "picture uploading", "banners", "specific form", "trello integration"]
   project = Project.new(
     title: "Sign Up",
-    description: "My website is great but I really would like a Sign up and login area. However, if you have anymore tips to make the website better please come forward.",
-    budget: (100..40_000).to_a.sample,
+    description: "My website is great I think but I really would like a Sign up and login area. However, if you have anymore tips to make the website better please come forward.",
+    budget: (100..3000).to_a.sample,
     due_date: Faker::Date.forward(100),
     status: status.sample,
     organization: organization1,
@@ -307,7 +307,7 @@ p "Creating projects"
   project = Project.new(
     title: "Payment integration",
     description: "I would like a contact us page and a donate button on each page.",
-    budget: (100..40_000).to_a.sample,
+    budget: (100..3000).to_a.sample,
     due_date: Faker::Date.forward(100),
     status: status.sample,
     organization: organization1,
@@ -331,7 +331,7 @@ p "Creating projects"
   project = Project.new(
     title: "Refactoring Website",
     description: "I would like to refactor our website its old and has no taste. I hope you can help!",
-    budget: (100..40_000).to_a.sample,
+    budget: (100..3000).to_a.sample,
     due_date: Faker::Date.forward(100),
     status: status.sample,
     organization: organization1,
@@ -355,7 +355,7 @@ p "Creating projects"
   project = Project.new(
     title: "Make our Website responsive",
     description: "I just realized again that our website is not viewable on any other device then the computer and even there is no taste in it.",
-    budget: (100..40_000).to_a.sample,
+    budget: (100..3000).to_a.sample,
     due_date: Faker::Date.forward(100),
     status: status.sample,
     organization: organization1,
@@ -379,7 +379,7 @@ p "Creating projects"
   project = Project.new(
     title: "About us",
     description: "I want a short and crispy about us page and will give you the text to be displayed.",
-    budget: (100..40_000).to_a.sample,
+    budget: (100..3000).to_a.sample,
     due_date: Faker::Date.forward(100),
     status: status.sample,
     organization: organization1,
@@ -403,7 +403,7 @@ p "Creating projects"
   project = Project.new(
     title: "Complete Website",
     description: "I would like to have a map displaying our headquarter(address) on the homepage and a complete follow up.",
-    budget: (100..40_000).to_a.sample,
+    budget: (100..3000).to_a.sample,
     due_date: Faker::Date.forward(100),
     status: status.sample,
     organization: organization1,
@@ -427,7 +427,7 @@ p "Creating projects"
   project = Project.new(
     title: "Donation",
     description: "I would like a donate button and payment on each page",
-    budget: (100..40_000).to_a.sample,
+    budget: (100..3000).to_a.sample,
     due_date: Faker::Date.forward(100),
     status: status.sample,
     organization: organization1,
