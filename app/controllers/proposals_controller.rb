@@ -1,7 +1,7 @@
 class ProposalsController < ApplicationController
   # before_action :set_booking, only: [:show, :update, :destroy, :confirm]
   before_action :project_finder, only: [:new, :create, :edit]
-  before_action :proposal_finder, only: [:edit, :update]
+  before_action :proposal_finder, only: [:show, :edit, :update]
 
   def index
     @proposals = policy_scope(Proposal).where(user: current_user)
@@ -63,7 +63,7 @@ class ProposalsController < ApplicationController
   end
 
   def proposal_params
-    params.require(:proposal).permit(:team_id, :project_id)
+    params.require(:proposal).permit(:team_id, :project_id, :pitch)
   end
 
   def project_finder
