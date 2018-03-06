@@ -33,6 +33,7 @@ class TeamsController < ApplicationController
 
   def edit
     authorize @team
+    @project = Project.find(@team.projects.first.id)
   end
 
   def update
@@ -58,7 +59,8 @@ class TeamsController < ApplicationController
 
   def project_finder
     # @projects = @team.projects.where { |project| project.teams == @team }
-    @project = Project.find(@team.projects.first.id)
+    # @project = Project.find(@team.projects.first.id)
+    @project = Project.find(params[:project_id])
   end
 
   def project_params
