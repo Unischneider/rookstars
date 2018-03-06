@@ -1,4 +1,4 @@
-.portfolio-box {
+.cards-home {
   position: relative;
   display: block;
   max-width: 650px;
@@ -31,12 +31,12 @@
 
 }
 
-.row.no-gutters > .col-lg-4.col-sm-6 {
+.row > .col-lg-4.col-sm-6 {
   padding-left: 0;
   padding-right: 0;
 }
 
-.portfolio-box .portfolio-box-caption {
+.cards-home .cards-home-caption {
   position: absolute;
   bottom: 0;
   display: block;
@@ -53,7 +53,7 @@
 
 
 
-.portfolio-box .portfolio-box-caption .portfolio-box-caption-content {
+.cards-home .cards-home-caption .cards-home-caption-content {
   position: absolute;
   top: 50%;
   width: 100%;
@@ -61,28 +61,28 @@
   text-align: center;
 }
 
-.portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-category{
+.cards-home .cards-home-caption .cards-home-caption-content .project-category{
   font-family: $headers-font;
 }
-.portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-name {
+.cards-home .cards-home-caption .cards-home-caption-content .project-name {
   font-family: $body-font;
 }
 
-.portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-category {
+.cards-home .cards-home-caption .cards-home-caption-content .project-category {
   font-size: 14px;
   font-weight: 600;
   text-transform: uppercase;
 }
 
-.portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-name {
+.cards-home .cards-home-caption .cards-home-caption-content .project-name {
   font-size: 18px;
 }
 
-.portfolio-box:hover .portfolio-box-caption {
+.cards-home:hover .cards-home-caption {
   opacity: 0.8;
 }
 
-.portfolio-box:focus {
+.cards-home:focus {
   outline: none;
 }
 
