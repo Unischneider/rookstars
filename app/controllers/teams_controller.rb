@@ -1,6 +1,5 @@
 class TeamsController < ApplicationController
   before_action :team_finder, only: [:show, :edit, :update, :destroy]
-  before_action :project_finder, only: [:index, :edit]
 
   def index
     @teams = policy_scope(Team).joins(:team_members).where('team_members.user_id = ? ', current_user.id)
@@ -55,12 +54,6 @@ class TeamsController < ApplicationController
 
   def team_finder
     @team = Team.find(params[:id])
-  end
-
-  def project_finder
-    # @projects = @team.projects.where { |project| project.teams == @team }
-    # @project = Project.find(@team.projects.first.id)
-    @project = Project.find(params[:project_id])
   end
 
   def project_params
