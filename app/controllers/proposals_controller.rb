@@ -1,6 +1,6 @@
 class ProposalsController < ApplicationController
   before_action :project_finder, only: [:show, :new, :create, :edit]
-  before_action :proposal_finder, only: [:show, :edit, :update]
+  before_action :proposal_finder, only: [:show, :edit, :update, :confirm]
 
   def index
     @proposals = policy_scope(Proposal).where(user: current_user)
