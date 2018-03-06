@@ -1,6 +1,7 @@
 .signing-form {
   background-color: $primary;
   border-radius: 10px;
+  margin: 10px 0 ;
 }
 
 .get-in-touch{
@@ -8,7 +9,7 @@
 }
 
 .links-forms {
-  a {
-  padding: 50px;
-  }
+  padding: 10px 0 55px 0;
+  display: flex;
+  justify-content: space-between;
 }
