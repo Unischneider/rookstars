@@ -1,15 +1,13 @@
 <div class="header-container-small" style="background-image: url('<%= image_path "image2.jpg" %>'); background-size: cover; background-position: center">
   <div class="header-content">
     <div class="text-center intro-text">
-      <h1>Support a cause with your work</h1>
+      <h1>find your favorite cause</h1>
     </div>
   </div>
 </div>
 <br>
-<div class="container-cards">
-  <h1 style="color: #005484;" class="text-center">Onboard an ongoing project</h1>
-  <br>
-<div class="container">
-<%= render 'components/cards' %>
-</div>
+<div class="container-fluid p-0">
+  <div class="row no-gutters">
+    <%= render 'components/cards' %>
+  </div>
 </div>

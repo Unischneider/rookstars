@@ -25,20 +25,44 @@
     </div>
   </div>
 -->
+<%= render 'components/progress' %>
+<div class="container-add-user">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <p>Enter up to 4 emails of Rookstars you want to work with</p>
+      </div>
+      <div class="col-xs-12">
+        <div class="user-add-top">
 
-<div class="container">
-  <div class="text-center">
-    <h1>Adding Team Members</h1>
-    <p>Enter up to 4 emails of Rookstars you want to work with</p>
-  </div>
-  <ol id="team_members_list">
-  </ol>
-  <div id="team_members_form">
-    <% if @team.team_members.count < 5 %>
-      <%= render "form", team: @team %>
-    <% end %>
-  </div>
-<%= link_to "Submit", edit_team_path(@team), class: "custom-primary-btn" %>
-</div>
+        <div id="team_members_form">
+          <% if @team.team_members.count < 5 %>
+          <%= render "form", team: @team %>
+          <% end %>
+        </div>
+        </div>
+      </div>
+    </div>
 
+      </div>
+      <hr>
+      <div class="container">
+        <div class="title text-center">
+          <h1 class="text-center">Your Team</h1>
+        </div>
+        <div class="row">
+            <div class="col-xs-6 col-xs-offset-3">
+            <div class="team-list">
+              <div class="team-list-items" id="team_members_list">
+                  <li>Martin (martindfru@gmail.com)</li>
+              </div>
+            </div>
+            </div>
+          <div class="col-xs-12">
+              <div style="margin-top: 30px;"></div>
+                <%= link_to "Submit", edit_team_path(@team), class: "custom-primary-btn" %>
+          </div>
+        </div>
+      </div>
+    </div>
 

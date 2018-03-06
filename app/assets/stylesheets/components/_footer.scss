@@ -1,50 +1,198 @@
 .footer {
-  background-color: #111111;
-    color: #232323;
-    height: 269px;
     position: relative;
-    background-size: cover;
-    border: 0;
-    font-size: 100%;
-    font: inherit;
-    vertical-align: baseline;
-    padding: 11px 20px;
-  ul {
-    list-style: none;
-  }
-
-  .single-forms .form-control {
-    width: 96.5%;
-    font-size: 14px;
-  }
-
-  .inline-forms .form-control {
-    width: 95%;
-    font-size: 14px;
-  }
-
-  a {
-    text-decoration: none;
-    color: white;
-    font-size: 14px;
-  }
-
-  .list-content {
-    padding-top: 30px;
-  }
-
-.list-names {
-    padding-top: 30px;
-  }
-
-  .alt {
-    text-align: left;
-  }
+    width: 100%;
+    min-height: 260px;
+    background: #0e2227;
+    padding: 10px 0;
+    z-index: 1;
 }
 
-.footer-img {
-      position: absolute;
-    right: 51px;
-    bottom: 54px;
-    max-width: 80px;
+
+.slice-footer {
+  width:145px;
+  height:135px;
+  margin-top:-45px;
+
+
+  }
+
+.footer .credits {
+    font-family: 'ProximaNovaBlack', helvetica, arial, sans-serif;
 }
+
+.footer-white {
+    color: #fff;
+    font-weight: normal;
+}
+
+.footer .social-area { margin-top: 90px; width:40%;}
+.footer .social-area ul{
+  z-index:1;
+  display: block;
+      margin-top: -15px;
+  width: 100%;
+  padding: 0;
+  text-align: right;
+  position:absolute;
+  right:7%;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+      -ms-box-sizing: border-box;
+       -o-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.footer .social-area ul li {
+  display: inline-block;
+  text-align: center;
+  line-height: 0;
+}
+.footer .social-area ul li a {
+  font-size: 28px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color:#FFFFFF;
+  text-decoration:none;
+}
+
+.footer .social-area ul li a span{
+  display:none;
+}
+
+.social-area ul li a .icon-instagram:hover { color: #3F729B; }
+.social-area ul li a .icon-facebook:hover { color: #3b5998; }
+.social-area ul li a .icon-behance:hover { color: #1769FF; }
+.social-area ul li a .icon-soundcloud:hover { color: #F76700; }
+
+
+
+
+
+.footer .social-area ul li a i { /* position: absolute; */ display: block; /* right: 0; */ margin-left: 20px; /* width: 58px; */ padding: 0 20px; text-align: center;}
+
+
+/*.footer .credits { position: absolute; font-family: 'Lekton', 'Lato', sans-serif; width: 20%; color:#474747; text-align: left; text-transform: uppercase; font-size: 20px; line-height: 1px; font-weight: 900; padding: 0; left:9%;}*/
+
+
+.footer .credits {
+position: absolute;
+width: 100%;
+color: #474747;
+text-align: center;
+text-transform: uppercase;
+font-size: 20px;
+line-height: 1px;
+padding: 0;
+/* left: 9%; */
+}
+
+.footer .credits p {
+position: absolute;
+text-align: left;
+text-transform: uppercase;
+font-size: 20px;
+line-height: 1px;
+padding: 0;
+left: 9%;
+}
+
+
+
+div.btn-link {
+  display: inline;
+}
+
+.footer a,
+.btn-link,
+.btn-link a,
+.cats a,
+.call-to-action-module h2,
+.call-to-action-module h3,
+.call-to-action-module h4  { position: relative; }
+.footer a:after,
+.btn-link:after,
+.btn-link a:after,
+.cats a:after,
+.cats-blog a:after,
+.action a:after,
+.call-to-action-module h2:after,
+.call-to-action-module h3:after,
+.call-to-action-module h4:after,
+.hero-info a:after,
+.royalSlider.tabs .rsTab:after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #000;
+  pointer-events: none;
+  -webkit-transform: translateY(7px);
+  transform: translateY(7px);
+  transition: -webkit-transform .1s cubic-bezier(0.55,.085,.68,.53),opacity .1s cubic-bezier(0.55,.085,.68,.53);
+  transition: transform .1s cubic-bezier(0.55,.085,.68,.53),opacity .1s cubic-bezier(0.55,.085,.68,.53);
+  opacity: 0;
+}
+.hero-info a:after { bottom: 3px; }
+.pagination-module .btn-link:after { bottom: 49.999%; }
+
+
+/* PETITE BARRE SOUS LES TITRES AU ROLL HOVER */
+
+
+/*.footer a:hover:after,
+.btn-link:hover:after,
+.btn-link a:hover:after,
+.cats a:hover:after,
+.cats-blog a:hover:after,
+.action a:hover:after,
+.call-to-action-module:hover h2:after,
+.call-to-action-module:hover h3:after,
+.call-to-action-module:hover h4:after,
+.hero-info a:hover:after,
+.royalSlider.tabs .rsTab:hover:after, .royalSlider.tabs .rsTab.rsNavSelected:after {
+  opacity: 1;
+  -webkit-transform: none;
+  transform: none;
+  transition: -webkit-transform .2s cubic-bezier(0.25,.46,.45,.94),opacity 0s linear;
+  transition: transform .2s cubic-bezier(0.25,.46,.45,.94),opacity 0s linear;
+  transition-delay: 0s;
+}
+*/
+
+
+
+
+.shr-btn-facebook {
+  background:url(img/facebook-icon.png) no-repeat center;
+    }
+
+.shr-btn-instagram {
+  background:url(img/instagram-icon.png) no-repeat center;
+    }
+
+.shr-btn-behance {
+  background:url(img/behance-icon.png) no-repeat center;
+    }
+
+.shr-btn-soundcloud {
+  background:url(img/soundcloud-icon.png) no-repeat center;
+    }
+
+.cats a:after,
+.cats-blog a:after { background: #fff85f; }
+.cats-blog a:after { height: 1px; }
+.action a:after { background: #fff85f; }
+.call-to-action-module h2:after,
+.call-to-action-module h3:after,
+.call-to-action-module h4:after { background: #fff85f; }
+.footer .shr-btn-twitter:after { background: #00aced; }
+.footer .shr-btn-facebook:after { background: #3b5998; }
+.footer .shr-btn-behance:after { background: #1769FF; }
+.footer .shr-btn-pinterest:after { background: #cb2027; }
+.footer .shr-btn-instagram:after { background: #3F729B; }
+.footer .shr-btn-soundcloud:after { background: #F76700; }
+.footer .shr-btn-linkedin:after { background: #3399CC; }
+.footer .shr-btn-dribbble:after { background: #EA4C89; }
+.footer .shr-btn-flickr:after { background: #FF0084; }
+.footer .shr-btn-gplus:after { background: #DD4B39; }
