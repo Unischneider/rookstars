@@ -18,7 +18,6 @@ class ProjectsController < ApplicationController
   end
 
   def create
-
     if current_user.class == Organization.class
       @project = Project.new(valid_params)
       authorize @project
