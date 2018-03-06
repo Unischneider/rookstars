@@ -9,7 +9,7 @@
           <h1>Seems like you don't have a team yet.</h1>
             <p>Go on and create your first one!</p>
           <div class="cta-button">
-            <%= link_to "Create a team!", project_teams_path, class: "custom-primary-btn" %>
+            <%= link_to "Create a team!", project_teams_path,method: :post, class: "custom-primary-btn" %>
           </div>
         </div>
       </div>
@@ -23,7 +23,16 @@
             <%# f.label :team, value: "#{team.lead_dev.map {|member| member.user.first_name}}'s team" %>
             <%# f.radio_button :team, team.lead_dev, checked: false %>
             <%# end %>
-            <%= f.input :team, collection: @teams, as: :radio_buttons, label_method: :lead_dev_label, label: false, hint: false, error: false %>
+            <%# f.input :team, collection: @teams, as: :radio_buttons, label_method: :lead_dev_label, label: false, hint: false, error: false %>
+            <% @teams.each do |team| %>
+              <input type="radio" value="<%= team.id %>" name="proposal[team]">
+              <%= team.lead_dev_label %>
+              <ul>
+                <% team.team_members.each do |team_member| %>
+                  <li><%= team_member.user.first_name %></li>
+                <% end %>
+              </ul>
+            <% end %>
             <%= f.submit class: "custom-primary-btn" %>
             <% end %>
           </div>
