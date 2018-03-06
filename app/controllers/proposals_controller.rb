@@ -33,7 +33,6 @@ class ProposalsController < ApplicationController
   end
 
   def edit
-    raise
     @projects = Project.all
     @team = Team.find(@proposal.team_id)
     authorize @proposal
@@ -41,6 +40,7 @@ class ProposalsController < ApplicationController
 
   def update
     @proposal.status = "Pending NGO validation"
+    @proposal.pitch = params[:pitch]
     @proposal.save!
     redirect_to proposal_path(@proposal)
   end
