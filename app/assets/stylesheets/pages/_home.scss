@@ -6,3 +6,49 @@ h1 {
   text-align: left;
   color: $secondary;
 }
+
+.message-form {
+  height: 300px;
+  margin-top: 30px;
+  p  {
+    font-weight: bold;
+    font-size: 24px;
+    text-align: center;
+    color: white;
+  }
+}
+
+.container-cards {
+      padding: 3px 0px 60px 0px;
+}
+
+.icon-steps {
+ color: white;
+ height: 490px;
+ padding: 51px 0px 62px 0px;
+ background-image: linear-gradient(to right, #92fe9d -100%, #00c9ff 100%);
+ background-color: blue;
+ .icon-container {
+  padding: 50px 0px 0px 0px;
+}
+p {
+  font-size: 14px;
+}
+h1 {
+  color: white;
+}
+
+hr {
+  margin-top: 16px;
+  margin-bottom: 16px;
+  width: 78px;
+  border-width: 6px;
+  border-color: #25b1dc;
+  text-align: left;
+}
+}
+
+.list-icon {
+  margin-top: 3px;
+  max-height: 80px;
+}

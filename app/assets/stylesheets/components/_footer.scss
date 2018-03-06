@@ -2,6 +2,7 @@
   background-color: #111111;
     color: #232323;
     height: 269px;
+    position: relative;
     background-size: cover;
     border: 0;
     font-size: 100%;
@@ -39,4 +40,11 @@
   .alt {
     text-align: left;
   }
+}
+
+.footer-img {
+      position: absolute;
+    right: 51px;
+    bottom: 54px;
+    max-width: 80px;
 }

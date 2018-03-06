@@ -18,7 +18,7 @@ class ProposalPolicy < ApplicationPolicy
   end
 
   def update?
-    user == record.user
+    true
   end
 
   def confirm?

@@ -58,7 +58,7 @@ organization = Organization.new(
      name: "Danish Refugee Council",
      password: "password123"
     )
-  organization.remote_photo_url = "https://drc.ngo/media/1273463/billeder-til-elfenbenskysten.jpg"
+  organization.remote_photo_url = "https://www.newvision.co.ug/w-images/0e9fb529-4c02-4d29-8191-42385501ffe9/1/DRC-703x422.jpg"
   organization.save
 
   organization = Organization.new(
@@ -102,7 +102,7 @@ organization = Organization.new(
      name: "Doctors Without Borders",
      password: "password123"
     )
-  organization.remote_photo_url = "http://media.msf.org/Doc/MSF/Media/TR1/5/4/b/3/MSF120855.jpg"
+  organization.remote_photo_url = "https://upload.wikimedia.org/wikipedia/en/thumb/b/bd/Msf_logo.svg/1200px-Msf_logo.svg.png"
   organization.save
 
   organization = Organization.new(
@@ -113,7 +113,7 @@ organization = Organization.new(
      name: "Cure Violence",
      password: "password123"
     )
-  organization.remote_photo_url = "https://www.ngoadvisor.net/wp-content/uploads/2016/01/Dont-Shoot-with-CV-Logo.jpg"
+  organization.remote_photo_url = "https://illinois.edu/skinDesigner/css/8365/Cure_Violence_Header.jpg"
   organization.save
 
   organization = Organization.new(
@@ -124,7 +124,7 @@ organization = Organization.new(
      name: "Mercy Corps",
      password: "password123"
     )
-  organization.remote_photo_url = "https://www.findit.com/Gallery/bd35bc75-617b-4593-bbb1-ec1c6462373a/ee6035d2-019b-4e74-b23b-0595e4dbad8e_bd35bc75-617b-4593-bbb1-ec1c6462373a.jpg"
+  organization.remote_photo_url = "https://upload.wikimedia.org/wikipedia/commons/9/96/MC_New_Logo_Horizontal_PMS_186_PC_10-15.jpg"
   organization.save
 
   organization = Organization.new(
@@ -190,7 +190,7 @@ organization = Organization.new(
      name: "Avaaz",
      password: "password123"
     )
-  organization.remote_photo_url = "https://secure.avaaz.org/campaign/static/images/blue/_sample/whatwedo.jpg?1515761494"
+  organization.remote_photo_url = "https://secure.avaaz.org/campaign/static/images/blue/logo_en.png?1518258155"
   organization.save
 
   organization = Organization.new(
@@ -230,7 +230,7 @@ p "Creating projects"
 
 
 
-  organization1 = Organization.all.sample
+  organization1 = Organization.find_by(name: "Internet Society")
   status = ["Pending", "On Going", "Accepted by the organization", "Declined by organization", "Rejected by the team", "Done"]
   some = ["Translation", "All in blue", "picture uploading", "banners", "specific form", "trello integration"]
   project = Project.new(
@@ -250,10 +250,10 @@ p "Creating projects"
     messaging_integration: false,
     other: some.sample,
     )
-  project.remote_photo_url = organization1.photo.to_s
+  project.remote_photo_url = "http://enterprise54.com/wp-content/uploads/2014/07/internet-governance-660x400.jpg"
   project.save
 
-  organization1 = Organization.all.sample
+  organization1 = Organization.find_by(name: "Avaaz")
   status = ["Pending", "On Going", "Accepted by the organization", "Declined by organization", "Rejected by the team", "Done"]
   some = ["Translation", "All in blue", "picture uploading", "banners", "specific form", "trello integration"]
   project = Project.new(
@@ -273,11 +273,11 @@ p "Creating projects"
     messaging_integration: true,
     other: some.sample,
     )
-  project.remote_photo_url = organization1.photo.to_s
+  project.remote_photo_url = "https://secure.avaaz.org/campaign/static/images/blue/_sample/whatwedo.jpg?1515761494"
   project.save
 
 
-  organization1 = Organization.all.sample
+  organization1 = Organization.find_by(name: "Red Cross")
   status = ["Pending", "On Going", "Accepted by the organization", "Declined by organization", "Rejected by the team", "Done"]
   some = ["Translation", "All in blue", "picture uploading", "banners", "specific form", "trello integration"]
   project = Project.new(
@@ -297,11 +297,11 @@ p "Creating projects"
     messaging_integration: false,
     other: some.sample,
     )
-  project.remote_photo_url = organization1.photo.to_s
+  project.remote_photo_url = "http://www.ifrc.org/Global/Photos/Asia%20Pacific/201701/20170112_WS_Thai_flooding_mainpic.jpg"
   project.save
 
 
-  organization1 = Organization.all.sample
+  organization1 = Organization.find_by(name: "BRAC")
   status = ["Pending", "On Going", "Accepted by the organization", "Declined by organization", "Rejected by the team", "Done"]
   some = ["Translation", "All in blue", "picture uploading", "banners", "specific form", "trello integration"]
   project = Project.new(
@@ -321,11 +321,11 @@ p "Creating projects"
     messaging_integration: false,
     other: some.sample,
     )
-  project.remote_photo_url = organization1.photo.to_s
+  project.remote_photo_url = "https://www.ngoadvisor.net/wp-content/uploads/2016/01/AWright_SierraLeone_003129.jpg"
   project.save
 
 
-  organization1 = Organization.all.sample
+  organization1 = Organization.find_by(name: "Doctors Without Borders")
   status = ["Pending", "On Going", "Accepted by the organization", "Declined by organization", "Rejected by the team", "Done"]
   some = ["Translation", "All in blue", "picture uploading", "banners", "specific form", "trello integration"]
   project = Project.new(
@@ -345,11 +345,11 @@ p "Creating projects"
     messaging_integration: true,
     other: some.sample,
     )
-  project.remote_photo_url = organization1.photo.to_s
+  project.remote_photo_url = "http://media.msf.org/Doc/MSF/Media/TR1/5/4/b/3/MSF120855.jpg"
   project.save
 
 
-  organization1 = Organization.all.sample
+  organization1 = Organization.find_by(name: "Danish Refugee Council")
   status = ["Pending", "On Going", "Accepted by the organization", "Declined by organization", "Rejected by the team", "Done"]
   some = ["Translation", "All in blue", "picture uploading", "banners", "specific form", "trello integration"]
   project = Project.new(
@@ -369,11 +369,11 @@ p "Creating projects"
     messaging_integration: false,
     other: some.sample,
     )
-  project.remote_photo_url = organization1.photo.to_s
+  project.remote_photo_url = "https://drc.ngo/media/1273463/billeder-til-elfenbenskysten.jpg"
   project.save
 
 
-  organization1 = Organization.all.sample
+  organization1 = Organization.find_by(name: "Amnesty International")
   status = ["Pending", "On Going", "Accepted by the organization", "Declined by organization", "Rejected by the team", "Done"]
   some = ["Translation", "All in blue", "picture uploading", "banners", "specific form", "trello integration"]
   project = Project.new(
@@ -393,11 +393,11 @@ p "Creating projects"
     messaging_integration: false,
     other: some.sample,
     )
-  project.remote_photo_url = organization1.photo.to_s
+  project.remote_photo_url = "https://www.amnesty.de/sites/default/files/styles/1218x600/public/2017-05/Australien-Amnesty-Action.jpg?itok=m0lzeOCo"
   project.save
 
 
-  organization1 = Organization.all.sample
+  organization1 = Organization.find_by(name: "UNAIDS")
   status = ["Pending", "On Going", "Accepted by the organization", "Declined by organization", "Rejected by the team", "Done"]
   some = ["Translation", "All in blue", "picture uploading", "banners", "specific form", "trello integration"]
   project = Project.new(
@@ -417,11 +417,11 @@ p "Creating projects"
     messaging_integration: false,
     other: some.sample,
     )
-  project.remote_photo_url = organization1.photo.to_s
+  project.remote_photo_url = "http://mm.one.un.org/content/dam/unct/myanmar/img/unct_mm_UNAIDS_seminar_lead%20image.jpg/jcr:content/renditions/cq5dam.web.540.390.jpeg"
   project.save
 
 
-  organization1 = Organization.all.sample
+  organization1 = Organization.find_by(name: "Orbis International")
   status = ["Pending", "On Going", "Accepted by the organization", "Declined by organization", "Rejected by the team", "Done"]
   some = ["Translation", "All in blue", "picture uploading", "banners", "specific form", "trello integration"]
   project = Project.new(
@@ -441,30 +441,265 @@ p "Creating projects"
     messaging_integration: false,
     other: some.sample,
     )
-  project.remote_photo_url = organization1.photo.to_s
+  project.remote_photo_url = "http://alliancemedicalgas.net/wp-content/uploads/2014/01/7743_10151889870945172_1027993467_n-1.jpg"
   project.save
 
 
+  organization1 = Organization.find_by(name: "Acumen Fund")
+  status = ["Pending", "On Going", "Accepted by the organization", "Declined by organization", "Rejected by the team", "Done"]
+  some = ["Translation", "All in blue", "picture uploading", "banners", "specific form", "trello integration"]
+  project = Project.new(
+    title: "Maps needs styling",
+    description: "I would like to have a new map displaying our headquarter and where we are stationed around the world.",
+    budget: (100..40_000).to_a.sample,
+    due_date: Faker::Date.forward(100),
+    status: status.sample,
+    organization: organization1,
+    db_sql: false,
+    maps: true,
+    forms: false,
+    mail_integration: false,
+    payment_integration: false,
+    sign_up_log_in: false,
+    landing_page: false,
+    messaging_integration: false,
+    other: some.sample,
+    )
+  project.remote_photo_url = "https://www.johnsonbanks.co.uk/content/projects/_quarter/Acumen-biz-card7.jpg"
+  project.save
 
+  organization1 = Organization.find_by(name: "Cure Violence")
+  status = ["Pending", "On Going", "Accepted by the organization", "Declined by organization", "Rejected by the team", "Done"]
+  some = ["Translation", "All in blue", "picture uploading", "banners", "specific form", "trello integration"]
+  project = Project.new(
+    title: "Complete Website",
+    description: "A new website, that contains forms to contact us and a volunteer login as well as a messaging area for those.",
+    budget: (100..40_000).to_a.sample,
+    due_date: Faker::Date.forward(100),
+    status: status.sample,
+    organization: organization1,
+    db_sql: false,
+    maps: false,
+    forms: true,
+    mail_integration: true,
+    payment_integration: false,
+    sign_up_log_in: true,
+    landing_page: true,
+    messaging_integration: true,
+    other: some.sample,
+    )
+  project.remote_photo_url = "https://www.ngoadvisor.net/wp-content/uploads/2016/01/Dont-Shoot-with-CV-Logo.jpg"
+  project.save
+
+
+  organization1 = Organization.find_by(name: "Chatham House")
+  status = ["Pending", "On Going", "Accepted by the organization", "Declined by organization", "Rejected by the team", "Done"]
+  some = ["Translation", "All in blue", "picture uploading", "banners", "specific form", "trello integration"]
+  project = Project.new(
+    title: "Login",
+    description: "I would like a Sign up and login area. However, if you have anymore tips to make the website better please come forward.",
+    budget: (100..40_000).to_a.sample,
+    due_date: Faker::Date.forward(100),
+    status: status.sample,
+    organization: organization1,
+    db_sql: false,
+    maps: false,
+    forms: true,
+    mail_integration: false,
+    payment_integration: false,
+    sign_up_log_in: true,
+    landing_page: false,
+    messaging_integration: false,
+    other: some.sample,
+    )
+  project.remote_photo_url = "https://www.stopkillerrobots.org/wp-content/uploads/2014/03/ChathamHouse_CR.jpg"
+  project.save
+
+
+  organization1 = Organization.find_by(name: "JCI")
+  status = ["Pending", "On Going", "Accepted by the organization", "Declined by organization", "Rejected by the team", "Done"]
+  some = ["Translation", "All in blue", "picture uploading", "banners", "specific form", "trello integration"]
+  project = Project.new(
+    title: "Payment option between Paypal etc",
+    description: "I would like a contact us page and a donate button on each page. It should include different payment options.",
+    budget: (100..40_000).to_a.sample,
+    due_date: Faker::Date.forward(100),
+    status: status.sample,
+    organization: organization1,
+    db_sql: false,
+    maps: false,
+    forms: true,
+    mail_integration: true,
+    payment_integration: true,
+    sign_up_log_in: false,
+    landing_page: false,
+    messaging_integration: false,
+    other: some.sample,
+    )
+  project.remote_photo_url = "http://jciranchi.com/wp-content/themes/jcix/images/mission.jpg"
+  project.save
+
+
+  organization1 = Organization.find_by(name: "Wikimedia Foundation")
+  status = ["Pending", "On Going", "Accepted by the organization", "Declined by organization", "Rejected by the team", "Done"]
+  some = ["Translation", "All in blue", "picture uploading", "banners", "specific form", "trello integration"]
+  project = Project.new(
+    title: "Whole new design",
+    description: "Our website needs a new design in the logo colours!",
+    budget: (100..40_000).to_a.sample,
+    due_date: Faker::Date.forward(100),
+    status: status.sample,
+    organization: organization1,
+    db_sql: true,
+    maps: true,
+    forms: true,
+    mail_integration: true,
+    payment_integration: false,
+    sign_up_log_in: false,
+    landing_page: true,
+    messaging_integration: true,
+    other: some.sample,
+    )
+  project.remote_photo_url = "https://media.glassdoor.com/l/38331/wikimedia-foundation-office.jpg"
+  project.save
+
+
+  organization1 = Organization.find_by(name: "Partners in Health")
+  status = ["Pending", "On Going", "Accepted by the organization", "Declined by organization", "Rejected by the team", "Done"]
+  some = ["Translation", "All in blue", "picture uploading", "banners", "specific form", "trello integration"]
+  project = Project.new(
+    title: "Make our Website suitable for all devices",
+    description: "The website should eb useable by all devices such as iPad, iPhone, etc",
+    budget: (100..40_000).to_a.sample,
+    due_date: Faker::Date.forward(100),
+    status: status.sample,
+    organization: organization1,
+    db_sql: false,
+    maps: false,
+    forms: true,
+    mail_integration: false,
+    payment_integration: false,
+    sign_up_log_in: true,
+    landing_page: true,
+    messaging_integration: false,
+    other: some.sample,
+    )
+  project.remote_photo_url = "http://i.vimeocdn.com/video/609508806_1280x720.jpg"
+  project.save
+
+
+  organization1 = Organization.find_by(name: "Ceres")
+  status = ["Pending", "On Going", "Accepted by the organization", "Declined by organization", "Rejected by the team", "Done"]
+  some = ["Translation", "All in blue", "picture uploading", "banners", "specific form", "trello integration"]
+  project = Project.new(
+    title: "Contact us",
+    description: "I want a short and crispy contact us page and will give you the text to be displayed.",
+    budget: (100..40_000).to_a.sample,
+    due_date: Faker::Date.forward(100),
+    status: status.sample,
+    organization: organization1,
+    db_sql: false,
+    maps: true,
+    forms: true,
+    mail_integration: true,
+    payment_integration: false,
+    sign_up_log_in: false,
+    landing_page: false,
+    messaging_integration: false,
+    other: some.sample,
+    )
+  project.remote_photo_url = "https://www.trendrr.net/wp-content/uploads/2017/04/Ceres-Top-Famous-NGOs-in-The-World-2018.jpg"
+  project.save
+
+
+  organization1 = Organization.find_by(name: "CARE")
+  status = ["Pending", "On Going", "Accepted by the organization", "Declined by organization", "Rejected by the team", "Done"]
+  some = ["Translation", "All in blue", "picture uploading", "banners", "specific form", "trello integration"]
+  project = Project.new(
+    title: "Messaging field",
+    description: "I want a messaging field wjich can be used for immediate responses by our volunteers.",
+    budget: (100..40_000).to_a.sample,
+    due_date: Faker::Date.forward(100),
+    status: status.sample,
+    organization: organization1,
+    db_sql: false,
+    maps: false,
+    forms: true,
+    mail_integration: true,
+    payment_integration: false,
+    sign_up_log_in: false,
+    landing_page: false,
+    messaging_integration: false,
+    other: some.sample,
+    )
+  project.remote_photo_url = "https://www.tmc.ac.uk/sites/default/files/3_42.jpg"
+  project.save
+
+  organization1 = Organization.find_by(name: "ISO")
+  status = ["Pending", "On Going", "Accepted by the organization", "Declined by organization", "Rejected by the team", "Done"]
+  some = ["Translation", "All in blue", "picture uploading", "banners", "specific form", "trello integration"]
+  project = Project.new(
+    title: "Search Bar",
+    description: "I would like a search bar so that our visitors can find what they are looking for without scrolling for ages.",
+    budget: (100..40_000).to_a.sample,
+    due_date: Faker::Date.forward(100),
+    status: status.sample,
+    organization: organization1,
+    db_sql: false,
+    maps: false,
+    forms: true,
+    mail_integration: false,
+    payment_integration: false,
+    sign_up_log_in: false,
+    landing_page: false,
+    messaging_integration: false,
+    other: some.sample,
+    )
+  project.remote_photo_url = "https://www.iso.org/files/live/sites/isoorg/files/about%20ISO/img/ISO_banner_Vernier.jpg/thumbnails/1200x300"
+  project.save
+
+  organization1 = Organization.find_by(name: "Mercy Corps")
+  status = ["Pending", "On Going", "Accepted by the organization", "Declined by organization", "Rejected by the team", "Done"]
+  some = ["Translation", "All in blue", "picture uploading", "banners", "specific form", "trello integration"]
+  project = Project.new(
+    title: "Page with all Projects",
+    description: "My team and I would like a page showing all our current projects and where they are located.",
+    budget: (100..40_000).to_a.sample,
+    due_date: Faker::Date.forward(100),
+    status: status.sample,
+    organization: organization1,
+    db_sql: true,
+    maps: true,
+    forms: false,
+    mail_integration: true,
+    payment_integration: false,
+    sign_up_log_in: false,
+    landing_page: false,
+    messaging_integration: false,
+    other: some.sample,
+    )
+  project.remote_photo_url = "https://www.palantir.com/philanthropy-engineering/annual-report/2016/resources/images/masthead-mercycorps-2.jpg"
+  project.save
 p "Creating teams"
 
 20.times do
-  Team.create(about_us: Faker::Lorem.paragraph)
+  Team.create(about_us: ["We are fast working and accurate people.", "We want to help for nearly no money.", "Hey we are an open team that communicates and keeps everyone up to date."].sample)
 end
 
 p "Creating user"
 
 20.times do
-  user = User.create(
+  user = User.new(
     email: Faker::Internet.email,
     password: "password123",
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
-    github: "https://github.com/Jb5322",
+    github: "https://github.com/juliettech13",
     photo: "https://source.unsplash.com/person",
     about_me: "#{Faker::SiliconValley.motto} + #{Faker::SiliconValley.quote}"
     )
-
+  user.remote_photo_url = "https://source.unsplash.com/person"
+  user.save
 end
 
 p "Creating team member"
@@ -483,7 +718,7 @@ p "Creating applications"
 
 20.times do
   Proposal.create(
-    pitch: Faker::Lorem.paragraph,
+    pitch: ["Me and my team would love to help you out. However, it would be great to get some financial help!", "We are work expirienced alumni from Le Wagon who are inquisitive and want to keep learning"].sample,
     status: ["Pending Developer request", "Pending NGO validation", "Confirmed", "Canceled"].sample,
     team: Team.all.sample,
     project: Project.all.sample

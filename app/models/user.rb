@@ -8,6 +8,7 @@ class User < ApplicationRecord
 
   accepts_nested_attributes_for :team_members
   before_create :make_moderator
+  mount_uploader :photo, PhotoUploader, :mount_on => :photo
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable,
@@ -34,7 +35,7 @@ class User < ApplicationRecord
         user.last_name = auth.info.name.split.last
       end
       p auth.info.image
-      user.photo = auth.info.image # assuming the user model has an image
+      user.remote_photo_url = auth.info.image # assuming the user model has an image
       user.moderator = true
       # If you are using confirmable and the provider(s) you use validate emails,
       # uncomment the line below to skip the confirmation emails.
