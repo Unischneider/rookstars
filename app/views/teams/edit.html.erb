@@ -1,13 +1,17 @@
+<%= render 'components/progress' %>
+<div class="container-add-about">
 <div class="container">
   <div class="col-xs-6 col-xs-offset-3">
     <div class="form">
       <div class="text-center">
         <%= simple_form_for @team do |f| %>
-          <%= f.label :about_us, "Tell the NGO about your team." %>
-          <%= f.input :about_us, label: " How did you meet? Why are you the best combination for the job?" %>
+          <h1 class="text-center"><%= f.label :about_us, "Tell the NGO about your team." %></h1>
+          <p>How did you meet? Why are you the best combination for the job?</p>
+           <%= f.input :about_us, label: false %>
           <%= f.submit "Add your proposal", class: "custom-primary-btn" %>
         <% end %>
       </div>
     </div>
   </div>
+</div>
 </div>

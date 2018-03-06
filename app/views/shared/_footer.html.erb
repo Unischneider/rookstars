@@ -1,38 +1,28 @@
-<div class="container-fluid">
-  <div class="row">
-    <div class="footer" style="background-image: url('<%= cl_image_path 'bg2.jpg' %>'); background-size: cover; background-position: center">
-      <div class="content">
-        <div class="list-content">
-          <div class="col-xs-4 list-names">
-            <section>
-              <ul class="alt">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Our NGOs</a></li>
-                <li><a href="#">Posted Jobs</a></li>
-            <ul style="margin-top: 21px;" class="list-inline alt">
-              <li><a href="#"><i style="font-size: 20px;" class="icon fab fa-twitter">&nbsp;</i></a></li>
-              <li><a href="#"><i style="font-size: 20px;" class="icon fab fa-facebook">&nbsp;</i></a></li>
-              <li><a href="#"><i style="font-size: 20px;" class="icon fab fa-instagram">&nbsp;</i></a></li>
-              <li><a href="#"><i style="font-size: 20px;" class="icon fab fa-github">&nbsp;</i></a></li>
-            </ul>
-
-              </ul>
-
-
-            </section>
-          </div>
-          <div>
-              <%= link_to root_path do  %>
-                <%= image_tag "favicon.png", class: "footer-img" %>
-              <% end %>
-          </div>
-
-      </div>
-    </div>
+<footer class="footer">
+  <div class="social-area">
+    <ul>
+      <li>
+        <a href="#" target="_blank" title="Join us on Facebook" class="icon fab fa-facebook">
+        <span>Facebook</span><i class="icon-facebook"></i></a>
+      </li>
+      <li>
+        <a href="#" target="_blank" title="Join us on Instagram" class="icon fab fa-instagram">
+        <span>Instagram</span><i class="icon-instagram"></i></a>
+      </li>
+      <li><a href="#" target="_blank" title="Join us on Twitter" class="icon fab fa-twitter">
+        <span>Twitter</span><i class="icon-behance"></i></a>
+      </li>
+      <li>
+        <a href="#" target="_blank" title="Join us on Github" class="icon fab fa-github">
+        <span>Github</span><i class="icon-soundcloud"></i></a>
+      </li>
+    </ul>
   </div>
-</div>
-</div>
+  <div class="credits">
+    <p>©2018 <span class="footer-white">RookStars</span></p>
+    <%= image_tag "favicon.png", class: "slice-footer", alt: "Rookstars" %>
+  </div>
+</footer>
 
 
 

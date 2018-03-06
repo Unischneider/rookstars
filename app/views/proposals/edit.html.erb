@@ -1,23 +1,20 @@
-  <%= render 'components/progress' %>
-  <div class="full-height">
+<%= render 'components/progress' %>
+
+  <div class="container-add-description">
     <div class="container">
-      <div class="row">
-        <div class="info">
-        </div>
-        <div class="col-xs-12 ">
-          <div class="proposal-form">
-            <div class="form">
-              <%= form_for [@project, @proposal] do |f| %>
-                <%= fields_for :proposal do |proposal| %>
-                <%= proposal.label "Tell us about how your team is planning on working on the project" %>
-                <br>
-                <%= proposal.text_area :pitch, placeholder: "Who will be working on what? How will you implement the feature? How long will it take you?" %>
-                <% end %>
-                <br>
-                <%= f.button :submit, class: "custom-primary-btn" %>
-              <% end %>
-            </div>
-          </div>
+      <div class="col-xs-6 col-xs-offset-3">
+        <div class="form">
+
+            <%= simple_form_for [@project, @proposal] do |f| %>
+            <h1 class="text-center"><%= f.label :pitch, "Your Pitch" %></h1>
+            <p>What is your value proposition for the NGO?</p>
+            <%= fields_for :proposal do |proposal| %>
+            <%= proposal.text_area :pitch %>
+            <% end %>
+            <br>
+            <%= f.button :submit, class: "custom-primary-btn" %>
+            <% end %>
+
         </div>
       </div>
     </div>
