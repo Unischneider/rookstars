@@ -1,66 +1,44 @@
-<%#= render 'components/progress' %>
-<div class="container">
-
-     <!--  <div class="col-xs-8 col-xs-offset-2">
-        <div class="team-members text-center">
-          <h1>Add Your Team Members</h1>
-          <%#= simple_form_for [@team, @team_member] do |f| %>
-            <div class="col-xs-6">
-              <%#= f.input :user, label: false  %>
-              <%#= f.input :user, label: false  %>
-              <%#= f.input :user, label: false  %>
-            </div>
-            <div class="col-xs-6">
-              <%#= f.input :user, label: false  %>
-              <%#= f.input :user, label: false  %>
-              <%#= f.input :user, label: false  %>
-            </div>
-              <%#= f.input :lead_dev, label: "Are you the team leader?" %>
-            <div class="col-xs-12">
-              2<%#= f.button :submit, "Start Your Project Application", class: "custom-primary-btn"  %>
-            </div> -->
-      <div class="col-xs-6 col-xs-offset-3">
-
-          <div class="title">
-            <h1>Invite your teammates</h1>
-          </div>
-          <div class="form">
-          <%= form_tag team_team_members_path do %>
-            <% @members.each do |member| %>
-                <div class="col xs-6">
-              <%= fields_for 'users[]', member do |m| %>
-                <%# m.text_field :lead_dev %>
-
-                  <%= m.label 'first_name', "First name" %>
-                  <%= m.text_field :first_name %>
-                </div>
-                <div class="col-xs-6">
-                  <%= m.label 'email', "Email" %>
-                  <%= m.text_field :email %>
-                </div>
-                <!-- <div class="field">
-                  <%# m.fields_for "user" do |p| %>
-                  <%# end %>
-                </div> -->
-              <% end %>
-            <% end %>
-           <div class="actions">
-            <%= submit_tag "Send invitations", class: "custom-primary-btn" %>
-           </div>
-          <% end %>
-
-
+<!-- INVITE BY EMAIL FORM -->
+<!-- <div class="container">
+  <div class="col-xs-6 col-xs-offset-3">
+    <div class="title">
+      <h1>Invite your teammates</h1>
+    </div>
+    <div class="form">
+      <%#= form_tag team_team_members_path do %>
+      <%# @members.each do |member| %>
+      <div class="col xs-6">
+        <%#= fields_for 'users[]', member do |m| %>
+        <%#= m.label 'first_name', "First name" %>
+        <%#= m.text_field :first_name %>
       </div>
-
+      <div class="col-xs-6">
+        <%#= m.label 'email', "Email" %>
+        <%#= m.text_field :email %>
+      </div>
+      <%# end %>
+      <%# end %>
+      <div class="actions">
+        <%#= submit_tag "Send invitations", class: "custom-primary-btn" %>
+      </div>
+      <%# end %>
+    </div>
   </div>
+-->
 
-<%# end %>
-<%#= form_for [@team, @team_member] do |f| %>
-<%#= f.check_box :lead_dev %>
-<%#= f.fields_for :users do |p| %>
-<%#= p.text_field :email %>
-<%#= p.text_field :first_name %>
-<%# end %>
-<%#= f.submit "Start Your Project Application", class: "custom-primary-btn"  %>
+<div class="container">
+  <div class="text-center">
+    <h1>Adding Team Members</h1>
+    <p>Enter up to 4 emails of Rookstars you want to work with</p>
+  </div>
+  <ol id="team_members_list">
+  </ol>
+  <div id="team_members_form">
+    <% if @team.team_members.count < 5 %>
+      <%= render "form", team: @team %>
+    <% end %>
+  </div>
+<%= link_to "Submit", edit_team_path(@team), class: "custom-primary-btn" %>
+</div>
 
 

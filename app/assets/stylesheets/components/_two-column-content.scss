@@ -25,6 +25,12 @@ p {
 }
 .text {
   margin-bottom: 35px;
+  .organization_photo {
+    padding-top: 15px;
+    img {
+    max-width: 330px;
+    }
+  }
 }
 .left-cta {
   background-size: cover;

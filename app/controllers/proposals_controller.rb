@@ -1,25 +1,28 @@
 class ProposalsController < ApplicationController
-  before_action :set_booking, only: [:show, :update, :destroy, :confirm]
+  before_action :project_finder, only: [:show, :new, :create, :edit, :update]
+  before_action :proposal_finder, only: [:show, :edit, :update, :confirm]
 
   def index
     @proposals = policy_scope(Proposal).where(user: current_user)
   end
 
   def show
-    @project = @proposal.project
+    @proposal.project = @project
+    @team = Team.find(@proposal.team_id)
     @team_members = TeamMember.where(team_id: @proposal.team_id)
     authorize @proposal
     authorize @project
   end
 
   def new
-    @project = Project.find(params[:project_id])
     @proposal = Proposal.new
+    team = Team.find(params[:proposal][:team])
+    @proposal.team = team
+    raise
     authorize @proposal
   end
 
   def create
-    @project = Project.find(params[:project_id])
     @proposal = Proposal.new(proposal_params)
     @proposal.project = @project
     @proposal.status = "Pending NGO validation"
@@ -35,16 +38,19 @@ class ProposalsController < ApplicationController
 
   def edit
     @projects = Project.all
-    @project = Project.find(params[:project_id])
-    @proposal = Proposal.find(params[:id])
     @team = Team.find(@proposal.team_id)
+    @proposal.team = @team
     authorize @proposal
   end
 
   def update
-    @proposal.status = "Pending NGO validation"
-    @proposal.save!
-    redirect_to proposal_path(@proposal)
+    # @proposal.status = "Pending NGO validation"
+    @proposal.update(proposal_params)
+    # @team = Team.find(@proposal.team_id)
+    # @proposal.team = @team
+    # @proposal.save!
+    authorize @proposal
+    redirect_to project_proposal_path(@project, @proposal)
   end
 
   def destroy
@@ -60,12 +66,15 @@ class ProposalsController < ApplicationController
 
   private
 
-  def proposal_params
-    params.require(:proposal).permit(:team_id, :project_id)
+  def proposal_finder
+    @proposal = Proposal.find(params[:id])
   end
 
+  def proposal_params
+    params.require(:proposal).permit(:team_id, :project_id, :pitch)
+  end
 
-  def set_booking
-    @proposal = Proposal.find(params[:id])
+  def project_finder
+    @project = Project.find(params[:project_id])
   end
 end

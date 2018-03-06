@@ -12,14 +12,14 @@ Rails.application.routes.draw do
     resources :teams, only: [:new, :index, :create]
     get 'classroom', to: :classroom, controller: 'projects'
     resources :proposals, only: [:edit, :show, :create, :destroy, :update]
-    get 'projects/:project_id/proposal/:id/confirm', to: 'proposals#confirm', as: 'proposal_confirm'
+    get 'proposal/:id/confirm', to: 'proposals#confirm', as: 'proposal_confirm'
   end
   resources :proposals, only: [:index, :destroy, :update]
   resources :teams, only: [:show, :delete, :edit, :update] do
     resources :team_members, only: [:new, :create]
   end
 
-  resources :users, only: [:new, :create, :show, :edit, :update]
+  resources :users, only: [:new, :create, :show, :edit, :update, :destroy]
 
   #for payments
   resources :orders, only: [:show, :create] do
