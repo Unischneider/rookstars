@@ -41,36 +41,44 @@
            <%= image_tag "icon2.png", class: "list-icon" %>
            <h1 class="text-center">Find a Cause</h1>
            <hr>
-          <p>Whether it's promoting human rights or gender equality, choose a cause that is close to your heart.</p>
-        </div>
-        <div class="content-icons col-xs-4">
+           <p>Whether it's promoting human rights or gender equality, choose a cause that is close to your heart.</p>
+         </div>
+         <div class="content-icons col-xs-4">
            <%= image_tag "icon1.png", class: "list-icon" %>
-          <h1 class="text-center">Build a Team</h1>
+           <h1 class="text-center">Build a Team</h1>
            <hr>
-          <p>Create a team where you and your friends can collaborate and learn from each other.</p>
-        </div>
-        <div class="content-icons col-xs-4">
+           <p>Create a team where you and your friends can collaborate and learn from each other.</p>
+         </div>
+         <div class="content-icons col-xs-4">
            <%= image_tag "icon3.png", class: "list-icon" %>
-          <h1 class="text-center">Boost your Porfolio</h1>
+           <h1 class="text-center">Boost your Porfolio</h1>
            <hr>
-          <p>Use your coding skills towards social good, while enhancing your portfolio.</p>
-        </div>
+           <p>Use your coding skills towards social good, while enhancing your portfolio.</p>
+         </div>
+       </div>
+     </div>
+   </div>
+ </div>
+</div>
+<div class="container-fluid p-0">
+  <div class="row no-gutters">
+    <%= render "components/cards" %>
+    <br>
+    <div class="col-lg-4 col-sm-6">
+      <%= link_to projects_path do  %>
+      <div class="portfolio-box" style="background-image: url('<%= cl_image_path 'favicon' %>');">
+        <div class="portfolio-box-caption" >
+          <div class="portfolio-box-caption-content">
+            <div class="project-category text-faded">
+              See all
+            </div>
+            <div class="project-name">
+
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-</div>
-<div class="container-cards">
-  <div class="container">
-    <br>
-    <h1 style="color: #005484;" class="text-center">Onboard an ongoing project</h1>
-    <br>
-    <div class="row">
-      <%= render "components/cards" %>
-    </div>
-    <br>
-    <div class="text-center">
-    <%= link_to "See All", projects_path, class: "custom-secondary-btn" %>
+      <% end %>
     </div>
   </div>
 </div>

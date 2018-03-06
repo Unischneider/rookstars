@@ -1,17 +1,19 @@
+
 <% @projects.each do |project| %>
-<div class="col-xs-4">
+<div class="col-lg-4 col-sm-6">
   <%= link_to project_path(project.id) do  %>
-  <div class="card">
-    <div class="card-category" style="background-image: url('<%= cl_image_path project.photo %>');">
-      <p class= "custom-primary-btn">Join</p>
-    </div>
-    <div class="card-description">
-      <h2><%= project.title%></h2>
-      <h1><%= project.organization.name %></h1>
-      <p class="description-text"><%= project.description.truncate(150) %></p>
+  <div class="portfolio-box" style="background-image: url('<%= cl_image_path project.photo %>');">
+    <div class="portfolio-box-caption" >
+      <div class="portfolio-box-caption-content">
+        <div class="project-category text-faded">
+          <%= project.organization.name %>
+        </div>
+        <div class="project-name">
+          <%= project.title%>
+        </div>
+      </div>
     </div>
   </div>
   <% end %>
 </div>
 <% end %>
-
