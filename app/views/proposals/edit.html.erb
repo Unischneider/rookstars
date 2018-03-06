@@ -7,7 +7,7 @@
         <div class="col-xs-12 ">
           <div class="proposal-form">
             <div class="form">
-              <%= form_for @project do |f| %>
+              <%= form_for [@proposal, @project] do |f| %>
               <%= fields_for :proposals do |proposal| %>
               <%= proposal.label "Tell us about how your team is planning on working on the project" %>
               <br>

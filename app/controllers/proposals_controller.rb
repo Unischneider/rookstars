@@ -39,6 +39,7 @@ class ProposalsController < ApplicationController
   end
 
   def update
+    raise
     @proposal.status = "Pending NGO validation"
     @proposal.pitch = params[:pitch]
     @proposal.save!
