@@ -7,6 +7,18 @@
   color: white;
 }
 
+.container-add-user {
+  input#email {
+   padding: 0px 64px 8px 11px;
+   margin-top: 31px;
+   margin-bottom: 47px;
+ }
+ text-align: center;
+ h1 {
+  text-align: center;
+}
+}
+
 .padding_proposal_show {
   padding-left: 0px;
   padding-right: 0px;
@@ -67,7 +79,7 @@
 }
 
 .proposal-form {
-    padding: 58px 0px;
+  padding: 58px 0px;
   font-family: "Comfortaa", "Helvetica", "sans-serif";
   font-weight: 500;
   line-height: 1.1;
@@ -90,7 +102,7 @@
 }
 
 .team-pick {
-    padding: 58px 0px;
+  padding: 58px 0px;
   font-family: "Comfortaa", "Helvetica", "sans-serif";
   font-weight: 500;
   line-height: 1.1;
@@ -101,25 +113,25 @@
   textarea {
     height: 190px;
   }
-    .control-label {
-       color: #465256b8;
-    font-size: 14px;
-
-    }
-
-  label {
-    color: #465256b8;
-    font-size: 21px;
-  }
-  h1 {
-     padding: 28px 0px;
-   font-family: "Comfortaa", "Helvetica", "sans-serif";
-   font-weight: 500;
-   line-height: 1.1;
-   text-align: center;
-   font-size: 38px;
+  .control-label {
    color: #465256b8;
-  }
+   font-size: 14px;
+
+ }
+
+ label {
+  color: #465256b8;
+  font-size: 21px;
+}
+h1 {
+ padding: 28px 0px;
+ font-family: "Comfortaa", "Helvetica", "sans-serif";
+ font-weight: 500;
+ line-height: 1.1;
+ text-align: center;
+ font-size: 38px;
+ color: #465256b8;
+}
 }
 
 .progress-custom {

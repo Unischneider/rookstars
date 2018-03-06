@@ -25,19 +25,35 @@
     </div>
   </div>
 -->
-
-<div class="container">
-  <div class="title text-center">
-    <h1>Add fellow Rookstars to your team</h1>
+<div class="container-add-user">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="title text-center">
+          <h1>Add fellow Rookstars to your team</h1>
+        </div>
+        <div id="team_members_form">
+          <% if @team.team_members.count < 5 %>
+          <%= render "form", team: @team %>
+          <% end %>
+        </div>
+      </div>
+    </div>
   </div>
-  <ol id="team_members_list">
-  </ol>
-  <div id="team_members_form">
-    <% if @team.team_members.count < 5 %>
-      <%= render "form", team: @team %>
-    <% end %>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="team-list">
+          <ol id="team_members_list">
+            <% if @team.team_members.count > 1 %>
+            <%= link_to "Submit", edit_team_path(@team), class: "custom-primary-btn" %>
+            <% else  %>
+            <p>Add a team member to continue</p>
+            <% end %>
+          </ol>
+        </div>
+      </div>
+    </div>
   </div>
-<%= link_to "Submit", edit_team_path(@team), class: "custom-primary-btn" %>
 </div>
-
 

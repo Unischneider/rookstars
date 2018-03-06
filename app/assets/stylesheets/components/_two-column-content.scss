@@ -37,6 +37,17 @@ p {
   height: 500px;
 }
 
+.left-img {
+  background-size: cover;
+  background-color: $primary;
+  height: 250px;
+}
+.right-img {
+  background-size: cover;
+  background-color: $accent;
+  height: 250px;
+}
+
 .cta-button {
   margin: 20px 0px;
 
