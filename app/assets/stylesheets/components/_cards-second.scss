@@ -1,0 +1,88 @@
+.cards-home {
+  position: relative;
+  display: block;
+  max-width: 650px;
+  margin: 0;
+  background-size: cover;
+  background-position: center;
+  height: 400px;
+
+  hr {
+   margin-bottom: 0px;
+   width: 78px;
+   margin-top: 70px;
+   border-width: 6px;
+   display: inline-block;
+   border-color: $blue;
+   text-align: left;
+   margin-left: 50px;
+ }
+
+  h2 {
+    font-size: 24px;
+    padding-left: 50px;
+    max-width: 330px;
+    line-height: 33px;
+    text-decoration: none;
+    padding-top: 90px;
+    margin: 0;
+    color: white;
+  }
+
+}
+
+.row > .col-lg-4.col-sm-6 {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.cards-home .cards-home-caption {
+  position: absolute;
+  bottom: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  opacity: 0;
+  color: #fff;
+  background: linear-gradient(60deg, #FA3E64 0%, #ffb199 260%);;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+
+
+.cards-home .cards-home-caption .cards-home-caption-content {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  transform: translateY(-50%);
+  text-align: center;
+}
+
+.cards-home .cards-home-caption .cards-home-caption-content .project-category{
+  font-family: $headers-font;
+}
+.cards-home .cards-home-caption .cards-home-caption-content .project-name {
+  font-family: $body-font;
+}
+
+.cards-home .cards-home-caption .cards-home-caption-content .project-category {
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.cards-home .cards-home-caption .cards-home-caption-content .project-name {
+  font-size: 18px;
+}
+
+.cards-home:hover .cards-home-caption {
+  opacity: 0.8;
+}
+
+.cards-home:focus {
+  outline: none;
+}
+
