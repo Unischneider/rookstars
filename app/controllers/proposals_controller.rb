@@ -40,6 +40,7 @@ class ProposalsController < ApplicationController
 
   def update
     @proposal.status = "Pending NGO validation"
+    @proposal.pitch = params[:pitch]
     @proposal.save!
     redirect_to proposal_path(@proposal)
   end
