@@ -17,6 +17,9 @@
               <h1><%= @organization.name %></h1>
               <p class="tag-label">About the NGO:</p>
               <p><%= @organization.description %></p>
+              <div class="organization_photo">
+                <%= cl_image_tag @organization.photo %>
+              </div>
             </div>
           </div>
         </div>
