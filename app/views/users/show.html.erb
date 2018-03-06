@@ -69,7 +69,7 @@
   <div class="row">
     <% @user.teams.each do |team| %>
     <% team.proposals.each do |app|%>
-    <% if app.accepted %>
+    <% if app.status == "Confirmed"%>
     <div class="col-xs-4">
       <%= link_to project_path(app.project.id) do  %>
       <div class="card">

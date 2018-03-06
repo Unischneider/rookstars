@@ -18,13 +18,35 @@ class ProjectsController < ApplicationController
   end
 
   def create
-    @project = Project.new(valid_params)
-    authorize @project
-    @project.organization = current_user
-    if @project.save
-      redirect_to project_path(@project)
+
+    if current_user.class == Organization.class
+      @project = Project.new(valid_params)
+      authorize @project
+      @project.organization = current_user
+      if @project.save
+        redirect_to project_path(@project)
+      else
+        render :new
+      end
     else
-      render :new
+      @project = Project.new(user_project_params)
+      @project.status = "Done"
+      @project.due_date = DateTime.now.to_date
+      @project.budget = 100
+      if @organization = Organization.find_by(name: params[:project][:organization])
+        @project.organization = @organization
+      else
+        @organization = Organization.create(name: params[:project][:organization], description: "selfcreated", email:"selfcreated#{Organization.last.id}@rook.com", password:"19823747288")
+      end
+      authorize @project
+      @team = Team.new(about_us: current_user.about_me)
+      team_member = TeamMember.create(team: @team, user: current_user, lead_dev: true)
+      if @project.save
+        proposal = Proposal.create(team: @team, project: @project, status: "Confirmed")
+        redirect_to user_path(current_user)
+      else
+        render :new
+      end
     end
   end
 
@@ -47,7 +69,10 @@ class ProjectsController < ApplicationController
   end
 
   def valid_params
-    params.permit(:project).require(:title, :description, :due_date, :status, :budget, :photo)
+    params.require(:project).permit(:title, :description, :due_date, :status, :budget, :photo)
   end
 
+  def user_project_params
+    params.require(:project).permit(:title, :description, :photo, :db_sql, :maps, :forms, :mail_integration, :messaging_integration, :sign_up_log_in, :payment_integration)
+  end
 end
