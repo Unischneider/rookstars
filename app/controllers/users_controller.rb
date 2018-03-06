@@ -8,6 +8,10 @@ class UsersController < ApplicationController
     authorize @user
   end
 
+  def edit
+    @user = User.find(params[:id])
+  end
+
   private
   def set_params
     params.require(:user).permit(:first_name, :email, :password, :term)
