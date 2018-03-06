@@ -48,7 +48,6 @@ class ProposalsController < ApplicationController
     @team = Team.find(@proposal.team_id)
     @proposal.team = @team
     @proposal.save!
-    raise
     authorize @proposal
     redirect_to project_proposal_path(@project, @proposal)
   end
