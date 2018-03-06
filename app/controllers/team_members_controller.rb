@@ -20,7 +20,6 @@ class TeamMembersController < ApplicationController
   end
 
   def edit
-
   end
 
   private
