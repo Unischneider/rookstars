@@ -1,19 +1,19 @@
 <div class="progress-custom">
   <div class="bar">
-   <div class="container-fluid">
+   <div class="container text-center">
      <div class="row">
-      <% if current_page? new_project_team_path(@project) %>
-      <div class="active col-xs-4"></div>
-      <div class="unactive col-xs-4"></div>
-      <div class="unactive col-xs-4"></div>
-      <% elsif current_page? project_teams_path(@project) %>
-      <div class="active col-xs-4"></div>
-      <div class="active col-xs-4"></div>
-      <div class="unactive col-xs-4"></div>
+      <% if current_page?  new_team_team_member_path(@team) %>
+      <div class="first current active col-xs-4">1. Add Team Members</div>
+      <div class="unactive col-xs-4">2. Tell Us About You</div>
+      <div class="last unactive col-xs-4">3. Pitch Your Idea</div>
+      <% elsif current_page?  edit_team_path(@team) %>
+      <div class="first active col-xs-4">1. Add Team Members</div>
+      <div class="current active col-xs-4">2. Tell Us About You</div>
+      <div class="last unactive col-xs-4">3. Pitch Your Idea</div>
       <% else %>
-      <div class="active col-xs-4"></div>
-      <div class="active col-xs-4"></div>
-      <div class="active col-xs-4"></div>
+      <div class="first active col-xs-4">1. Add Team Members</div>
+      <div class="active col-xs-4">2. Tell Us About You</div>
+      <div class="last current active col-xs-4">3. Pitch Your Idea</div>
       <% end %>
     </div>
   </div>
