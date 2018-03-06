@@ -1,5 +1,5 @@
 class ProposalsController < ApplicationController
-  before_action :project_finder, only: [:show, :new, :create, :edit]
+  before_action :project_finder, only: [:show, :new, :create, :edit, :update]
   before_action :proposal_finder, only: [:show, :edit, :update, :confirm]
 
   def index
@@ -8,7 +8,6 @@ class ProposalsController < ApplicationController
 
   def show
     @proposal.project = @project
-    @proposal.pitch = params[:pitch]
     @team = Team.find(@proposal.team_id)
     @team_members = TeamMember.where(team_id: @proposal.team_id)
     authorize @proposal
@@ -45,12 +44,13 @@ class ProposalsController < ApplicationController
   end
 
   def update
-    @proposal.status = "Pending NGO validation"
-    @proposal.pitch = params[:pitch]
-    @team = Team.find(@proposal.team_id)
-    @proposal.team = @team
-    @proposal.save!
-    redirect_to proposal_path(@proposal)
+    # @proposal.status = "Pending NGO validation"
+    @proposal.update(proposal_params)
+    # @team = Team.find(@proposal.team_id)
+    # @proposal.team = @team
+    # @proposal.save!
+    authorize @proposal
+    redirect_to project_proposal_path(@project, @proposal)
   end
 
   def destroy
