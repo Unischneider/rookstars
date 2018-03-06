@@ -36,6 +36,7 @@ class TeamsController < ApplicationController
   end
 
   def update
+    @team.update(team_params)
     authorize @team
     @project = Project.find(@team.projects.first.id)
     @proposal = Proposal.find_by(team: @team, project: @project)
@@ -60,7 +61,7 @@ class TeamsController < ApplicationController
     params.permit(:project).require(:title, :description, :budget, :pic_url, :due_date, :status, :organization_id)
   end
 
-  def set_params
+  def team_params
     params.require(:team).permit(:about_us)
   end
 end
