@@ -6,11 +6,11 @@ class PagesController < ApplicationController
   end
 
   def contact_us
-    @marker =
-      {
-        lat: 52.506972,
-        lng: 13.391486,
-      }
+    @markers = {
+        lat: "52.506972",
+        lng: "13.391486",
 
+        icon: ActionController::Base.helpers.image_url('pointer.png')
+      }
   end
 end

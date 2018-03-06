@@ -43,3 +43,35 @@
     width: 100%;
     vertical-align: middle;
 }
+
+.white_space {
+  height: 400px;
+  padding-top: 25px;
+}
+
+.zigzag_2 {
+  padding-top: 25px;
+}
+
+.map_height {
+  height: 600px;
+}
+
+.contact_header {
+  justify-self: center;
+  align-self: center;
+  justify-content: center;
+  display: flex;
+  padding-top: 200px;
+}
+
+.contact_header h1 {
+  font-family: 'ProximaNovaBlack', helvetica, arial, sans-serif;
+  font-weight: bolder;
+  justify-self: center;
+  align-self: center;
+}
+
+.contact_background {
+  background-attachment: fixed;
+}
