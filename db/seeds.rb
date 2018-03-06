@@ -651,7 +651,7 @@ p "Creating applications"
 20.times do
   Proposal.create(
     pitch: ["Me and my team would love to help you out. However, it would be great to get some financial help!", "We are work expirienced alumni from Le Wagon who are inquisitive and want to keep learning"].sample,
-    status: ["Pending Developer request", "Pending NGO validation", "Confirmed", "Canceled", "Selfcreated"].sample,
+    status: ["Pending Developer request", "Pending NGO validation", "Confirmed", "Canceled"].sample,
     team: Team.all.sample,
     project: Project.all.sample
     )

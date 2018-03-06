@@ -18,14 +18,14 @@
         <div class="col-xs-6 col-xs-offset-3">
           <h1>Select from your teams</h1>
           <div class="team-list">
-            <%= simple_form_for [@project, @proposal] do |f| %>
+            <%= form_for [@project, @proposal] do |f| %>
             <%# @teams.map do |team| %>
             <%# f.label :team, value: "#{team.lead_dev.map {|member| member.user.first_name}}'s team" %>
             <%# f.radio_button :team, team.lead_dev, checked: false %>
             <%# end %>
             <%# f.input :team, collection: @teams, as: :radio_buttons, label_method: :lead_dev_label, label: false, hint: false, error: false %>
             <% @teams.each do |team| %>
-              <input type="radio" value="<%= team.id %>" name="proposal[team]">
+              <input type="radio" required value="<%= team.id %>" name="proposal[team]" >
               <%= team.lead_dev_label %>
               <ul>
                 <% team.team_members.each do |team_member| %>

@@ -33,6 +33,7 @@ class ProposalsController < ApplicationController
   end
 
   def edit
+    raise
     @projects = Project.all
     @team = Team.find(@proposal.team_id)
     authorize @proposal
