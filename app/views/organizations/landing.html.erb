@@ -6,6 +6,22 @@
     </div>
   </div>
 </div>
+<% if organization_signed_in? %>
+<div class="one-column-content" style="background-image: url('<%= cl_image_path 'bg3.jpg' %>'); background-size: cover; background-position: center">
+  <div class="container-fluid">
+    <div class="cta-content">
+      <hr>
+      <div class="text">
+        <h1>Need some help from a developer?</h1>
+        <p>Create a new project</p>
+      </div>
+      <div class="cta-button">
+        <%= link_to "Add your organization and your projects!", new_project_path, class: "custom-primary-btn" %>
+      </div>
+    </div>
+  </div>
+</div>
+<% else %>
 <div class="one-column-content" style="background-image: url('<%= cl_image_path 'bg3.jpg' %>'); background-size: cover; background-position: center">
   <div class="container-fluid">
     <div class="cta-content">
@@ -19,9 +35,10 @@
     </div>
   </div>
 </div>
+<% end %>
 <div class="container">
   <br>
-  <h1 style="color: #005484;" class="text-center">Onboard an ongoing project</h1>
+  <h1 style="color: #005484;" class="text-center">Other projects</h1>
   <br>
   <div class="row">
   <%= render "components/cards" %>
