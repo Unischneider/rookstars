@@ -50,9 +50,6 @@
   height: 50px;
 }
 
-.navbar-top-eric {
-}
-
 /* User Avatar */
 .navbar-top-link .avatar {
   height: 35px;
@@ -74,11 +71,11 @@
 }
 
 /* Navbar link */
-.navbar-top-link-link {
+.navbar-top-link {
   color: #616668;
   font-size: 14px;
 }
-.navbar-top-link-link:hover {
+.navbar-top-link:hover {
   color: #da552f;
   text-decoration: none;
 }
@@ -164,5 +161,3 @@
     opacity: 1;
   }
 }
-
-
