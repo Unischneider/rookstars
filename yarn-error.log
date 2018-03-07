@@ -1,8 +1,8 @@
 Arguments: 
-  /usr/local/bin/node /usr/local/Cellar/yarn/1.5.1/libexec/bin/yarn.js install
+  /usr/local/bin/node /usr/local/Cellar/yarn/1.5.1/libexec/bin/yarn.js check --integrity
 
 PATH: 
-  /Users/john-ericberner/.rbenv/versions/2.4.3/bin:/usr/local/Cellar/rbenv/1.1.1/libexec:./bin:./node_modules/.bin:/Users/john-ericberner/.rbenv/shims:/Users/john-ericberner/.rbenv/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin
+  /Users/juliette/.rbenv/versions/2.4.3/lib/ruby/gems/2.4.0/bin:/Users/juliette/.rbenv/versions/2.4.3/bin:/usr/local/Cellar/rbenv/1.1.1/libexec:./bin:./node_modules/.bin:/Users/juliette/.rbenv/shims:/Users/juliette/.rbenv/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin
 
 Yarn version: 
   1.5.1
@@ -22,7 +22,7 @@ npm manifest:
       "bootstrap": "3",
       "dragula": "^3.7.2",
       "gmaps": "^0.4.24",
-      "jquery": "^3.3.1"
+      "jquery": "^3.3.1",
       "typed.js": "^2.0.6"
     },
     "devDependencies": {
@@ -7284,9 +7284,9 @@ Lockfile:
       untildify "^3.0.2"
 
 Trace: 
-  SyntaxError: /Users/john-ericberner/code/JB5322/unischneider/rookstars/package.json: Unexpected string in JSON at position 196
-      at JSON.parse (<anonymous>)
-      at /usr/local/Cellar/yarn/1.5.1/libexec/lib/cli.js:1036:59
+  Error: Found 1 errors.
+      at new MessageError (/usr/local/Cellar/yarn/1.5.1/libexec/lib/cli.js:186:110)
+      at /usr/local/Cellar/yarn/1.5.1/libexec/lib/cli.js:59470:13
       at Generator.next (<anonymous>)
       at step (/usr/local/Cellar/yarn/1.5.1/libexec/lib/cli.js:98:30)
       at /usr/local/Cellar/yarn/1.5.1/libexec/lib/cli.js:109:13
