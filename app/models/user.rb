@@ -44,6 +44,14 @@ class User < ApplicationRecord
     end
   end
 
+  def avatar
+    if photo.file.nil?
+      "http://res.cloudinary.com/jules/image/upload/v1520336238/placeholder.jpg"
+    else
+      photo
+    end
+  end
+
   private
 
   def make_moderator
