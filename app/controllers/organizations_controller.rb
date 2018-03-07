@@ -14,8 +14,14 @@ class OrganizationsController < ApplicationController
   end
 
   def show
-    @organization = Organization.new
+    @organization = Organization.find(params[:id])
     authorize @organization
+    @projects = Project.where(organization: @organization)
+    @markers = [{
+        lat: "52.506972",
+        lng: "13.391486",
+        icon: ActionController::Base.helpers.image_url('pointer.png')
+      }]
   end
 
   def landing

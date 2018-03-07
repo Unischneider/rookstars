@@ -1,2 +1,64 @@
-<h1>Organizations#show</h1>
-<p>Find me in app/views/organizations/show.html.erb</p>
+<div class="display">
+  <div class="container-fluid" style="background-image: url('<%= cl_image_path @organization.photo %>'); background-size: cover; background-position: center; background-attachment: fixed">
+    <div class="cards-container">
+      <div class="row no-gutters">
+        <div class="col-xs-6">
+          <div class="cards-home" style="background-image: url('<%= cl_image_path 'bg3.jpg' %>');">
+            <hr>
+            <h2><%= @organization.name %></h2>
+            <br>
+            <p><%= @organization.description %></p>
+          </div>
+        </div>
+        <div class="col-xs-6">
+          <div class="cards-home" style="background-image: url('<%= cl_image_path 'bg2.jpg' %>');">
+            <hr>
+            <h2>General information</h2>
+            <br>
+            <p>
+              <%= @organization.location %>
+              <br>Website: <%= @organization.website %>
+              <br>
+              <a href="mailto:#{<%=@organization.email%>}"></a>
+              <br>
+              <a href="<%= @organization.email %>">Contact</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <br>
+  <h1 class="text-center">Past projects <%= @organization.name %> worked on</h1>
+  <br>
+  <div class="row">
+    <% @projects.each do |project| %>
+    <div class="col-xs-4">
+      <%= link_to project_path(project.id) do  %>
+      <div class="card">
+        <div class="card-category" style="background-image: url('<%= cl_image_path project.photo %>');">
+        </div>
+        <div class="card-description">
+          <h2><%= project.title%></h2>
+          <h1><%= project.organization.name %></h1>
+          <p class="description-text"><%= project.description %></p>
+        </div>
+      </div>
+      <% end %>
+    </div>
+    <% end %>
+  </div>
+</div>
+
+<div class="map_height">
+  <div
+  id="map"
+  style="width: 100%;
+  height: 100%;"
+  data-markers="<%= @markers.to_json %>"
+  >
+</div>
+</div>
