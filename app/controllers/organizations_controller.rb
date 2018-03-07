@@ -14,8 +14,9 @@ class OrganizationsController < ApplicationController
   end
 
   def show
-    @organization = Organization.new
+    @organization = Organization.find(params[:id])
     authorize @organization
+    @projects = Project.where(organization: @organization)
   end
 
   def landing

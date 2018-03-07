@@ -1,2 +1,31 @@
-<h1>Organizations#show</h1>
-<p>Find me in app/views/organizations/show.html.erb</p>
+<div class="header-container-small" style="background-image: url('<%= cl_image_path @organization.photo %>'); background-size: cover; background-position: center; background-attachment: fixed">
+  <div class="header-content">
+    <div class="text-center intro-text">
+
+    </div>
+  </div>
+</div>
+
+
+<div class="container">
+  <br>
+  <h1 class="text-center">Past projects <%= @organization.name %> worked on</h1>
+  <br>
+  <div class="row">
+    <% @projects.each do |project| %>
+    <div class="col-xs-4">
+      <%= link_to project_path(project.id) do  %>
+      <div class="card">
+        <div class="card-category" style="background-image: url('<%= cl_image_path project.photo %>');">
+        </div>
+        <div class="card-description">
+          <h2><%= project.title%></h2>
+          <h1><%= project.organization.name %></h1>
+          <p class="description-text"><%= project.description %></p>
+        </div>
+      </div>
+      <% end %>
+    </div>
+    <% end %>
+  </div>
+</div>
