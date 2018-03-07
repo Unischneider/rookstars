@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   resources :contacts, only: [:new, :create]
   get 'landing', to: "organizations#landing"
+  get 'contact_us', to: "pages#contact_us"
 
 
   # resources :users, only: [:new, :create, :show, :edit, :update]

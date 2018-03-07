@@ -27,6 +27,7 @@ gem 'ruby-trello'
 gem 'thredded', '~> 0.14.2'
 gem 'money-rails'
 gem 'stripe'
+gem "geocoder"
 
 
 gem 'pundit'

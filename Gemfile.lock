@@ -91,6 +91,7 @@ GEM
     friendly_id (5.2.3)
       activerecord (>= 4.0.0)
     gemoji (2.1.0)
+    geocoder (1.4.6)
     gibbon (3.2.0)
       faraday (>= 0.9.1)
       multi_json (>= 1.11.0)
@@ -354,6 +355,7 @@ DEPENDENCIES
   faker
   figaro
   font-awesome-sass
+  geocoder
   gibbon
   jbuilder (~> 2.0)
   letter_opener
