@@ -8,6 +8,7 @@
             <h2><%= @organization.name %></h2>
             <br>
             <p><%= @organization.description %></p>
+            <%= link_to "hallo", root_path, class: "custom-btn-primary"  %>
           </div>
         </div>
         <div class="col-xs-6">
@@ -26,6 +27,9 @@
           </div>
         </div>
       </div>
+    <div class="text-center" style="margin-top: -150px; ">
+      <%= link_to "Edit", edit_organization_path, class: "custom-btn-primary" %>
+    </div>
     </div>
   </div>
 </div>
