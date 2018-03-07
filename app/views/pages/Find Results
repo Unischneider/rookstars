@@ -1,0 +1,20 @@
+Searching 289 files for ".card .description-text"
+
+0 matches
+
+Searching 289 files for ".description-text"
+
+/Users/martindefrutos/code/martindefruit/unischneider/rookstars/app/assets/stylesheets/components/_cards.scss:
+   63    color: white;
+   64  }
+   65: .description-text {
+   66    position: absolute;
+   67    font-size: 14px;
+   ..
+  126
+  127    }
+  128:   .description-text {
+  129      position: absolute;
+  130      font-size: 14px;
+
+2 matches in 1 file
