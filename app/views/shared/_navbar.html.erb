@@ -26,6 +26,19 @@
             </div>
           </div>
         </div>
+        <% elsif  organization_signed_in? %>
+        <div class="navbar-top-item">
+          <div class="dropdown">
+            <%= image_tag current_organization.avatar, class: "avatar dropdown-toggle", id: "navbar-top-menu" , data:{toggle: "dropdown"} %>
+            <ul class="dropdown-menu dropdown-menu-right navbar-top-dropdown-menu">
+              <li><%= link_to "Profile", organizations_path(current_organization)  %></li>
+              <li><%= link_to destroy_organization_session_path, method: :delete do %>
+                <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
+                <% end %></li>
+              </ul>
+            </div>
+          </div>
+        </div>
         <% else %>
         <div class="nav-content">
           <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-top-eric custom-primary-btn" %>
