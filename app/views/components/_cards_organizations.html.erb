@@ -1,0 +1,16 @@
+<% @organizations.each do |organization| %>
+<div class="col-xs-6 col-xs-6">
+  <div class="cards-home" style="background-image: url('<%= cl_image_path organization.photo %>');">
+    <div class="cards-home-caption" >
+      <div class="cards-home-caption-content">
+        <div class="project-name">
+          <%= organization.name %>
+        </div><br>
+        <div class="project-category text-faded">
+          <%= organization.description%>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>

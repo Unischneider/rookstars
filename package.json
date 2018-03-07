@@ -6,7 +6,7 @@
     "bootstrap": "3",
     "dragula": "^3.7.2",
     "gmaps": "^0.4.24",
-    "jquery": "^3.3.1"
+    "jquery": "^3.3.1",
     "typed.js": "^2.0.6"
   },
   "devDependencies": {

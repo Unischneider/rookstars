@@ -12,6 +12,7 @@ class PagesController < ApplicationController
         icon: ActionController::Base.helpers.image_url('pointer.png')
       }]
 
-    @projects = Project.all.first
+    @project = Project.all.first
+    @organization = Organization.all.first
   end
 end
