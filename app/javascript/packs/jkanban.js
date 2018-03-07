@@ -1265,34 +1265,33 @@ var KanbanTest = new jKanban({
             "title": "To Do",
             "class": "info,good",
             "dragTo": ['_working'],
-        //     "item": [
-        //         {
-        //             "id": "_test_delete",
-        //             "title": "Dashboard",
-        //             "drag": function (el, source) {
-        //                 console.log("START DRAG: " + el.dataset.eid);
-        //             },
-        //             "dragend": function (el) {
-        //                 console.log("END DRAG: " + el.dataset.eid);
-        //             },
-        //             "drop": function(el){
-        //                 console.log('DROPPED: ' + el.dataset.eid )
-        //             }
-        //         },
-        //         {
-        //             "id": "try",
-        //             "title": "Try Click This!",
-        //         }
-        //     ]
+            "item": [
+                {
+                    "title": "landing#page",
+                },
+                {
+                    "title": "contact form",
+                },
+                {
+                    "title": "Map with pointers",
+                },
+                {
+                    "title": "customized pointers"
+                },
+                {
+                    "title": "recent work"
+                },
+                {
+                    "title": "optimization for all devices"
+                }
+            ]
         },
         {
             "id": "_working",
             "title": "Working",
             "class": "warning",
             "item": [
-                {
-                    "title": "landing#page",
-                },
+
             ]
         },
         {
@@ -1301,12 +1300,7 @@ var KanbanTest = new jKanban({
             "class": "success",
             "dragTo": ['_working'],
             "item": [
-                {
-                    "title": "application#index",
-                },
-                {
-                    "title": "bookings#index",
-                }
+
             ]
         }
     ]

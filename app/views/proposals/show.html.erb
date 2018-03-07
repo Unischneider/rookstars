@@ -1,4 +1,6 @@
-r<div class="header-container-small" style="background-image: linear-gradient(-225deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.18) 50%), url('<%= cl_image_path @proposal.project.photo, crop: :fill %>'); background-attachment: fixed">
+
+<div class="header-container-small" style="background-image: linear-gradient(-225deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.18) 50%), url('<%= cl_image_path @proposal.project.photo, crop: :fill %>'); background-attachment: fixed">
+
   <div class="header-content">
     <div class="text-center intro-text">
       <h1>Team Proposal</h1>
@@ -17,8 +19,8 @@ r<div class="header-container-small" style="background-image: linear-gradient(-2
               <h1>Team</h1>
               <div class="team-avatar">
                 <% @proposal.team_members.each do |member| %>
-                <% if member.user.photo %>
-                <%= cl_image_tag member.user.photo, class: "member-avatar" %>
+                <% if member.user.avatar %>
+                <%= cl_image_tag member.user.avatar, class: "member-avatar" %>
                 <% end %>
                 <% end %>
               </div>

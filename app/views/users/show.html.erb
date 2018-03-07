@@ -8,9 +8,7 @@
   <div class="row">
     <div class="col-xs-12">
       <div class="text-center">
-        <% if @user.photo.file.nil? %>
-        <%= image_tag @user.photo, class: "avatar-large" %>
-        <% end %>
+        <%= image_tag @user.avatar, class: "avatar-large" %>
       </div>
     </div>
   </div>
