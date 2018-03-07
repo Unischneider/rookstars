@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get 'landing', to: "organizations#landing"
   get 'contact_us', to: "pages#contact_us"
 
+  resources :organizations, only: [:show]
 
   # resources :users, only: [:new, :create, :show, :edit, :update]
   resources :projects do
