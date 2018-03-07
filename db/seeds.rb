@@ -277,28 +277,28 @@ p "Creating projects"
   project.save
 
 
-  organization1 = Organization.find_by(name: "Kiron")
-  status = ["Pending", "On Going", "Accepted by the organization", "Declined by organization", "Rejected by the team", "Done"]
-  some = ["Translation", "All in blue", "picture uploading", "banners", "specific form", "trello integration"]
-  project = Project.new(
-    title: "Sign Up",
-    description: "My website is great I think but I really would like a Sign up and login area. However, if you have anymore tips to make the website better please come forward.",
-    budget: "750$",
-    due_date: Faker::Date.forward(100),
-    status: status.sample,
-    organization: organization1,
-    db_sql: false,
-    maps: false,
-    forms: true,
-    mail_integration: false,
-    payment_integration: false,
-    sign_up_log_in: true,
-    landing_page: false,
-    messaging_integration: false,
-    other: some.sample,
-    )
-  project.photo = "https://kiron.ngo/wp-content/uploads/2017/12/Copy-of-Copy-of-Blog-Template-Featured-Image-9.png"
-  project.save
+  # organization1 = Organization.find_by(name: "Kiron")
+  # status = ["Pending", "On Going", "Accepted by the organization", "Declined by organization", "Rejected by the team", "Done"]
+  # some = ["Translation", "All in blue", "picture uploading", "banners", "specific form", "trello integration"]
+  # project = Project.new(
+  #   title: "Sign Up",
+  #   description: "My website is great I think but I really would like a Sign up and login area. However, if you have anymore tips to make the website better please come forward.",
+  #   budget: "750$",
+  #   due_date: Faker::Date.forward(100),
+  #   status: status.sample,
+  #   organization: organization1,
+  #   db_sql: false,
+  #   maps: false,
+  #   forms: true,
+  #   mail_integration: false,
+  #   payment_integration: false,
+  #   sign_up_log_in: true,
+  #   landing_page: false,
+  #   messaging_integration: false,
+  #   other: some.sample,
+  #   )
+  # project.photo = "https://kiron.ngo/wp-content/uploads/2017/12/Copy-of-Copy-of-Blog-Template-Featured-Image-9.png"
+  # project.save
 
   organization1 = Organization.find_by(name: "BRAC")
   status = ["Pending", "On Going", "Accepted by the organization", "Declined by organization", "Rejected by the team", "Done"]
@@ -327,7 +327,7 @@ p "Creating projects"
   some = ["Everything should be in different shades of blue", "Picture uploading would be nice for user interface", "Banners are highly encouraged", "Trello integration for internal use"]
   project = Project.new(
     title: "Landing Page",
-    description: "Doctors Without Borders needs a landing page for our newest branch that will attract people as soon as you land. We want a map that shows where we are stationed around the world with a customized icon for each location. Also, the website must have a contact form so that those interested in volunteering can reach us in a very easy manner. Ideally, this page would have a space for showcasing our most recent work and where we have been mentioned in recent publications. The page should be consistent with the design of the rest of our website and should be  when used in mobile and tablets, as well as all-sized computers."
+    description: "Doctors Without Borders needs a landing page for our newest branch that will attract people as soon as you land. We want a map that shows where we are stationed around the world with a customized icon for each location. Also, the website must have a contact form so that those interested in volunteering can reach us in a very easy manner. Ideally, this page would have a space for showcasing our most recent work and where we have been mentioned in recent publications. The page should be consistent with the design of the rest of our website and should be equally represented when used in mobile and tablets, as well as small, mid, and large computers.",
     budget: "1,150€",
     due_date: "20/04/2018",
     status: "Accepted by the organization",
