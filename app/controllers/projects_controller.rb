@@ -9,6 +9,7 @@ class ProjectsController < ApplicationController
     set_params
     authorize @project
     @organization = Organization.find(@project.organization_id)
+    @project_member = is_part_of_project?
   end
 
   def new
@@ -62,6 +63,18 @@ class ProjectsController < ApplicationController
   end
 
   private
+
+  def is_part_of_project?
+    @project.proposals.each do |proposal|
+      if proposal.status == "Confirmed"
+        @joinable = proposal.joinable
+        proposal.team_members.each do |team_member|
+          return true if team_member.user == current_user
+        end
+      end
+    end
+    return false
+  end
 
   def set_params
     @project = Project.find(params[:id])
