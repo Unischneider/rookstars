@@ -17,16 +17,17 @@ User.destroy_all
 
 p "Creating organizations"
 
-organization = Organization.new(
-    email: "info@brac.net",
-    location: "75 Mohakhali, Dhaka-1212, Bangladesh",
-     website: "brac.net",
-     description: "BRAC, an international development organization based in Bangladesh, is the largest non-governmental development organisation in the world, in terms of number of employees as of September 2016",
-     name: "BRAC",
-     password: "password123"
-    )
-  organization.remote_photo_url = "http://www.brac.net/images/brac-logo-big.png"
-  organization.save
+# organization = Organization.new(
+#     email: "info@brac.net",
+#     location: "75 Mohakhali, Dhaka-1212, Bangladesh",
+#      website: "www.brac.net",
+#      description: "BRAC, an international development organization based in Bangladesh, is the largest non-governmental development organisation in the world, in terms of number of employees as of September 2016.
+#      BRAC’s community empowerment programme believes in the need to build and strengthen community institutions and ensure stronger accountability of the local government towards the poor, especially women, in terms of their socio-political empowerment. This involves their capacity building, motivating them to raise their voice and take collective action. It strengthens the local government for poverty reduction initiatives, creates awareness and access to information, and prevents violence, particularly against women.",
+#      name: "BRAC",
+#      password: "password123"
+#     )
+#   organization.remote_photo_url = "http://www.brac.net/images/brac-logo-big.png"
+#   organization.save
 
   organization = Organization.new(
     email: "info@wikimedia.org",
@@ -47,7 +48,7 @@ organization = Organization.new(
      name: "Acumen Fund",
      password: "password123"
     )
-  organization.remote_photo_url = "http://acumen.org/wp-content/uploads/2017/10/logo-1.png"
+  organization.remote_photo_url = "https://acumen.org/wp-content/themes/acumen-theme/img/global/footer-logo.png"
   organization.save
 
   organization = Organization.new(
@@ -98,11 +99,11 @@ organization = Organization.new(
     email: "info@msf.org",
     location: "78 rue de Lausanne, Case Postale 1016, 1211 Geneva 1, Switzerland",
      website: "msf.org",
-     description: "Médecins Sans Frontières, also known in English as Doctors Without Borders, is an international humanitarian non-governmental organization best known for its projects in war-torn regions and developing countries affected by endemic diseases.",
+     description: "Médecins Sans Frontières, also known in English as Doctors Without Borders, is an international humanitarian non-governmental organization best known for its projects in war-torn regions and developing countries affected by endemic diseases. Doctors Without Borders/Médecins Sans Frontières (MSF) medical teams often witness violence, atrocities, and neglect in the course of their work, much of which occurs in places that rarely receive international attention. While on the ground, the teams are in constant dialogue with local authorities, warring parties, and other aid agencies in an attempt to reinforce the organization's operational independence and to facilitate the delivery of the best possible medical care for patients and their communities",
      name: "Doctors Without Borders",
      password: "password123"
     )
-  organization.remote_photo_url = "https://upload.wikimedia.org/wikipedia/en/thumb/b/bd/Msf_logo.svg/1200px-Msf_logo.svg.png"
+  organization.remote_photo_url = "hhttps://www.msf-me.org/MSFLogo.jpg"
   organization.save
 
   organization = Organization.new(
@@ -120,7 +121,7 @@ organization = Organization.new(
     email: "info@mercycorpsnw.org",
     location: "45 SW Ankeny St., Portland, OR 97204, USA",
      website: "mercycorpsnw.org",
-     description: "Mercy Corps is a global humanitarian aid agency engaged in transitional environments that have experienced some sort of shock: natural disaster, economic collapse, or conflict.",
+     description: "Mercy Corps is a global humanitarian aid agency engaged in transitional environments that have experienced some sort of shock: natural disaster, economic collapse, or conflict. We understand that communities are the best agents of their own change and local markets are the best engines of long-term recovery. In more than 40 countries, we partner to put bold solutions into action, helping people triumph over adversity and grow stronger from within. For the refugee who dreams of rebuilding her country, for the mother who wants a healthy future for her children — for millions of people filled with the power of possibility — Mercy Corps connects people to the resources they need to build better, stronger lives.",
      name: "Mercy Corps",
      password: "password123"
     )
@@ -157,14 +158,14 @@ organization = Organization.new(
      name: "Red Cross",
      password: "password123"
     )
-  organization.remote_photo_url = "https://i.forbesimg.com/media/lists/companies/american-national-red-cross_416x416.jpg"
+  organization.remote_photo_url = "https://scontent-frt3-2.xx.fbcdn.net/v/t1.0-9/5228_10153696418285071_4752331705566006231_n.png?oh=433cc72529982452e132e9896526a11e&oe=5B46B2CC"
   organization.save
 
   organization = Organization.new(
     email: "communications@unaids.org",
     location: "20, Avenue Appia, CH-1211 Geneva 27, Switzerland",
      website: "http://www.unaids.org/en",
-     description: "The Joint United Nations Programme on HIV and AIDS is the main advocate for accelerated, comprehensive and coordinated global action on the HIV/AIDS pandemic.",
+     description: "The Joint United Nations Programme on HIV and AIDS is the main advocate for accelerated, comprehensive and coordinated global action on the HIV/AIDS pandemic. UNAIDS is a problem-solver. It places people living with HIV and people affected by the virus at the decision-making table and at the centre of designing, delivering and monitoring the AIDS response. It charts paths for countries and communities to get on the Fast-Track to ending AIDS and is a bold advocate for addressing the legal and policy barriers to the AIDS response. UNAIDS provides the strategic direction, advocacy, coordination and technical support needed to catalyse and connect leadership from governments, the private sector and communities to deliver life-saving HIV services. Without UNAIDS, there would be no strategic vision for the AIDS response.",
      name: "UNAIDS",
      password: "password123"
     )
@@ -176,7 +177,7 @@ organization = Organization.new(
     location: "15645 Olive Blvd. Chesterfield, MO 63017, USA",
      website: "https://www.jci.cc/",
      description: "Junior Chamber International is a non-profit international non-governmental organization of young people between 18 and 40 years old. It has members in about 124 countries, and regional or national organizations in many of them.",
-     name: "JCI",
+     name: "Junior Chamber International",
      password: "password123"
     )
   organization.remote_photo_url = "http://www.jcihk.org/images/download/dlwid_83_dlwlistid_78.jpg"
@@ -208,7 +209,8 @@ organization = Organization.new(
     email: "donck@isoc.org",
     location: "1775 Wiehle Avenue, Suite 201, Reston, VA, 20190-5108, USA",
      website: "internetsociety.org",
-     description: "The Internet Society is an American non-profit organization founded in 1992 to provide leadership in Internet-related standards, education, access, and policy.",
+     description: "The Internet Society is an American non-profit organization founded in 1992 to provide leadership in Internet-related standards, education, access, and policy.
+     In the Internet’s short history, we have already witnessed attempts to shut down or limit discussions on key issues such as network neutrality, or to reframe the implications of policies, such as those that relate to cybersecurity. What we learn repeatedly is that the best and most lasting solutions are ones that we arrive at through cooperation and mutual respect, that are rooted in principle, and that open the door to innovation.",
      name: "Internet Society",
      password: "password123"
     )
@@ -223,20 +225,18 @@ organization = Organization.new(
      name: "Chatham House",
      password: "password123"
     )
-  organization.remote_photo_url = "http://www.chathamhouse.org/sites/default/themes/custom/childship/images/logo-fb-share.png?d=1"
+  organization.remote_photo_url = "https://www.chathamhouse.org/sites/default/themes/custom/childship/images/logo-fb-share.png?d=1"
   organization.save
 
 p "Creating projects"
-
-
 
   organization1 = Organization.find_by(name: "Internet Society")
   status = ["Pending", "On Going", "Accepted by the organization", "Declined by organization", "Rejected by the team", "Done"]
   some = ["Translation", "All in blue", "picture uploading", "banners", "specific form", "trello integration"]
   project = Project.new(
     title: "Google Maps integration",
-    description: "I would like to have a map displaying our headquarter and where we are stationed around the world.",
-    budget: (100..3000).to_a.sample,
+    description: "We would like to have a map displaying our landing page that will display specifically all the cities where we are established. This map should have personalized markers with our logo and should react automatically everytime we open a new office. We also want to be able to customize the map to be decorated with the colors of our brand as well as have it fit the entire screen",
+    budget: "500$",
     due_date: Faker::Date.forward(100),
     status: status.sample,
     organization: organization1,
@@ -250,7 +250,7 @@ p "Creating projects"
     messaging_integration: false,
     other: some.sample,
     )
-  project.remote_photo_url = "http://enterprise54.com/wp-content/uploads/2014/07/internet-governance-660x400.jpg"
+  project.remote_photo_url = "https://static.pexels.com/photos/220201/pexels-photo-220201.jpeg"
   project.save
 
   organization1 = Organization.find_by(name: "Avaaz")
@@ -259,7 +259,7 @@ p "Creating projects"
   project = Project.new(
     title: "Complete Website",
     description: "I would like to have a whole new website. It shoulod contain forms to contact us and a volunteer login as well as a messaging area for those.",
-    budget: (100..3000).to_a.sample,
+    budget: "1700$",
     due_date: Faker::Date.forward(100),
     status: status.sample,
     organization: organization1,
@@ -283,7 +283,7 @@ p "Creating projects"
   project = Project.new(
     title: "Sign Up",
     description: "My website is great I think but I really would like a Sign up and login area. However, if you have anymore tips to make the website better please come forward.",
-    budget: (100..3000).to_a.sample,
+    budget: "750$",
     due_date: Faker::Date.forward(100),
     status: status.sample,
     organization: organization1,
@@ -297,7 +297,7 @@ p "Creating projects"
     messaging_integration: false,
     other: some.sample,
     )
-  project.remote_photo_url = "http://www.ifrc.org/Global/Photos/Asia%20Pacific/201701/20170112_WS_Thai_flooding_mainpic.jpg"
+  project.photo = "https://scontent-frt3-2.xx.fbcdn.net/v/t31.0-8/25531972_10155712513275071_7766071174360086115_o.jpg?oh=7624539bc339650a0a660033485d3148&oe=5B434A20"
   project.save
 
 
@@ -307,7 +307,7 @@ p "Creating projects"
   project = Project.new(
     title: "Payment integration",
     description: "I would like a contact us page and a donate button on each page.",
-    budget: (100..3000).to_a.sample,
+    budget: "570$",
     due_date: Faker::Date.forward(100),
     status: status.sample,
     organization: organization1,
@@ -324,16 +324,14 @@ p "Creating projects"
   project.remote_photo_url = "https://www.ngoadvisor.net/wp-content/uploads/2016/01/AWright_SierraLeone_003129.jpg"
   project.save
 
-
   organization1 = Organization.find_by(name: "Doctors Without Borders")
-  status = ["Pending", "On Going", "Accepted by the organization", "Declined by organization", "Rejected by the team", "Done"]
-  some = ["Translation", "All in blue", "picture uploading", "banners", "specific form", "trello integration"]
+  some = ["Everything should be in different shades of blue", "Picture uploading would be nice for user interface", "Banners are highly encouraged", "Trello integration for internal use"]
   project = Project.new(
-    title: "Refactoring Website",
-    description: "I would like to refactor our website its old and has no taste. I hope you can help!",
-    budget: (100..3000).to_a.sample,
-    due_date: Faker::Date.forward(100),
-    status: status.sample,
+    title: "Landing Page",
+    description: "Doctors Without Borders needs a landing page for our newest branch that will attract people as soon as you land. We want a map that shows where we are stationed around the world with a customized icon for each location and a different one for our newest location. Also, the website must have a contact form so that those interested in volunteering can reach us in a very easy manner. Ideally, this page would also have a space for showcasing our most recent work and where we have been mentioned in recent publications. The page should be consistent with the design of the rest of our website and should be responsive when used in mobile and tablets, as well as all-sized computers.",
+    budget: "1,150€",
+    due_date: "20/04/2018",
+    status: "Accepted by the organization",
     organization: organization1,
     db_sql: true,
     maps: true,
@@ -355,7 +353,7 @@ p "Creating projects"
   project = Project.new(
     title: "Make our Website responsive",
     description: "I just realized again that our website is not viewable on any other device then the computer and even there is no taste in it.",
-    budget: (100..3000).to_a.sample,
+    budget: "800$",
     due_date: Faker::Date.forward(100),
     status: status.sample,
     organization: organization1,
@@ -379,7 +377,7 @@ p "Creating projects"
   project = Project.new(
     title: "About us",
     description: "I want a short and crispy about us page and will give you the text to be displayed.",
-    budget: (100..3000).to_a.sample,
+    budget: "550$",
     due_date: Faker::Date.forward(100),
     status: status.sample,
     organization: organization1,
@@ -403,7 +401,7 @@ p "Creating projects"
   project = Project.new(
     title: "Complete Website",
     description: "I would like to have a map displaying our headquarter(address) on the homepage and a complete follow up.",
-    budget: (100..3000).to_a.sample,
+    budget: "600$",
     due_date: Faker::Date.forward(100),
     status: status.sample,
     organization: organization1,
@@ -427,7 +425,7 @@ p "Creating projects"
   project = Project.new(
     title: "Donation",
     description: "I would like a donate button and payment on each page",
-    budget: (100..3000).to_a.sample,
+    budget: "800$",
     due_date: Faker::Date.forward(100),
     status: status.sample,
     organization: organization1,
@@ -451,7 +449,7 @@ p "Creating projects"
   project = Project.new(
     title: "Maps needs styling",
     description: "I would like to have a new map displaying our headquarter and where we are stationed around the world.",
-    budget: (100..40_000).to_a.sample,
+    budget: "600$",
     due_date: Faker::Date.forward(100),
     status: status.sample,
     organization: organization1,
@@ -465,7 +463,7 @@ p "Creating projects"
     messaging_integration: false,
     other: some.sample,
     )
-  project.remote_photo_url = "https://www.johnsonbanks.co.uk/content/projects/_quarter/Acumen-biz-card7.jpg"
+  project.remote_photo_url = "https://acumen.org/wp-content/uploads/2017/09/26456759842_6362a7d038_k.jpg"
   project.save
 
   organization1 = Organization.find_by(name: "Cure Violence")
@@ -474,7 +472,7 @@ p "Creating projects"
   project = Project.new(
     title: "Complete Website",
     description: "A new website, that contains forms to contact us and a volunteer login as well as a messaging area for those.",
-    budget: (100..40_000).to_a.sample,
+    budget: "1500$",
     due_date: Faker::Date.forward(100),
     status: status.sample,
     organization: organization1,
@@ -488,7 +486,7 @@ p "Creating projects"
     messaging_integration: true,
     other: some.sample,
     )
-  project.remote_photo_url = "https://www.ngoadvisor.net/wp-content/uploads/2016/01/Dont-Shoot-with-CV-Logo.jpg"
+  project.remote_photo_url = "https://scontent-frt3-2.xx.fbcdn.net/v/t1.0-9/19884369_1945539745460059_5237039269211580641_n.jpg?oh=674beeeaca5a9083f55c20c784035d05&oe=5B0D2A2C"
   project.save
 
 
@@ -498,7 +496,7 @@ p "Creating projects"
   project = Project.new(
     title: "Login",
     description: "I would like a Sign up and login area. However, if you have anymore tips to make the website better please come forward.",
-    budget: (100..40_000).to_a.sample,
+    budget: "450$",
     due_date: Faker::Date.forward(100),
     status: status.sample,
     organization: organization1,
@@ -522,7 +520,7 @@ p "Creating projects"
   project = Project.new(
     title: "Payment option between Paypal etc",
     description: "I would like a contact us page and a donate button on each page. It should include different payment options.",
-    budget: (100..40_000).to_a.sample,
+    budget: "500$",
     due_date: Faker::Date.forward(100),
     status: status.sample,
     organization: organization1,
@@ -546,7 +544,7 @@ p "Creating projects"
   project = Project.new(
     title: "Whole new design",
     description: "Our website needs a new design in the logo colours!",
-    budget: (100..40_000).to_a.sample,
+    budget: "1500$",
     due_date: Faker::Date.forward(100),
     status: status.sample,
     organization: organization1,
@@ -570,7 +568,7 @@ p "Creating projects"
   project = Project.new(
     title: "Make our Website suitable for all devices",
     description: "The website should eb useable by all devices such as iPad, iPhone, etc",
-    budget: (100..40_000).to_a.sample,
+    budget: "1300$",
     due_date: Faker::Date.forward(100),
     status: status.sample,
     organization: organization1,
@@ -594,7 +592,7 @@ p "Creating projects"
   project = Project.new(
     title: "Contact us",
     description: "I want a short and crispy contact us page and will give you the text to be displayed.",
-    budget: (100..40_000).to_a.sample,
+    budget: "500$",
     due_date: Faker::Date.forward(100),
     status: status.sample,
     organization: organization1,
@@ -618,7 +616,7 @@ p "Creating projects"
   project = Project.new(
     title: "Messaging field",
     description: "I want a messaging field wjich can be used for immediate responses by our volunteers.",
-    budget: (100..40_000).to_a.sample,
+    budget: "800$",
     due_date: Faker::Date.forward(100),
     status: status.sample,
     organization: organization1,
@@ -641,7 +639,7 @@ p "Creating projects"
   project = Project.new(
     title: "Search Bar",
     description: "I would like a search bar so that our visitors can find what they are looking for without scrolling for ages.",
-    budget: (100..40_000).to_a.sample,
+    budget: "700$",
     due_date: Faker::Date.forward(100),
     status: status.sample,
     organization: organization1,
@@ -659,14 +657,13 @@ p "Creating projects"
   project.save
 
   organization1 = Organization.find_by(name: "Mercy Corps")
-  status = ["Pending", "On Going", "Accepted by the organization", "Declined by organization", "Rejected by the team", "Done"]
-  some = ["Translation", "All in blue", "picture uploading", "banners", "specific form", "trello integration"]
+  some = ["Everything should be in different shades of blue", "Picture uploading would be nice for user interface", "Banners are highly encouraged", "Trello integration for internal use"]
   project = Project.new(
-    title: "Page with all Projects",
-    description: "My team and I would like a page showing all our current projects and where they are located.",
-    budget: (100..40_000).to_a.sample,
-    due_date: Faker::Date.forward(100),
-    status: status.sample,
+    title: "Landing Page",
+    description: "Mercy Corps needs a website that will attract people as soon as you land. We want a map that shows where we are stationed around the world with a customized icon for each location, as well as a contact form so that those interested in volunteering can reach us in a very easy manner. Ideally, this page would also have a space for showcasing our most recent work and where we have been mentioned in recent publications. The page should be consistent with the design of the rest of our website and should be responsive when used in mobile and tablets, as well as all-sized computers.",
+    budget: "1,150€",
+    due_date: "20/04/2018",
+    status: "Accepted by the organization",
     organization: organization1,
     db_sql: true,
     maps: true,
@@ -680,10 +677,11 @@ p "Creating projects"
     )
   project.remote_photo_url = "https://www.palantir.com/philanthropy-engineering/annual-report/2016/resources/images/masthead-mercycorps-2.jpg"
   project.save
+
 p "Creating teams"
 
 20.times do
-  Team.create(about_us: ["We are fast working and accurate people.", "We want to help for nearly no money.", "Hey we are an open team that communicates and keeps everyone up to date."].sample)
+  Team.create(about_us: ["We are fast working and  people.", "We want to help for nearly no money.", "Hey we are an open team that communicates and keeps everyone up to date."].sample)
 end
 
 p "Creating user"
