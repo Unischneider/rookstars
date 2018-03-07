@@ -4,9 +4,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
     if current_user.photo.file.nil?
       current_user.remote_photo_url = "http://res.cloudinary.com/jules/image/upload/v1520336238/placeholder.jpg"
       current_user.save
-      binding.pry
-    else
-      binding.pry
     end
   end
 
