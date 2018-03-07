@@ -20,8 +20,8 @@
           <%= f.input :current_password, hint: "we need your current password to confirm the changes", required: true %>
         </div>
         <div class="col-xs-4">
-          <% if @user.photo %>
-          <a href=""><%= image_tag @user.photo, class: "avatar-large" %></a>
+          <% if @user.avatar %>
+          <a href=""><%= image_tag @user.avatar, class: "avatar-large" %></a>
           <div class="alignment_center">
           <%= f.input :photo %>
           <%= f.input :photo_cache, as: :hidden%>

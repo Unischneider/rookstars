@@ -19,8 +19,8 @@
               <h1>Team</h1>
               <div class="team-avatar">
                 <% @proposal.team_members.each do |member| %>
-                <% if member.user.photo %>
-                <%= cl_image_tag member.user.photo, class: "member-avatar" %>
+                <% if member.user.avatar %>
+                <%= cl_image_tag member.user.avatar, class: "member-avatar" %>
                 <% end %>
                 <% end %>
               </div>

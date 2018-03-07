@@ -695,7 +695,6 @@ p "Creating user"
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
     github: "https://github.com/juliettech13",
-    photo: "https://source.unsplash.com/person",
     about_me: "#{Faker::SiliconValley.motto} + #{Faker::SiliconValley.quote}"
     )
   user.remote_photo_url = "https://source.unsplash.com/random"
