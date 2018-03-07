@@ -17,17 +17,17 @@ User.destroy_all
 
 p "Creating organizations"
 
-# organization = Organization.new(
-#     email: "info@brac.net",
-#     location: "75 Mohakhali, Dhaka-1212, Bangladesh",
-#      website: "www.brac.net",
-#      description: "BRAC, an international development organization based in Bangladesh, is the largest non-governmental development organisation in the world, in terms of number of employees as of September 2016.
-#      BRAC’s community empowerment programme believes in the need to build and strengthen community institutions and ensure stronger accountability of the local government towards the poor, especially women, in terms of their socio-political empowerment. This involves their capacity building, motivating them to raise their voice and take collective action. It strengthens the local government for poverty reduction initiatives, creates awareness and access to information, and prevents violence, particularly against women.",
-#      name: "BRAC",
-#      password: "password123"
-#     )
-#   organization.remote_photo_url = "http://www.brac.net/images/brac-logo-big.png"
-#   organization.save
+organization = Organization.new(
+    email: "info@brac.net",
+    location: "75 Mohakhali, Dhaka-1212, Bangladesh",
+     website: "www.brac.net",
+     description: "BRAC, an international development organization based in Bangladesh, is the largest non-governmental development organisation in the world, in terms of number of employees as of September 2016.
+     BRAC’s community empowerment programme believes in the need to build and strengthen community institutions and ensure stronger accountability of the local government towards the poor, especially women, in terms of their socio-political empowerment. This involves their capacity building, motivating them to raise their voice and take collective action. It strengthens the local government for poverty reduction initiatives, creates awareness and access to information, and prevents violence, particularly against women.",
+     name: "BRAC",
+     password: "password123"
+    )
+  organization.remote_photo_url = "http://www.brac.net/images/brac-logo-big.png"
+  organization.save
 
   organization = Organization.new(
     email: "info@wikimedia.org",
@@ -99,11 +99,11 @@ p "Creating organizations"
     email: "info@msf.org",
     location: "78 rue de Lausanne, Case Postale 1016, 1211 Geneva 1, Switzerland",
      website: "msf.org",
-     description: "Médecins Sans Frontières, also known in English as Doctors Without Borders, is an international humanitarian non-governmental organization best known for its projects in war-torn regions and developing countries affected by endemic diseases. Doctors Without Borders/Médecins Sans Frontières (MSF) medical teams often witness violence, atrocities, and neglect in the course of their work, much of which occurs in places that rarely receive international attention. While on the ground, the teams are in constant dialogue with local authorities, warring parties, and other aid agencies in an attempt to reinforce the organization's operational independence and to facilitate the delivery of the best possible medical care for patients and their communities",
+     description: "Médecins Sans Frontières, also known in English as Doctors Without Borders, is an international humanitarian non-governmental organization best known for its projects in war-torn regions and developing countries affected by endemic diseases. Doctors Without Borders/Médecins Sans Frontières (MSF) medical teams often witness violence, atrocities, and neglect in the course of their work, much of which occurs in places that rarely receive international attention. While on the ground, the teams are in constant dialogue with local authorities, warring parties, and other aid agencies in an attempt to reinforce the organization's operational independence and to facilitate the delivery of the best possible medical care for patients and their communities.",
      name: "Doctors Without Borders",
      password: "password123"
     )
-  organization.remote_photo_url = "hhttps://www.msf-me.org/MSFLogo.jpg"
+  organization.remote_photo_url = "https://www.msf-me.org/MSFLogo.jpg"
   organization.save
 
   organization = Organization.new(
@@ -151,14 +151,14 @@ p "Creating organizations"
   organization.save
 
   organization = Organization.new(
-    email: "info@rescross.org",
-    location: "431 18th Street, NW, Washington, DC 20006, USA",
-     website: "http://www.redcross.org/",
-     description: "The International Red Cross and Red Crescent Movement is an international humanitarian movement with approximately 97 million volunteers, members and staff worldwide which was founded to protect human ...",
-     name: "Red Cross",
+    email: "info@kiron.ngo",
+    location: "Palais Am Festungsgraben. Am Festungsgraben 1. 10117 Berlin, DE",
+     website: "http://kiron.ngo/",
+     description: "A world in which everyone has the equal chance to access and succeed in higher education. Kiron enables access to higher education and successful learning for refugees through digital solutions.",
+     name: "Kiron",
      password: "password123"
     )
-  organization.remote_photo_url = "https://scontent-frt3-2.xx.fbcdn.net/v/t1.0-9/5228_10153696418285071_4752331705566006231_n.png?oh=433cc72529982452e132e9896526a11e&oe=5B46B2CC"
+  organization.remote_photo_url = "https://wp.kiron.ngo/wp-content/uploads/2016/11/k-Logo-WEB-Blue-500.png"
   organization.save
 
   organization = Organization.new(
@@ -169,7 +169,7 @@ p "Creating organizations"
      name: "UNAIDS",
      password: "password123"
     )
-  organization.remote_photo_url = "http://logonoid.com/images/unaids-logo.png"
+  organization.remote_photo_url = "http://photos.myjoyonline.com/photos/news/201606/2800131492057_7212904850848.jpg"
   organization.save
 
   organization = Organization.new(
@@ -235,7 +235,7 @@ p "Creating projects"
   some = ["Translation", "All in blue", "picture uploading", "banners", "specific form", "trello integration"]
   project = Project.new(
     title: "Google Maps integration",
-    description: "We would like to have a map displaying our landing page that will display specifically all the cities where we are established. This map should have personalized markers with our logo and should react automatically everytime we open a new office. We also want to be able to customize the map to be decorated with the colors of our brand as well as have it fit the entire screen",
+    description: "We would like to have a map displaying our landing page that will display specifically all the cities where we are established. This map should have personalized markers with our logo and should react automatically everytime we open a new office. We also want to be able to customize the map to be decorated with the colors of our brand as well as have it fit the entire screen.",
     budget: "500$",
     due_date: Faker::Date.forward(100),
     status: status.sample,
@@ -277,7 +277,7 @@ p "Creating projects"
   project.save
 
 
-  organization1 = Organization.find_by(name: "Red Cross")
+  organization1 = Organization.find_by(name: "Kiron")
   status = ["Pending", "On Going", "Accepted by the organization", "Declined by organization", "Rejected by the team", "Done"]
   some = ["Translation", "All in blue", "picture uploading", "banners", "specific form", "trello integration"]
   project = Project.new(
@@ -297,9 +297,8 @@ p "Creating projects"
     messaging_integration: false,
     other: some.sample,
     )
-  project.photo = "https://scontent-frt3-2.xx.fbcdn.net/v/t31.0-8/25531972_10155712513275071_7766071174360086115_o.jpg?oh=7624539bc339650a0a660033485d3148&oe=5B434A20"
+  project.photo = "https://kiron.ngo/wp-content/uploads/2017/12/Copy-of-Copy-of-Blog-Template-Featured-Image-9.png"
   project.save
-
 
   organization1 = Organization.find_by(name: "BRAC")
   status = ["Pending", "On Going", "Accepted by the organization", "Declined by organization", "Rejected by the team", "Done"]
@@ -328,7 +327,7 @@ p "Creating projects"
   some = ["Everything should be in different shades of blue", "Picture uploading would be nice for user interface", "Banners are highly encouraged", "Trello integration for internal use"]
   project = Project.new(
     title: "Landing Page",
-    description: "Doctors Without Borders needs a landing page for our newest branch that will attract people as soon as you land. We want a map that shows where we are stationed around the world with a customized icon for each location and a different one for our newest location. Also, the website must have a contact form so that those interested in volunteering can reach us in a very easy manner. Ideally, this page would also have a space for showcasing our most recent work and where we have been mentioned in recent publications. The page should be consistent with the design of the rest of our website and should be responsive when used in mobile and tablets, as well as all-sized computers.",
+    description: "Doctors Without Borders needs a landing page for our newest branch that will attract people as soon as you land. We want a map that shows where we are stationed around the world with a customized icon for each location. Also, the website must have a contact form so that those interested in volunteering can reach us in a very easy manner. Ideally, this page would have a space for showcasing our most recent work and where we have been mentioned in recent publications. The page should be consistent with the design of the rest of our website and should be  when used in mobile and tablets, as well as all-sized computers."
     budget: "1,150€",
     due_date: "20/04/2018",
     status: "Accepted by the organization",
@@ -415,7 +414,7 @@ p "Creating projects"
     messaging_integration: false,
     other: some.sample,
     )
-  project.remote_photo_url = "http://mm.one.un.org/content/dam/unct/myanmar/img/unct_mm_UNAIDS_seminar_lead%20image.jpg/jcr:content/renditions/cq5dam.web.540.390.jpeg"
+  project.remote_photo_url = "http://www.unaids.org/sites/default/files/20170921_FT_2.jpg"
   project.save
 
 
@@ -534,7 +533,7 @@ p "Creating projects"
     messaging_integration: false,
     other: some.sample,
     )
-  project.remote_photo_url = "http://jciranchi.com/wp-content/themes/jcix/images/mission.jpg"
+  project.remote_photo_url = "https://scontent-frt3-2.xx.fbcdn.net/v/t31.0-8/27173386_10155221509008461_2987268575239163423_o.jpg?oh=25249c4ea6327560c735fae8480bf948&oe=5B09189F"
   project.save
 
 
@@ -566,7 +565,7 @@ p "Creating projects"
   status = ["Pending", "On Going", "Accepted by the organization", "Declined by organization", "Rejected by the team", "Done"]
   some = ["Translation", "All in blue", "picture uploading", "banners", "specific form", "trello integration"]
   project = Project.new(
-    title: "Make our Website suitable for all devices",
+    title: "Make our Website Responsive",
     description: "The website should eb useable by all devices such as iPad, iPhone, etc",
     budget: "1300$",
     due_date: Faker::Date.forward(100),
@@ -582,7 +581,7 @@ p "Creating projects"
     messaging_integration: false,
     other: some.sample,
     )
-  project.remote_photo_url = "http://i.vimeocdn.com/video/609508806_1280x720.jpg"
+  project.remote_photo_url = "https://www.pih.org/sites/default/files/styles/flexslider_full/public/2017-07/Haiti_0915_Cardiac_rrollins_051-web.jpg?itok=n3jmJ-LN"
   project.save
 
 
@@ -614,7 +613,7 @@ p "Creating projects"
   status = ["Pending", "On Going", "Accepted by the organization", "Declined by organization", "Rejected by the team", "Done"]
   some = ["Translation", "All in blue", "picture uploading", "banners", "specific form", "trello integration"]
   project = Project.new(
-    title: "Messaging field",
+    title: "Messaging form",
     description: "I want a messaging field wjich can be used for immediate responses by our volunteers.",
     budget: "800$",
     due_date: Faker::Date.forward(100),
