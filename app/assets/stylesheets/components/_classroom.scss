@@ -1,8 +1,62 @@
 .classroom-container {
- height: 80vh;
+ height: 60vh;
 }
-.title-classroom {
-  h1 {
-
+.link-to-message {
+  .button {
+    position: relative;
+    display: flex;
+    margin: 4px 21px 12.5px;
+    p {
+      margin: 13px 20px 12.5px;
+      color: #aaaaaa;
+    }
+    .badge {
+      height: 20px;
+    left: 196px;
+    width: 20px;
+    font-size: 12px;
+    border-radius: 50px;
+    background-color: #ff4b4c;
+    position: absolute;
+    }
   }
+  form {
+    padding-bottom: 3px;
+  }
+  margin: 0px 30px 0px 30px;
+  h1 {
+   margin: 11px 1px;
+ }
+ display: flex;
+ justify-content: space-between;
+}
+
+.title-classroom {
+  margin: 50px 10px;
+}
+
+.msg-button {
+  i {
+  font-size: 23px;
+  }
+  padding: 10px;
+  color: white;
+  background-image: linear-gradient(to right, #92fe9d -100%, #00c9ff 100%);
+  border-radius: 50px;
+  color: white;
+  font-family: "Roboto";
+  font-size: 20px;
+}
+
+.msg-button:hover {
+  i {
+  font-size: 23px;
+  }
+  padding: 10px;
+  color: white;
+  background-image: linear-gradient(60deg, #FA3E64 0%, #ffb199 260%);
+  border-radius: 50px;
+  color: white;
+  font-family: "Roboto";
+  font-size: 20px;
 }

@@ -1,25 +1,45 @@
+
 <div class="header-container-small" style="background-image: url('<%= cl_image_path @project.photo, crop: :fill %>');">
   <div class="header-content">
-    <div class="text-center intro-text">
-      <h1>Team Proposal</h1>
-
+    <div class="intro-text">
+      <p >Your Project Classroom For:</p>
+      <h1> <%= @project.title %> for <%= @project.organization.name %></p></h1>
     </div>
   </div>
 </div>
 <br>
 <div class="classroom-container">
- <div class="title-classroom">
-  <h1>This is your to do list!</h1>
-  <div class="button">
-    <%= link_to "Chat", thredded_path, class: "custom-primary-btn" %>
-  </div>
-</div>
-<div class="container-fluid">
+<div class="container">
+  <div class="row">
+   <div class="title-classroom">
+    <div class="link-to-message">
+      <h1>This is your to do list!</h1>
+      <div class="button">
+        <div class="badge">4</div>
+       <p>Message Board</p>
+       <%= form_tag thredded_path, method: :get do %>
+       <button class="msg-button" type="submit"><i class="fas fa-comments"></i></button>
+       <% end %>
+     </div>
+   </div>
+ </div>
+ <div class="container-fluid">
   <div class="col-xs-12">
     <div id="myKanban">
     </div>
   </div>
 </div>
-
+</div>
 <%= javascript_pack_tag 'jkanban' %>
+</div>
+</div>
+<div class="container-fluid" style="background-image: url('<%= cl_image_path 'bg4.jpg' %>'); background-size: cover; background-position: center">
+  <div class="message-form">
+    <div class="col-xs-6 col-xs-offset-3">
+      <section>
+        <h1 style="text-align: center; color: white; font-size: 24px; margin-left: 20px;">Get in touch</h1>
+        <%= render 'contacts/new', contact: @contact %>
+      </section>
+    </div>
+  </div>
 </div>
