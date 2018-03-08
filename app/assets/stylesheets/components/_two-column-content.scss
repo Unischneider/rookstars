@@ -41,17 +41,19 @@ p {
   background-size: cover;
   background-color: $accent;
   height: 610px;
+   .team-new{
+    height: 200px;
+  }
 }
-
 .left-img {
   background-size: cover;
   background-color: $primary;
-  height: 250px;
+  height: 350px;
 }
 .right-img {
   background-size: cover;
   background-color: $accent;
-  height: 250px;
+  height: 350px;
 }
 
 .cta-button {
