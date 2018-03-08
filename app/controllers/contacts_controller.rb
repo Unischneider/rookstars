@@ -9,7 +9,7 @@ class ContactsController < ApplicationController
     if @contact.deliver
       flash.now[:notice] = 'Thank you for your message. We will contact you soon!'
     else
-      flash.now[:error] = 'Cannot send message.'
+      flash.now[:error] = 'Sorry, we could not send your message.'
       redirect_to root_path
     end
   end
