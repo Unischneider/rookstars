@@ -55,7 +55,7 @@ organization = Organization.new(
     email: Faker::Internet.email,
     location: "Borgergade 10, 3rd floor, 1300 Copenhagen K., Denmark",
      website: "drc.ngo",
-     description: "Danish Refugee Council is a private Danish humanitarian organisation, founded in 1956. It serves as an umbrella organization for 33 member organizations.",
+     description: "Danish Refugee Council is a private Danish humanitarian organisation, founded in 1956. It serves as an umbrella organization for 33 member organizations. DRC fulfils its mandate by providing direct assistance to conflict-affected populations – refugees, internally displaced people (IDPs) and host communities in the conflict areas of the world; and by advocating on behalf of conflict-affected populations internationally, and in Denmark, on the basis of humanitarian principles and the Human Rights Declaration. We understand 'durable solutions' as any means by which the situation of refugees can be permanently and satisfactorily resolved, enabling them to live normal lives. Durable solutions can be voluntary repatriation, local integration or resettlement. In Denmark, DRC assists refugees in all aspects of integration as well as asylum procedures. Internationally, DRC actively participates in supporting the protection of refugees, and promoting durable solutions for conflict-affected populations.",
      name: "Danish Refugee Council",
      password: "password123"
     )
@@ -253,28 +253,6 @@ p "Creating projects"
   project.remote_photo_url = "https://static.pexels.com/photos/220201/pexels-photo-220201.jpeg"
   project.save
 
-  organization1 = Organization.find_by(name: "Avaaz")
-  status = ["Pending", "On Going", "Accepted by the organization", "Declined by organization", "Rejected by the team", "Done"]
-  some = ["Translation", "All in blue", "picture uploading", "banners", "specific form", "trello integration"]
-  project = Project.new(
-    title: "Complete Website",
-    description: "I would like to have a whole new website. It shoulod contain forms to contact us and a volunteer login as well as a messaging area for those.",
-    budget: "1700$",
-    due_date: Faker::Date.forward(100),
-    status: status.sample,
-    organization: organization1,
-    db_sql: false,
-    maps: false,
-    forms: true,
-    mail_integration: true,
-    payment_integration: false,
-    sign_up_log_in: true,
-    landing_page: true,
-    messaging_integration: true,
-    other: some.sample,
-    )
-  project.remote_photo_url = "https://secure.avaaz.org/campaign/static/images/blue/_sample/whatwedo.jpg?1515761494"
-  project.save
 
 
   # organization1 = Organization.find_by(name: "Kiron")
@@ -299,6 +277,28 @@ p "Creating projects"
   #   )
   # project.photo = "https://kiron.ngo/wp-content/uploads/2017/12/Copy-of-Copy-of-Blog-Template-Featured-Image-9.png"
   # project.save
+  organization1 = Organization.find_by(name: "CARE")
+  status = ["Pending", "On Going", "Accepted by the organization", "Declined by organization", "Rejected by the team", "Done"]
+  some = ["Translation", "All in blue", "picture uploading", "banners", "specific form", "trello integration"]
+  project = Project.new(
+    title: "Messaging form",
+    description: "I want a messaging field wjich can be used for immediate responses by our volunteers.",
+    budget: "800$",
+    due_date: Faker::Date.forward(100),
+    status: status.sample,
+    organization: organization1,
+    db_sql: false,
+    maps: false,
+    forms: true,
+    mail_integration: true,
+    payment_integration: false,
+    sign_up_log_in: false,
+    landing_page: false,
+    messaging_integration: false,
+    other: some.sample,
+    )
+  project.remote_photo_url = "https://www.tmc.ac.uk/sites/default/files/3_42.jpg"
+  project.save
 
   organization1 = Organization.find_by(name: "BRAC")
   status = ["Pending", "On Going", "Accepted by the organization", "Declined by organization", "Rejected by the team", "Done"]
@@ -323,10 +323,32 @@ p "Creating projects"
   project.remote_photo_url = "https://www.ngoadvisor.net/wp-content/uploads/2016/01/AWright_SierraLeone_003129.jpg"
   project.save
 
-  organization1 = Organization.find_by(name: "Doctors Without Borders")
+  organization1 = Organization.find_by(name: "Mercy Corps")
   some = ["Everything should be in different shades of blue", "Picture uploading would be nice for user interface", "Banners are highly encouraged", "Trello integration for internal use"]
   project = Project.new(
     title: "Landing Page",
+    description: "Mercy Corps needs a website that will attract people as soon as you land. We want a map that shows where we are stationed around the world with a customized icon for each location, as well as a contact form so that those interested in volunteering can reach us in a very easy manner. Ideally, this page would also have a space for showcasing our most recent work and where we have been mentioned in recent publications. The page should be consistent with the design of the rest of our website and should be responsive when used in mobile and tablets, as well as all-sized computers.",
+    budget: "1,150€",
+    due_date: "20/04/2018",
+    status: "Accepted by the organization",
+    organization: organization1,
+    db_sql: true,
+    maps: true,
+    forms: false,
+    mail_integration: true,
+    payment_integration: false,
+    sign_up_log_in: false,
+    landing_page: false,
+    messaging_integration: false,
+    other: some.sample,
+    )
+  project.remote_photo_url = "https://www.palantir.com/philanthropy-engineering/annual-report/2016/resources/images/masthead-mercycorps-2.jpg"
+  project.save
+
+  organization1 = Organization.find_by(name: "Doctors Without Borders")
+  some = ["Everything should be in different shades of blue", "Picture uploading would be nice for user interface", "Banners are highly encouraged", "Trello integration for internal use"]
+  project = Project.new(
+    title: "Home Page Responsiveness",
     description: "Doctors Without Borders needs a landing page for our newest branch that will attract people as soon as you land. We want a map that shows where we are stationed around the world with a customized icon for each location. Also, the website must have a contact form so that those interested in volunteering can reach us in a very easy manner. Ideally, this page would have a space for showcasing our most recent work and where we have been mentioned in recent publications. The page should be consistent with the design of the rest of our website and should be equally represented when used in mobile and tablets, as well as small, mid, and large computers.",
     budget: "1,150€",
     due_date: "20/04/2018",
@@ -350,8 +372,8 @@ p "Creating projects"
   status = ["Pending", "On Going", "Accepted by the organization", "Declined by organization", "Rejected by the team", "Done"]
   some = ["Translation", "All in blue", "picture uploading", "banners", "specific form", "trello integration"]
   project = Project.new(
-    title: "Make our Website responsive",
-    description: "I just realized again that our website is not viewable on any other device then the computer and even there is no taste in it.",
+    title: "Landing Page",
+    description: "DRC needs a landing page for our newest branch that will attract people as soon as you land. We want a map that shows where we are stationed around the world with a customized icon for each location. Also, the website must have a contact form so that those interested in volunteering can reach us in a very easy manner. Ideally, this page would have a space for showcasing our most recent work and where we have been mentioned in recent publications. The page should be consistent with the design of the rest of our website and should be proportionate when used in mobile and tablets, as well as small, mid, and large-sized computers.",
     budget: "800$",
     due_date: Faker::Date.forward(100),
     status: status.sample,
@@ -609,28 +631,6 @@ p "Creating projects"
   project.save
 
 
-  organization1 = Organization.find_by(name: "CARE")
-  status = ["Pending", "On Going", "Accepted by the organization", "Declined by organization", "Rejected by the team", "Done"]
-  some = ["Translation", "All in blue", "picture uploading", "banners", "specific form", "trello integration"]
-  project = Project.new(
-    title: "Messaging form",
-    description: "I want a messaging field wjich can be used for immediate responses by our volunteers.",
-    budget: "800$",
-    due_date: Faker::Date.forward(100),
-    status: status.sample,
-    organization: organization1,
-    db_sql: false,
-    maps: false,
-    forms: true,
-    mail_integration: true,
-    payment_integration: false,
-    sign_up_log_in: false,
-    landing_page: false,
-    messaging_integration: false,
-    other: some.sample,
-    )
-  project.remote_photo_url = "https://www.tmc.ac.uk/sites/default/files/3_42.jpg"
-  project.save
 
   organization1 = Organization.find_by(name: "ISO")
   status = ["Pending", "On Going", "Accepted by the organization", "Declined by organization", "Rejected by the team", "Done"]
@@ -655,26 +655,28 @@ p "Creating projects"
   project.remote_photo_url = "https://www.iso.org/files/live/sites/isoorg/files/about%20ISO/img/ISO_banner_Vernier.jpg/thumbnails/1200x300"
   project.save
 
-  organization1 = Organization.find_by(name: "Mercy Corps")
-  some = ["Everything should be in different shades of blue", "Picture uploading would be nice for user interface", "Banners are highly encouraged", "Trello integration for internal use"]
+
+  organization1 = Organization.find_by(name: "Avaaz")
+  status = ["Pending", "On Going", "Accepted by the organization", "Declined by organization", "Rejected by the team", "Done"]
+  some = ["Translation", "All in blue", "picture uploading", "banners", "specific form", "trello integration"]
   project = Project.new(
-    title: "Landing Page",
-    description: "Mercy Corps needs a website that will attract people as soon as you land. We want a map that shows where we are stationed around the world with a customized icon for each location, as well as a contact form so that those interested in volunteering can reach us in a very easy manner. Ideally, this page would also have a space for showcasing our most recent work and where we have been mentioned in recent publications. The page should be consistent with the design of the rest of our website and should be responsive when used in mobile and tablets, as well as all-sized computers.",
-    budget: "1,150€",
-    due_date: "20/04/2018",
-    status: "Accepted by the organization",
+    title: "Complete Website",
+    description: "I would like to have a whole new website. It shoulod contain forms to contact us and a volunteer login as well as a messaging area for those.",
+    budget: "1700$",
+    due_date: Faker::Date.forward(100),
+    status: status.sample,
     organization: organization1,
-    db_sql: true,
-    maps: true,
-    forms: false,
+    db_sql: false,
+    maps: false,
+    forms: true,
     mail_integration: true,
     payment_integration: false,
-    sign_up_log_in: false,
-    landing_page: false,
-    messaging_integration: false,
+    sign_up_log_in: true,
+    landing_page: true,
+    messaging_integration: true,
     other: some.sample,
     )
-  project.remote_photo_url = "https://www.palantir.com/philanthropy-engineering/annual-report/2016/resources/images/masthead-mercycorps-2.jpg"
+  project.remote_photo_url = "https://secure.avaaz.org/campaign/static/images/blue/_sample/whatwedo.jpg?1515761494"
   project.save
 
 p "Creating teams"

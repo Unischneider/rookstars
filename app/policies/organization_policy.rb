@@ -5,6 +5,10 @@ class Scope < Scope
     end
   end
 
+  def edit?
+    user == record
+  end
+
   def show?
     true
   end
