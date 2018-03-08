@@ -47,7 +47,8 @@
   }
   .right-cta {
     white-space: normal;
-    overflow: overlay;
+    overflow: scroll;
+    -webkit-overflow: scroll;
     background-size: cover;
     background-color: $accent;
     height: 610px;
