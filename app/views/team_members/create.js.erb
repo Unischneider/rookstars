@@ -34,7 +34,7 @@ function destroyForm() {
   newUserForm.innerHTML = ''
 }
 // console.log("ghjkl")
-<% if @team_member && @team_member.errors.any? %>
+<% if @team_member && @team_member.errors.any? || @current == @team_member.user%>
   destroyErrors();
   addErrors("Please add the correct email address of an existing user");
 <% elsif @team_members.count > 4 %>
