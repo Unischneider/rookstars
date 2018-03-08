@@ -1,0 +1,54 @@
+<div class="container-fluid">
+  <div class="text-center">
+    <h2>Edit <%= @user.first_name %></h2>
+
+    <%= simple_form_for(@user, html: { method: :put }) do |f| %>
+    <%= f.error_notification %>
+
+    <div class="box-about-me-2">
+      <div class="form-inputs">
+      <div class="row">
+        <div class="col-xs-4 col-xs-offset-2">
+          <%= f.input :email, required: true, autofocus: true %>
+
+          <%= f.input :password, autocomplete: "off", hint: "leave blank if you don't want to change it", required: false %>
+          <%= f.input :password_confirmation, required: false %>
+          <%= f.input :current_password, hint: "we need your current password to confirm the changes", required: true %>
+        </div>
+        <div class="col-xs-4">
+          <% if @user.avatar %>
+          <a href=""><%= image_tag @user.avatar, class: "avatar-large" %></a>
+          <div class="alignment_center">
+          <%= f.input :photo %>
+          <%= f.input :photo_cache, as: :hidden%>
+          </div>
+          <% else %>
+          <%= f.input :photo %>
+          <div class="alignment_center">
+            <%= f.input :photo_cache, as: :hidden%>
+          </div>
+          <% end %>
+          <%= f.input :about_me, required: false %>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-actions">
+      <%= f.button :submit, "Update", class: "custom-primary-btn" %>
+    </div>
+    <% end %>
+  </div>
+
+    <div class="box-about-me-2">
+    <h3>Delete my account</h3>
+
+    <p>Unhappy? <%= link_to "Delete my account", user_path(@user), data: { confirm: "Are you sure?" }, method: :delete,  class: "custom-secondary-btn" %></p>
+    <br>
+
+
+    <%= link_to "Back", :back, class: "custom-primary-btn" %>
+  </div>
+  </div>
+  <br>
+  <br>
+</div>

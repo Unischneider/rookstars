@@ -21,7 +21,7 @@
         <div class="box-about-me">
           <p><%= @user.about_me if @user.about_me %></p>
         </div>
-        <%= link_to "Edit", edit_user_registration_path, class: "custom-btn-primary" %></p>
+        <%= link_to "Edit", edit_user_path, class: "custom-primary-btn" %></p>
       </div>
     </div>
   </div>
@@ -50,7 +50,7 @@
               <h1>Applications</h1>
               <% @user.teams.each do |team| %>
               <% team.proposals.each do |app|   %>
-              <p><%= link_to "#{app.project.title}", projects_path(app.project.title), style: "text-decoration: none; color:white;" %></p>
+              <p><%= link_to "#{app.project.title}", project_path(app.project.id), style: "text-decoration: none; color:white;" %></p>
               <% end %>
               <% end %>
             </div>

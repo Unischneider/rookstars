@@ -71,6 +71,11 @@ class ProjectsController < ApplicationController
         proposal.team_members.each do |team_member|
           return true if team_member.user == current_user
         end
+      else
+        proposal.team_members.each do |team_member|
+          @proposal_pending = team_member.user == current_user
+          @proposal = proposal if team_member.user == current_user
+        end
       end
     end
     return false
