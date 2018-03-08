@@ -6,7 +6,7 @@
       <h1>Your Proposal for <%= @proposal.project.organization.name %></h1>
       <br>
       <div class="cta-button">
-        <%= link_to "Check Project Status", project_proposal_confirm_path , class: "custom-primary-btn" %>
+        <%= link_to "Check Project Status", edit_proposals_confirm_path , class: "custom-primary-btn" %>
       </div>
     </div>
   </div>
@@ -38,7 +38,7 @@
                 <% if @proposal.joinable %>
                 <p>This team is open for applicants</p>
                 <div class="cta-button">
-                  <%= link_to "Apply", project_proposal_confirm_path(@project), class: "custom-primary-btn" %>
+                  <%= link_to "Apply", edit_proposals_confirm_path(@project), class: "custom-primary-btn" %>
                   <% else %>
                   <p>This team is closed</p>
                 </div>
@@ -82,7 +82,7 @@
         <p>Checkout your application status.</p>
       </div>
       <div class="cta-button">
-        <%= link_to "Status", project_proposal_confirm_path , class: "custom-primary-btn" %>
+        <%= link_to "Status", edit_proposals_confirm_path , class: "custom-primary-btn" %>
       </div>
     </div>
   </div>

@@ -47,7 +47,7 @@
           <% elsif @proposal_pending %>
             <p>You have a pending application for this project.</p>
             <br>
-            <%= link_to "View Project Status", project_proposal_confirm_path(@project, @proposal.id), class: "custom-primary-btn" %>
+            <%= link_to "View Project Status", edit_proposals_confirm_path(@project, @proposal.id), class: "custom-primary-btn" %>
           <% else %>
           <div class="cta-button">
             <%= link_to "Apply to Collaborate", new_project_team_path(@project), class: "custom-primary-btn" %>

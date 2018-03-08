@@ -24,7 +24,7 @@ class ProposalsController < ApplicationController
   def create
     @proposal = Proposal.new(proposal_params)
     @proposal.project = @project
-    @proposal.status = "Pending NGO validation"
+    @proposal.status = "Pending NGO confirmation"
     team = Team.find(params[:proposal][:team])
     @proposal.team = team
     authorize @proposal
@@ -43,7 +43,7 @@ class ProposalsController < ApplicationController
   end
 
   def update
-    @proposal.status = "Pending NGO validation"
+    @proposal.status = "Pending NGO confirmation"
     @proposal.update(proposal_params)
     @team = Team.find(@proposal.team_id)
     @proposal.team = @team
@@ -58,11 +58,6 @@ class ProposalsController < ApplicationController
     redirect_to proposals_path
   end
 
-  def confirm
-    @team_members = TeamMember.where(team_id: @proposal.team_id)
-    authorize @proposal
-  end
-
   private
 
   def proposal_finder
@@ -71,10 +66,6 @@ class ProposalsController < ApplicationController
 
   def proposal_params
     params.require(:proposal).permit(:team_id, :project_id, :pitch)
-  end
-
-  def team_params
-    params.require(:team).permit(:about_us)
   end
 
   def project_finder

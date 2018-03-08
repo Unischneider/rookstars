@@ -1,5 +1,18 @@
 Rails.application.routes.draw do
 
+  #refactoring
+
+  namespace :proposals do
+    resources :confirm, only: [:edit, :update]
+  end
+
+
+
+
+
+
+
+  #old
   devise_for :organizations, path: 'organizations', controllers: { sessions: 'organizations/sessions', registrations: 'organizations/registrations' }
   devise_for :users, path: 'users', controllers: { omniauth_callbacks: 'users/omniauth_callbacks', sessions: 'users/sessions', registrations: 'users/registrations' }
   root to: 'pages#home'
