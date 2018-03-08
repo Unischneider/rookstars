@@ -15,11 +15,9 @@
             <hr>
             <div class="text">
               <h1><%= @organization.name %></h1>
-              <p class="tag-label">About the NGO:</p>
+             <strong> <p class="tag-label">About the NGO:</p></strong>
               <p><%= @organization.description %></p>
-              <div class="organization_photo">
-                <%= cl_image_tag @organization.photo %>
-              </div>
+
             </div>
           </div>
         </div>
@@ -27,15 +25,15 @@
       <div class="right-cta col-xs-12 col-md-6" style="background-image: url('<%= cl_image_path 'bg3.jpg' %>'); background-size: cover; background-position: center">
         <div class="cta-content">
           <hr>
-          <div class="text">
+          <div class="text text-overflow">
             <h1>About the Project</h1>
-            <p class="tag-label">Project:</p>
-            <p><strong> <%= @project.title %></strong></p><br>
-            <p class="tag-label">Project details:</p>
-            <p><strong> <%= @project.description %></strong></p><br>
-            <p class="tag-label">Due date:</p>
-            <p><strong><%= @project.due_date %></strong></p><br>
-            <p class="tag-label">Budget:</p> <p> <strong> <%= @project.budget %> </strong></p>
+            <strong><p class="tag-label">Project:</p></strong>
+            <p><%= @project.title %></p><br>
+            <strong><p class="tag-label">Project details:</p></strong>
+            <p> <%= @project.description %></p><br>
+            <strong><p class="tag-label">Due date:</p></strong>
+            <p><%= @project.due_date %></p><br>
+           <strong><p class="tag-label">Budget:</p> <p><%= @project.budget %> </p>
           </div>
           <% if @project.status == "Done" || @joinable %>
             <p>This project can not be joined</p>
