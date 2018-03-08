@@ -9,25 +9,18 @@
 </div>
 <br>
 <div class="classroom-container">
-<div class="container">
-  <div class="row">
-   <div class="title-classroom">
-    <div class="link-to-message">
-      <div class="button">
-       <%= form_tag thredded_path, method: :get do %>
-       <button class="msg-button" type="submit"><i class="fas fa-comments"></i></button>
-       <% end %>
-     </div>
-   </div>
- </div>
- <div class="container-fluid">
-  <div class="col-xs-12">
-    <div id="myKanban">
+  <div class="container">
+    <div class="container-fluid">
+      <div class="col-xs-12">
+        <div id="myKanban">
+        </div>
+      </div>
     </div>
   </div>
+  <%= javascript_pack_tag 'jkanban' %>
 </div>
 </div>
-<%= javascript_pack_tag 'jkanban' %>
-</div>
-</div>
+<%= form_tag thredded_path, method: :get do %>
+<button class="msg-button" type="submit"><i class="fas fa-comments"></i></button>
+<% end %>
 
