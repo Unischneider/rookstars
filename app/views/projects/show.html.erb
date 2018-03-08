@@ -7,7 +7,7 @@
             <p>This project can not be joined</p>
           <% else %>
           <div class="cta-button">
-            <%= link_to "Collaborate On This Project", new_project_team_path(@project), class: "custom-primary-btn" %>
+            <%= link_to "Join This Project", new_project_team_path(@project), class: "custom-primary-btn" %>
           </div>
           <% end %>
     </div>
@@ -48,10 +48,6 @@
             <p>You have a pending application for this project.</p>
             <br>
             <%= link_to "View Project Status", project_proposal_confirm_path(@project, @proposal.id), class: "custom-primary-btn" %>
-          <% else %>
-          <div class="cta-button">
-            <%= link_to "Apply to Collaborate", new_project_team_path(@project), class: "custom-primary-btn" %>
-          </div>
           <% end %>
           </div>
         </div>
