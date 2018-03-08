@@ -6,4 +6,11 @@ class Organization < ApplicationRecord
 
   validates :name, :description, presence: true
   mount_uploader :photo, PhotoUploader
+  def avatar
+    if photo.file.nil?
+      "http://res.cloudinary.com/jules/image/upload/v1520336238/placeholder.jpg"
+    else
+      photo
+    end
+  end
 end
