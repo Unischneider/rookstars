@@ -33,17 +33,6 @@
                 <%= member.user.last_name %></p>
                 <% end %>
                 <% end %>
-                <br>
-                <p class="tag-label">Application Status</p>
-                <% if @proposal.joinable %>
-                <p>This team is open for applicants</p>
-                <div class="cta-button">
-                  <%= link_to "Apply", project_proposal_confirm_path(@project), class: "custom-primary-btn" %>
-                  <% else %>
-                  <p>This team is closed</p>
-                </div>
-                <% end %>
-
               </div>
             </div>
           </div>
@@ -69,20 +58,6 @@
       <div class="text" style="color: #0e3849;">
         <h1>About the team</h1>
         <p><%= @proposal.team.about_us%></p>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="one-column-cta" style="background-image: url('<%= cl_image_path 'bg.jpg' %>'); background-size: cover; background-position: center">
-  <div class="container-fluid">
-    <div class="cta-content">
-      <hr>
-      <div class="text text-center">
-        <h1>Haven't heard from the NGO yet?</h1>
-        <p>Checkout your application status.</p>
-      </div>
-      <div class="cta-button">
-        <%= link_to "Status", project_proposal_confirm_path , class: "custom-primary-btn" %>
       </div>
     </div>
   </div>

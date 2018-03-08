@@ -1,7 +1,6 @@
-<%= form_tag(team_team_members_path(team), method: :post, remote: true) do %>
+<%= form_tag(team_team_members_path(team), method: :post, remote: true, class: "team_members_form") do %>
   <%# hidden_field_tag :team_id, team.id %>
-  <%= label_tag 'Email' %>
-  <%= text_field_tag :email %>
-  <%= submit_tag 'Add', name: nil, class: "custom-secondary-btn" %>
+  <%= text_field_tag :email, nil, placeholder: "Enter Email Address" %>
+  <%= submit_tag 'Add', name: nil, class: "custom-primary-btn form-custom-btn" %>
 <% end %>
 
