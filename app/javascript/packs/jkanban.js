@@ -1234,7 +1234,7 @@ module.exports = tick;
 var KanbanTest = new jKanban({
     element: '#myKanban',
     gutter: '10px',
-    widthBoard: '300px',
+    widthBoard: '340px',
     click: function (el) {
 
     },
