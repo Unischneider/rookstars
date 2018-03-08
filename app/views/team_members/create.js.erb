@@ -13,6 +13,14 @@ function addErrors(errorMessage) {
   form.insertAdjacentHTML('beforeend', '<p>' + errorMessage + '</p>');
 }
 
+function destroyErrors() {
+  const errorMessage = document.getElementById('team_members_form');
+  const errors = errorMessage.querySelectorAll('p');
+  errors.forEach((error) => {
+    error.innerHTML = '';
+    })
+}
+
 function teamMemberList(teamMembers) {
   const users = document.getElementById('team_members_list');
   users.innerHTML = ''
@@ -27,6 +35,7 @@ function destroyForm() {
 }
 // console.log("ghjkl")
 <% if @team_member && @team_member.errors.any? %>
+  destroyErrors();
   addErrors("Please add the correct email address of an existing user");
 <% elsif @team_members.count > 4 %>
   addUser('<li><%= "#{@team_member.user.first_name} #{@team_member.user.last_name} (#{@team_member.user.email})" %></li>');
