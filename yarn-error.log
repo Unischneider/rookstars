@@ -21,6 +21,10 @@ npm manifest:
       "@rails/webpacker": "^3.2.2",
       "bootstrap": "3",
       "dragula": "^3.7.2",
+<<<<<<< HEAD
+=======
+      "gmaps": "^0.4.24",
+>>>>>>> master
       "jquery": "^3.3.1",
       "typed.js": "^2.0.6"
     },
@@ -2924,6 +2928,13 @@ Lockfile:
       lodash "~4.17.4"
       minimatch "~3.0.2"
   
+<<<<<<< HEAD
+=======
+  gmaps@^0.4.24:
+    version "0.4.24"
+    resolved "https://registry.yarnpkg.com/gmaps/-/gmaps-0.4.24.tgz#07f22f0cfc3e4e32498950ffafd7ca635ffc100c"
+  
+>>>>>>> master
   got@^7.0.0, got@^7.1.0:
     version "7.1.0"
     resolved "https://registry.yarnpkg.com/got/-/got-7.1.0.tgz#05450fd84094e6bbea56f451a43a9c289166385a"

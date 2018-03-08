@@ -1,6 +1,5 @@
 .two-column-cta {
-  height: 300px;
-
+  height: 350px;
   hr {
    margin-bottom: 0px;
    width: 78px;
@@ -19,28 +18,24 @@
 p {
   color: white;
   font-weight: light;
-  font-size: 14px;
-}
+  max-width: 350px;
+  margin-bottom: 35px;
+  font-size: 20px;
+  }
 .left-cta {
   background-color: $primary;
   background-size: cover;
-  height: 300px;
+  height: 350px;
 }
 .right-cta {
   background-color: $accent;
   background-size: cover;
-  height: 300px;
-
+  height: 350px;
 }
-
 .cta-button {
   margin: 20px 0px;
-
 }
-
 .cta-content {
   margin-left: 65px;
 }
-
 }
-

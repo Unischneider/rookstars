@@ -1,20 +1,22 @@
-<div class="header-container-small" style="background-image: url('<%= cl_image_path @proposal.project.photo, crop: :fill %>');">
+
+<div class="header-container-small" style="background-image: linear-gradient(-225deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.18) 50%), url('<%= cl_image_path @proposal.project.photo, crop: :fill %>'); background-attachment: fixed;">
+
   <div class="header-content">
     <div class="text-center intro-text">
       <h1>Confirmation</h1>
     </div>
   </div>
 </div>
-<div class="one-column-cta" style="background-image: url('<%= cl_image_path 'bg2.jpg' %>'); background-size: cover; background-position: center">
+<div class="one-column-cta" style="background-color: #f4f4f4; height: 349px;">
   <div class="container-fluid">
      <div class="cta-content">
             <hr>
             <div class="text">
-              <h1><%= @proposal.project.organization.name %> wants your team <br> to manage the implementation of the  Project: <%= @proposal.project.title %></h1>
-              <p>Accept it now and start working in the office</p>
+              <h1 style="color: #022832; line-height: 30px;"><%= @proposal.project.organization.name %> wants your team <br> to manage the implementation of the  Project: <%= @proposal.project.title %></h1>
+              <p style="color: #022832;">Accept it now and start working in the office</p>
               <div class="cta-button">
                 <%= link_to "Accept", project_classroom_path, class: "custom-primary-btn"  %>
-                 <%= link_to "Decline", projects_path, class: "custom-primary-btn"  %>
+                 <%= link_to "Decline", projects_path, class: "terciary-primary-btn"  %>
               </div>
             </div>
           </div>
@@ -32,8 +34,8 @@
               <h1>Team</h1>
               <div class="team-avatar">
                 <% @team_members.each do |member| %>
-                <% if member.user.photo %>
-                <%= cl_image_tag member.user.photo, class: "member-avatar" %>
+                <% if member.user.avatar %>
+                <%= cl_image_tag member.user.avatar, class: "member-avatar" %>
                 <% end %>
                 <% end %>
               </div>
@@ -72,7 +74,7 @@
     </div>
   </div>
 </div>
-<div class="one-column-content" style="background-image: url('<%= cl_image_path 'bg2.jpg' %>'); background-size: cover; background-position: center">
+<div class="one-column-content" style="color: #0e3849;"">
   <div class="container-fluid">
     <div class="cta-content">
       <hr>

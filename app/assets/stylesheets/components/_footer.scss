@@ -1,7 +1,7 @@
 .footer {
     position: relative;
     width: 100%;
-    min-height: 260px;
+    min-height: 200px;
     background: #0e2227;
     padding: 10px 0;
     z-index: 1;
@@ -9,15 +9,15 @@
 
 
 .slice-footer {
-  width:145px;
-  height:135px;
+  width:220px;
+  max-height:135px;
   margin-top:-45px;
 
 
   }
 
 .footer .credits {
-    font-family: 'ProximaNovaBlack', helvetica, arial, sans-serif;
+
 }
 
 .footer-white {

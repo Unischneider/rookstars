@@ -1,66 +1,10 @@
-<div class="navbar-container">
-
-
-  <% if current_page? root_path %>
-
-
-  <div class="navbar-top-home">
-    <!-- Logo -->
-    <div class="back">
-      <% unless current_page? root_path %>
-      <%= link_to :back do %>
-      <div class="back-text">
-        <i class="back-btn fas fa-arrow-left"></i>
-        <p>Back</p>
-      </div>
-      <% end %>
-      <% end %>
-    </div>
-    <div class="brand">
-      <%= link_to root_path do  %>
-      <%= image_tag "logo.png", class: "navbar-wagon-brand" %>
-      <% end %>
-    </div>
-
-    <div class="please-work">
-      <% if user_signed_in? %>
-      <%= link_to destroy_user_session_path,class: "custom-primary-btn",  method: :delete do %>
-      <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
-      <% end %>
-      <div class="navbar-top-item">
-        <% if current_user.photo.nil? %>
-        <%= link_to user_path(current_user) do   %>
-        <img src="https://kitt.lewagon.com/placeholder/users/ssaunier" class="avatar dropdown-toggle" id="navbar-top-menu">
-        <% end %>
-        <% else %>
-        <%= link_to user_path(current_user) do   %>
-        <%= image_tag current_user.photo, class: "avatar dropdown-toggle", id: "navbar-top-menu" %>
-        <% end %>
-        <% end %>
-      </div>
-      <% else %>
-      <% unless current_page? root_path %>
-      <div class="nav-content">
-        <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-top-eric custom-primary-btn" %>
-      </div>
-      <% end %>
-      <% end %>
-    </div>
-
-
-    <% else %>
-
-
+  <div class="navbar-container">
+    <% unless current_page? root_path %>
     <div class="navbar-top">
       <div class="back">
-        <% unless current_page? root_path %>
-        <%= link_to :back do %>
-        <div class="back-text">
-          <i class="back-btn fas fa-arrow-left"></i>
-          <p>Back</p>
-        </div>
-        <% end %>
-        <% end %>
+        <a href="javascript:history.back()", class="back-text ">
+          <i class="back-btn fas fa-arrow-left"></i><p>Back</p>
+        </a>
       </div>
       <div class="brand">
         <%= link_to root_path do  %>
@@ -70,29 +14,37 @@
 
       <div class="please-work">
         <% if user_signed_in? %>
-        <%= link_to destroy_user_session_path,class: "custom-primary-btn",  method: :delete do %>
-        <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
-        <% end %>
         <div class="navbar-top-item">
-          <% if current_user.photo.nil? %>
-          <%= link_to user_path(current_user) do   %>
-          <img src="https://kitt.lewagon.com/placeholder/users/ssaunier" class="avatar dropdown-toggle" id="navbar-top-menu">
-          <% end %>
-          <% else %>
-          <%= link_to user_path(current_user) do   %>
-          <%= image_tag current_user.photo, class: "avatar dropdown-toggle", id: "navbar-top-menu" %>
-          <% end %>
-          <% end %>
+          <div class="dropdown">
+            <%= image_tag current_user.avatar, class: "avatar dropdown-toggle", id: "navbar-top-menu" , data:{toggle: "dropdown"} %>
+            <ul class="dropdown-menu dropdown-menu-right navbar-top-dropdown-menu">
+              <li><%= link_to "Profile", user_path(current_user)  %></li>
+              <li><%= link_to destroy_user_session_path, method: :delete do %>
+                <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
+                <% end %></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <% elsif  organization_signed_in? %>
+        <div class="navbar-top-item">
+          <div class="dropdown">
+            <%= image_tag current_organization.avatar, class: "avatar dropdown-toggle", id: "navbar-top-menu" , data:{toggle: "dropdown"} %>
+            <ul class="dropdown-menu dropdown-menu-right navbar-top-dropdown-menu">
+              <li><%= link_to "Profile", organization_path(current_organization)  %></li>
+              <li><%= link_to destroy_organization_session_path, method: :delete do %>
+                <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
+                <% end %></li>
+              </ul>
+            </div>
+          </div>
         </div>
         <% else %>
-        <% unless current_page? root_path %>
         <div class="nav-content">
           <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-top-eric custom-primary-btn" %>
         </div>
         <% end %>
-        <% end %>
-        <% end %>
       </div>
     </div>
+    <% end %>
   </div>
-</div>
