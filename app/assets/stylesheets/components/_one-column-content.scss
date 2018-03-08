@@ -1,8 +1,10 @@
 .one-column-content {
-   text-align: left;
-   background-size: cover;
-   height: 300px;
-  hr {
+ text-align: left;
+ white-space: normal;
+ overflow: overlay;
+ background-size: cover;
+ height: 300px;
+ hr {
    margin-bottom: 0px;
    width: 78px;
    margin-top: 70px;
@@ -17,10 +19,10 @@
   font-weight: bold;
   font-size: 24px;
   text-align: left;
-  color: white;
+  color: #022831;
 }
 p {
-  color: white;
+  color: #022831;
   margin-bottom: 1px;
   font-weight: light;
   font-size: 20px;
@@ -30,7 +32,7 @@ p {
   .organization_photo {
     padding-top: 15px;
     img {
-    max-width: 330px;
+      max-width: 330px;
     }
   }
 }
