@@ -33,16 +33,28 @@ function destroyForm() {
   const newUserForm = document.getElementById('team_members_form');
   newUserForm.innerHTML = ''
 }
+
+// function teamMemberExist() {
+//   const tm = <%= @team_member.user %>;
+//   const users = <%= @team_members %>;
+//   users.forEach((user) => {
+//     if(user === tm){
+//       return true;
+//     };
+
+//   })
+
+// }
 // console.log("ghjkl")
 <% if @team_member && @team_member.errors.any? || @current == @team_member.user%>
   destroyErrors();
   addErrors("Please add the correct email address of an existing user");
 <% elsif @team_members.count > 4 %>
-  addUser('<li><%= "#{@team_member.user.first_name} #{@team_member.user.last_name} (#{@team_member.user.email})" %></li>');
+  addUser('<li><%= cl_image_tag @team_member.user.avatar , class: "avatar" %><div style="text-align: left; margin-left: 10px;"><p style="margin: 0px; color: #303030;"><%= "#{@team_member.user.first_name} #{@team_member.user.last_name}" %></p><p style="font-size: 18px; margin-bottom: 0px;"><%= "#{@team_member.user.email}"%></p></div></li>')
   destroyForm()
   addErrors("You have reached the maximum of teammates you can have");
 <% else %>
-  addUser('<li><%= "#{@team_member.user.first_name} #{@team_member.user.last_name} (#{@team_member.user.email})" %></li>')
+  addUser('<li><%= cl_image_tag @team_member.user.avatar , class: "avatar" %><div style="text-align: left; margin-left: 10px;"><p style="margin: 0px; color: #303030;"><%= "#{@team_member.user.first_name} #{@team_member.user.last_name}" %></p><p style="font-size: 18px; margin-bottom: 0px;"><%= "#{@team_member.user.email}"%></p></div></li>')
   refreshForm('');
 <% end %>
 
