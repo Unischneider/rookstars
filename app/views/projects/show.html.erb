@@ -42,7 +42,6 @@
             <strong><p class="tag-label">Due date:</p></strong>
             <p><%= @project.due_date %></p><br>
            <strong><p class="tag-label">Budget:</p> <p><%= @project.budget %> </p>
-          </div>
           <% if @project.status == "Done" || @joinable %>
             <p>This project can not be joined</p>
           <% elsif @proposal_pending %>
@@ -54,8 +53,7 @@
             <%= link_to "Apply to Collaborate", new_project_team_path(@project), class: "custom-primary-btn" %>
           </div>
           <% end %>
-
-
+          </div>
         </div>
       </div>
     </div>

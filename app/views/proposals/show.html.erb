@@ -4,6 +4,10 @@
   <div class="header-content">
     <div class="text-center intro-text">
       <h1>Your Proposal for <%= @proposal.project.organization.name %></h1>
+      <br>
+      <div class="cta-button">
+        <%= link_to "Check Project Status", project_proposal_confirm_path , class: "custom-primary-btn" %>
+      </div>
     </div>
   </div>
 </div>
@@ -39,10 +43,7 @@
                   <p>This team is closed</p>
                 </div>
                 <% end %>
-                <p class="tag-label">Status</p>
-                <div class="cta-button">
-                  <%= link_to "Check Status", project_proposal_confirm_path , class: "custom-primary-btn" %>
-                </div>
+
               </div>
             </div>
           </div>
