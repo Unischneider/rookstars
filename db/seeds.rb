@@ -277,6 +277,28 @@ p "Creating projects"
   #   )
   # project.photo = "https://kiron.ngo/wp-content/uploads/2017/12/Copy-of-Copy-of-Blog-Template-Featured-Image-9.png"
   # project.save
+  organization1 = Organization.find_by(name: "CARE")
+  status = ["Pending", "On Going", "Accepted by the organization", "Declined by organization", "Rejected by the team", "Done"]
+  some = ["Translation", "All in blue", "picture uploading", "banners", "specific form", "trello integration"]
+  project = Project.new(
+    title: "Messaging form",
+    description: "I want a messaging field wjich can be used for immediate responses by our volunteers.",
+    budget: "800$",
+    due_date: Faker::Date.forward(100),
+    status: status.sample,
+    organization: organization1,
+    db_sql: false,
+    maps: false,
+    forms: true,
+    mail_integration: true,
+    payment_integration: false,
+    sign_up_log_in: false,
+    landing_page: false,
+    messaging_integration: false,
+    other: some.sample,
+    )
+  project.remote_photo_url = "https://www.tmc.ac.uk/sites/default/files/3_42.jpg"
+  project.save
 
   organization1 = Organization.find_by(name: "BRAC")
   status = ["Pending", "On Going", "Accepted by the organization", "Declined by organization", "Rejected by the team", "Done"]
@@ -609,28 +631,6 @@ p "Creating projects"
   project.save
 
 
-  organization1 = Organization.find_by(name: "CARE")
-  status = ["Pending", "On Going", "Accepted by the organization", "Declined by organization", "Rejected by the team", "Done"]
-  some = ["Translation", "All in blue", "picture uploading", "banners", "specific form", "trello integration"]
-  project = Project.new(
-    title: "Messaging form",
-    description: "I want a messaging field wjich can be used for immediate responses by our volunteers.",
-    budget: "800$",
-    due_date: Faker::Date.forward(100),
-    status: status.sample,
-    organization: organization1,
-    db_sql: false,
-    maps: false,
-    forms: true,
-    mail_integration: true,
-    payment_integration: false,
-    sign_up_log_in: false,
-    landing_page: false,
-    messaging_integration: false,
-    other: some.sample,
-    )
-  project.remote_photo_url = "https://www.tmc.ac.uk/sites/default/files/3_42.jpg"
-  project.save
 
   organization1 = Organization.find_by(name: "ISO")
   status = ["Pending", "On Going", "Accepted by the organization", "Declined by organization", "Rejected by the team", "Done"]
