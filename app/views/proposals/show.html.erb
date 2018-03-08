@@ -33,17 +33,6 @@
                 <%= member.user.last_name %></p>
                 <% end %>
                 <% end %>
-                <br>
-                <p class="tag-label">Application Status</p>
-                <% if @proposal.joinable %>
-                <p>This team is open for applicants</p>
-                <div class="cta-button">
-                  <%= link_to "Apply", project_proposal_confirm_path(@project), class: "custom-primary-btn" %>
-                  <% else %>
-                  <p>This team is closed</p>
-                </div>
-                <% end %>
-
               </div>
             </div>
           </div>
