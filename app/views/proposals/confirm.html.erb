@@ -9,20 +9,19 @@
 </div>
 <div class="one-column-cta" style="background-color: #f4f4f4; height: 349px;">
   <div class="container-fluid">
-     <div class="cta-content">
-            <hr>
-            <div class="text">
-              <h1 style="color: #022832; line-height: 30px;"><%= @proposal.project.organization.name %> wants your team <br> to manage the implementation of the  Project: <%= @proposal.project.title %></h1>
-              <p style="color: #022832;">Accept it now and start working in the office</p>
-              <div class="cta-button">
-                <%= link_to "Accept", project_classroom_path, class: "custom-primary-btn"  %>
-                 <%= link_to "Decline", projects_path, class: "terciary-primary-btn"  %>
-              </div>
-            </div>
-          </div>
+   <div class="cta-content">
+    <hr>
+    <div class="text">
+      <h1 style="color: #022832; line-height: 30px;"><%= @proposal.project.organization.name %> wants your team <br> to manage the implementation of the  Project: <%= @proposal.project.title %></h1>
+      <p style="color: #022832;">Accept it now and start working in the office</p>
+      <div class="cta-button">
+        <%= link_to "Accept", project_classroom_path, class: "custom-primary-btn"  %>
+        <%= link_to "Decline", projects_path, class: "terciary-primary-btn"  %>
+      </div>
+    </div>
   </div>
 </div>
-
+</div>
 <div class="container-fluid">
   <div class="two-column-content">
     <div class="row">
