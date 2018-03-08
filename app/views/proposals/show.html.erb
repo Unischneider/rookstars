@@ -36,25 +36,24 @@
                 <p>This team is open for applicants</p>
                 <div class="cta-button">
                   <%= link_to "Apply", project_proposal_confirm_path(@project), class: "custom-primary-btn" %>
-                <% else %>
-                <p>This team is closed</p>
+                  <% else %>
+                  <p>This team is closed</p>
                 </div>
                 <% end %>
+                <p class="tag-label">Status</p>
+                <div class="cta-button">
+                  <%= link_to "Check Status", project_proposal_confirm_path , class: "custom-primary-btn" %>
+                </div>
               </div>
             </div>
           </div>
-
-        <div class="right-cta col-xs-12 col-md-6" style="background-image: url('<%= cl_image_path 'bg3.jpg' %>'); background-size: cover; background-position: center">
-          <div class="cta-content">
-            <hr>
-            <div class="text">
-              <h1>Team's Pitch</h1>
-              <p class="tag-label"><%= @proposal.project.organization.name %></p>
+          <div class="right-cta col-xs-12 col-md-6" style="background-image: url('<%= cl_image_path 'bg3.jpg' %>'); background-size: cover; background-position: center">
+            <div class="cta-content">
+              <hr>
+              <div class="text">
+              <h1>The Pitch fo <%= @proposal.project.organization.name %></h1>
               <p><strong> <%= @proposal.pitch %></strong></p>
               <br>
-
-              <p class="tag-label">Status</p>
-              <p><%= @proposal.status %></p>
             </div>
           </div>
         </div>
@@ -62,11 +61,12 @@
     </div>
   </div>
 </div>
-<div class="one-column-content" style="background-image: url('<%= cl_image_path 'bg2.jpg' %>'); background-size: cover; background-position: center">
+</div>
+<div class="one-column-content" style="background-color: #f0f0f0; ">
   <div class="container-fluid">
     <div class="cta-content">
       <hr>
-      <div class="text">
+      <div class="text" style="color: #0e3849;">
         <h1>About the team</h1>
         <p><%= @proposal.team.about_us%></p>
       </div>
