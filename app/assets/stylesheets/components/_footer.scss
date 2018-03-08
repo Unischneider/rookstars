@@ -1,45 +1,42 @@
 .footer {
-    position: relative;
-    width: 100%;
-    min-height: 200px;
-    background: #0e2227;
-    padding: 10px 0;
-    z-index: 1;
+  position: relative;
+  width: 100%;
+  min-height: 200px;
+  background: #0e2227;
+  padding: 10px 0;
+  z-index: 1;
 }
 
 
 .slice-footer {
-  width:220px;
-  max-height:135px;
-  margin-top:-45px;
-
-
-  }
+ width: 160px;
+ margin-top: 62px;
+}
 
 .footer .credits {
 
 }
 
 .footer-white {
-    color: #fff;
-    font-weight: normal;
+  color: #fff;
+  font-weight: normal;
 }
 
 .footer .social-area { margin-top: 90px; width:40%;}
 .footer .social-area ul{
   z-index:1;
   display: block;
-      margin-top: -15px;
+  margin-top: -15px;
   width: 100%;
   padding: 0;
   text-align: right;
   position:absolute;
   right:7%;
   -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-      -ms-box-sizing: border-box;
-       -o-box-sizing: border-box;
-          box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
 }
 .footer .social-area ul li {
   display: inline-block;
@@ -74,25 +71,25 @@
 
 
 .footer .credits {
-position: absolute;
-width: 100%;
-color: #474747;
-text-align: center;
-text-transform: uppercase;
-font-size: 20px;
-line-height: 1px;
-padding: 0;
+  position: absolute;
+  width: 100%;
+  color: #474747;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 20px;
+  line-height: 1px;
+  padding: 0;
 /* left: 9%; */
 }
 
 .footer .credits p {
-position: absolute;
-text-align: left;
-text-transform: uppercase;
-font-size: 20px;
-line-height: 1px;
-padding: 0;
-left: 9%;
+  position: absolute;
+  text-align: left;
+  text-transform: uppercase;
+  font-size: 20px;
+  line-height: 1px;
+  padding: 0;
+  left: 9%;
 }
 
 
@@ -165,19 +162,19 @@ div.btn-link {
 
 .shr-btn-facebook {
   background:url(img/facebook-icon.png) no-repeat center;
-    }
+}
 
 .shr-btn-instagram {
   background:url(img/instagram-icon.png) no-repeat center;
-    }
+}
 
 .shr-btn-behance {
   background:url(img/behance-icon.png) no-repeat center;
-    }
+}
 
 .shr-btn-soundcloud {
   background:url(img/soundcloud-icon.png) no-repeat center;
-    }
+}
 
 .cats a:after,
 .cats-blog a:after { background: #fff85f; }
