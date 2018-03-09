@@ -1,0 +1,16 @@
+<% @proposals.each do |proposal| %>
+<div class="col-xs-6 col-xs-6">
+  <div class="cards-home" style="background-image: url('<%= cl_image_path proposal.project.photo %>');">
+    <div class="cards-home-caption" >
+      <div class="cards-home-caption-content">
+        <div class="project-name">
+          <%= proposal. %>
+        </div><br>
+        <div class="project-category text-faded">
+          <%= proposal.pitch%>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>
