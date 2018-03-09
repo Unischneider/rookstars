@@ -75,3 +75,43 @@ ul li {
   margin-top: 3px;
   max-height: 80px;
 }
+
+@media (max-width: 575.98px) {
+
+  .message-form {
+    visibility: hidden;
+  height: 300px;
+  margin-top: 30px;
+  p  {
+    font-weight: bold;
+    font-size: 24px;
+    text-align: center;
+    color: white;
+  }
+}
+    .icon-steps {
+ color: #0e3849;
+ height: 1060px;
+ padding: 51px 0px 62px 0px;
+ background-color: #f0f0f0;
+ .icon-container {
+  padding: 50px 0px 0px 0px;
+}
+p {
+  font-size: 20px;
+}
+h1 {
+  color: white;
+  color: #0e3849;
+}
+
+hr {
+  margin-top: 16px;
+  margin-bottom: 16px;
+  width: 78px;
+  border-width: 6px;
+  border-color: #25b1dc;
+  text-align: left;
+}
+}
+}
