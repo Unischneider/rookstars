@@ -1,0 +1,28 @@
+<h2>Edit <%= @organization.name %></h2>
+
+<%= simple_form_for(@organization, html: { method: :put }) do |f| %>
+<%= f.error_notification %>
+
+<div class="form-inputs">
+  <%= f.input :email, required: true, autofocus: true %>
+  <%= f.input :name, required: true, autofocus: true %>
+  <%= f.input :description, required: true, autofocus: true %>
+  <%= f.input :location, required: true, autofocus: true %>
+  <%= f.input :website, required: true, autofocus: true %>
+  <%= f.input :photo, required: true, autofocus: true %>
+
+  <%= f.input :password, autocomplete: "off", hint: "leave it blank if you don't want to change it", required: false %>
+  <%= f.input :password_confirmation, required: false %>
+  <%= f.input :current_password, hint: "we need your current password to confirm your changes", required: true %>
+</div>
+
+<div class="form-actions">
+  <%= f.button :submit, "Update" %>
+</div>
+<% end %>
+
+<h3>Cancel my account</h3>
+
+<p>Unhappy? <%= link_to "Cancel my account", organization_path(@organization), data: { confirm: "Are you sure?" }, method: :delete %></p>
+
+<%= link_to "Back", :back %>

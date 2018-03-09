@@ -9,6 +9,10 @@ class UserPolicy < ApplicationPolicy
     true
   end
 
+  def edit?
+    user == record
+  end
+
   def show?
     true
   end

@@ -4,10 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= favicon_link_tag 'favicon.png' %>
-    <meta name="description" content="" />
-    <meta name="keywords" content="" />
+    <meta name="description" content="Lifting tech graduates and NGOs to digital success" />
+    <meta name="keywords" content="NGO and tech graduates" />
 
-    <title>Rookstart</title>
+    <title>Rookstars - Lifting tech graduates and NGOs to digital success</title>
+    <meta name="description" content="<%= meta_description %>">
+
+    <!-- Facebook Open Graph data -->
+    <meta property="og:title" content="<%= meta_title %>" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="<%= request.original_url %>" />
+    <meta property="og:image" content="<%= meta_image %>" />
+    <meta property="og:description" content="<%= meta_description %>" />
+    <meta property="og:site_name" content="<%= meta_title %>" />
 
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
@@ -24,6 +33,7 @@
     <%= yield %>
     </div>
     <%= render 'shared/footer' %>
+    <%= javascript_pack_tag 'typed' %>
     <%= javascript_pack_tag 'application' %>
     <%= javascript_include_tag 'application' %>
     <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?libraries=places&key=#{ENV['GOOGLE_API_BROWSER_KEY']}" %>

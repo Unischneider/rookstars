@@ -1,14 +1,7 @@
 .two-column-cta {
+
   height: 350px;
-  hr {
-   margin-bottom: 0px;
-   width: 78px;
-   margin-top: 70px;
-   border-width: 6px;
-   display: inline-block;
-   border-color: $blue;
-   text-align: left;
- }
+
  h1 {
   font-weight: bold;
   font-size: 24px;
@@ -23,11 +16,29 @@ p {
   font-size: 20px;
   }
 .left-cta {
+  hr {
+   margin-bottom: 0px;
+   width: 78px;
+   margin-top: 70px;
+   border-width: 6px;
+   display: inline-block;
+    border-color: #013d53;
+   text-align: left;
+ }
   background-color: $primary;
   background-size: cover;
   height: 350px;
 }
 .right-cta {
+  hr {
+   margin-bottom: 0px;
+   width: 78px;
+   margin-top: 70px;
+   border-width: 6px;
+   display: inline-block;
+   border-color: $blue;
+   text-align: left;
+ }
   background-color: $accent;
   background-size: cover;
   height: 350px;
@@ -37,5 +48,11 @@ p {
 }
 .cta-content {
   margin-left: 65px;
+}
+}
+
+@media (max-width: 575.98px) {
+    .two-column-cta .cta-content {
+    margin-left: 27px;
 }
 }

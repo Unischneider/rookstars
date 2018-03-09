@@ -11,6 +11,7 @@ class OrganizationsController < ApplicationController
   end
 
   def edit
+    @organization = Organization.find(params[:id])
   end
 
   def show
@@ -28,5 +29,9 @@ class OrganizationsController < ApplicationController
     @organization = Organization.new
     authorize @organization
     @projects = policy_scope(Project)
+  end
+
+  def pundit_user
+    current_organization
   end
 end

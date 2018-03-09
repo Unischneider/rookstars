@@ -1,13 +1,5 @@
 .two-column-content {
-  hr {
-   margin-bottom: 0px;
-   width: 78px;
-   margin-top: 70px;
-   border-width: 6px;
-   display: inline-block;
-   border-color: $blue;
-   text-align: left;
- }
+
  .tag-label {
    font-size: 17px;
    color: #ffffffc4;
@@ -39,41 +31,82 @@
     }
   }
   .left-cta {
-    background-size: cover;
-    white-space: normal;
-    overflow: overlay;
-    background-color: $primary;
-    height: 610px;
-  }
-  .right-cta {
-    white-space: normal;
-    overflow: overlay;
-    background-size: cover;
-    background-color: $accent;
-    height: 610px;
-    .team-new{
-      height: 200px;
-    }
-  }
-  .left-img {
-    background-size: cover;
-    background-color: $primary;
-    height: 350px;
-  }
-  .right-img {
-    background-size: cover;
-    background-color: $accent;
-    height: 350px;
-  }
 
-  .cta-button {
-    margin: 20px 0px;
+    hr {
+     margin-bottom: 0px;
+     width: 78px;
+     margin-top: 70px;
+     border-width: 6px;
+     display: inline-block;
+     border-color: #013d53;
+     text-align: left;
+   }
+   background-size: cover;
+   white-space: normal;
+   overflow: overlay;
+   background-color: $primary;
+   height: 610px;
+ }
+ .right-cta {
+  hr {
+   margin-bottom: 0px;
+   width: 78px;
+   margin-top: 70px;
+   border-width: 6px;
+   display: inline-block;
+   border-color: $blue;
+   text-align: left;
+ }
+ white-space: normal;
+ overflow: overlay;
+ background-size: cover;
+ background-color: $accent;
+ height: 610px;
+ .team-new{
+  height: 200px;
+}
+}
+.left-img {
+  background-size: cover;
+  background-color: $primary;
+  height: 350px;
+}
+.right-img {
+  background-size: cover;
+  background-color: $accent;
+  height: 350px;
+}
 
-  }
 
-  .cta-content {
-    margin-left: 65px;
-  }
+.cta-button {
+  margin: 20px 0px;
 
 }
+
+.cta-content {
+  margin-left: 65px;
+}
+
+}
+
+@media (max-width: 575.98px) {
+    .two-column-content .cta-content {
+    margin-left: 27px;
+}
+.two-column-content .right-cta {
+    white-space: normal;
+    overflow: overlay;
+    background-size: cover;
+    background-color: #3a3a3a;
+    height: 310px;
+}
+.two-column-content .left-cta {
+    white-space: normal;
+    overflow: overlay;
+    background-size: cover;
+    background-color: #3a3a3a;
+     height: 310px;
+}
+}
+
 

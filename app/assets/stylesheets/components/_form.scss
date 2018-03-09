@@ -10,6 +10,13 @@
 .user-add-top {
   display: flex;
   justify-content: space-around;
+  .custom-secondary-btn {
+    padding: 10px 60px;
+    border-radius: 41px;
+    color: #303030;
+    font-size: 20px;
+    border: 1px solid #03cafe;
+}
 }
 
 .team-list-items {
@@ -20,9 +27,60 @@
     margin-bottom: 40px;
   }
 }
+
+.team-list-items .avatar {
+    margin-right: 15px;
+}
+
+.team-list-items {
+  p {
+          margin: 0px;
+    color: #303030;
+    /* font-weight: 600; */
+    }
+}
+
+.team-list-items {
+  li {
+          background: white;
+      padding: 20px 70px;
+      /* border-radius: 5px; */
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: left;
+      align-items: center;
+          border-radius: 25px;
+      .avatar {
+        width: 80px;
+        margin-left: 18px;
+        height: 80px;
+      }
+    }
+  div {
+        text-align: left;
+    p {
+          margin: 0px;
+    color: #303030;
+    /* font-weight: 600; */
+    }
+  }
+}
+
 .team_list {
 
   margin-bottom: 50px;
+}
+
+.team_members_form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .form-custom-btn {
+    width: 182px;
+    line-height: 1;
+    height: 44px;
+  }
 }
 
 .second-btn {
@@ -32,10 +90,21 @@
 .container-add-user {
   padding: 60px 0px;
   input#email {
-   padding: 0px 64px 8px 11px;
-   margin-top: 10px;
-   margin-bottom: 47px;
- }
+    width: 439px;
+    padding: 10px 70px 10px 15px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    background: transparent;
+    border: 0;
+    padding: 0;
+    padding-bottom: 5px;
+    border-bottom: 2px #adadad solid;
+    font-size: 18px;
+
+    &:focus {
+      outline: 0;
+    }
+  }
  text-align: center;
  h1 {
   text-align: center;
@@ -83,7 +152,7 @@ p {
  }
  padding: 60px 0px;
  textarea {
-  width: 440px;
+  width: 540px;
   height: 190px;
   margin-bottom: 15px;
 }
@@ -123,6 +192,8 @@ p {
   color: #465256b8;
   font-size: 20px;
 }
+
+
 
 .about-team {
   padding: 28px 0px;

@@ -25,11 +25,13 @@ class ApplicationController < ActionController::Base
   #     end
   #   end
   # end
-
+  def default_url_options
+    { host: ENV["www.rookstars.eu"] || "localhost:3000" }
+  end
 
   private
 
   def skip_pundit?
-    devise_controller? || params[:controller] =~ /(^(rails_)?admin)|(^pages$)/ || params[:controller] == "thredded/preferences" || params[:controller] == "thredded/private_topics" || params[:controller] == "thredded/moderation"
+    devise_controller? || params[:controller] =~ /(^(rails_)?admin)|(^pages$)|(^contacts$)/ || params[:controller] == "thredded/preferences" || params[:controller] == "thredded/private_topics" || params[:controller] == "thredded/moderation"
   end
 end

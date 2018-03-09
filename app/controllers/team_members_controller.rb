@@ -14,6 +14,7 @@ class TeamMembersController < ApplicationController
       authorize @team_member
     end
     @team_members = @team.team_members
+    @current = current_user
     respond_to do |format|
       format.js
     end
