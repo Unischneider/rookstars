@@ -8,7 +8,9 @@ Rails.application.routes.draw do
     resources :confirm, only: [:edit, :update]
   end
 
-
+  namespace :organizations do
+    resources :proposals, only: [:index]
+  end
 
 
 
