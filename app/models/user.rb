@@ -2,7 +2,7 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   # after_create :subscribe_to_newsletter
-  has_many :team_members
+  has_many :team_members, dependent: :destroy
   has_many :teams, through: :team_members
   validates :first_name, presence: true
 
