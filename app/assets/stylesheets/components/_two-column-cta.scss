@@ -16,6 +16,8 @@ p {
   font-size: 20px;
   }
 .left-cta {
+  overflow: scroll;
+ -webkit-overflow: scroll;
   hr {
    margin-bottom: 0px;
    width: 78px;
@@ -30,6 +32,8 @@ p {
   height: 350px;
 }
 .right-cta {
+  overflow: scroll;
+ -webkit-overflow: scroll;
   hr {
    margin-bottom: 0px;
    width: 78px;
