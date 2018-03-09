@@ -7,26 +7,42 @@
   </div>
 </div>
 <% if organization_signed_in? %>
-<div class="one-column-content" style="background-image: url('<%= cl_image_path 'bg3.jpg' %>'); background-size: cover; background-position: center">
-  <div class="container-fluid">
-    <div class="cta-content">
-      <hr>
-      <div class="text">
-        <h1>Need some help from a developer?</h1>
-        <p>Create a new project</p>
+<div class="two-column-cta">
+  <div class="row">
+    <div class="double-cta">
+      <div class="left-cta col-xs-12 col-md-6" style="background-image: url('<%= cl_image_path 'bg2.jpg' %>'); background-size: cover; background-position: center">
+        <div class="cta-content">
+          <hr>
+          <div class="text">
+            <h1>Need some help from a developer?</h1>
+            <p>Create a new project</p>
+          </div>
+          <div class="cta-button">
+            <%= link_to "Add your project!", new_project_path, class: "custom-primary-btn" %>
+          </div>
+        </div>
       </div>
-      <div class="cta-button">
-        <%= link_to "Add your project!", new_project_path, class: "custom-primary-btn" %>
-      </div>
-    </div>
-  </div>
+      <div class="right-cta col-xs-12 col-md-6" style="background-image: url('<%= cl_image_path 'bg3.jpg' %>'); background-size: cover; background-position: center">
+        <div class="cta-content">
+          <hr>
+          <div class="text">
+            <h1>Have already projects up for applications?</h1>
+            <p>See the applications for your projects</p>
+          </div>
+          <div class="cta-button">
+           <%= link_to "Applications", organizations_proposals_path, class: "custom-primary-btn" %>
+         </div>
+       </div>
+     </div>
+   </div>
+ </div>
 </div>
 <% else %>
 <div class="one-column-content" style="background-image: url('<%= cl_image_path 'bg3.jpg' %>'); background-size: cover; background-position: center">
   <div class="container-fluid">
     <div class="cta-content">
       <hr>
-      <div class="text">
+      <div class="text" style="color: white !important;">
         <h1>Don't have an Account yet?</h1>
       </div>
       <div class="cta-button">
@@ -41,6 +57,6 @@
   <h1 style="color: #005484;" class="text-center">Other projects</h1>
   <br>
   <div class="row">
-  <%= render "components/cards" %>
+    <%= render "components/cards" %>
   </div>
 </div>
