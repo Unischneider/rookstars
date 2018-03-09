@@ -1,11 +1,7 @@
 class Organizations::ProposalPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
-      scope.all
+      scope.where(id: current_organization.id)
     end
-  end
-
-  def index?
-    true
   end
 end
