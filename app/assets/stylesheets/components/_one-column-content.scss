@@ -1,7 +1,7 @@
 .one-column-content {
  text-align: left;
- white-space: normal;
- overflow: overlay;
+ overflow: scroll;
+ -webkit-overflow: scroll;
  background-size: cover;
  height: 300px;
  hr {
