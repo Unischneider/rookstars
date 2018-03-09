@@ -1,3 +1,4 @@
+
 .header-container {
   background-color: #232323;
   background-position: center;
@@ -19,6 +20,16 @@
     color: white;
     font-weight: 100;
     font-size: 20px;
+  }
+  @media (max-width: 575.98px) {
+    height: 100vh;
+    h1 {
+      font-size: 45px;
+      img {
+        width: 260px;
+      }
+    }
+
   }
 }
 
@@ -47,6 +58,14 @@
     font-weight: 100;
     font-size: 20px;
   }
+    @media (max-width: 575.98px) {
+    h1 {
+      font-size: 40px;
+
+    }
+
+  }
+
 }
 
 .team-avatar {
@@ -55,3 +74,5 @@
     margin-left: 0px;
   }
 }
+
+
