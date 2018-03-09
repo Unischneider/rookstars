@@ -45,8 +45,8 @@
             <strong><p class="tag-label">Project details:</p></strong>
             <p> <%= @project.description %></p><br>
             <strong><p class="tag-label">Due date:</p></strong>
-            <p><%= @project.due_date %></p><br>
-           <strong><p class="tag-label">Budget:</p> <p><%= @project.budget %> </p>
+            <p><%= @project.due_date.strftime("%m - %d - %Y")%></p><br>
+           <strong><p class="tag-label">Budget:</p> <p>€<%= @project.budget %> </p>
           <% if @project.status == "Done" || @joinable %>
             <p>This project can not be joined</p>
           <% elsif @proposal_pending %>

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  mount Thredded::Engine => '/forum'
+
 
   devise_for :organizations, path: 'organizations', controllers: { sessions: 'organizations/sessions', registrations: 'organizations/registrations' }
   devise_for :users, path: 'users', controllers: { omniauth_callbacks: 'users/omniauth_callbacks', sessions: 'users/sessions', registrations: 'users/registrations' }
@@ -28,7 +30,6 @@ Rails.application.routes.draw do
     resources :payments, only: [:new, :create]
   end
 
-  mount Thredded::Engine => '/forum'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
