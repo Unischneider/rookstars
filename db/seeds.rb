@@ -373,7 +373,7 @@ p "Creating projects"
   some = ["Translation", "All in blue", "picture uploading", "banners", "specific form", "trello integration"]
   project = Project.new(
     title: "Landing Page",
-    description: "DRC's landing page must have a contact form so that those interested in volunteering can reach us in a very easy manner. Ideally, this page would have a space for showcasing our most recent work and where we have been mentioned in recent publications on a map with customized icons. The page should be consistent with the design of the rest of our website and should be proportionate when used in mobile and tablets, as well as small, mid, and large-sized computers.",
+    description: "DRC's landing page must have a contact form so that those interested in volunteering can reach us in a very easy manner. Ideally, this page would have a space for showcasing our most recent work and where we have been mentioned in recent publications on a map with customized icons. The page should be consistent with the design of the rest of our website and responsive.",
     budget: "800$",
     due_date: Faker::Date.forward(100),
     status: status.sample,
