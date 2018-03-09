@@ -89,3 +89,24 @@
 
 }
 
+@media (max-width: 575.98px) {
+    .two-column-content .cta-content {
+    margin-left: 27px;
+}
+.two-column-content .right-cta {
+    white-space: normal;
+    overflow: overlay;
+    background-size: cover;
+    background-color: #3a3a3a;
+    height: 310px;
+}
+.two-column-content .left-cta {
+    white-space: normal;
+    overflow: overlay;
+    background-size: cover;
+    background-color: #3a3a3a;
+     height: 310px;
+}
+}
+
+
