@@ -55,7 +55,7 @@ organization = Organization.new(
     email: Faker::Internet.email,
     location: "Borgergade 10, 3rd floor, 1300 Copenhagen K., Denmark",
      website: "drc.ngo",
-     description: "Danish Refugee Council is a private Danish humanitarian organisation, founded in 1956. It serves as an umbrella organization for 33 member organizations. DRC fulfils its mandate by providing direct assistance to conflict-affected populations – refugees, internally displaced people (IDPs) and host communities in the conflict areas of the world; and by advocating on behalf of conflict-affected populations internationally, and in Denmark, on the basis of humanitarian principles and the Human Rights Declaration. We understand 'durable solutions' as any means by which the situation of refugees can be permanently and satisfactorily resolved, enabling them to live normal lives. Durable solutions can be voluntary repatriation, local integration or resettlement. In Denmark, DRC assists refugees in all aspects of integration as well as asylum procedures. Internationally, DRC actively participates in supporting the protection of refugees, and promoting durable solutions for conflict-affected populations.",
+     description: "Danish Refugee Council is a private Danish humanitarian organisation, founded in 1956. It serves as an umbrella organization for 33 member organizations. DRC fulfils its mandate by providing direct assistance to conflict-affected populations – refugees, internally displaced people (IDPs) and host communities in the conflict areas of the world; and by advocating on behalf of conflict-affected populations internationally, and in Denmark, on the basis of humanitarian principles and the Human Rights Declaration.",
      name: "Danish Refugee Council",
      password: "password123"
     )
@@ -373,7 +373,7 @@ p "Creating projects"
   some = ["Translation", "All in blue", "picture uploading", "banners", "specific form", "trello integration"]
   project = Project.new(
     title: "Landing Page",
-    description: "DRC needs a landing page for our newest branch that will attract people as soon as you land. We want a map that shows where we are stationed around the world with a customized icon for each location. Also, the website must have a contact form so that those interested in volunteering can reach us in a very easy manner. Ideally, this page would have a space for showcasing our most recent work and where we have been mentioned in recent publications. The page should be consistent with the design of the rest of our website and should be proportionate when used in mobile and tablets, as well as small, mid, and large-sized computers.",
+    description: "DRC's landing page must have a contact form so that those interested in volunteering can reach us in a very easy manner. Ideally, this page would have a space for showcasing our most recent work and where we have been mentioned in recent publications on a map with customized icons. The page should be consistent with the design of the rest of our website and responsive.",
     budget: "800$",
     due_date: Faker::Date.forward(100),
     status: status.sample,
@@ -694,6 +694,7 @@ p "Creating user"
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
     github: "https://github.com/juliettech13",
+    photo: "https://source.unsplash.com/person",
     about_me: "#{Faker::SiliconValley.motto} + #{Faker::SiliconValley.quote}"
     )
   user.remote_photo_url = "https://source.unsplash.com/random"
