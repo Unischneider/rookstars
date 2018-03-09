@@ -373,7 +373,7 @@ p "Creating projects"
   some = ["Translation", "All in blue", "picture uploading", "banners", "specific form", "trello integration"]
   project = Project.new(
     title: "Landing Page",
-    description: "DRC needs a landing page for our newest branch that will attract people as soon as you land. We want a map that shows where we are stationed around the world with a customized icon for each location. Also, the website must have a contact form so that those interested in volunteering can reach us in a very easy manner. Ideally, this page would have a space for showcasing our most recent work and where we have been mentioned in recent publications. The page should be consistent with the design of the rest of our website and should be proportionate when used in mobile and tablets, as well as small, mid, and large-sized computers.",
+    description: "DRC wants a map that shows where we are stationed around the world with a customized icon for each location. Also, the website must have a contact form so that those interested in volunteering can reach us in a very easy manner. Ideally, this page would have a space for showcasing our most recent work and where we have been mentioned in recent publications.",
     budget: "800$",
     due_date: Faker::Date.forward(100),
     status: status.sample,
@@ -694,6 +694,7 @@ p "Creating user"
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
     github: "https://github.com/juliettech13",
+    photo: "https://source.unsplash.com/person",
     about_me: "#{Faker::SiliconValley.motto} + #{Faker::SiliconValley.quote}"
     )
   user.remote_photo_url = "https://source.unsplash.com/random"
