@@ -4,6 +4,8 @@
   <title>The page you were looking for doesn't exist (404)</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <style>
+  @import url("https://fonts.googleapis.com/css?family=Lato:400,900|Roboto:300");
+@import url("https://fonts.googleapis.com/css?family=Comfortaa");
   .rails-default-error-page {
     background-color: #EFEFEF;
     color: #2E2F30;
@@ -51,17 +53,71 @@
     color: #666;
     box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
   }
+
+  .center {
+    text-align: center;
+  }
+
+  .custom-error-page {
+    height: 100vh;
+    padding-top: 15vh;
+    font-family: "Roboto";
+  }
+
+  h1 {
+    font-family: "Comfortaa", "Helvetica", "sans-serif";
+    color: white;
+        padding-top: 12px;
+
+
+  }
+
+  p {
+    font-size: 25px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+  }
+
+  mark {
+    color: white;
+
+    padding: 13px 13px 13px 13px;
+    background-image: linear-gradient(to right, #92fe9d -100%, #00c9ff 100%);
+  }
+
+  hr {
+   margin-bottom: 0px;
+   width: 78px;
+   border-width: 6px;
+   display: inline-block;
+   border-color: red;
+   text-align: left;
+ }
+
+ .quote {
+
+    margin: 53px 400px;
+    color: white;
+    font-weight: bold;
+    border-radius: 4px;
+    padding: 50px 60px;
+    background-color: #0acbfc8a;
+ }
+
   </style>
 </head>
 
-<body class="rails-default-error-page">
+<body class="custom-error-page" style="background-size: cover; background-image: url(images/404.gif);"">
   <!-- This file lives in public/404.html -->
-  <div class="dialog">
-    <div>
+  <div>
+    <div class="center">
+      <h1><mark>404 Error</mark></h1>
       <h1>The page you were looking for doesn't exist.</h1>
-      <p>You may have mistyped the address or the page may have moved.</p>
+       <div class="quote">
+      <p>Not all those who wonder are lost.</p>
+      <p>- J.R.R Tolkien</p>
     </div>
-    <p>If you are the application owner check the logs for more information.</p>
+    </div>
   </div>
 </body>
 </html>
