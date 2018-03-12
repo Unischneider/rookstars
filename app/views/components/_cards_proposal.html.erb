@@ -4,6 +4,7 @@
   <div class="card-proposal">
   <%= link_to edit_proposals_confirm_path(proposal.id) do  %>
     <div class="card-category-proposal" style="background-image: url('<%= cl_image_path proposal.project.photo %>');">
+      <% if proposal.status == "Pending NGO confirmation" %>
       <div class="button">
           <%= simple_form_for(proposal, url: proposals_confirm_path(proposal.id)) do |f|%>
           <%= f.input :status, as: :hidden, value: "Confirmed" %>
@@ -16,6 +17,9 @@
           <%= f.button :submit, "Decline", class: "custom-primary-btn" %>
           <% end %>
       </div>
+      <% else %>
+      <h2><%= proposal.status %></h2>
+      <% end %>
     </div>
     <div class="card-description-proposal">
      <div class="team">
