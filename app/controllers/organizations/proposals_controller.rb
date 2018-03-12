@@ -2,8 +2,7 @@ class Organizations::ProposalsController < ApplicationController
   skip_before_action :authenticate_user!
 
   def index
-    @proposals = policy_scope(Proposal.joins(project: :organization))
-    binding.pry
+    @proposals = policy_scope(Proposal.joins(project: :organization).where(id: current_organization.id))
   end
 
   private

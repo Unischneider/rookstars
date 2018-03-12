@@ -15,11 +15,11 @@
         <h1 style="color: #022832; line-height: 30px;"><%= @proposal.project.organization.name %> wants your team <br> to manage the implementation of the  Project: <%= @proposal.project.title %></h1>
         <p style="color: #022832;">Accept it now and start working in the office</p>
         <div class="cta-button">
-          <%= simple_form_for(@proposal) do |f|%>
+          <%= simple_form_for(@proposal, url: proposals_confirm_path(@proposal.id)) do |f|%>
           <%= f.input :status, as: :hidden, value: "Confirmed" %>
           <%= f.button :submit, "Accept", class: "custom-primary-btn" %>
           <% end %>
-          <%= simple_form_for(@proposal) do |f|%>
+          <%= simple_form_for(@proposal, url: proposals_confirm_path(@proposal.id)) do |f|%>
           <%= f.input :status, as: :hidden, value: "Canceled" %>
           <%= f.button :submit, "Decline", class: "terciary-primary-btn" %>
           <% end %>

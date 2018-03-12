@@ -1,0 +1,148 @@
+a .card-prop {
+    color: $blue;
+    text-decoration: none;
+}
+.card-proposal {
+ width: 540px;
+ height: 450px;
+ margin: 13px 0px;
+ position: relative;
+ border-radius: 4px;
+ .card-category-proposal {
+  display: flex;
+  justify-content: center;
+  width: 540px;
+  z-index: +1;
+  padding: 49px 20px;
+  border-color: $blue;
+  background-color: $primary;
+  border-bottom: solid 6px;
+  border-radius: 4px 4px 0px 0px;
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+
+}
+.card-description-proposal {
+  display:flex;
+  flex-direction: column;
+  height: 250px;
+  .member-avatar {
+    width: 70px;
+    border: solid 2px white;
+    height: 70px;
+    border-radius: 50%;
+    margin: 0px;
+}
+}
+
+.custom-primary-btn {
+  visibility: hidden;
+}
+
+h1 {
+  font-weight: 700;
+  position:absolute;
+  top: 187px;
+  font-size: 20px;
+  margin: 0px;
+  text-align: left;
+  color: $secondary;
+}
+h2 {
+  font-weight: 100;
+  position:absolute;
+  top: 160px;
+  font-size: 20px;
+  margin: 0px;
+  text-align: left;
+  color: $secondary;
+  a {
+    color: $primary;
+  }
+}
+p {
+  color: $gray;
+}
+
+.card-category-proposal p {
+  font-weight: 100;
+  visibility: hidden;
+  font-size: 20px;
+  margin: 0px;
+  text-align: left;
+  color: white;
+}
+.description-text-proposal {
+  font-size: 14px;
+  top: 219px;
+}
+
+
+}
+.card-proposal:hover {
+  transition: ease .2s;
+  width: 540px;
+  height: 450px;
+  border-bottom: solid 6px;
+  border-top: solid 6px;
+  margin: 13px 0px;
+  position: relative;
+  border-radius: 4px;
+
+  .card-category-proposal {
+    opacity: .8;
+    transition: ease .3s;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 0px;
+    width: 540px;
+    padding: 49px 20px;
+    border-color: $blue;
+    background-color: $primary;
+    border-bottom: solid 6px;
+    height: 200px;
+
+  }
+
+  a {
+    text-decoration:none;
+  }
+
+
+  h1 {
+    font-weight: 700;
+    top: 187px;
+    font-size: 20px;
+    margin: 0px;
+    text-align: left;
+    color: $accent;
+  }
+  h2 {
+    font-weight: 100;
+    top: 160px;
+    font-size: 20px;
+    margin: 0px;
+    text-align: left;
+    color: $accent;
+  }
+  p {
+    color: $accent;
+  }
+  .custom-primary-btn {
+    color: white;
+    background-color: $primary;
+    text-decoration: none;
+    visibility: visible;
+    padding: 10px 60px;
+    border-radius: 41px;
+
+  }
+  .description-text-proposal {
+    font-size: 14px;
+    top: 219px;
+  }
+}
+
+
