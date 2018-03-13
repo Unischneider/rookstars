@@ -1,6 +1,6 @@
 class Project < ApplicationRecord
   belongs_to :organization
-  has_many :proposals
+  has_many :proposals, dependent: :destroy
   has_many :teams, through: :proposals
   has_one :thredded_messageboard_group
   validates :title, :description, :due_date, :status, :budget, presence: true

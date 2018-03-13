@@ -3,7 +3,7 @@ class Organization < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-
+  has_many :projects, dependent: :destroy
   validates :name, :description, presence: true
   mount_uploader :photo, PhotoUploader
   def avatar
