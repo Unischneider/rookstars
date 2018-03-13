@@ -19,10 +19,11 @@ class ProjectsController < ApplicationController
   end
 
   def create
-    if current_user.class == Organization.class
+    if current_organization
       @project = Project.new(valid_params)
       authorize @project
-      @project.organization = current_user
+      @project.status = "Pending"
+      @project.organization = current_organization
       if @project.save
         redirect_to project_path(@project)
       else
@@ -86,7 +87,7 @@ class ProjectsController < ApplicationController
   end
 
   def valid_params
-    params.require(:project).permit(:title, :description, :due_date, :status, :budget, :photo)
+    params.require(:project).permit(:title, :description, :due_date, :budget, :photo)
   end
 
   def user_project_params

@@ -10,21 +10,24 @@ class Proposals::ConfirmController < ApplicationController
   def update
     authorize @proposal
     if current_user
-      binding.pry
-      @proposal.status = params[:status]
       if params[:status] == "Confirmed"
+        @proposal.project.status = "On Going"
+        @proposal.project.save
+        binding.pry
         redirect_to project_classroom
       else
+        @proposal.status = params[:status]
+        @proposal.save
         redirect_to user_path(current_user)
       end
     else
-      if params[:status] = "Confirmed"
+      if params[:status] == "Confirmed"
         @proposal.status = "Pending Developer confirmation"
-        binding.pry
+        @proposal.save
         redirect_to organizations_proposals_path
       else
         @proposal.status = params[:status]
-        binding.pry
+        @proposal.save
         redirect_to organizations_proposals_path
       end
     end

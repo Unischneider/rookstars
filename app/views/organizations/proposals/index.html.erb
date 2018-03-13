@@ -7,9 +7,15 @@
 </div>
 <br>
 <div class="container-cards">
-  <!-- <h1 style="color: #005484;" class="text-center">Hop on a project</h1> -->
+  <% @proposals = @org_accept %>
+  <h1>Proposals that need your decision</h1>
   <br>
 <div class="container">
 <%= render 'components/cards_proposal' %>
 </div>
+  <h1>Awaiting the answer of the developers</h1>
+  <% @proposals = @dev_accept  %>
+  <div class="container">
+  <%= render 'components/cards_proposal' %>
+  </div>
 </div>

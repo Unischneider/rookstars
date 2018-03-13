@@ -231,7 +231,7 @@ organization = Organization.new(
 p "Creating projects"
 
   organization1 = Organization.find_by(name: "Internet Society")
-  status = ["Pending", "On Going", "Accepted by the organization", "Declined by organization", "Rejected by the team", "Done"]
+  status = ["On Going", "Pending", "Done"]
   some = ["Translation", "All in blue", "picture uploading", "banners", "specific form", "trello integration"]
   project = Project.new(
     title: "Google Maps integration",
@@ -256,7 +256,7 @@ p "Creating projects"
 
 
   # organization1 = Organization.find_by(name: "Kiron")
-  # status = ["Pending", "On Going", "Accepted by the organization", "Declined by organization", "Rejected by the team", "Done"]
+
   # some = ["Translation", "All in blue", "picture uploading", "banners", "specific form", "trello integration"]
   # project = Project.new(
   #   title: "Sign Up",
@@ -278,7 +278,6 @@ p "Creating projects"
   # project.photo = "https://kiron.ngo/wp-content/uploads/2017/12/Copy-of-Copy-of-Blog-Template-Featured-Image-9.png"
   # project.save
   organization1 = Organization.find_by(name: "CARE")
-  status = ["Pending", "On Going", "Accepted by the organization", "Declined by organization", "Rejected by the team", "Done"]
   some = ["Translation", "All in blue", "picture uploading", "banners", "specific form", "trello integration"]
   project = Project.new(
     title: "Messaging form",
@@ -301,7 +300,6 @@ p "Creating projects"
   project.save
 
   organization1 = Organization.find_by(name: "BRAC")
-  status = ["Pending", "On Going", "Accepted by the organization", "Declined by organization", "Rejected by the team", "Done"]
   some = ["Translation", "All in blue", "picture uploading", "banners", "specific form", "trello integration"]
   project = Project.new(
     title: "Payment integration",
@@ -369,7 +367,6 @@ p "Creating projects"
 
 
   organization1 = Organization.find_by(name: "Danish Refugee Council")
-  status = ["Pending", "On Going", "Accepted by the organization", "Declined by organization", "Rejected by the team", "Done"]
   some = ["Translation", "All in blue", "picture uploading", "banners", "specific form", "trello integration"]
   project = Project.new(
     title: "Landing Page",
@@ -393,7 +390,6 @@ p "Creating projects"
 
 
   organization1 = Organization.find_by(name: "Amnesty International")
-  status = ["Pending", "On Going", "Accepted by the organization", "Declined by organization", "Rejected by the team", "Done"]
   some = ["Translation", "All in blue", "picture uploading", "banners", "specific form", "trello integration"]
   project = Project.new(
     title: "About us",
@@ -417,7 +413,6 @@ p "Creating projects"
 
 
   organization1 = Organization.find_by(name: "UNAIDS")
-  status = ["Pending", "On Going", "Accepted by the organization", "Declined by organization", "Rejected by the team", "Done"]
   some = ["Translation", "All in blue", "picture uploading", "banners", "specific form", "trello integration"]
   project = Project.new(
     title: "Complete Website",
@@ -441,7 +436,6 @@ p "Creating projects"
 
 
   organization1 = Organization.find_by(name: "Orbis International")
-  status = ["Pending", "On Going", "Accepted by the organization", "Declined by organization", "Rejected by the team", "Done"]
   some = ["Translation", "All in blue", "picture uploading", "banners", "specific form", "trello integration"]
   project = Project.new(
     title: "Donation",
@@ -465,7 +459,6 @@ p "Creating projects"
 
 
   organization1 = Organization.find_by(name: "Acumen Fund")
-  status = ["Pending", "On Going", "Accepted by the organization", "Declined by organization", "Rejected by the team", "Done"]
   some = ["Translation", "All in blue", "picture uploading", "banners", "specific form", "trello integration"]
   project = Project.new(
     title: "Maps needs styling",
@@ -488,7 +481,6 @@ p "Creating projects"
   project.save
 
   organization1 = Organization.find_by(name: "Cure Violence")
-  status = ["Pending", "On Going", "Accepted by the organization", "Declined by organization", "Rejected by the team", "Done"]
   some = ["Translation", "All in blue", "picture uploading", "banners", "specific form", "trello integration"]
   project = Project.new(
     title: "Complete Website",
@@ -512,7 +504,6 @@ p "Creating projects"
 
 
   organization1 = Organization.find_by(name: "Chatham House")
-  status = ["Pending", "On Going", "Accepted by the organization", "Declined by organization", "Rejected by the team", "Done"]
   some = ["Translation", "All in blue", "picture uploading", "banners", "specific form", "trello integration"]
   project = Project.new(
     title: "Login",
@@ -536,7 +527,6 @@ p "Creating projects"
 
 
   organization1 = Organization.find_by(name: "JCI")
-  status = ["Pending", "On Going", "Accepted by the organization", "Declined by organization", "Rejected by the team", "Done"]
   some = ["Translation", "All in blue", "picture uploading", "banners", "specific form", "trello integration"]
   project = Project.new(
     title: "Payment option between Paypal etc",
@@ -560,7 +550,6 @@ p "Creating projects"
 
 
   organization1 = Organization.find_by(name: "Wikimedia Foundation")
-  status = ["Pending", "On Going", "Accepted by the organization", "Declined by organization", "Rejected by the team", "Done"]
   some = ["Translation", "All in blue", "picture uploading", "banners", "specific form", "trello integration"]
   project = Project.new(
     title: "Whole new design",
@@ -584,7 +573,6 @@ p "Creating projects"
 
 
   organization1 = Organization.find_by(name: "Partners in Health")
-  status = ["Pending", "On Going", "Accepted by the organization", "Declined by organization", "Rejected by the team", "Done"]
   some = ["Translation", "All in blue", "picture uploading", "banners", "specific form", "trello integration"]
   project = Project.new(
     title: "Make our Website Responsive",
@@ -608,7 +596,6 @@ p "Creating projects"
 
 
   organization1 = Organization.find_by(name: "Ceres")
-  status = ["Pending", "On Going", "Accepted by the organization", "Declined by organization", "Rejected by the team", "Done"]
   some = ["Translation", "All in blue", "picture uploading", "banners", "specific form", "trello integration"]
   project = Project.new(
     title: "Contact us",
@@ -633,7 +620,6 @@ p "Creating projects"
 
 
   organization1 = Organization.find_by(name: "ISO")
-  status = ["Pending", "On Going", "Accepted by the organization", "Declined by organization", "Rejected by the team", "Done"]
   some = ["Translation", "All in blue", "picture uploading", "banners", "specific form", "trello integration"]
   project = Project.new(
     title: "Search Bar",
@@ -657,7 +643,6 @@ p "Creating projects"
 
 
   organization1 = Organization.find_by(name: "Avaaz")
-  status = ["Pending", "On Going", "Accepted by the organization", "Declined by organization", "Rejected by the team", "Done"]
   some = ["Translation", "All in blue", "picture uploading", "banners", "specific form", "trello integration"]
   project = Project.new(
     title: "Complete Website",

@@ -15,9 +15,7 @@
         <%= simple_form_for project do |f| %>
         <%= f.input :title %>
         <%= f.input :description %>
-        <%= f.input :organization %>
-
-        <% if current_user.class == Organization.class %>
+        <% if current_organization%>
           <%= f.input :budget %>
         <% end %>
         <p>What functionalities would you need?</p>
@@ -32,7 +30,7 @@
           <%= f.input :landing_page,  wrapper_html: { class: "feature_checkbox" }%>
         </div>
         <%= f.input :other %>
-        <% if current_user.class == Organization.class %>
+        <% if current_organization%>
           <%=  f.input :due_date %>
         <% end %>
         <%= f.input :photo, label: "Upload a project picture"%>

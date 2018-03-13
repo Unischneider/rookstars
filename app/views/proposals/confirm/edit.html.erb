@@ -12,6 +12,7 @@
     <div class="cta-content">
     <hr>
       <div class="text">
+        <% if @proposal.status == "Pending Developer confirmation" %>
         <h1 style="color: #022832; line-height: 30px;"><%= @proposal.project.organization.name %> wants your team <br> to manage the implementation of the  Project: <%= @proposal.project.title %></h1>
         <p style="color: #022832;">Accept it now and start working in the office</p>
         <div class="cta-button">
@@ -22,6 +23,13 @@
           <%= simple_form_for(@proposal, url: proposals_confirm_path(@proposal.id)) do |f|%>
           <%= f.input :status, as: :hidden, value: "Canceled" %>
           <%= f.button :submit, "Decline", class: "terciary-primary-btn" %>
+          <% end %>
+          <% elsif @proposal.status == "Declined" %>
+            <h1 style="color: #022832; line-height: 30px;">We are sorry to inform you that <%= @proposal.project.organization.name %> has declined your application </h1>
+          <% else %>
+          <h1 style="color: #022832; line-height: 30px;"><%= @proposal.project.organization.name %> has not answered your application yet</h1>
+          <p style="color: #022832;">Please be patient a little longer</p>
+
           <% end %>
         </div>
       </div>
