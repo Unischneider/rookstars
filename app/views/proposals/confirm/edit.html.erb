@@ -17,19 +17,22 @@
         <p style="color: #022832;">Accept it now and start working in the office</p>
         <div class="cta-button">
           <%= simple_form_for(@proposal, url: proposals_confirm_path(@proposal.id)) do |f|%>
-          <%= f.input :status, as: :hidden, value: "Confirmed" %>
+          <%= hidden_field_tag :status, "Confirmed" %>
           <%= f.button :submit, "Accept", class: "custom-primary-btn" %>
           <% end %>
           <%= simple_form_for(@proposal, url: proposals_confirm_path(@proposal.id)) do |f|%>
-          <%= f.input :status, as: :hidden, value: "Canceled" %>
+          <%= hidden_field_tag :status, "Canceled" %>
           <%= f.button :submit, "Decline", class: "terciary-primary-btn" %>
           <% end %>
           <% elsif @proposal.status == "Declined" %>
             <h1 style="color: #022832; line-height: 30px;">We are sorry to inform you that <%= @proposal.project.organization.name %> has declined your application </h1>
+          <% elsif @proposal.status == "Confirmed" %>
+            <h1 style="color: #022832; line-height: 30px;"><%= @proposal.project.organization.name %> has already accepted your application</h1>
+            <p style="color: #022832;">Work further on the project</p>
+            <%= link_to "Office", project_classroom_path(@proposal.project.id), class: "custom-primary-btn"  %>
           <% else %>
-          <h1 style="color: #022832; line-height: 30px;"><%= @proposal.project.organization.name %> has not answered your application yet</h1>
-          <p style="color: #022832;">Please be patient a little longer</p>
-
+            <h1 style="color: #022832; line-height: 30px;"><%= @proposal.project.organization.name %> has not answered your application yet</h1>
+            <p style="color: #022832;">Please be patient a little longer</p>
           <% end %>
         </div>
       </div>

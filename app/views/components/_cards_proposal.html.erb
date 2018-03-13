@@ -7,13 +7,13 @@
       <% if proposal.status == "Pending NGO confirmation" %>
       <div class="button">
           <%= simple_form_for(proposal, url: proposals_confirm_path(proposal.id)) do |f|%>
-          <%= f.input :status, as: :hidden, value: "Confirmed" %>
+          <%= hidden_field_tag :status, "Confirmed" %>
           <%= f.button :submit, "Accept", class: "custom-primary-btn" %>
           <% end %>
       </div>
       <div class="button">
           <%= simple_form_for(proposal, url: proposals_confirm_path(proposal.id)) do |f|%>
-          <%= f.input :status, as: :hidden, value: "Canceled" %>
+          <%= hidden_field_tag :status, "Canceled" %>
           <%= f.button :submit, "Decline", class: "custom-primary-btn" %>
           <% end %>
       </div>
