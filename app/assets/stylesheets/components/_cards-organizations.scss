@@ -1,14 +1,14 @@
-a .card-prop {
+a .card-organization {
     color: $blue;
     text-decoration: none;
 }
-.card-proposal {
+.card-organization {
  width: 540px;
  height: 450px;
  margin: 13px 0px;
  position: relative;
  border-radius: 4px;
- .card-category-proposal {
+ .card-category-organization {
   display: flex;
   justify-content: center;
   width: 540px;
@@ -23,7 +23,7 @@ a .card-prop {
   background-position: center;
 
 }
-.card-description-proposal {
+.card-description-organization {
   display:flex;
   flex-direction: column;
   height: 250px;
@@ -65,21 +65,21 @@ p {
   color: $gray;
 }
 
-.card-category-proposal p {
+.card-category-organization p {
   font-weight: 100;
   font-size: 20px;
   margin: 0px;
   text-align: left;
   color: white;
 }
-.description-text-proposal {
+.description-text-organization {
   font-size: 14px;
   top: 219px;
 }
 
 
 }
-.card-proposal:hover {
+.card-organization:hover {
   transition: ease .2s;
   width: 540px;
   height: 450px;
@@ -89,7 +89,7 @@ p {
   position: relative;
   border-radius: 4px;
 
-  .card-category-proposal {
+  .card-category-organization {
     opacity: .8;
     transition: ease .3s;
     display: flex;
@@ -138,7 +138,7 @@ p {
     border-radius: 41px;
 
   }
-  .description-text-proposal {
+  .description-text-organization {
     font-size: 14px;
     top: 219px;
   }

@@ -1,9 +1,9 @@
 
 <% @proposals.each do |proposal| %>
 <div class="col-xs-6">
-  <div class="card-proposal">
+  <div class="card-organization">
   <%= link_to edit_proposals_confirm_path(proposal.id) do  %>
-    <div class="card-category-proposal" style="background-image: url('<%= cl_image_path proposal.project.photo %>');">
+    <div class="card-category-organization" style="background-image: url('<%= cl_image_path proposal.project.photo %>');">
       <% if proposal.status == "Pending NGO confirmation" %>
       <div class="button">
           <%= simple_form_for(proposal, url: proposals_confirm_path(proposal.id)) do |f|%>
@@ -21,7 +21,7 @@
       <h2><%= proposal.status %></h2>
       <% end %>
     </div>
-    <div class="card-description-proposal">
+    <div class="card-description-organization">
      <div class="team">
        <% proposal.team.team_members.each do |team_member| %>
        <div class="team-member">
@@ -32,7 +32,7 @@
       <% end %>
     </div>
 
-    <div class="description-text-proposal">
+    <div class="description-text-organization">
       <p> <%= proposal.pitch.truncate(150) %></p>
     </div>
   </div>

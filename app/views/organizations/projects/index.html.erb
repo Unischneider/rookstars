@@ -52,11 +52,21 @@
   </div>
 </div>
 <% end %>
+<div class="container-cards">
+  <% @projects = @on_goings %>
+  <h1>Projects that are on going</h1>
+  <br>
 <div class="container">
-  <br>
-  <h1 style="color: #005484;" class="text-center">Other projects</h1>
-  <br>
-  <div class="row">
-    <%= render "components/cards" %>
+<%= render 'components/cards' %>
+</div>
+  <h1>Projects that have not started yet</h1>
+  <% @projects = @pendings  %>
+  <div class="container">
+  <%= render 'components/cards' %>
+  </div>
+  <h1>Projects that are done</h1>
+  <% @projects = @dones  %>
+  <div class="container">
+  <%= render 'components/cards' %>
   </div>
 </div>

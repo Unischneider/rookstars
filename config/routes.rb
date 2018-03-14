@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   end
 
   namespace :organizations do
+    resources :projects, only: [:index, :new]
     resources :proposals, only: [:index]
   end
 
@@ -21,7 +22,6 @@ Rails.application.routes.draw do
   devise_for :users, path: 'users', controllers: { omniauth_callbacks: 'users/omniauth_callbacks', sessions: 'users/sessions', registrations: 'users/registrations' }
   root to: 'pages#home'
   resources :contacts, only: [:new, :create]
-  get 'landing', to: "organizations#landing"
   get 'contact_us', to: "pages#contact_us"
 
   resources :organizations, only: [:show, :edit, :destroy, :update]

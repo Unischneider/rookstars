@@ -9,7 +9,7 @@ module Accessible
     if current_organization
       flash.clear
       # if you have rails_admin. You can redirect anywhere really
-      redirect_to(landing_path) && return
+      redirect_to(organizations_projects_path) && return
     elsif current_user
       flash.clear
       # The authenticated root path can be defined in your routes.rb in: devise_scope :user do...
