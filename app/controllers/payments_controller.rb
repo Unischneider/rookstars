@@ -1,7 +1,10 @@
 class PaymentsController < ApplicationController
-  before_action :set_order
+  #before_action :set_order
+  skip_before_action :authenticate_user!
+  skip_after_action :verify_authorized
 
   def new
+    @order = Order.where(state: 'pending').find(params[:order_id])
   end
 
   def create
@@ -26,8 +29,11 @@ class PaymentsController < ApplicationController
   end
 
   private
+  def pundit_user
+    current_organization
+  end
 
   def set_order
-    @order = Order.where(state: 'pending').find(params[:order_id])
+    @order = policy_scope(Order.where(state: 'pending').find(params[:order_id]))
   end
 end

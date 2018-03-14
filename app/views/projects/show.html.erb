@@ -10,6 +10,10 @@
       <br>
       <% if @project.status == "Done" || @joinable %>
             <p>This project can not be joined</p>
+      <% elsif current_organization = @project.organization%>
+      <% if @project.status == "Pending" %>
+      <%= link_to "Edit", edit_project_path(@project.id)  %>
+        <% end %>
           <% else %>
           <div class="cta-button">
             <%= link_to "Join This Project", new_project_team_path(@project), class: "custom-primary-btn" %>
@@ -52,7 +56,7 @@
           <% elsif @proposal_pending %>
             <p>You have a pending application for this project.</p>
             <br>
-            <%= link_to "View Project Status", edit_proposals_confirm_path(@project, @proposal.id), class: "custom-primary-btn" %>
+            <%= link_to "View Project Status", edit_proposals_confirm_path(@proposal.id), class: "custom-primary-btn" %>
           <% else %>
           <div class="cta-button">
             <%= link_to "Apply to Collaborate", new_project_team_path(@project), class: "custom-primary-btn" %>

@@ -1,4 +1,4 @@
-<div class="header-container" style="background-image: url('<%= cl_image_path 'bg.jpg' %>'); background-size: cover; background-position: center">
+<div class="header-container" style="background-image: url('<%= cl_image_path 'bg.jpg' %>'); background-size: cover; background-position: center; background-attachment: fixed">
   <div class="header-content">
     <div class="text-center intro-text">
       <h1>Look at the projects <br>
@@ -52,6 +52,7 @@
   </div>
 </div>
 <% end %>
+<% if current_organization %>
 <div class="container-cards">
   <% @projects = @on_goings %>
   <h1>Projects that are on going</h1>
@@ -70,3 +71,11 @@
   <%= render 'components/cards' %>
   </div>
 </div>
+<% else %>
+<div class="container-cards">
+<h1>Projects that are being done through rookstars</h1>
+  <div class="container">
+  <%= render 'components/cards' %>
+  </div>
+</div>
+<% end %>

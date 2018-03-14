@@ -23,7 +23,8 @@ class Proposals::ConfirmController < ApplicationController
       if params[:status] == "Confirmed"
         @proposal.status = "Pending Developer confirmation"
         @proposal.save
-        redirect_to organizations_proposals_path
+        order  = Order.create!(project_sku: @proposal.project.title, amount: @proposal.project.price_cents, state: 'pending')
+        redirect_to new_order_payment_path(order)
       else
         @proposal.status = params[:status]
         @proposal.save
