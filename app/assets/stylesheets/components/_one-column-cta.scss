@@ -2,6 +2,8 @@
    text-align: center;
    background-color: $accent;
   height: 300px;
+  overflow: scroll;
+ -webkit-overflow: scroll;
   background-position: center;
   background-size: cover;
   hr {

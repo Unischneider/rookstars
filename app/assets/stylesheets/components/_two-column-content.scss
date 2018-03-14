@@ -31,7 +31,8 @@
     }
   }
   .left-cta {
-
+ overflow: scroll;
+ -webkit-overflow: scroll;
     hr {
      margin-bottom: 0px;
      width: 78px;
@@ -48,6 +49,8 @@
    height: 610px;
  }
  .right-cta {
+  overflow: scroll;
+ -webkit-overflow: scroll;
   hr {
    margin-bottom: 0px;
    width: 78px;
@@ -58,7 +61,6 @@
    text-align: left;
  }
  white-space: normal;
- overflow: overlay;
  background-size: cover;
  background-color: $accent;
  height: 610px;
@@ -88,4 +90,25 @@
 }
 
 }
+
+@media (max-width: 575.98px) {
+    .two-column-content .cta-content {
+    margin-left: 27px;
+}
+.two-column-content .right-cta {
+    white-space: normal;
+    overflow: overlay;
+    background-size: cover;
+    background-color: #3a3a3a;
+    height: 310px;
+}
+.two-column-content .left-cta {
+    white-space: normal;
+    overflow: overlay;
+    background-size: cover;
+    background-color: #3a3a3a;
+     height: 310px;
+}
+}
+
 
