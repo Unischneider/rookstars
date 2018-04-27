@@ -1,1 +1,5 @@
-Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team.
+<html>
+  <h1>Rookstars</h1>
+  <a href="www.rookstars.eu"></a>
+  <p>Rookstars is a platform that connects Le Wagon Alumni with non-profit organizations looking to advance their digital brand.</p>
+</html>
