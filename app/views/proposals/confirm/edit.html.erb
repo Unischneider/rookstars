@@ -10,7 +10,7 @@
 <div class="one-column-cta" style="background-color: #f4f4f4; height: 349px;">
   <div class="container-fluid">
     <div class="cta-content">
-    <hr>
+      <hr>
       <div class="text">
         <% if @proposal.status == "Pending Developer confirmation" %>
         <h1 style="color: #022832; line-height: 30px;"><%= @proposal.project.organization.name %> wants your team <br> to manage the implementation of the  Project: <%= @proposal.project.title %></h1>
@@ -25,78 +25,90 @@
           <%= f.button :submit, "Decline", class: "terciary-primary-btn" %>
           <% end %>
           <% elsif @proposal.status == "Declined" %>
-            <h1 style="color: #022832; line-height: 30px;">We are sorry to inform you that <%= @proposal.project.organization.name %> has declined your application </h1>
+          <h1 style="color: #022832; line-height: 30px;">We are sorry to inform you that <%= @proposal.project.organization.name %> has declined your application </h1>
           <% elsif @proposal.status == "Confirmed" %>
-            <h1 style="color: #022832; line-height: 30px;"><%= @proposal.project.organization.name %> has already accepted your application</h1>
-            <p style="color: #022832;">Work further on the project</p>
-            <%= link_to "Office", project_classroom_path(@proposal.project.id), class: "custom-primary-btn"  %>
-          <% else %>
+          <h1 style="color: #022832; line-height: 30px;"><%= @proposal.project.organization.name %> has already accepted your application</h1>
+          <p style="color: #022832;">Work further on the project</p>
+          <%= link_to "Office", project_classroom_path(@proposal.project.id), class: "custom-primary-btn"  %>
+          <% elsif current_organization == @proposal.project.organization %>
+          <h1 style="color: #022832; line-height: 30px;"> The following team wants to do your project: <%= @proposal.project.title %></h1>
+          <p style="color: #022832;">Accept it now and wait for the final decision of the developer team.</p>
+          <div class="cta-button">
+            <%= simple_form_for(@proposal, url: proposals_confirm_path(@proposal.id)) do |f|%>
+            <%= hidden_field_tag :status, "Confirmed" %>
+            <%= f.button :submit, "Accept", class: "custom-primary-btn" %>
+            <% end %>
+            <%= simple_form_for(@proposal, url: proposals_confirm_path(@proposal.id)) do |f|%>
+            <%= hidden_field_tag :status, "Canceled" %>
+            <%= f.button :submit, "Decline", class: "terciary-primary-btn" %>
+            <% end %>
+            <% else %>
             <h1 style="color: #022832; line-height: 30px;"><%= @proposal.project.organization.name %> has not answered your application yet</h1>
             <p style="color: #022832;">Please be patient a little longer</p>
-          <% end %>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="container-fluid">
-  <div class="two-column-content">
-    <div class="row">
-      <div class="double-cta">
-        <div class="left-cta col-xs-12 col-md-6" style="background-image: url('<%= cl_image_path 'bg2.jpg' %>'); background-size: cover; background-position: center">
-          <div class="cta-content">
-            <hr>
-            <div class="text">
-              <h1>Team</h1>
-              <div class="team-avatar">
-                <% @team_members.each do |member| %>
-                <% if member.user.avatar %>
-                <%= cl_image_tag member.user.avatar, class: "member-avatar" %>
-                <% end %>
-                <% end %>
-              </div>
-              <% @team_members.each do |member| %>
-              <p><%= member.user.first_name %>
-                <% if member.user.last_name %>
-                <%= member.user.last_name %></p>
-                <% end %>
-                <% end %>
-                <br>
-                <p class="tag-label">Application Status</p>
-                <% if @proposal.joinable %>
-                <p>This team is closed</p>
-                <% else %>
-                <p>This team is open for applicants</p>
-                <% end %>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="right-cta col-xs-12 col-md-6" style="background-image: url('<%= cl_image_path 'bg3.jpg' %>'); background-size: cover; background-position: center">
-          <div class="cta-content">
-            <hr>
-            <div class="text">
-              <h1>Elevator Pitch</h1>
-              <p class="tag-label"><%= @proposal.project.organization.name %></p>
-              <p><strong> <%= @proposal.pitch %></strong></p>
-              <br>
-              <p class="tag-label">Status</p>
-              <p><%= @proposal.status %></p>
-            </div>
+            <% end %>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
-<div class="one-column-content" style="color: #0e3849;"">
   <div class="container-fluid">
-    <div class="cta-content">
-      <hr>
-      <div class="text">
-        <h1>About the team</h1>
-        <p><%= @proposal.team.about_us%></p>
+    <div class="two-column-content">
+      <div class="row">
+        <div class="double-cta">
+          <div class="left-cta col-xs-12 col-md-6" style="background-image: url('<%= cl_image_path 'bg2.jpg' %>'); background-size: cover; background-position: center">
+            <div class="cta-content">
+              <hr>
+              <div class="text">
+                <h1>Team</h1>
+                <div class="team-avatar">
+                  <% @team_members.each do |member| %>
+                  <% if member.user.avatar %>
+                  <%= cl_image_tag member.user.avatar, class: "member-avatar" %>
+                  <% end %>
+                  <% end %>
+                </div>
+                <% @team_members.each do |member| %>
+                <p><%= member.user.first_name %>
+                  <% if member.user.last_name %>
+                  <%= member.user.last_name %></p>
+                  <% end %>
+                  <% end %>
+                  <br>
+                  <p class="tag-label">Application Status</p>
+                  <% if @proposal.joinable %>
+                  <p>This team is closed</p>
+                  <% else %>
+                  <p>This team is open for applicants</p>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="right-cta col-xs-12 col-md-6" style="background-image: url('<%= cl_image_path 'bg3.jpg' %>'); background-size: cover; background-position: center">
+            <div class="cta-content">
+              <hr>
+              <div class="text">
+                <h1>Elevator Pitch</h1>
+                <p class="tag-label"><%= @proposal.project.organization.name %></p>
+                <p><strong> <%= @proposal.pitch %></strong></p>
+                <br>
+                <p class="tag-label">Status</p>
+                <p><%= @proposal.status %></p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-</div>
+  <div class="one-column-content" style="color: #0e3849;"">
+    <div class="container-fluid">
+      <div class="cta-content">
+        <hr>
+        <div class="text">
+          <h1>About the team</h1>
+          <p><%= @proposal.team.about_us%></p>
+        </div>
+      </div>
+    </div>
+  </div>

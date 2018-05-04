@@ -10,7 +10,7 @@
       <br>
       <% if @project.status == "Done" || @joinable %>
             <p>This project can not be joined</p>
-      <% elsif current_organization = @project.organization%>
+      <% elsif current_organization == @project.organization%>
       <% if @project.status == "Pending" %>
       <%= link_to "Edit", edit_project_path(@project.id) , class: "custom-primary-btn" %>
         <% end %>
