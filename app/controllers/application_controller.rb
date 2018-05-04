@@ -32,6 +32,6 @@ class ApplicationController < ActionController::Base
   private
 
   def skip_pundit?
-    devise_controller? || params[:controller] =~ /(^(rails_)?admin)|(^pages$)|(^contacts$)/ || params[:controller] == "thredded/preferences" || params[:controller] == "thredded/private_topics" || params[:controller] == "thredded/moderation"
+    devise_controller? || params[:controller] =~ /(^(rails_)?admin)|(^pages$)|(^contacts$)/
   end
 end
